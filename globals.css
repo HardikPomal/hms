@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+  project-2026-1 — CSS Architecture
+  
+  - fonts.css      @font-face declarations for all local fonts
+  - theme.css      Color variables, transitions, scrollbar, logo CSS vars  
+  - typography.css Responsive text sizing + element rules + language font overrides
+*/
+
+@import "./styles/fonts.css";
+@import "./styles/theme.css";
+@import "./styles/typography.css";
+
+/* ─── Font Family Mappings ─────────────────────────────────────────────── */
+@theme {
+    --font-display: "Archivo", sans-serif;
+    --font-body: "Supreme", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Supreme", sans-serif;
+}
+
+/* Apply Font Families Globally */
+html,
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1-text,
+.h2-text,
+.h3-text,
+.h4-text,
+.h5-text,
+.h6-text {
+    font-family: var(--font-display);
+}
+
+/* Utility classes */
+.font-display {
+    font-family: var(--font-display);
+}
+.font-body {
+    font-family: var(--font-body);
+}
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Form elements inherit font */
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────── */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-base-500) transparent;
+}
+
+/* ─── Container ────────────────────────────────────────────────────────── */
+.container {
+    @apply max-w-365! px-5! mx-auto!;
+}
+
+.bg-dot-grid {
+    background-image: radial-gradient(circle, var(--color-base-300) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.dark .bg-dot-grid {
+    background-image: radial-gradient(circle, var(--color-dark-base-300) 1px, transparent 1px);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-base-300 dark:bg-dark-base-300 rounded-full border-4 border-solid border-transparent bg-clip-padding hover:bg-base-400 dark:hover:bg-dark-base-400 transition-colors;
+}

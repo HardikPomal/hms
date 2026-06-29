@@ -1,0 +1,129 @@
+/* 
+  fonts.css
+  Defines specific font families from local assets.
+*/
+
+/* Archivo - Display Font */
+@font-face {
+    font-family: "Archivo";
+    src: url("/assets/fonts/archivo/Archivo-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("/assets/fonts/archivo/Archivo-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("/assets/fonts/archivo/Archivo-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("/assets/fonts/archivo/Archivo-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("/assets/fonts/archivo/Archivo-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Supreme - Body Font (Variable) */
+@font-face {
+    font-family: "Supreme";
+    src: url("/assets/fonts/supreme/Supreme-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* JetBrains Mono - Code Font */
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/assets/fonts/jetBrains_mono/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Anek Gujarati - Gujarati Font */
+@font-face {
+    font-family: "Anek Gujarati";
+    src: url("/assets/fonts/anek_gujarati/AnekGujarati-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Anek Gujarati";
+    src: url("/assets/fonts/anek_gujarati/AnekGujarati-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Anek Gujarati";
+    src: url("/assets/fonts/anek_gujarati/AnekGujarati-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Anek Gujarati";
+    src: url("/assets/fonts/anek_gujarati/AnekGujarati-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Hind - Hindi Font */
+@font-face {
+    font-family: "Hind";
+    src: url("/assets/fonts/hind/Hind-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hind";
+    src: url("/assets/fonts/hind/Hind-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hind";
+    src: url("/assets/fonts/hind/Hind-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hind";
+    src: url("/assets/fonts/hind/Hind-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/*
+  Swasthya Sathi — CSS Architecture
+  
+  - fonts.css      @font-face declarations for all local fonts
+  - theme.css      Color variables, transitions, scrollbar, logo CSS vars  
+  - typography.css Responsive text sizing + element rules + language font overrides
+*/
+
+@import "../styles/fonts.css";
+@import "../styles/theme.css";
+@import "../styles/typography.css";
+
+/* ─── Font Family & Scale Mappings ─────────────────────────────────────────────── */
+@theme {
+    --font-display: "Archivo", sans-serif;
+    --font-body: "Supreme", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Supreme", sans-serif;
+
+    /* Scaled down typography */
+    --text-xs: 0.7rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.9375rem;
+    --text-lg: 1.0625rem;
+    --text-xl: 1.1875rem;
+    --text-2xl: 1.375rem;
+    --text-3xl: 1.75rem;
+    --text-4xl: 2rem;
+}
+
+/* Apply Font Families Globally */
+html,
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1-text,
+.h2-text,
+.h3-text,
+.h4-text,
+.h5-text,
+.h6-text {
+    font-family: var(--font-display);
+}
+
+/* Utility classes */
+.font-display {
+    font-family: var(--font-display);
+}
+.font-body {
+    font-family: var(--font-body);
+}
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Form elements inherit font */
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────── */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-base-500) transparent;
+}
+
+/* ─── Container ────────────────────────────────────────────────────────── */
+.container {
+    @apply max-w-2xl! px-4! mx-auto!;
+}
+
+.bg-dot-grid {
+    background-image: radial-gradient(circle, var(--color-base-300) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.dark .bg-dot-grid {
+    background-image: radial-gradient(circle, var(--color-dark-base-300) 1px, transparent 1px);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-base-300 dark:bg-dark-base-300 rounded-full;
+}
+
+/* ─── Text Size Modes ──────────────────────────────────────────────────── */
+.text-size-large {
+    font-size: 110% !important;
+}
+.text-size-xlarge {
+    font-size: 125% !important;
+}
+
+/* ─── High Contrast Mode ───────────────────────────────────────────────── */
+.high-contrast {
+    --background: #000000;
+    --foreground: #ffffff;
+    --color-primary-500: #ffdd00;
+    --color-primary-400: #ffee44;
+}
+.high-contrast body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* ─── Touch Targets (Accessibility) ───────────────────────────────────── */
+button,
+a,
+[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* ─── Card Styles ──────────────────────────────────────────────────────── */
+.card {
+    @apply bg-white dark:bg-dark-base-100 border-2 border-base-200 dark:border-dark-base-200 rounded-2xl p-4;
+}
+
+.card-elevated {
+    @apply bg-white dark:bg-dark-base-100 border-2 border-base-300 dark:border-dark-base-300 rounded-2xl p-4;
+}
+
+/* ─── Status Badge Colors ──────────────────────────────────────────────── */
+.badge-high {
+    @apply bg-danger-50 border border-danger-200 text-danger-700 dark:bg-dark-danger-200 dark:border-dark-danger-300 dark:text-dark-danger-800 rounded-lg px-2 py-1 text-xs font-bold;
+}
+.badge-low {
+    @apply bg-primary-50 border border-primary-200 text-primary-700 dark:bg-dark-primary-200 dark:border-dark-primary-300 dark:text-dark-primary-800 rounded-lg px-2 py-1 text-xs font-bold;
+}
+.badge-normal {
+    @apply bg-success-50 border border-success-200 text-success-700 dark:bg-dark-success-200 dark:border-dark-success-300 dark:text-dark-success-800 rounded-lg px-2 py-1 text-xs font-bold;
+}
+
+/* ─── Gradient Backgrounds ─────────────────────────────────────────────── */
+.gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-500) 100%);
+}
+.gradient-calm {
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+}
+.dark .gradient-calm {
+    background: linear-gradient(135deg, var(--color-dark-primary-100) 0%, var(--color-dark-secondary-100) 100%);
+}
+
+/* ─── Animations ───────────────────────────────────────────────────────── */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+}
+
+.animate-slide-up { animation: slideUp 0.3s ease forwards; }
+.animate-fade-in  { animation: fadeIn 0.25s ease forwards; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* ─── Bottom Nav Safe Area ─────────────────────────────────────────────── */
+.pb-safe {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+.bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+}

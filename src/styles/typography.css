@@ -1,0 +1,430 @@
+/*#region TYPOGRAPHY VARIABLES */
+@theme {
+    /*#region DESKTOP - 1920PX */
+
+    /* FONT SIZE */
+    --fs-d-h1: 48px;
+    --fs-d-h2: 38px;
+    --fs-d-h3: 32px;
+    --fs-d-h4: 28px;
+    --fs-d-h5: 22px;
+    --fs-d-h6: 18px;
+    --fs-d-p: 15px;
+    --fs-d-body: 14px;
+    --fs-d-body-xs: 12px;
+    --fs-d-code: 13px;
+
+    /* LINE HEIGHT */
+    --lh-d-h1: 68px;
+    --lh-d-h2: 54px;
+    --lh-d-h3: 46px;
+    --lh-d-h4: 42px;
+    --lh-d-h5: 34px;
+    --lh-d-h6: 28px;
+    --lh-d-p: 24px;
+    --lh-d-body: 22px;
+    --lh-d-body-xs: 20px;
+    --lh-d-code: 22px;
+
+    /* LETTER SPACING */
+    --ls-d-h1: -1px;
+    --ls-d-h2: -0.6px;
+    --ls-d-h3: -0.4px;
+    --ls-d-h4: -0.2px;
+    --ls-d-h5: 0px;
+    --ls-d-h6: 0.2px;
+    --ls-d-p: 0px;
+    --ls-d-body: 0px;
+    --ls-d-body-xs: 0.2px;
+    --ls-d-code: 0px;
+
+    /* FONT WEIGHT */
+    --fw-d-h1: 500;
+    --fw-d-h2: 500;
+    --fw-d-h3: 500;
+    --fw-d-h4: 500;
+    --fw-d-h5: 500;
+    --fw-d-h6: 500;
+    --fw-d-p: 400;
+    --fw-d-body: 400;
+    --fw-d-body-xs: 400;
+    --fw-d-code: 400;
+
+    /*#endregion DESKTOP */
+
+    /*#region TABLET - 990PX */
+
+    /* FONT SIZE */
+    --fs-t-h1: 38px;
+    --fs-t-h2: 32px;
+    --fs-t-h3: 26px;
+    --fs-t-h4: 22px;
+    --fs-t-h5: 18px;
+    --fs-t-h6: 16px;
+    --fs-t-p: 14px;
+    --fs-t-body: 13px;
+    --fs-t-body-xs: 11px;
+    --fs-t-code: 12px;
+
+    /* LINE HEIGHT */
+    --lh-t-h1: 54px;
+    --lh-t-h2: 46px;
+    --lh-t-h3: 40px;
+    --lh-t-h4: 36px;
+    --lh-t-h5: 32px;
+    --lh-t-h6: 26px;
+    --lh-t-p: 22px;
+    --lh-t-body: 20px;
+    --lh-t-body-xs: 18px;
+    --lh-t-code: 20px;
+
+    /* LETTER SPACING */
+    --ls-t-h1: -0.8px;
+    --ls-t-h2: -0.5px;
+    --ls-t-h3: -0.3px;
+    --ls-t-h4: -0.1px;
+    --ls-t-h5: 0px;
+    --ls-t-h6: 0.2px;
+    --ls-t-p: 0px;
+    --ls-t-body: 0px;
+    --ls-t-body-xs: 0.2px;
+    --ls-t-code: 0px;
+
+    /* FONT WEIGHT */
+    --fw-t-h1: 500;
+    --fw-t-h2: 500;
+    --fw-t-h3: 500;
+    --fw-t-h4: 500;
+    --fw-t-h5: 500;
+    --fw-t-h6: 500;
+    --fw-t-p: 400;
+    --fw-t-body: 400;
+    --fw-t-body-xs: 400;
+    --fw-t-code: 400;
+
+    /*#endregion TABLET */
+
+    /*#region MOBILE - 430PX */
+
+    /* FONT SIZE */
+    --fs-m-h1: 28px;
+    --fs-m-h2: 22px;
+    --fs-m-h3: 18px;
+    --fs-m-h4: 16px;
+    --fs-m-h5: 15px;
+    --fs-m-h6: 14px;
+    --fs-m-p: 13px;
+    --fs-m-body: 12px;
+    --fs-m-body-xs: 11px;
+    --fs-m-code: 12px;
+
+    /* LINE HEIGHT */
+    --lh-m-h1: 40px;
+    --lh-m-h2: 34px;
+    --lh-m-h3: 30px;
+    --lh-m-h4: 28px;
+    --lh-m-h5: 26px;
+    --lh-m-h6: 24px;
+    --lh-m-p: 22px;
+    --lh-m-body: 20px;
+    --lh-m-body-xs: 18px;
+    --lh-m-code: 20px;
+
+    /* LETTER SPACING */
+    --ls-m-h1: -0.5px;
+    --ls-m-h2: -0.3px;
+    --ls-m-h3: -0.2px;
+    --ls-m-h4: 0px;
+    --ls-m-h5: 0.1px;
+    --ls-m-h6: 0.2px;
+    --ls-m-p: 0px;
+    --ls-m-body: 0px;
+    --ls-m-body-xs: 0.2px;
+    --ls-m-code: 0px;
+
+    /* FONT WEIGHT */
+    --fw-m-h1: 500;
+    --fw-m-h2: 500;
+    --fw-m-h3: 500;
+    --fw-m-h4: 500;
+    --fw-m-h5: 500;
+    --fw-m-h6: 500;
+    --fw-m-p: 400;
+    --fw-m-body: 400;
+    --fw-m-body-xs: 400;
+    --fw-m-code: 400;
+}
+
+/*#endregion TYPOGRAPHY VARIABLES */
+
+/*#region DESKTOP TYPOGRAPHY */
+
+h1,
+.h1-text,
+h2,
+.h2-text,
+h3,
+.h3-text,
+h4,
+.h4-text,
+h5,
+.h5-text,
+h6,
+.h6-text {
+    font-family: var(--font-display);
+}
+
+p,
+.p-text,
+.body-text,
+.body-xs-text {
+    font-family: var(--font-body);
+}
+
+.code,
+.code-text {
+    font-family: "JetBrains Mono", monospace !important;
+}
+
+/* Headings */
+h1,
+.h1-text {
+    font-size: var(--fs-d-h1);
+    line-height: var(--lh-d-h1);
+    font-weight: var(--fw-d-h1);
+    letter-spacing: var(--ls-d-h1);
+}
+
+h2,
+.h2-text {
+    font-size: var(--fs-d-h2);
+    line-height: var(--lh-d-h2);
+    font-weight: var(--fw-d-h2);
+    letter-spacing: var(--ls-d-h2);
+}
+
+h3,
+.h3-text {
+    font-size: var(--fs-d-h3);
+    line-height: var(--lh-d-h3);
+    font-weight: var(--fw-d-h3);
+    letter-spacing: var(--ls-d-h3);
+}
+
+h4,
+.h4-text {
+    font-size: var(--fs-d-h4);
+    line-height: var(--lh-d-h4);
+    font-weight: var(--fw-d-h4);
+    letter-spacing: var(--ls-d-h4);
+}
+
+h5,
+.h5-text {
+    font-size: var(--fs-d-h5);
+    line-height: var(--lh-d-h5);
+    font-weight: var(--fw-d-h5);
+    letter-spacing: var(--ls-d-h5);
+}
+
+h6,
+.h6-text {
+    font-size: var(--fs-d-h6);
+    line-height: var(--lh-d-h6);
+    font-weight: var(--fw-d-h6);
+    letter-spacing: var(--ls-d-h6);
+}
+
+/* Body */
+p,
+.p-text {
+    font-size: var(--fs-d-p);
+    line-height: var(--lh-d-p);
+    font-weight: var(--fw-d-p);
+    letter-spacing: var(--ls-d-p);
+}
+
+.body-text {
+    font-size: var(--fs-d-body);
+    line-height: var(--lh-d-body);
+    font-weight: var(--fw-d-body);
+    letter-spacing: var(--ls-d-body);
+}
+
+.body-xs-text {
+    font-size: var(--fs-d-body-xs);
+    line-height: var(--lh-d-body-xs);
+    font-weight: var(--fw-d-body-xs);
+    letter-spacing: var(--ls-d-body-xs);
+}
+
+/*#endregion DESKTOP TYPOGRAPHY */
+
+/*#region RESPONSIVE TYPOGRAPHY */
+
+/* TABLET */
+@media (max-width: 990px) {
+    h1,
+    .h1-text {
+        font-size: var(--fs-t-h1);
+        line-height: var(--lh-t-h1);
+        font-weight: var(--fw-t-h1);
+        letter-spacing: var(--ls-t-h1);
+    }
+
+    h2,
+    .h2-text {
+        font-size: var(--fs-t-h2);
+        line-height: var(--lh-t-h2);
+        font-weight: var(--fw-t-h2);
+        letter-spacing: var(--ls-t-h2);
+    }
+
+    h3,
+    .h3-text {
+        font-size: var(--fs-t-h3);
+        line-height: var(--lh-t-h3);
+        font-weight: var(--fw-t-h3);
+        letter-spacing: var(--ls-t-h3);
+    }
+
+    h4,
+    .h4-text {
+        font-size: var(--fs-t-h4);
+        line-height: var(--lh-t-h4);
+        font-weight: var(--fw-t-h4);
+        letter-spacing: var(--ls-t-h4);
+    }
+
+    h5,
+    .h5-text {
+        font-size: var(--fs-t-h5);
+        line-height: var(--lh-t-h5);
+        font-weight: var(--fw-t-h5);
+        letter-spacing: var(--ls-t-h5);
+    }
+
+    h6,
+    .h6-text {
+        font-size: var(--fs-t-h6);
+        line-height: var(--lh-t-h6);
+        font-weight: var(--fw-t-h6);
+        letter-spacing: var(--ls-t-h6);
+    }
+
+    p,
+    .p-text {
+        font-size: var(--fs-t-p);
+        line-height: var(--lh-t-p);
+        font-weight: var(--fw-t-p);
+        letter-spacing: var(--ls-t-p);
+    }
+
+    .body-text {
+        font-size: var(--fs-t-body);
+        line-height: var(--lh-t-body);
+        font-weight: var(--fw-t-body);
+        letter-spacing: var(--ls-t-body);
+    }
+
+    .body-xs-text {
+        font-size: var(--fs-t-body-xs);
+        line-height: var(--lh-t-body-xs);
+        font-weight: var(--fw-t-body-xs);
+        letter-spacing: var(--ls-t-body-xs);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 430px) {
+    h1,
+    .h1-text {
+        font-size: var(--fs-m-h1);
+        line-height: var(--lh-m-h1);
+        font-weight: var(--fw-m-h1);
+        letter-spacing: var(--ls-m-h1);
+    }
+
+    h2,
+    .h2-text {
+        font-size: var(--fs-m-h2);
+        line-height: var(--lh-m-h2);
+        font-weight: var(--fw-m-h2);
+        letter-spacing: var(--ls-m-h2);
+    }
+
+    h3,
+    .h3-text {
+        font-size: var(--fs-m-h3);
+        line-height: var(--lh-m-h3);
+        font-weight: var(--fw-m-h3);
+        letter-spacing: var(--ls-m-h3);
+    }
+
+    h4,
+    .h4-text {
+        font-size: var(--fs-m-h4);
+        line-height: var(--lh-m-h4);
+        font-weight: var(--fw-m-h4);
+        letter-spacing: var(--ls-m-h4);
+    }
+
+    h5,
+    .h5-text {
+        font-size: var(--fs-m-h5);
+        line-height: var(--lh-m-h5);
+        font-weight: var(--fw-m-h5);
+        letter-spacing: var(--ls-m-h5);
+    }
+
+    h6,
+    .h6-text {
+        font-size: var(--fs-m-h6);
+        line-height: var(--lh-m-h6);
+        font-weight: var(--fw-m-h6);
+        letter-spacing: var(--ls-m-h6);
+    }
+
+    p,
+    .p-text {
+        font-size: var(--fs-m-p);
+        line-height: var(--lh-m-p);
+        font-weight: var(--fw-m-p);
+        letter-spacing: var(--ls-m-p);
+    }
+
+    .body-text {
+        font-size: var(--fs-m-body);
+        line-height: var(--lh-m-body);
+        font-weight: var(--fw-m-body);
+        letter-spacing: var(--ls-m-body);
+    }
+
+    .body-xs-text {
+        font-size: var(--fs-m-body-xs);
+        line-height: var(--lh-m-body-xs);
+        font-weight: var(--fw-m-body-xs);
+        letter-spacing: var(--ls-m-body-xs);
+    }
+}
+
+/*#endregion RESPONSIVE TYPOGRAPHY */
+
+/*#region LANGUAGE SPECIFIC FONTS */
+/* 
+  Mixed Language Support: 
+  We put the English font first in the stack. 
+  Since the English font lacks Indic glyphs, the browser 
+  automatically falls back to the Indic font for those characters, 
+  preserving the brand's typography for technical terms like "API".
+*/
+[lang="gu"] {
+    --font-display: "Archivo", "Anek Gujarati", sans-serif !important;
+    --font-body: "Supreme", "Anek Gujarati", sans-serif !important;
+}
+
+[lang="hi"] {
+    --font-display: "Archivo", "Hind", sans-serif !important;
+    --font-body: "Supreme", "Hind", sans-serif !important;
+}
+/*#endregion LANGUAGE SPECIFIC FONTS */
