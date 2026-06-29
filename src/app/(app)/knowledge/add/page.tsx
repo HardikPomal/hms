@@ -9,6 +9,7 @@ import {
   addKnowledgeEntry,
   addRelationship,
 } from "@/lib/db/knowledge";
+import { useKnowledgeContext } from "@/contexts/KnowledgeContext";
 import { analyzeUserKnowledgeNotes } from "@/app/actions/ai";
 import { Sparkles, Save, BrainCircuit } from "lucide-react";
 import type { EntityType, RelationType } from "@/types";
@@ -17,6 +18,7 @@ function AddKnowledgeForm() {
   const { t } = useLanguage();
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { refreshKnowledge } = useKnowledgeContext();
 
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState<string>("medical_term");
@@ -129,6 +131,8 @@ function AddKnowledgeForm() {
         );
         await processRelations(aiExtraction.relatedFoods, "food", "improves");
       }
+
+      await refreshKnowledge();
 
       const returnTo = searchParams.get("returnTo");
       if (returnTo) {
