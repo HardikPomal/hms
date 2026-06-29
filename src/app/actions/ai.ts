@@ -360,15 +360,17 @@ export async function analyzeUserKnowledgeNotes(
   title: string,
   category: string,
   notes: string
-): Promise<AnalyzeNotesResponse | null> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not set.");
-  }
+): Promise<AnalyzeNotesResponse | { error: string } | null> {
+  try {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.warn("GEMINI_API_KEY is not set.");
+      return { error: "GEMINI_API_KEY is not configured on the server. Please add it to your environment variables." };
+    }
 
-  const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey });
 
-  const systemInstruction = `You are a medical knowledge extraction assistant.
+    const systemInstruction = `You are a medical knowledge extraction assistant.
 The user has provided their own detailed medical notes for the entity '${title}' (Category: '${category}').
 Your task is to read their notes and extract structured metadata from it.
 Do NOT generate a detailed description, as we will save their exact notes.
@@ -388,7 +390,6 @@ Generate the output in strictly this JSON format:
 If their notes don't explicitly state something (like related medicines), you can optionally supplement it based on general medical knowledge, or leave it empty.
 Return raw JSON only. Do not wrap in markdown \`\`\`.`;
 
-  try {
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `Title: ${title}\nCategory: ${category}\n\nUser Notes:\n${notes}`,
@@ -403,6 +404,6 @@ Return raw JSON only. Do not wrap in markdown \`\`\`.`;
     return JSON.parse(resText);
   } catch (e) {
     console.error("AI Analyze Notes Error", e);
-    return null;
+    return { error: "Failed to communicate with AI model. Please try again later." };
   }
 }

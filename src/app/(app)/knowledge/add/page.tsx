@@ -58,6 +58,12 @@ function AddKnowledgeForm() {
         notes,
       );
 
+      if (aiExtraction && "error" in aiExtraction) {
+        alert(aiExtraction.error);
+        setSaving(false);
+        return;
+      }
+
       // 2. Save the Parameter
       const param = await addParameter({
         name: title.trim(),
@@ -130,8 +136,9 @@ function AddKnowledgeForm() {
       } else {
         router.replace("/knowledge");
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      alert(e?.message || "An unexpected error occurred while saving.");
       setSaving(false);
     }
   };
