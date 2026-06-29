@@ -1,0 +1,23 @@
+{
+  "name": "Swasthya Sathi",
+  "short_name": "Swasthya Sathi",
+  "description": "Your family health companion for cancer care — manage reports, medicines, chemotherapy, and health records completely offline.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f5a300",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
