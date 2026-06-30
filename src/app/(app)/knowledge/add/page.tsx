@@ -38,12 +38,12 @@ function AddKnowledgeForm() {
     "text-xs font-bold text-base-500 dark:text-dark-base-500 block mb-1.5 uppercase tracking-wide";
 
   const categories = [
+    "medical_report",
+    "lab_parameter",
     "medical_term",
     "medicine",
     "cancer_info",
     "treatment",
-    "nutrition",
-    "exercise",
     "doctor_advice",
     "general",
   ];
@@ -53,84 +53,31 @@ function AddKnowledgeForm() {
     setSaving(true);
 
     try {
-      // 1. Let AI Analyze the unstructured notes
-      const aiExtraction = await analyzeUserKnowledgeNotes(
-        title,
-        category,
-        notes,
-      );
-
-      if (aiExtraction && "error" in aiExtraction) {
-        alert(aiExtraction.error);
-        setSaving(false);
-        return;
-      }
-
-      // 2. Save the Parameter
+      // 1. Save the Parameter with 'needs_analysis' status
       const param = await addParameter({
         name: title.trim(),
         alternativeNames: [],
         category,
-        knowledgeStatus: "advanced",
+        knowledgeStatus: "needs_analysis",
         defaultRefMin: undefined,
       });
 
-      // 3. Save the Knowledge Entry
+      // 2. Save the Knowledge Entry with raw notes
       await addKnowledgeEntry({
         parameterId: param.id,
-        simpleMeaning: aiExtraction?.simpleMeaning || title.trim(),
+        simpleMeaning: title.trim(), // Will be updated by AI later
         detailedDescription: notes.trim(), // Storing raw markdown notes here
-        whyImportant: aiExtraction?.whyImportant || "",
-        normalRangeText: aiExtraction?.normalRange || "",
-        source: "User Notes (AI Structured)",
+        whyImportant: "", // Will be updated by AI later
+        normalRangeText: "", // Will be updated by AI later
+        source: "User Notes (Pending AI)",
         doctorNotes: "",
         personalNotes: "",
         references: [],
-        tags: aiExtraction?.tags
-          ? aiExtraction.tags
-              .split(",")
-              .map((t) => t.trim())
-              .filter(Boolean)
-          : [],
+        tags: [], // Will be updated by AI later
         versionHistory: [],
       });
 
-      // 4. Process Graph Relationships extracted by AI
-      if (aiExtraction) {
-        const processRelations = async (
-          csv: string | undefined,
-          targetType: EntityType,
-          relType: RelationType,
-        ) => {
-          if (!csv) return;
-          const items = csv
-            .split(",")
-            .map((i) => i.trim())
-            .filter(Boolean);
-          for (const item of items) {
-            const safeId = `ext_${targetType}_${item.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
-            await addRelationship(
-              param.id,
-              "parameter",
-              safeId,
-              targetType,
-              relType,
-            );
-          }
-        };
-
-        await processRelations(
-          aiExtraction.relatedSymptoms,
-          "symptom",
-          "causes",
-        );
-        await processRelations(
-          aiExtraction.relatedMedicines,
-          "medicine",
-          "treats",
-        );
-        await processRelations(aiExtraction.relatedFoods, "food", "improves");
-      }
+      // Graph Relationships will be extracted during the batch AI analysis process later
 
       await refreshKnowledge();
 
@@ -217,13 +164,13 @@ function AddKnowledgeForm() {
         >
           {saving ? (
             <>
-              <BrainCircuit className="animate-pulse" size={20} />
-              AI is processing...
+              <Save className="animate-pulse" size={20} />
+              Saving...
             </>
           ) : (
             <>
               <Save size={20} />
-              Save & Analyze
+              Save
             </>
           )}
         </button>

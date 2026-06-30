@@ -167,7 +167,7 @@ export interface MedicineLog {
 
 // ─── Parameters & Knowledge Base ─────────────────────────────────────────────
 
-export type KnowledgeStatus = "unknown" | "basic" | "advanced";
+export type KnowledgeStatus = "unknown" | "basic" | "advanced" | "needs_analysis";
 
 export interface ParameterDef {
   id: string; // e.g., "param_hemoglobin"

@@ -24,14 +24,18 @@ import {
   updateChemoSession,
 } from "@/lib/db/chemo";
 import { getAllReports } from "@/lib/db/reports";
+import { getAllParameters } from "@/lib/db/knowledge";
 import { analyzeDischargeDocument } from "@/app/actions/ai";
 import type {
   ChemoSession,
   ChemoSessionStatus,
   ChemoMedicine,
   MedicalReport,
+  ParameterDef,
 } from "@/types";
 import { generateId } from "@/lib/db/db";
+import Link from "next/link";
+import { BookOpen } from "lucide-react";
 
 const STAGES: { id: ChemoSessionStatus; icon: any; label: string }[] = [
   { id: "scheduled", icon: Clock, label: "Scheduled" },
@@ -49,6 +53,7 @@ export default function ChemoActiveTrackerPage() {
   const router = useRouter();
   const [session, setSession] = useState<ChemoSession | null>(null);
   const [reports, setReports] = useState<MedicalReport[]>([]);
+  const [kbParams, setKbParams] = useState<ParameterDef[]>([]);
   const [loading, setLoading] = useState(true);
   const [showDelete, setShowDelete] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -71,9 +76,10 @@ export default function ChemoActiveTrackerPage() {
   >([]);
 
   useEffect(() => {
-    Promise.all([getChemoSessionById(id), getAllReports()]).then(([s, r]) => {
+    Promise.all([getChemoSessionById(id), getAllReports(), getAllParameters()]).then(([s, r, p]) => {
       setSession(s ?? null);
       setReports(r);
+      setKbParams(p);
       setLoading(false);
       if (s) {
         setSelectedReportId(s.cbcReportId || "");
@@ -412,7 +418,18 @@ export default function ChemoActiveTrackerPage() {
                   className="p-3 bg-base-50 dark:bg-dark-base-200 rounded-xl border border-base-200 flex items-center justify-between"
                 >
                   <div>
-                    <p className="font-bold text-base-900">{med.name}</p>
+                    {(() => {
+                      const kbMatch = kbParams.find((p) => p.name.toLowerCase() === med.name.toLowerCase() || p.alternativeNames.some(a => a.toLowerCase() === med.name.toLowerCase()));
+                      if (kbMatch) {
+                        return (
+                          <Link href={`/knowledge/${kbMatch.id}`} className="font-bold text-primary-600 hover:text-primary-700 hover:underline flex items-center gap-1.5 transition-colors">
+                            <BookOpen size={14} className="shrink-0" />
+                            {med.name}
+                          </Link>
+                        );
+                      }
+                      return <p className="font-bold text-base-900">{med.name}</p>;
+                    })()}
                     <p className="text-xs text-base-500">
                       Duration: {med.duration || "N/A"}
                     </p>

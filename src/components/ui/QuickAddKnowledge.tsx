@@ -17,6 +17,8 @@ interface QuickAddKnowledgeProps {
 }
 
 const CATEGORIES: string[] = [
+  "medical_report",
+  "lab_parameter",
   "medical_term",
   "medicine",
   "cancer_info",

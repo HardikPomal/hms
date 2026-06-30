@@ -2,13 +2,22 @@
 
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
-import { Plus, BookOpen, ChevronRight, Search } from "lucide-react";
+import { Plus, BookOpen, ChevronRight, Search, BrainCircuit, Play } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getAllParameters } from "@/lib/db/knowledge";
-import type { ParameterDef } from "@/types";
+import { 
+  getAllParameters, 
+  getKnowledgeByParameterId,
+  updateParameter,
+  updateKnowledgeEntry,
+  addRelationship
+} from "@/lib/db/knowledge";
+import { analyzeUserKnowledgeNotes } from "@/app/actions/ai";
+import type { ParameterDef, EntityType, RelationType } from "@/types";
 
 const CATEGORY_ICONS: Record<string, string> = {
+  medical_report: "📋",
+  lab_parameter: "🧪",
   medical_term: "🔬",
   medicine: "💊",
   cancer_info: "🎗️",
@@ -26,12 +35,18 @@ export default function KnowledgePage() {
   const [query, setQuery] = useState("");
   const [filterCat, setFilterCat] = useState<string>("ALL");
   const [loading, setLoading] = useState(true);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzeProgress, setAnalyzeProgress] = useState({ current: 0, total: 0 });
 
-  useEffect(() => {
+  const loadData = () => {
     getAllParameters().then((k) => {
       setEntries(k);
       setLoading(false);
     });
+  };
+
+  useEffect(() => {
+    loadData();
   }, []);
 
   const filtered = entries.filter((e) => {
@@ -43,7 +58,78 @@ export default function KnowledgePage() {
     return matchesCat && matchesQ;
   });
 
-  const categories = ["medical_term", "medicine", "cancer_info", "treatment", "nutrition", "exercise", "doctor_advice", "general", "Hematology"];
+  const categories = ["medical_report", "lab_parameter", "medical_term", "medicine", "cancer_info", "treatment", "nutrition", "exercise", "doctor_advice", "general", "Hematology"];
+
+  const pendingItems = entries.filter((e) => e.knowledgeStatus === "needs_analysis");
+
+  const handleAnalyzeAll = async () => {
+    if (pendingItems.length === 0 || analyzing) return;
+    setAnalyzing(true);
+    setAnalyzeProgress({ current: 0, total: pendingItems.length });
+
+    for (let i = 0; i < pendingItems.length; i++) {
+      const param = pendingItems[i];
+      setAnalyzeProgress({ current: i + 1, total: pendingItems.length });
+
+      try {
+        const kb = await getKnowledgeByParameterId(param.id);
+        if (!kb) continue;
+
+        const aiExtraction = await analyzeUserKnowledgeNotes(
+          param.name,
+          param.category,
+          kb.detailedDescription
+        );
+
+        if (aiExtraction && !("error" in aiExtraction)) {
+          // Safeguard structured Form Mode nutrition entries
+          const isStructuredNutrition = param.category === "nutrition" && kb.simpleMeaning !== param.name;
+
+          // Update KB
+          await updateKnowledgeEntry(kb.id, {
+            simpleMeaning: isStructuredNutrition ? kb.simpleMeaning : (aiExtraction.simpleMeaning || kb.simpleMeaning),
+            whyImportant: isStructuredNutrition ? kb.whyImportant : (aiExtraction.whyImportant || ""),
+            normalRangeText: aiExtraction.normalRange || "",
+            tags: aiExtraction.tags
+              ? aiExtraction.tags.split(",").map((t) => t.trim()).filter(Boolean)
+              : [],
+          });
+
+          // Process Relations
+          const processRelations = async (
+            csv: string | undefined,
+            targetType: EntityType,
+            relType: RelationType
+          ) => {
+            if (!csv) return;
+            const items = csv.split(",").map((item) => item.trim()).filter(Boolean);
+            for (const item of items) {
+              const safeId = `ext_${targetType}_${item.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
+              await addRelationship(param.id, "parameter", safeId, targetType, relType);
+            }
+          };
+
+          await processRelations(aiExtraction.relatedSymptoms, "symptom", "causes");
+          await processRelations(aiExtraction.relatedMedicines, "medicine", "treats");
+          await processRelations(aiExtraction.relatedFoods, "food", "improves");
+
+          // Update Param Status
+          await updateParameter(param.id, { knowledgeStatus: "advanced" });
+        }
+      } catch (err) {
+        console.error(`Failed to analyze ${param.name}`, err);
+        // Continue to the next one even if this one fails
+      }
+
+      // Safe Rate Limiting: 20 seconds delay
+      if (i < pendingItems.length - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 20000));
+      }
+    }
+
+    setAnalyzing(false);
+    loadData();
+  };
 
   return (
     <AppShell
@@ -57,6 +143,40 @@ export default function KnowledgePage() {
         </Link>
       }
     >
+      {/* Analyze Pending Button */}
+      {pendingItems.length > 0 && (
+        <div className="mb-4">
+          <button
+            onClick={handleAnalyzeAll}
+            disabled={analyzing}
+            className={`w-full py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
+              analyzing
+                ? "bg-base-200 dark:bg-dark-base-200 text-base-500 cursor-not-allowed"
+                : "bg-secondary-500 hover:bg-secondary-600 text-white shadow-lg shadow-secondary-500/30"
+            }`}
+          >
+            {analyzing ? (
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex items-center gap-2">
+                  <BrainCircuit className="animate-pulse" size={18} />
+                  <span>
+                    Processing {analyzeProgress.current} of {analyzeProgress.total}...
+                  </span>
+                </div>
+                <span className="text-xs font-medium opacity-80">
+                  Estimated time left: {Math.floor(((analyzeProgress.total - analyzeProgress.current + 1) * 20) / 60)}m {((analyzeProgress.total - analyzeProgress.current + 1) * 20) % 60}s
+                </span>
+              </div>
+            ) : (
+              <>
+                <Play size={18} className="fill-current" />
+                Analyze {pendingItems.length} Pending Items
+              </>
+            )}
+          </button>
+        </div>
+      )}
+
       {/* Search */}
       <div className="relative mb-4">
         <Search

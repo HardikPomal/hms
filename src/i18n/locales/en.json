@@ -142,6 +142,8 @@
     "contentGu": "Content in Gujarati (optional)",
     "category": "Category",
     "categories": {
+      "lab_parameter": "Lab Parameter",
+      "medical_report": "Medical Report",
       "medical_term": "Medical Term",
       "medicine": "Medicine",
       "cancer_info": "Cancer Info",

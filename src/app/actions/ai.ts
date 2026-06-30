@@ -390,15 +390,41 @@ Generate the output in strictly this JSON format:
 If their notes don't explicitly state something (like related medicines), you can optionally supplement it based on general medical knowledge, or leave it empty.
 Return raw JSON only. Do not wrap in markdown \`\`\`.`;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: `Title: ${title}\nCategory: ${category}\n\nUser Notes:\n${notes}`,
-      config: {
-        systemInstruction,
-        responseMimeType: "application/json",
-        temperature: 0.1,
-      },
-    });
+    let response;
+    let retries = 3;
+    let delay = 2000;
+
+    while (true) {
+      try {
+        response = await ai.models.generateContent({
+          model: "gemini-2.5-flash",
+          contents: `Title: ${title}\nCategory: ${category}\n\nUser Notes:\n${notes}`,
+          config: {
+            systemInstruction,
+            responseMimeType: "application/json",
+            temperature: 0.1,
+          },
+        });
+        break;
+      } catch (error: any) {
+        const isRetryable =
+          error?.status === 503 ||
+          error?.status === 429 ||
+          error?.message?.includes("503") ||
+          error?.message?.includes("429") ||
+          error?.message?.includes("UNAVAILABLE") ||
+          error?.message?.includes("Quota");
+
+        if (isRetryable && retries > 0) {
+          console.warn(`AI Analyze Notes rate limit hit, retrying in ${delay}ms...`);
+          retries--;
+          await new Promise((resolve) => setTimeout(resolve, delay));
+          delay *= 2; // Exponential backoff
+        } else {
+          throw error;
+        }
+      }
+    }
 
     const resText = response.text || "{}";
     return JSON.parse(resText);

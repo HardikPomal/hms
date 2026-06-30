@@ -142,6 +142,8 @@
     "contentGu": "ગુજરાતી માહિતી (ઇચ્છા પ્રમાણે)",
     "category": "વિભાગ",
     "categories": {
+      "lab_parameter": "લેબ પેરામીટર",
+      "medical_report": "તબીબી અહેવાલ",
       "medical_term": "તબીબી શબ્દ",
       "medicine": "દવા",
       "cancer_info": "કૅન્સર માહિતી",
