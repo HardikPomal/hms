@@ -23,7 +23,13 @@ export function KnowledgeProvider({ children }: { children: React.ReactNode }) {
       setLoading(true);
       const data = await getAllParameters();
       setParameters(data);
-      setKnownTerms(data.map((p) => p.name.toLowerCase().trim()));
+      const terms = new Set<string>();
+      data.forEach(p => {
+        terms.add(p.name.toLowerCase().trim());
+        if (p.nameGu) terms.add(p.nameGu.toLowerCase().trim());
+        p.alternativeNames?.forEach(alt => terms.add(alt.toLowerCase().trim()));
+      });
+      setKnownTerms(Array.from(terms));
     } catch (e) {
       console.error("Failed to load parameters", e);
     } finally {

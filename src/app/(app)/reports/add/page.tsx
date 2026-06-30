@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
-import { Plus, Trash2, ChevronDown, Info, Sparkles } from "lucide-react";
+import { Plus, Trash2, ChevronDown, Info, Sparkles, Search, Link as LinkIcon, FileText, FlaskConical, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { addReport } from "@/lib/db/reports";
+import { updateParameter } from "@/lib/db/knowledge";
 import { useKnowledgeContext } from "@/contexts/KnowledgeContext";
 import { analyzeReportFields } from "@/lib/analysis/analyzer";
 import { REPORT_TEMPLATES } from "@/data/reportTemplates";
@@ -38,6 +39,10 @@ export default function AddReportPage() {
   const [extracting, setExtracting] = useState(false);
   const { parameters, knownTerms, refreshKnowledge } = useKnowledgeContext();
 
+  const [linkModalTitle, setLinkModalTitle] = useState<string | null>(null);
+  const [linkSearchQuery, setLinkSearchQuery] = useState("");
+  const [linking, setLinking] = useState(false);
+
   useEffect(() => {
     const draftStr = sessionStorage.getItem("addReportDraft");
     if (draftStr) {
@@ -63,24 +68,37 @@ export default function AddReportPage() {
   }, []);
 
   const handleResearchAndAdd = (title: string) => {
+    setLinkModalTitle(title);
+    setLinkSearchQuery(title);
+  };
+
+  const handleLinkKnowledge = async (parameterId: string) => {
+    if (!linkModalTitle) return;
+    setLinking(true);
+    try {
+      const param = parameters.find(p => p.id === parameterId);
+      if (param) {
+        const altNames = Array.from(new Set([...param.alternativeNames, linkModalTitle]));
+        await updateParameter(parameterId, { alternativeNames: altNames });
+        await refreshKnowledge();
+      }
+      setLinkModalTitle(null);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to link knowledge.");
+    } finally {
+      setLinking(false);
+    }
+  };
+
+  const handleCreateKnowledge = (categoryUrl: string) => {
+    if (!linkModalTitle) return;
     const draft = {
-      step,
-      reportType,
-      reportName,
-      hospital,
-      doctor,
-      reportDate,
-      notes,
-      fields,
-      sections,
-      fileData,
-      fileName,
-      fileType,
+      step, reportType, reportName, hospital, doctor, reportDate,
+      notes, fields, sections, fileData, fileName, fileType,
     };
     sessionStorage.setItem("addReportDraft", JSON.stringify(draft));
-    router.push(
-      `/knowledge/add?title=${encodeURIComponent(title)}&returnTo=/reports/add`,
-    );
+    router.push(`${categoryUrl}?title=${encodeURIComponent(linkModalTitle)}&returnTo=/reports/add`);
   };
 
   const handleAutoFill = async () => {
@@ -132,17 +150,22 @@ export default function AddReportPage() {
         setFields([]);
       } else {
         setFields(
-          template.fields.map((f) => ({
-            id: generateId(),
-            name: f.name,
-            nameGu: f.nameGu,
-            value: "",
-            unit: f.unit,
-            refMin: f.refMin,
-            refMax: f.refMax,
-            status: "unknown",
-            notes: f.notes,
-          })),
+          template.fields.map((f) => {
+            const dbParam = parameters.find(
+              (p) => p.name.toLowerCase() === f.name.toLowerCase()
+            );
+            return {
+              id: generateId(),
+              name: dbParam ? dbParam.name : f.name,
+              nameGu: dbParam ? (dbParam.nameGu || f.nameGu) : f.nameGu,
+              value: "",
+              unit: dbParam?.defaultUnit || f.unit,
+              refMin: (dbParam?.defaultRefMin || f.refMin)?.toString(),
+              refMax: (dbParam?.defaultRefMax || f.refMax)?.toString(),
+              status: "unknown",
+              notes: f.notes,
+            };
+          }),
         );
         setSections([]);
       }
@@ -620,6 +643,105 @@ export default function AddReportPage() {
           {saving ? t("common.loading") : t("common.save")}
         </button>
       </div>
+      {/* Link Knowledge Modal */}
+      {linkModalTitle && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-dark-base-100 rounded-2xl w-full max-w-md shadow-2xl flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-200">
+            <div className="p-4 border-b-2 border-base-100 dark:border-dark-base-200 flex justify-between items-center shrink-0">
+              <h2 className="font-bold text-lg text-base-900 dark:text-dark-base-900 flex items-center gap-2">
+                <LinkIcon size={20} className="text-primary-500" />
+                Link "{linkModalTitle}"
+              </h2>
+              <button
+                onClick={() => setLinkModalTitle(null)}
+                className="p-2 text-base-500 hover:text-base-900 dark:text-dark-base-500 dark:hover:text-dark-base-900 rounded-full hover:bg-base-100 dark:hover:bg-dark-base-200 transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="p-4 flex-1 overflow-y-auto space-y-6">
+              {/* Search Existing */}
+              <div className="space-y-3">
+                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">Search Existing Brain</h3>
+                <div className="relative">
+                  <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-base-400" />
+                  <input
+                    type="text"
+                    placeholder="Search existing parameters..."
+                    value={linkSearchQuery}
+                    onChange={(e) => setLinkSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2.5 bg-base-50 dark:bg-dark-base-200 border-2 border-base-200 dark:border-dark-base-300 rounded-xl text-sm font-medium outline-none focus:border-primary-500 transition-colors"
+                  />
+                </div>
+                
+                <div className="max-h-[150px] overflow-y-auto space-y-2 pr-1">
+                  {parameters
+                    .filter(p => p.name.toLowerCase().includes(linkSearchQuery.toLowerCase()) || p.alternativeNames.some(a => a.toLowerCase().includes(linkSearchQuery.toLowerCase())))
+                    .slice(0, 5)
+                    .map(p => (
+                      <div key={p.id} className="flex items-center justify-between p-2 rounded-lg border border-base-200 dark:border-dark-base-300 hover:border-primary-300 dark:hover:border-dark-primary-300 bg-white dark:bg-dark-base-100 transition-colors">
+                        <div>
+                          <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">{p.name}</p>
+                          <p className="text-xs text-base-500 capitalize">{p.category.replace("_", " ")}</p>
+                        </div>
+                        <button
+                          onClick={() => handleLinkKnowledge(p.id)}
+                          disabled={linking}
+                          className="px-3 py-1.5 bg-primary-100 text-primary-700 dark:bg-dark-primary-200 dark:text-dark-primary-700 text-xs font-bold rounded-lg hover:bg-primary-200 transition-colors"
+                        >
+                          Link
+                        </button>
+                      </div>
+                    ))
+                  }
+                  {parameters.filter(p => p.name.toLowerCase().includes(linkSearchQuery.toLowerCase()) || p.alternativeNames.some(a => a.toLowerCase().includes(linkSearchQuery.toLowerCase()))).length === 0 && (
+                    <p className="text-center text-sm text-base-400 py-4">No matching terms found.</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="h-px bg-base-200 dark:bg-dark-base-300 flex-1"></div>
+                <span className="text-xs font-bold text-base-400 uppercase tracking-widest">OR</span>
+                <div className="h-px bg-base-200 dark:bg-dark-base-300 flex-1"></div>
+              </div>
+
+              {/* Add New Knowledge */}
+              <div className="space-y-3">
+                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">Add New Knowledge</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <button
+                    onClick={() => handleCreateKnowledge("/knowledge/add/lab-parameter")}
+                    className="flex items-center gap-3 p-3 rounded-xl border-2 border-base-200 dark:border-dark-base-300 hover:border-primary-400 hover:bg-primary-50 dark:hover:bg-dark-primary-100 transition-colors text-left"
+                  >
+                    <div className="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-lg shrink-0">
+                      <FlaskConical size={18} />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">Lab Parameter</p>
+                      <p className="text-xs text-base-500">Normal ranges, uses</p>
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => handleCreateKnowledge("/knowledge/add")}
+                    className="flex items-center gap-3 p-3 rounded-xl border-2 border-base-200 dark:border-dark-base-300 hover:border-primary-400 hover:bg-primary-50 dark:hover:bg-dark-primary-100 transition-colors text-left"
+                  >
+                    <div className="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg shrink-0">
+                      <FileText size={18} />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">Generic Term</p>
+                      <p className="text-xs text-base-500">Any other medical info</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
     </AppShell>
   );
 }

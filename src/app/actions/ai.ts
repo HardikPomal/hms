@@ -351,9 +351,20 @@ export interface AnalyzeNotesResponse {
   whyImportant: string;
   normalRange: string;
   tags: string;
-  relatedSymptoms: string;
-  relatedMedicines: string;
-  relatedFoods: string;
+  
+  // Graph Extraction
+  findings: Array<{
+    state: "high" | "low" | "abnormal";
+    conditions: Array<{
+      name: string;
+      strength: number; // 0-100
+      interventions: Array<{
+        name: string;
+        type: "food" | "diet" | "supplement";
+        relationType: "recommended_for" | "improves" | "contains";
+      }>;
+    }>;
+  }>;
 }
 
 export async function analyzeUserKnowledgeNotes(
@@ -370,25 +381,43 @@ export async function analyzeUserKnowledgeNotes(
 
     const ai = new GoogleGenAI({ apiKey });
 
-    const systemInstruction = `You are a medical knowledge extraction assistant.
-The user has provided their own detailed medical notes for the entity '${title}' (Category: '${category}').
-Your task is to read their notes and extract structured metadata from it.
-Do NOT generate a detailed description, as we will save their exact notes.
-You just need to extract the short structured data to build the Knowledge Graph.
+    const systemInstruction = `You are an advanced medical knowledge graph builder.
+The user has provided their own detailed medical notes for the parameter '${title}' (Category: '${category}').
+Your task is to read their notes and extract structured metadata and a diagnostic sub-graph.
 
-Generate the output in strictly this JSON format:
+Generate the output in STRICTLY this JSON format (no markdown backticks):
 {
   "simpleMeaning": "A one sentence simple explanation based on their notes.",
-  "whyImportant": "1-2 sentences on why this is important (extracted).",
-  "normalRange": "Standard reference range if mentioned (e.g. '11.5–16.5 g/dL'). Empty if not.",
-  "tags": "comma-separated tags based on the content",
-  "relatedSymptoms": "comma-separated list of symptoms mentioned",
-  "relatedMedicines": "comma-separated list of medicines mentioned",
-  "relatedFoods": "comma-separated list of foods mentioned"
+  "whyImportant": "1-2 sentences on why this is important.",
+  "normalRange": "Standard reference range if mentioned. Empty if not.",
+  "tags": "comma-separated tags",
+  "findings": [
+    {
+      "state": "low", // "high", "low", or "abnormal"
+      "conditions": [
+        {
+          "name": "Iron Deficiency Anemia",
+          "strength": 95, // Confidence score (0-100) of this association
+          "interventions": [
+            {
+              "name": "Iron Rich Diet",
+              "type": "diet", // "food", "diet", or "supplement"
+              "relationType": "recommended_for" // "recommended_for", "improves", or "contains"
+            },
+            {
+              "name": "Spinach",
+              "type": "food",
+              "relationType": "improves"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 
-If their notes don't explicitly state something (like related medicines), you can optionally supplement it based on general medical knowledge, or leave it empty.
-Return raw JSON only. Do not wrap in markdown \`\`\`.`;
+If the parameter is not a lab test with high/low states (e.g. a general concept), you can use state "abnormal" or leave findings empty.
+Use your medical knowledge to supplement the graph if the notes are brief, focusing on widely accepted clinical associations.`;
 
     let response;
     let retries = 3;

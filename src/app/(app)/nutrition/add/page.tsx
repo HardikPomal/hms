@@ -41,7 +41,8 @@ export default function AddFoodPage() {
         
         const param = await addParameter({
           name: formState.nameEn.trim(),
-          alternativeNames: formState.nameGu.trim() ? [formState.nameGu.trim()] : [],
+          nameGu: formState.nameGu.trim() || undefined,
+          alternativeNames: [],
           category: "nutrition",
           knowledgeStatus: "needs_analysis", // This will still process tags/relations in background!
           defaultRefMin: undefined,

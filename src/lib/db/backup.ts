@@ -1,12 +1,11 @@
 import { getDB } from "./db";
 import { getAllReports, getAllTemplates } from "./reports";
 import { getAllChemoSessions } from "./chemo";
-import { getAllMedicines, getLogsForDate } from "./medicines";
-// We don't import knowledge getters because we can just use DB directly for backups
+import { getAllMedicines } from "./medicines";
 import { getSettings } from "./settings";
 
 interface BackupData {
-  version: number; // For the backup format, maybe v2 now
+  version: number;
   exportedAt: string;
   reports: unknown[];
   chemoSessions: unknown[];
@@ -19,10 +18,20 @@ interface BackupData {
   knowledgeBase?: unknown[];
   reportTemplates?: unknown[];
   relationships?: unknown[];
+
+  // v4 fields
+  medicalEntities?: unknown[];
 }
 
 export async function exportDatabase(): Promise<string> {
   const db = await getDB();
+
+  const safeGetAll = async (storeName: string) => {
+    if (db.objectStoreNames.contains(storeName as any)) {
+      return await db.getAll(storeName as any);
+    }
+    return [];
+  };
 
   const [
     reports, 
@@ -33,21 +42,23 @@ export async function exportDatabase(): Promise<string> {
     parameters,
     knowledgeBase,
     reportTemplates,
-    relationships
+    relationships,
+    medicalEntities
   ] = await Promise.all([
     getAllReports(),
     getAllChemoSessions(),
     getAllMedicines(),
-    db.getAll("medicine_logs"),
-    db.getAll("settings"),
-    db.getAll("parameters"),
-    db.getAll("knowledge_base"),
+    safeGetAll("medicine_logs"),
+    safeGetAll("settings"),
+    safeGetAll("parameters"),
+    safeGetAll("knowledge_base"),
     getAllTemplates(),
-    db.getAll("relationships")
+    safeGetAll("relationships"),
+    safeGetAll("medical_entities")
   ]);
 
   const backup: BackupData = {
-    version: 2,
+    version: 4,
     exportedAt: new Date().toISOString(),
     reports,
     chemoSessions,
@@ -57,7 +68,8 @@ export async function exportDatabase(): Promise<string> {
     parameters,
     knowledgeBase,
     reportTemplates,
-    relationships
+    relationships,
+    medicalEntities
   };
 
   return JSON.stringify(backup, null, 2);
@@ -79,36 +91,36 @@ export async function importDatabase(jsonString: string): Promise<void> {
 
   // Import all data using transactions
   const tx1 = db.transaction("reports", "readwrite");
-  for (const report of backup.reports) {
+  for (const report of backup.reports || []) {
     await tx1.store.put(report as Parameters<typeof tx1.store.put>[0]);
   }
   await tx1.done;
 
   const tx2 = db.transaction("chemo_sessions", "readwrite");
-  for (const session of backup.chemoSessions) {
+  for (const session of backup.chemoSessions || []) {
     await tx2.store.put(session as Parameters<typeof tx2.store.put>[0]);
   }
   await tx2.done;
 
   const tx3 = db.transaction("medicines", "readwrite");
-  for (const med of backup.medicines) {
+  for (const med of backup.medicines || []) {
     await tx3.store.put(med as Parameters<typeof tx3.store.put>[0]);
   }
   await tx3.done;
 
   const tx4 = db.transaction("medicine_logs", "readwrite");
-  for (const log of backup.medicineLogs) {
+  for (const log of backup.medicineLogs || []) {
     await tx4.store.put(log as Parameters<typeof tx4.store.put>[0]);
   }
   await tx4.done;
 
   const tx6 = db.transaction("settings", "readwrite");
-  for (const setting of backup.settings) {
+  for (const setting of backup.settings || []) {
     await tx6.store.put(setting as Parameters<typeof tx6.store.put>[0]);
   }
   await tx6.done;
 
-  // Import v2 fields if they exist
+  // Import legacy fields if they exist (they'll be migrated by db.ts later)
   if (backup.parameters) {
     const tx7 = db.transaction("parameters", "readwrite");
     for (const p of backup.parameters) {
@@ -140,6 +152,14 @@ export async function importDatabase(jsonString: string): Promise<void> {
     }
     await tx10.done;
   }
+  
+  if (backup.medicalEntities) {
+    const tx11 = db.transaction("medical_entities", "readwrite");
+    for (const e of backup.medicalEntities) {
+      await tx11.store.put(e as Parameters<typeof tx11.store.put>[0]);
+    }
+    await tx11.done;
+  }
 }
 
 export function downloadBackup(jsonString: string): void {
@@ -167,11 +187,16 @@ export async function clearDatabase(): Promise<void> {
     "knowledge_base",
     "report_templates",
     "relationships",
+    "medical_entities"
     // knowledge_archive is intentionally not cleared so they don't lose the old data backup
   ] as const;
+  
   for (const store of stores) {
-    const tx = db.transaction(store, "readwrite");
-    await tx.store.clear();
-    await tx.done;
+    // Check if store exists before clearing
+    if (db.objectStoreNames.contains(store)) {
+      const tx = db.transaction(store, "readwrite");
+      await tx.store.clear();
+      await tx.done;
+    }
   }
 }

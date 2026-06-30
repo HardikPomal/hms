@@ -151,7 +151,8 @@
       "nutrition": "Nutrition",
       "exercise": "Exercise",
       "doctor_advice": "Doctor's Advice",
-      "general": "General"
+      "general": "General",
+      "Hematology": "Hematology"
     },
     "tags": "Tags (comma separated)",
     "relatedEntries": "Related Entries",

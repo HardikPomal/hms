@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getAllParameters, getKnowledgeByParameterId } from "@/lib/db/knowledge";
+import { getEntitiesByType } from "@/lib/db/knowledge";
 import { seedNutritionData } from "@/lib/db/seed";
-import type { ParameterDef, KnowledgeEntry } from "@/types";
+import type { MedicalEntity } from "@/types";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 
@@ -38,21 +38,16 @@ export default function NutritionPage() {
   const { t, language } = useLanguage();
   const [filter, setFilter] = useState<string>("all");
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [foods, setFoods] = useState<{param: ParameterDef, kb: KnowledgeEntry}[]>([]);
+  const [foods, setFoods] = useState<MedicalEntity[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
       try {
         await seedNutritionData();
-        const allParams = await getAllParameters();
-        const nutritionParams = allParams.filter(p => p.category === "nutrition" || p.category === "food");
-        const items = [];
-        for (const p of nutritionParams) {
-          const kb = await getKnowledgeByParameterId(p.id);
-          if (kb) items.push({param: p, kb});
-        }
-        setFoods(items);
+        const foodEntities = await getEntitiesByType("food");
+        const dietEntities = await getEntitiesByType("diet");
+        setFoods([...foodEntities, ...dietEntities]);
       } catch (error) {
         console.error(error);
       } finally {
@@ -65,7 +60,7 @@ export default function NutritionPage() {
   const filtered =
     filter === "all"
       ? foods
-      : foods.filter((n) => n.kb.tags && n.kb.tags.includes(filter));
+      : foods.filter((n) => n.tags && n.tags.includes(filter));
 
   return (
     <AppShell title={t("nutrition.title")}>
@@ -108,40 +103,40 @@ export default function NutritionPage() {
           </div>
         ) : (
           filtered.map((item) => {
-            let englishPrep = item.kb.detailedDescription;
-            let gujPrep = item.kb.detailedDescription;
-            let englishBen = item.kb.simpleMeaning;
-            let gujBen = item.kb.simpleMeaning;
-            let englishTime = item.kb.whyImportant;
-            let gujTime = item.kb.whyImportant;
+            let englishPrep = item.detailedDescription || "";
+            let gujPrep = item.detailedDescription || "";
+            let englishBen = item.simpleMeaning || "";
+            let gujBen = item.simpleMeaning || "";
+            let englishTime = item.whyImportant || "";
+            let gujTime = item.whyImportant || "";
 
             // Try to extract Guj specific from the new format if it exists
-            const gujPrepMatch = item.kb.detailedDescription.match(/Gujarati:\s*(.*)/i);
+            const gujPrepMatch = englishPrep.match(/Gujarati:\s*(.*)/i);
             if (gujPrepMatch) {
               gujPrep = gujPrepMatch[1];
               englishPrep = englishPrep.split(/Gujarati:/i)[0].trim();
             }
             
-            const benGujMatch = item.kb.detailedDescription.match(/Benefits \(Gujarati\):\s*(.*)/i);
+            const benGujMatch = englishPrep.match(/Benefits \(Gujarati\):\s*(.*)/i);
             if (benGujMatch) {
               gujBen = benGujMatch[1];
             }
 
             // Time is saved as: Best time to eat: Morning (સવારે)
-            const timeMatch = item.kb.whyImportant.match(/(.*?)\((.*?)\)/);
+            const timeMatch = englishTime.match(/(.*?)\((.*?)\)/);
             if (timeMatch) {
               englishTime = timeMatch[1].trim();
               gujTime = timeMatch[2].trim();
             }
             
-            const engTitle = item.param.name;
-            const gujTitle = item.param.alternativeNames[0] || engTitle;
+            const engTitle = item.name;
+            const gujTitle = item.nameGu || engTitle;
             
             return (
-              <div key={item.param.id} className="card-elevated">
+              <div key={item.id} className="card-elevated">
                 <button
                   className="w-full flex items-center gap-3 text-left"
-                  onClick={() => setExpanded(expanded === item.param.id ? null : item.param.id)}
+                  onClick={() => setExpanded(expanded === item.id ? null : item.id)}
                 >
                   <span className="text-3xl flex items-center justify-center shrink-0">🍲</span>
                   <div className="flex-1">
@@ -153,11 +148,11 @@ export default function NutritionPage() {
                     </p>
                   </div>
                   <span className="text-base-400 text-lg">
-                    {expanded === item.param.id ? "▲" : "▼"}
+                    {expanded === item.id ? "▲" : "▼"}
                   </span>
                 </button>
 
-                {expanded === item.param.id && (
+                {expanded === item.id && (
                   <div className="mt-3 space-y-3 border-t border-base-100 dark:border-dark-base-200 pt-3 animate-fade-in">
                     <div>
                       <p className="text-xs font-semibold text-success-600 mb-1">

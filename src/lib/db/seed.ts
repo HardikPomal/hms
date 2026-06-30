@@ -1,4 +1,3 @@
-import { NUTRITION_DATA } from "@/data/nutrition";
 import { addParameter, addKnowledgeEntry, getAllParameters, deleteParameter } from "./knowledge";
 import { getDB } from "./db";
 
@@ -34,37 +33,8 @@ export const seedNutritionData = async () => {
       console.log("Deduplication complete.");
     }
     
-    // --- 2. Seeding Logic ---
-    // Re-fetch after deduplication to be safe, or just use nameMap
-    for (const item of NUTRITION_DATA) {
-      if (nameMap.has(item.name.toLowerCase())) continue;
-
-      const param = await addParameter({
-        name: item.name,
-        alternativeNames: [item.nameGu],
-        category: "nutrition",
-        knowledgeStatus: "advanced",
-        defaultRefMin: undefined,
-      });
-
-      await addKnowledgeEntry({
-        parameterId: param.id,
-        simpleMeaning: item.benefits,
-        detailedDescription: `${item.preparation}\n\nGujarati: ${item.preparationGu}\nBenefits (Gujarati): ${item.benefitsGu}`,
-        whyImportant: `Best time to eat: ${item.whenToEat} (${item.whenToEatGu})`,
-        normalRangeText: "",
-        source: "System Defaults",
-        doctorNotes: "",
-        personalNotes: "",
-        references: [],
-        tags: item.categories,
-        versionHistory: [],
-      });
-      
-      // Update our map so we don't insert it again if the loop runs twice concurrently somehow
-      nameMap.set(item.name.toLowerCase(), param.id);
-      console.log(`Seeded nutrition item: ${item.name}`);
-    }
+    // --- 2. Seeding Logic Removed ---
+    // (User opted to rely entirely on manual DB entries for Nutrition)
   } catch (error) {
     console.error("Failed to seed nutrition data:", error);
   }

@@ -3,6 +3,23 @@ import { X } from "lucide-react";
 import type { ParameterDef, KnowledgeEntry } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getKnowledgeByParameterId } from "@/lib/db/knowledge";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+const extractLangBlock = (content: string, language: string) => {
+  if (!content) return "";
+  if (content.includes("<en>") || content.includes("<gu>")) {
+    const enMatch = content.match(/<en>([\s\S]*?)<\/en>/);
+    const guMatch = content.match(/<gu>([\s\S]*?)<\/gu>/);
+    
+    if (language === "gu" && guMatch) {
+      return guMatch[1].trim();
+    } else if (enMatch) {
+      return enMatch[1].trim();
+    }
+  }
+  return content.trim();
+};
 
 interface QuickViewKnowledgeProps {
   isOpen: boolean;
@@ -61,18 +78,25 @@ export default function QuickViewKnowledge({
           <div className="prose prose-sm dark:prose-invert max-w-none">
             {knowledge ? (
                <>
-                 <p className="whitespace-pre-wrap text-base-700 dark:text-dark-base-700 leading-relaxed font-medium">
-                   {knowledge.simpleMeaning || knowledge.detailedDescription}
-                 </p>
+                 <div className="text-base-700 dark:text-dark-base-700 font-medium">
+                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                     {extractLangBlock(knowledge.detailedDescription || knowledge.simpleMeaning || "", language)}
+                   </ReactMarkdown>
+                 </div>
                  {knowledge.normalRangeText && (
                    <p className="mt-4 text-sm text-base-800 dark:text-dark-base-800 bg-primary-50 dark:bg-dark-primary-900/30 p-3 rounded-xl border border-primary-100 dark:border-dark-primary-800">
-                     <strong>Normal Range:</strong> {knowledge.normalRangeText}
+                     <strong>Normal Range:</strong> {extractLangBlock(knowledge.normalRangeText, language)}
                    </p>
                  )}
                  {knowledge.whyImportant && (
-                   <p className="mt-4 text-sm text-base-700 dark:text-dark-base-700">
-                     <strong>Why it's important:</strong> {knowledge.whyImportant}
-                   </p>
+                   <div className="mt-4 text-sm text-base-700 dark:text-dark-base-700">
+                     <strong>Why it's important:</strong> 
+                     <div className="mt-1">
+                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                         {extractLangBlock(knowledge.whyImportant, language)}
+                       </ReactMarkdown>
+                     </div>
+                   </div>
                  )}
                </>
             ) : (

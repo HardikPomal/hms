@@ -2,18 +2,18 @@
 
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
-import { Plus, BookOpen, ChevronRight, Search, BrainCircuit, Play } from "lucide-react";
+import { Plus, BookOpen, BrainCircuit, Play, Search } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   getAllParameters, 
-  getKnowledgeByParameterId,
-  updateParameter,
-  updateKnowledgeEntry,
-  addRelationship
+  updateEntity,
+  addRelationship,
+  findEntityByNameAndType,
+  addEntity
 } from "@/lib/db/knowledge";
 import { analyzeUserKnowledgeNotes } from "@/app/actions/ai";
-import type { ParameterDef, EntityType, RelationType } from "@/types";
+import type { EntityType, RelationType, ParameterEntity } from "@/types";
 
 const CATEGORY_ICONS: Record<string, string> = {
   medical_report: "📋",
@@ -31,16 +31,27 @@ const CATEGORY_ICONS: Record<string, string> = {
 
 export default function KnowledgePage() {
   const { t, language } = useLanguage();
-  const [entries, setEntries] = useState<ParameterDef[]>([]);
-  const [query, setQuery] = useState("");
-  const [filterCat, setFilterCat] = useState<string>("ALL");
+  const [entries, setEntries] = useState<ParameterEntity[]>([]);
   const [loading, setLoading] = useState(true);
   const [analyzing, setAnalyzing] = useState(false);
   const [analyzeProgress, setAnalyzeProgress] = useState({ current: 0, total: 0 });
 
   const loadData = () => {
-    getAllParameters().then((k) => {
-      setEntries(k);
+    getAllParameters().then(async (k) => {
+      let needsRefresh = false;
+      for (const param of k) {
+        if (param.knowledgeStatus === "basic") {
+          await updateEntity(param.id, { knowledgeStatus: "needs_analysis" });
+          needsRefresh = true;
+        }
+      }
+      
+      if (needsRefresh) {
+        const updatedK = await getAllParameters();
+        setEntries(updatedK as any);
+      } else {
+        setEntries(k as any);
+      }
       setLoading(false);
     });
   };
@@ -49,17 +60,7 @@ export default function KnowledgePage() {
     loadData();
   }, []);
 
-  const filtered = entries.filter((e) => {
-    const matchesCat = filterCat === "ALL" || e.category === filterCat;
-    const matchesQ =
-      !query ||
-      e.name.toLowerCase().includes(query.toLowerCase()) ||
-      e.alternativeNames.some(a => a.toLowerCase().includes(query.toLowerCase()));
-    return matchesCat && matchesQ;
-  });
-
   const categories = ["medical_report", "lab_parameter", "medical_term", "medicine", "cancer_info", "treatment", "nutrition", "exercise", "doctor_advice", "general", "Hematology"];
-
   const pendingItems = entries.filter((e) => e.knowledgeStatus === "needs_analysis");
 
   const handleAnalyzeAll = async () => {
@@ -72,56 +73,82 @@ export default function KnowledgePage() {
       setAnalyzeProgress({ current: i + 1, total: pendingItems.length });
 
       try {
-        const kb = await getKnowledgeByParameterId(param.id);
-        if (!kb) continue;
-
         const aiExtraction = await analyzeUserKnowledgeNotes(
           param.name,
-          param.category,
-          kb.detailedDescription
+          param.category || "general",
+          param.detailedDescription || ""
         );
 
         if (aiExtraction && !("error" in aiExtraction)) {
-          // Safeguard structured Form Mode nutrition entries
-          const isStructuredNutrition = param.category === "nutrition" && kb.simpleMeaning !== param.name;
+          // Safeguard structured Form Mode entries
+          const isManualStructured = param.source?.includes("Manual Entry") || (param.category === "nutrition" && param.simpleMeaning !== param.name);
 
-          // Update KB
-          await updateKnowledgeEntry(kb.id, {
-            simpleMeaning: isStructuredNutrition ? kb.simpleMeaning : (aiExtraction.simpleMeaning || kb.simpleMeaning),
-            whyImportant: isStructuredNutrition ? kb.whyImportant : (aiExtraction.whyImportant || ""),
+          // Update Param
+          await updateEntity(param.id, {
+            simpleMeaning: isManualStructured ? param.simpleMeaning : (aiExtraction.simpleMeaning || param.simpleMeaning),
+            whyImportant: isManualStructured ? param.whyImportant : (aiExtraction.whyImportant || ""),
             normalRangeText: aiExtraction.normalRange || "",
             tags: aiExtraction.tags
               ? aiExtraction.tags.split(",").map((t) => t.trim()).filter(Boolean)
               : [],
+            knowledgeStatus: "advanced"
           });
 
-          // Process Relations
-          const processRelations = async (
-            csv: string | undefined,
-            targetType: EntityType,
-            relType: RelationType
-          ) => {
-            if (!csv) return;
-            const items = csv.split(",").map((item) => item.trim()).filter(Boolean);
-            for (const item of items) {
-              const safeId = `ext_${targetType}_${item.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
-              await addRelationship(param.id, "parameter", safeId, targetType, relType);
+          // Build Diagnostic Sub-Graph
+          if (aiExtraction.findings && Array.isArray(aiExtraction.findings)) {
+            for (const finding of aiExtraction.findings) {
+              const findingName = `${param.name} ${finding.state.charAt(0).toUpperCase() + finding.state.slice(1)}`;
+              
+              // 1. Get or Create Finding
+              let findingEntity = await findEntityByNameAndType(findingName, "finding");
+              if (!findingEntity) {
+                findingEntity = await addEntity({
+                  type: "finding",
+                  name: findingName,
+                  tags: [param.name, finding.state],
+                  metadata: { parameterId: param.id, state: finding.state }
+                });
+              }
+
+              for (const condition of finding.conditions) {
+                // 2. Get or Create Condition
+                let conditionEntity = await findEntityByNameAndType(condition.name, "condition");
+                if (!conditionEntity) {
+                  conditionEntity = await addEntity({
+                    type: "condition",
+                    name: condition.name,
+                    tags: ["condition", finding.state],
+                    metadata: { severity: "moderate" }
+                  });
+                }
+
+                // Link Finding -> Condition
+                await addRelationship(findingEntity.id, "finding", conditionEntity.id, "condition", "associated_with", condition.strength);
+
+                for (const intervention of condition.interventions) {
+                   // 3. Get or Create Intervention (Food/Diet/Supplement)
+                   let interventionEntity = await findEntityByNameAndType(intervention.name, intervention.type as any);
+                   if (!interventionEntity) {
+                     interventionEntity = await addEntity({
+                       type: intervention.type as any,
+                       name: intervention.name,
+                       tags: [intervention.type, condition.name],
+                     });
+                     
+                     // If it's a food, optionally trigger the autoFill background task (omitted here to save time, but it exists in DB now!)
+                   }
+
+                   // Link Condition -> Intervention
+                   await addRelationship(conditionEntity.id, "condition", interventionEntity.id, intervention.type as any, intervention.relationType as any);
+                }
+              }
             }
-          };
-
-          await processRelations(aiExtraction.relatedSymptoms, "symptom", "causes");
-          await processRelations(aiExtraction.relatedMedicines, "medicine", "treats");
-          await processRelations(aiExtraction.relatedFoods, "food", "improves");
-
-          // Update Param Status
-          await updateParameter(param.id, { knowledgeStatus: "advanced" });
+          }
         }
       } catch (err) {
         console.error(`Failed to analyze ${param.name}`, err);
-        // Continue to the next one even if this one fails
       }
 
-      // Safe Rate Limiting: 20 seconds delay
       if (i < pendingItems.length - 1) {
         await new Promise((resolve) => setTimeout(resolve, 20000));
       }
@@ -145,7 +172,7 @@ export default function KnowledgePage() {
     >
       {/* Analyze Pending Button */}
       {pendingItems.length > 0 && (
-        <div className="mb-4">
+        <div className="mb-6">
           <button
             onClick={handleAnalyzeAll}
             disabled={analyzing}
@@ -163,9 +190,6 @@ export default function KnowledgePage() {
                     Processing {analyzeProgress.current} of {analyzeProgress.total}...
                   </span>
                 </div>
-                <span className="text-xs font-medium opacity-80">
-                  Estimated time left: {Math.floor(((analyzeProgress.total - analyzeProgress.current + 1) * 20) / 60)}m {((analyzeProgress.total - analyzeProgress.current + 1) * 20) % 60}s
-                </span>
               </div>
             ) : (
               <>
@@ -177,96 +201,44 @@ export default function KnowledgePage() {
         </div>
       )}
 
-      {/* Search */}
-      <div className="relative mb-4">
-        <Search
-          size={16}
-          className="absolute left-3.5 top-1/2 -translate-y-1/2 text-base-400"
-        />
-        <input
-          type="search"
-          placeholder={
-            language === "gu" ? "જ્ઞાન શોધો..." : "Search knowledge..."
-          }
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 bg-white dark:bg-dark-base-100 border border-base-200 dark:border-dark-base-200 rounded-xl text-sm outline-none focus:border-primary-400 transition-colors"
-        />
-      </div>
-
-      {/* Category Filter */}
-      <div className="flex gap-2 overflow-x-auto pb-2 mb-4 no-scrollbar">
-        <button
-          onClick={() => setFilterCat("ALL")}
-          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${filterCat === "ALL" ? "bg-primary-500 text-white" : "bg-base-100 dark:bg-dark-base-200 text-base-600 dark:text-dark-base-600"}`}
-        >
-          {language === "gu" ? "બધા" : "All"}
-        </button>
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilterCat(cat === filterCat ? "ALL" : cat)}
-            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-colors flex items-center gap-1 ${filterCat === cat ? "bg-primary-500 text-white" : "bg-base-100 dark:bg-dark-base-200 text-base-600 dark:text-dark-base-600"}`}
-          >
-            {CATEGORY_ICONS[cat] || "📝"} {t(`knowledge.categories.${cat}`)}
-          </button>
-        ))}
-      </div>
-
       {loading ? (
         <div className="flex justify-center py-12">
           <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
         </div>
-      ) : filtered.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          <div className="w-16 h-16 bg-base-100 dark:bg-dark-base-200 rounded-2xl flex items-center justify-center mb-4">
-            <BookOpen size={32} className="text-base-300" />
+      ) : (
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-sm font-bold text-base-500 uppercase tracking-wider mb-4">Categories</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {categories.map((cat) => {
+                const count = entries.filter((e) => e.category === cat).length;
+                return (
+                  <Link
+                    key={cat}
+                    href={`/knowledge/category/${cat}`}
+                    className="card-elevated flex flex-col items-center text-center justify-center p-4 hover:-translate-y-1 hover:shadow-lg transition-all"
+                  >
+                    <span className="text-3xl mb-2">{CATEGORY_ICONS[cat] || "📝"}</span>
+                    <span className="font-semibold text-sm text-base-900 dark:text-dark-base-900 line-clamp-1">
+                      {t(`knowledge.categories.${cat}`)}
+                    </span>
+                    <span className="text-xs text-base-400 mt-1">{count} items</span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-          <p className="text-base-500 text-sm mb-4">
-            {t("knowledge.noEntries")}
-          </p>
+          
           <Link
             href="/knowledge/add"
-            className="px-6 py-3 gradient-primary text-white rounded-xl font-medium text-sm"
+            className="w-full py-4 border-2 border-dashed border-primary-300 dark:border-primary-900 bg-primary-50 dark:bg-dark-primary-100 rounded-2xl flex flex-col items-center justify-center text-primary-600 dark:text-dark-primary-600 hover:bg-primary-100 transition-colors"
           >
-            + {t("knowledge.add")}
+            <Plus size={24} className="mb-2" />
+            <span className="font-bold">Add Manual Knowledge</span>
+            <span className="text-xs text-primary-500 opacity-80 mt-1 text-center px-4">
+              Click here to add notes or open specialized forms for Reports and Labs.
+            </span>
           </Link>
-        </div>
-      ) : (
-        <div className="space-y-2">
-          {filtered.map((entry, i) => (
-            <Link
-              key={entry.id}
-              href={`/knowledge/${entry.id}`}
-              className="block card-elevated hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200 animate-slide-up"
-              style={{ animationDelay: `${i * 30}ms` }}
-            >
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-base-100 dark:bg-dark-base-200 rounded-xl flex items-center justify-center text-xl shrink-0">
-                  {CATEGORY_ICONS[entry.category] || "📝"}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-base-900 dark:text-dark-base-900 truncate">
-                    {language === "gu" && entry.alternativeNames.length > 0
-                      ? entry.alternativeNames[0]
-                      : entry.name}
-                  </p>
-                  <p className="text-xs text-base-400 mt-0.5 line-clamp-1">
-                    Status: {entry.knowledgeStatus}
-                  </p>
-                  <div className="flex flex-wrap gap-1 mt-1.5">
-                    <span className="text-xs bg-base-100 dark:bg-dark-base-200 text-base-500 px-1.5 py-0.5 rounded-full">
-                      {t(`knowledge.categories.${entry.category}`)}
-                    </span>
-                  </div>
-                </div>
-                <ChevronRight
-                  size={16}
-                  className="text-base-400 shrink-0 mt-1"
-                />
-              </div>
-            </Link>
-          ))}
         </div>
       )}
     </AppShell>

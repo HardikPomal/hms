@@ -74,7 +74,7 @@ export default function SearchPage() {
           ...know.map((k) => ({
             type: "knowledge",
             id: k.id,
-            title: language === "gu" && k.alternativeNames.length > 0 ? k.alternativeNames[0] : k.name,
+            title: language === "gu" && k.nameGu ? k.nameGu : k.name,
             subtitle: t(`knowledge.categories.${k.category}`),
             icon: BookOpen,
           })),

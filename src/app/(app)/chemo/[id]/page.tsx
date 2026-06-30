@@ -419,7 +419,11 @@ export default function ChemoActiveTrackerPage() {
                 >
                   <div>
                     {(() => {
-                      const kbMatch = kbParams.find((p) => p.name.toLowerCase() === med.name.toLowerCase() || p.alternativeNames.some(a => a.toLowerCase() === med.name.toLowerCase()));
+                      const kbMatch = kbParams.find((p) => 
+                        p.name.toLowerCase() === med.name.toLowerCase() || 
+                        (p.nameGu && p.nameGu.toLowerCase() === med.name.toLowerCase()) ||
+                        p.alternativeNames.some(a => a.toLowerCase() === med.name.toLowerCase())
+                      );
                       if (kbMatch) {
                         return (
                           <Link href={`/knowledge/${kbMatch.id}`} className="font-bold text-primary-600 hover:text-primary-700 hover:underline flex items-center gap-1.5 transition-colors">

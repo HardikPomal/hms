@@ -5,8 +5,7 @@ import type {
   Medicine,
   MedicineLog,
   AppSettings,
-  ParameterDef,
-  KnowledgeEntry,
+  MedicalEntity,
   ReportTemplate,
   EntityRelationship
 } from "@/types";
@@ -14,23 +13,27 @@ import type {
 // ─── Database Schema ─────────────────────────────────────────────────────────
 
 interface SwasthyaSathiDB extends DBSchema {
-  parameters: {
+  // New Unified Store (v4)
+  medical_entities: {
     key: string;
-    value: ParameterDef;
+    value: MedicalEntity;
     indexes: {
+      "by-type": string;
       "by-name": string;
-      "by-category": string;
-      "by-status": string;
     };
   };
-  knowledge_base: {
+  
+  // Archival stores (v3)
+  parameters_archive_v3: {
     key: string;
-    value: KnowledgeEntry;
-    indexes: {
-      "by-parameter": string;
-      "by-category": string;
-    };
+    value: any;
   };
+  knowledge_base_archive_v3: {
+    key: string;
+    value: any;
+  };
+  
+  // Existing stores
   report_templates: {
     key: string;
     value: ReportTemplate;
@@ -85,15 +88,26 @@ interface SwasthyaSathiDB extends DBSchema {
     key: string;
     value: { key: string; value: unknown };
   };
-  // Archived store for fallback
   knowledge_archive: {
     key: string;
     value: any;
   };
+  
+  // Legacy stores that will be deleted after migration, kept for type safety during upgrade
+  parameters: {
+    key: string;
+    value: any;
+    indexes: { "by-name": string; "by-category": string; "by-status": string; };
+  };
+  knowledge_base: {
+    key: string;
+    value: any;
+    indexes: { "by-parameter": string; "by-category": string; };
+  };
 }
 
 const DB_NAME = "swasthya-sathi-db";
-const DB_VERSION = 3; // Bumped to v3 for Chemo Session Workflow Redesign
+const DB_VERSION = 4; // Bumped to v4 for Unified MedicalEntity Graph
 
 let dbInstance: IDBPDatabase<SwasthyaSathiDB> | null = null;
 
@@ -162,6 +176,19 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
         if (!reports.indexNames.contains("by-format")) reports.createIndex("by-format", "format");
       }
 
+      // v4 stores
+      if (!db.objectStoreNames.contains("medical_entities")) {
+        const entities = db.createObjectStore("medical_entities", { keyPath: "id" });
+        entities.createIndex("by-type", "type");
+        entities.createIndex("by-name", "name");
+      }
+      if (!db.objectStoreNames.contains("parameters_archive_v3")) {
+        db.createObjectStore("parameters_archive_v3", { keyPath: "id" });
+      }
+      if (!db.objectStoreNames.contains("knowledge_base_archive_v3")) {
+        db.createObjectStore("knowledge_base_archive_v3", { keyPath: "id" });
+      }
+
       // ─── MIGRATION LOGIC v1 -> v2 ──────────────────────────────────────────
       if (oldVersion === 1) {
         if (db.objectStoreNames.contains("knowledge" as any)) {
@@ -169,17 +196,15 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
           const archiveStore = transaction.objectStore("knowledge_archive" as any);
           const allOldKnowledge = await oldKbStore.getAll();
           
-          const paramStore = transaction.objectStore("parameters");
-          const newKbStore = transaction.objectStore("knowledge_base");
+          const paramStore = transaction.objectStore("parameters" as any);
+          const newKbStore = transaction.objectStore("knowledge_base" as any);
           const relStore = transaction.objectStore("relationships");
 
           for (const old of allOldKnowledge) {
-            // Archive original data
             await archiveStore.put(old);
 
-            // Generate Parameter
             const paramId = `param_${old.id}`;
-            const param: ParameterDef = {
+            const param = {
               id: paramId,
               name: old.title || "Unknown",
               alternativeNames: old.titleGu ? [old.titleGu] : [],
@@ -193,8 +218,7 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
             };
             await paramStore.put(param);
 
-            // Generate KnowledgeEntry
-            const newKb: KnowledgeEntry = {
+            const newKb = {
               id: `kb_${old.id}`,
               parameterId: paramId,
               simpleMeaning: old.title || "",
@@ -212,15 +236,14 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
             };
             await newKbStore.put(newKb);
 
-            // Generate Relationships
             if (old.relatedIds && Array.isArray(old.relatedIds)) {
               for (const relId of old.relatedIds) {
                 const rel: EntityRelationship = {
                   id: `rel_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
                   sourceId: paramId,
-                  sourceType: "parameter",
+                  sourceType: "parameter" as any,
                   targetId: relId.startsWith("param_") ? relId : `param_${relId}`,
-                  targetType: "parameter",
+                  targetType: "parameter" as any,
                   relationType: "related_to",
                   createdAt: new Date().toISOString()
                 };
@@ -228,17 +251,13 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
               }
             }
           }
-          
-          // Delete old store to clean up, since we backed it up to knowledge_archive
           db.deleteObjectStore("knowledge" as any);
         }
         
-        // Migrate "reports" structure
         if (db.objectStoreNames.contains("reports" as any)) {
           const reportStore = transaction.objectStore("reports" as any);
           const allReports = await reportStore.getAll();
           for (const oldReport of allReports) {
-            // Check if it's already in the new format (has templateId)
             if (!oldReport.templateId) {
               const newReport = {
                 ...oldReport,
@@ -256,18 +275,16 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
                 narrativeSections: [],
                 generalNotes: oldReport.notes || ""
               };
-              
-              // Remove old properties manually since type restricts them
               delete newReport.fields;
               delete newReport.reportType;
               delete newReport.reportName;
               delete newReport.notes;
-
               await reportStore.put(newReport);
             }
           }
         }
       }
+
       // ─── MIGRATION LOGIC v2 -> v3 ──────────────────────────────────────────
       if (oldVersion < 3) {
         if (db.objectStoreNames.contains("chemo_sessions")) {
@@ -285,6 +302,75 @@ export async function getDB(): Promise<IDBPDatabase<SwasthyaSathiDB>> {
           }
         }
       }
+
+      // ─── MIGRATION LOGIC v3 -> v4 ──────────────────────────────────────────
+      if (oldVersion < 4) {
+        if (db.objectStoreNames.contains("parameters" as any) && db.objectStoreNames.contains("knowledge_base" as any)) {
+          const paramStore = transaction.objectStore("parameters" as any);
+          const kbStore = transaction.objectStore("knowledge_base" as any);
+          const entityStore = transaction.objectStore("medical_entities");
+          const paramArchive = transaction.objectStore("parameters_archive_v3");
+          const kbArchive = transaction.objectStore("knowledge_base_archive_v3");
+
+          const allParams = await paramStore.getAll();
+          const allKbs = await kbStore.getAll();
+
+          for (const param of allParams) {
+            await paramArchive.put(param);
+
+            // Find matching KB
+            const kb = allKbs.find((k: any) => k.parameterId === param.id);
+
+            const isFood = param.category === "nutrition" || param.category === "food";
+            const isMedicine = param.category === "medicine";
+            
+            const entityType = isFood ? "food" : isMedicine ? "medication" : "parameter";
+
+            let metadata: any = {};
+            if (entityType === "parameter") {
+              metadata = {
+                unit: param.defaultUnit,
+                refMin: param.defaultRefMin,
+                refMax: param.defaultRefMax
+              };
+            }
+
+            const newEntity: MedicalEntity = {
+              id: param.id, // Preserve original ID so relationships and reports stay linked
+              type: entityType,
+              name: param.name,
+              nameGu: param.nameGu,
+              
+              simpleMeaning: kb?.simpleMeaning || "",
+              detailedDescription: kb?.detailedDescription || "",
+              whyImportant: kb?.whyImportant || "",
+              normalRangeText: kb?.normalRangeText || "",
+              
+              tags: kb?.tags || [],
+              alternativeNames: param.alternativeNames,
+              category: param.category,
+              knowledgeStatus: param.knowledgeStatus,
+              
+              source: kb?.source,
+              versionHistory: kb?.versionHistory || [],
+              
+              metadata,
+              createdAt: param.createdAt,
+              updatedAt: kb?.updatedAt || param.updatedAt
+            };
+
+            await entityStore.put(newEntity);
+          }
+
+          for (const kb of allKbs) {
+            await kbArchive.put(kb);
+          }
+
+          // Safely remove old stores now that they are archived and migrated
+          db.deleteObjectStore("parameters" as any);
+          db.deleteObjectStore("knowledge_base" as any);
+        }
+      }
     },
   });
 
@@ -300,3 +386,4 @@ export function generateId(): string {
 export function nowISO(): string {
   return new Date().toISOString();
 }
+

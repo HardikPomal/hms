@@ -18,35 +18,23 @@ export default function MorePage() {
   const menuItems = [
     {
       title: t("nav.knowledge"),
-      subtitle: t("knowledge.title"),
       icon: BookOpen,
       href: "/knowledge",
-      color: "text-primary-600 dark:text-dark-primary-600",
-      bg: "bg-primary-100 dark:bg-dark-primary-100",
     },
     {
       title: t("nav.nutrition"),
-      subtitle: t("nutrition.title"),
       icon: Salad,
       href: "/nutrition",
-      color: "text-success-600 dark:text-dark-success-600",
-      bg: "bg-success-100 dark:bg-dark-success-100",
     },
     {
       title: t("nav.wellness"),
-      subtitle: t("wellness.title"),
       icon: Activity,
       href: "/wellness",
-      color: "text-secondary-600 dark:text-dark-secondary-600",
-      bg: "bg-secondary-100 dark:bg-dark-secondary-100",
     },
     {
       title: t("nav.summary"),
-      subtitle: t("summary.title"),
       icon: BarChart2,
       href: "/summary",
-      color: "text-danger-600 dark:text-dark-danger-600",
-      bg: "bg-danger-100 dark:bg-dark-danger-100",
     },
   ];
 
@@ -61,16 +49,14 @@ export default function MorePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col items-center justify-center p-6 card-elevated hover:-translate-y-1 transition-transform duration-200"
+                className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-primary-50 dark:bg-dark-primary-100 border border-primary-200 dark:border-dark-primary-200 hover:bg-primary-100 dark:hover:bg-dark-primary-200 transition-colors"
               >
-                <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-3 ${item.bg}`}
-                >
-                  <Icon size={28} className={item.color} />
+                <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
+                  <Icon size={20} className="text-white" />
                 </div>
-                <h3 className="font-semibold text-base-900 dark:text-dark-base-900 text-center">
+                <span className="text-sm font-medium text-primary-700 dark:text-dark-primary-700 text-center">
                   {item.title}
-                </h3>
+                </span>
               </Link>
             );
           })}

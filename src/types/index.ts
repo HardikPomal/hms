@@ -165,61 +165,115 @@ export interface MedicineLog {
   createdAt: string;
 }
 
-// ─── Parameters & Knowledge Base ─────────────────────────────────────────────
+// ─── Parameters & Knowledge Base (v4 Graph Model) ────────────────────────────
 
 export type KnowledgeStatus = "unknown" | "basic" | "advanced" | "needs_analysis";
 
-export interface ParameterDef {
-  id: string; // e.g., "param_hemoglobin"
+export type EntityType = 
+  | "parameter" 
+  | "finding"      // e.g., "Hemoglobin Low"
+  | "condition"    // e.g., "Iron Deficiency Anemia"
+  | "food" 
+  | "diet"
+  | "supplement" 
+  | "medication" 
+  | "symptom" 
+  | "report_template"
+  | "chemo_session"
+  | "general";
+
+// Strongly-typed Metadata Interfaces
+export interface ParameterMetadata {
+  unit?: string;
+  refMin?: number | string;
+  refMax?: number | string;
+  criticalMin?: number;
+  criticalMax?: number;
+  isAgeSpecific?: boolean;
+}
+
+export interface FoodMetadata {
+  calories?: number;
+  preparationMethods?: string;
+  storage?: string;
+  nutritionFacts?: Record<string, string>;
+}
+
+export interface ConditionMetadata {
+  severity?: "mild" | "moderate" | "severe";
+  isChronic?: boolean;
+}
+
+// Unified Graph Node with Discriminated Unions (Type-safe metadata)
+export interface BaseEntity {
+  id: string; // e.g., "ent_12345" or "param_hemoglobin" for legacy compat
+  type: EntityType;
   name: string;
-  alternativeNames: string[]; // e.g., ["Hb", "Hgb"]
-  category: string; // e.g., "Hematology"
+  nameGu?: string; // Gujarati Name
   
-  // Default bounds and units (can be overridden in specific reports)
-  defaultUnit?: string;
-  defaultRefMin?: number | string;
-  defaultRefMax?: number | string;
+  // Previously from KnowledgeEntry:
+  simpleMeaning?: string;
+  detailedDescription?: string;
+  whyImportant?: string;
+  normalRangeText?: string;
   
-  knowledgeStatus: KnowledgeStatus; 
-  
+  tags: string[];
+  alternativeNames?: string[]; // Kept for legacy parameter compatibility
+  category?: string; // Kept for legacy grouping ("Hematology")
+  knowledgeStatus?: KnowledgeStatus; 
+
+  source?: string;
+  versionHistory?: Array<{ date: string; changes: string }>;
+
   createdAt: string;
   updatedAt: string;
 }
 
-export interface KnowledgeEntry {
-  id: string; // e.g., "kb_hemoglobin"
-  parameterId?: string; // Links to ParameterDef (optional, if knowledge is general)
-  
-  // Core Info (Basic Knowledge)
-  simpleMeaning: string;
-  whyImportant: string;
-  normalRangeText: string;
-  
-  // Advanced Knowledge
-  detailedDescription: string;
-  source: string;
-  doctorNotes: string;
-  personalNotes: string;
-  references: string[];
-  
-  // HYBRID RELATIONSHIP CACHE (Array of IDs for fast UI rendering)
-  // The 'relationships' store remains the single source of truth.
-  relatedSymptomsCache?: string[]; 
-  relatedFoodsCache?: string[];
-  relatedMedicinesCache?: string[];
-  relatedReportsCache?: string[];
-  
-  tags: string[];
-  versionHistory: Array<{ date: string; changes: string }>;
-  
-  createdAt: string;
-  updatedAt: string;
+export interface ParameterEntity extends BaseEntity {
+  type: "parameter";
+  metadata?: ParameterMetadata;
 }
+
+export interface FindingEntity extends BaseEntity {
+  type: "finding";
+  metadata?: {
+    parameterId: string; // Links back to the base parameter
+    state: "high" | "low" | "critical" | "abnormal";
+  };
+}
+
+export interface ConditionEntity extends BaseEntity {
+  type: "condition";
+  metadata?: ConditionMetadata;
+}
+
+export interface FoodEntity extends BaseEntity {
+  type: "food";
+  metadata?: FoodMetadata;
+}
+
+export type MedicalEntity = 
+  | ParameterEntity 
+  | FindingEntity 
+  | ConditionEntity 
+  | FoodEntity 
+  | (BaseEntity & { type: Exclude<EntityType, "parameter" | "finding" | "condition" | "food">; metadata?: any });
 
 // ─── Relationships (Graph Model) ─────────────────────────────────────────────
 
-export type EntityType = "parameter" | "knowledge" | "medicine" | "symptom" | "food" | "report_template" | "chemo_session" | "general";
-export type RelationType = "causes" | "treats" | "worsens" | "improves" | "measured_by" | "related_to" | "side_effect_of";
+export type RelationType = 
+  | "associated_with" // e.g. Finding -> Condition
+  | "recommended_for" // e.g. Diet -> Condition
+  | "improves"        // e.g. Food -> Condition
+  | "treats"
+  | "worsens"
+  | "causes"          // e.g. Medication -> Symptom
+  | "related_to"      
+  | "contains"        // e.g. Diet -> Food
+  | "indicates"       // e.g. Finding -> Condition (stronger than associated_with)
+  | "contraindicated_for" // e.g. Medication/Food -> Condition
+  | "measured_by"
+  | "side_effect_of";
 
 export interface EntityRelationship {
   id: string;             // Unique edge ID (e.g., "rel_12345")
@@ -229,6 +283,8 @@ export interface EntityRelationship {
   targetType: EntityType; 
   relationType: RelationType;
   
+  strength?: number; // 0-100 Confidence score for diagnostic reasoning
+  evidence?: string; // e.g., "Standard clinical protocol", "User note"
   notes?: string;
   createdAt: string;
 }

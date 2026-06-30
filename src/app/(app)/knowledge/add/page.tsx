@@ -27,8 +27,12 @@ function AddKnowledgeForm() {
 
   useEffect(() => {
     const pTitle = searchParams.get("title");
+    const pCat = searchParams.get("category");
     if (pTitle) {
       setTitle(pTitle);
+    }
+    if (pCat) {
+      setCategory(pCat);
     }
   }, [searchParams]);
 
