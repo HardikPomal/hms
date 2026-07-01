@@ -120,21 +120,61 @@ export async function importDatabase(jsonString: string): Promise<void> {
   }
   await tx6.done;
 
-  // Import legacy fields if they exist (they'll be migrated by db.ts later)
-  if (backup.parameters) {
-    const tx7 = db.transaction("parameters", "readwrite");
-    for (const p of backup.parameters) {
-      await tx7.store.put(p as Parameters<typeof tx7.store.put>[0]);
-    }
-    await tx7.done;
-  }
+  // Import legacy fields if they exist
+  if (backup.parameters && backup.knowledgeBase) {
+    if (db.objectStoreNames.contains("parameters" as any)) {
+      const tx7 = db.transaction("parameters" as any, "readwrite");
+      for (const p of backup.parameters) {
+        await tx7.store.put(p as Parameters<typeof tx7.store.put>[0]);
+      }
+      await tx7.done;
 
-  if (backup.knowledgeBase) {
-    const tx8 = db.transaction("knowledge_base", "readwrite");
-    for (const k of backup.knowledgeBase) {
-      await tx8.store.put(k as Parameters<typeof tx8.store.put>[0]);
+      const tx8 = db.transaction("knowledge_base" as any, "readwrite");
+      for (const k of backup.knowledgeBase) {
+        await tx8.store.put(k as Parameters<typeof tx8.store.put>[0]);
+      }
+      await tx8.done;
+    } else if (db.objectStoreNames.contains("medical_entities" as any) && (!backup.medicalEntities || backup.medicalEntities.length === 0)) {
+      // Migrate V3 to V4 on the fly since parameters store is gone
+      const tx11 = db.transaction("medical_entities" as any, "readwrite");
+      for (const p of backup.parameters as any[]) {
+        const kb = (backup.knowledgeBase as any[]).find((k: any) => k.parameterId === p.id);
+        const isFood = p.category === "nutrition" || p.category === "food";
+        const isMedicine = p.category === "medicine";
+        const entityType = isFood ? "food" : isMedicine ? "medication" : "parameter";
+
+        let metadata: any = {};
+        if (entityType === "parameter") {
+          metadata = {
+            unit: p.defaultUnit,
+            refMin: p.defaultRefMin,
+            refMax: p.defaultRefMax
+          };
+        }
+
+        const newEntity = {
+          id: p.id,
+          type: entityType,
+          name: p.name,
+          nameGu: p.nameGu,
+          simpleMeaning: kb?.simpleMeaning || "",
+          detailedDescription: kb?.detailedDescription || "",
+          whyImportant: kb?.whyImportant || "",
+          normalRangeText: kb?.normalRangeText || "",
+          tags: kb?.tags || [],
+          alternativeNames: p.alternativeNames,
+          category: p.category,
+          knowledgeStatus: p.knowledgeStatus,
+          source: kb?.source,
+          versionHistory: kb?.versionHistory || [],
+          metadata,
+          createdAt: p.createdAt,
+          updatedAt: kb?.updatedAt || p.updatedAt
+        };
+        await tx11.store.put(newEntity as any);
+      }
+      await tx11.done;
     }
-    await tx8.done;
   }
 
   if (backup.reportTemplates) {
