@@ -67,8 +67,8 @@ export default function EditMedicalReportPage() {
         
         // Very basic heuristic: English is ascii, Gujarati has Gujarati chars. 
         // We'll just load them as comma separated strings.
-        const engAka = p.alternativeNames.filter(n => /^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
-        const guAka = p.alternativeNames.filter(n => !/^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
+        const engAka = (p.alternativeNames || []).filter((n: string) => /^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
+        const guAka = (p.alternativeNames || []).filter((n: string) => !/^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
 
         const fullDesc = k?.detailedDescription || "";
         let enBlock = extractLangBlock(fullDesc, "en");
