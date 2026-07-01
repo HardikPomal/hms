@@ -24,6 +24,7 @@ import {
   updateChemoSession,
 } from "@/lib/db/chemo";
 import { getAllReports } from "@/lib/db/reports";
+import { formatDate } from "@/lib/format";
 import { getAllParameters } from "@/lib/db/knowledge";
 import { analyzeDischargeDocument } from "@/app/actions/ai";
 import type {
@@ -308,7 +309,7 @@ export default function ChemoActiveTrackerPage() {
                 <option value="">No report linked</option>
                 {reports.map((r) => (
                   <option key={r.id} value={r.id}>
-                    {r.reportDate} - {r.hospitalName} ({r.format})
+                    {formatDate(r.reportDate)} - {r.templateId}
                   </option>
                 ))}
               </select>
