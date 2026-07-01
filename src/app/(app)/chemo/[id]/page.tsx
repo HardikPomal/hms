@@ -25,7 +25,7 @@ import {
 } from "@/lib/db/chemo";
 import { getAllReports } from "@/lib/db/reports";
 import { formatDate } from "@/lib/format";
-import { getAllParameters } from "@/lib/db/knowledge";
+import { getAllParameters, getEntitiesByType } from "@/lib/db/knowledge";
 import { analyzeDischargeDocument } from "@/app/actions/ai";
 import type {
   ChemoSession,
@@ -33,10 +33,12 @@ import type {
   ChemoMedicine,
   MedicalReport,
   ParameterDef,
+  MedicalEntity,
 } from "@/types";
 import { generateId } from "@/lib/db/db";
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
+import { BookOpen, FileImage } from "lucide-react";
+import FileUpload from "@/components/ui/FileUpload";
 
 const STAGES: { id: ChemoSessionStatus; icon: any; label: string }[] = [
   { id: "scheduled", icon: Clock, label: "Scheduled" },
@@ -54,7 +56,7 @@ export default function ChemoActiveTrackerPage() {
   const router = useRouter();
   const [session, setSession] = useState<ChemoSession | null>(null);
   const [reports, setReports] = useState<MedicalReport[]>([]);
-  const [kbParams, setKbParams] = useState<ParameterDef[]>([]);
+  const [kbEntities, setKbEntities] = useState<MedicalEntity[]>([]);
   const [loading, setLoading] = useState(true);
   const [showDelete, setShowDelete] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -69,6 +71,7 @@ export default function ChemoActiveTrackerPage() {
   const [newMedDuration, setNewMedDuration] = useState("");
   const [nextApptDate, setNextApptDate] = useState("");
   const [dischargeText, setDischargeText] = useState("");
+  const [dischargeFileData, setDischargeFileData] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [clarificationQuestion, setClarificationQuestion] = useState("");
   const [clarificationAnswer, setClarificationAnswer] = useState("");
@@ -77,10 +80,15 @@ export default function ChemoActiveTrackerPage() {
   >([]);
 
   useEffect(() => {
-    Promise.all([getChemoSessionById(id), getAllReports(), getAllParameters()]).then(([s, r, p]) => {
+    Promise.all([
+      getChemoSessionById(id),
+      getAllReports(),
+      getAllParameters(),
+      getEntitiesByType("medication")
+    ]).then(([s, r, p, m]) => {
       setSession(s ?? null);
       setReports(r);
-      setKbParams(p);
+      setKbEntities([...(p as MedicalEntity[]), ...(m as MedicalEntity[])]);
       setLoading(false);
       if (s) {
         setSelectedReportId(s.cbcReportId || "");
@@ -139,6 +147,13 @@ export default function ChemoActiveTrackerPage() {
     setRefreshTrigger((p) => p + 1);
   };
 
+  const removeMedicine = async (medId: string) => {
+    if (!session) return;
+    const updatedMeds = session.medicines.filter((m) => m.id !== medId);
+    await updateChemoSession(session.id, { medicines: updatedMeds });
+    setRefreshTrigger((p) => p + 1);
+  };
+
   const toggleBottleTimer = async (medId: string) => {
     if (!session) return;
     const now = new Date().toISOString();
@@ -156,10 +171,10 @@ export default function ChemoActiveTrackerPage() {
   const handleAnalyzeDischarge = async (
     history: { role: "user" | "model"; text: string }[] = [],
   ) => {
-    if (!session || !dischargeText.trim()) return;
+    if (!session || (!dischargeText.trim() && !dischargeFileData)) return;
     setIsAnalyzing(true);
     try {
-      const result = await analyzeDischargeDocument(dischargeText, history);
+      const result = await analyzeDischargeDocument(dischargeText, history, dischargeFileData);
       if (result) {
         if (result.type === "clarification_needed") {
           setClarificationQuestion(result.message);
@@ -420,20 +435,29 @@ export default function ChemoActiveTrackerPage() {
                 >
                   <div>
                     {(() => {
-                      const kbMatch = kbParams.find((p) => 
-                        p.name.toLowerCase() === med.name.toLowerCase() || 
-                        (p.nameGu && p.nameGu.toLowerCase() === med.name.toLowerCase()) ||
-                        p.alternativeNames?.some((a: string) => a.toLowerCase() === med.name.toLowerCase())
+                      // Find ALL entities whose name is contained within the string they typed
+                      const matches = kbEntities.filter((p) => {
+                        const searchStr = med.name.toLowerCase();
+                        return searchStr.includes(p.name.toLowerCase()) || 
+                          (p.nameGu && searchStr.includes(p.nameGu.toLowerCase())) ||
+                          (p.alternativeNames || []).some((a: string) => searchStr.includes(a.toLowerCase()));
+                      });
+
+                      return (
+                        <div>
+                          <p className="font-bold text-base-900 leading-snug">{med.name}</p>
+                          {matches.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-1.5 mb-1">
+                              {matches.map(m => (
+                                <Link key={m.id} href={`/knowledge/${m.id}`} className="text-xs font-bold bg-primary-50 text-primary-700 hover:bg-primary-100 hover:text-primary-800 px-2 py-1 rounded-md flex items-center gap-1 transition-colors border border-primary-100">
+                                  <BookOpen size={12} className="shrink-0" />
+                                  {m.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       );
-                      if (kbMatch) {
-                        return (
-                          <Link href={`/knowledge/${kbMatch.id}`} className="font-bold text-primary-600 hover:text-primary-700 hover:underline flex items-center gap-1.5 transition-colors">
-                            <BookOpen size={14} className="shrink-0" />
-                            {med.name}
-                          </Link>
-                        );
-                      }
-                      return <p className="font-bold text-base-900">{med.name}</p>;
                     })()}
                     <p className="text-xs text-base-500">
                       Duration: {med.duration || "N/A"}
@@ -457,19 +481,31 @@ export default function ChemoActiveTrackerPage() {
                       </p>
                     )}
                   </div>
-                  <button
-                    onClick={() => toggleBottleTimer(med.id)}
-                    disabled={!!med.endTime}
-                    className={`p-3 rounded-full ${med.endTime ? "bg-success-100 text-success-600" : med.startTime ? "bg-warning-100 text-warning-600 animate-pulse" : "bg-primary-100 text-primary-600"}`}
-                  >
-                    {med.endTime ? (
-                      <CheckCircle2 size={24} />
-                    ) : med.startTime ? (
-                      <Square size={24} />
-                    ) : (
-                      <Play size={24} fill="currentColor" />
+                  <div className="flex items-center gap-2">
+                    {!med.startTime && (
+                      <button
+                        onClick={() => removeMedicine(med.id)}
+                        className="p-3 text-error-500 hover:bg-error-50 rounded-full transition-colors"
+                        title="Remove bottle"
+                      >
+                        <Trash2 size={20} />
+                      </button>
                     )}
-                  </button>
+                    <button
+                      onClick={() => toggleBottleTimer(med.id)}
+                      disabled={!!med.endTime}
+                      className={`p-3 rounded-full ${med.endTime ? "bg-success-100 text-success-600" : med.startTime ? "bg-warning-100 text-warning-600 animate-pulse" : "bg-primary-100 text-primary-600"}`}
+                      title={med.endTime ? "Finished" : med.startTime ? "Stop Timer" : "Start Timer"}
+                    >
+                      {med.endTime ? (
+                        <CheckCircle2 size={24} />
+                      ) : med.startTime ? (
+                        <Square size={24} />
+                      ) : (
+                        <Play size={24} fill="currentColor" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               ))}
 
@@ -545,6 +581,21 @@ export default function ChemoActiveTrackerPage() {
                 </div>
               ) : (
                 <>
+                  <div className="mb-4">
+                    <FileUpload
+                      onFileLoad={(data) => setDischargeFileData(data)}
+                    />
+                    {dischargeFileData && (
+                      <div className="mt-2 text-xs text-success-600 flex items-center gap-1 font-medium bg-success-50 p-2 rounded-lg border border-success-100">
+                        <FileImage size={14} /> Image ready for analysis
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <div className="h-px bg-base-200 flex-1" />
+                    <span className="text-xs text-base-400 font-bold uppercase">OR</span>
+                    <div className="h-px bg-base-200 flex-1" />
+                  </div>
                   <textarea
                     value={dischargeText}
                     onChange={(e) => setDischargeText(e.target.value)}
@@ -553,7 +604,7 @@ export default function ChemoActiveTrackerPage() {
                   />
                   <button
                     onClick={() => handleAnalyzeDischarge([])}
-                    disabled={isAnalyzing || !dischargeText.trim()}
+                    disabled={isAnalyzing || (!dischargeText.trim() && !dischargeFileData)}
                     className="w-full py-3 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl shadow-md disabled:opacity-50 flex items-center justify-center gap-2 transition-colors"
                   >
                     {isAnalyzing ? (

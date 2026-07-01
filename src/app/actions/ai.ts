@@ -262,7 +262,8 @@ export type AnalyzeDischargeResponse =
 
 export async function analyzeDischargeDocument(
   content: string,
-  chatHistory: { role: "user" | "model"; text: string }[] = []
+  chatHistory: { role: "user" | "model"; text: string }[] = [],
+  base64Image?: string
 ): Promise<AnalyzeDischargeResponse | null> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -294,7 +295,10 @@ Output format MUST be strictly JSON matching this schema:
 }
 Do not include markdown backticks.`;
 
-  let prompt = `Discharge Document Text: ${content}\n\n`;
+  let prompt = "";
+  if (content) {
+    prompt += `Discharge Document Text: ${content}\n\n`;
+  }
   if (chatHistory.length > 0) {
     prompt += "Chat History for Clarification:\n";
     chatHistory.forEach((msg) => {
@@ -302,6 +306,23 @@ Do not include markdown backticks.`;
     });
     prompt += "Please provide the final JSON output based on this clarified context.\n";
   }
+
+  const contents: any[] = [];
+  
+  if (base64Image) {
+    const match = base64Image.match(/^data:(image\/[a-zA-Z+.-]+);base64,(.*)$/);
+    if (match) {
+      contents.push({
+        inlineData: {
+          mimeType: match[1],
+          data: match[2],
+        },
+      });
+      prompt += "\nExtract the discharge details from the provided image.";
+    }
+  }
+  
+  contents.push(prompt);
 
   let response;
   let retries = 3;
@@ -311,7 +332,7 @@ Do not include markdown backticks.`;
     try {
       response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: prompt,
+        contents: contents,
         config: {
           systemInstruction: systemInstruction,
           responseMimeType: "application/json",
