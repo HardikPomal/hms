@@ -26,7 +26,7 @@ export function analyzeField(field: ReportField, knowledge?: ParameterDef[]): Re
 
   // Fallback to Knowledge Base (Active Brain)
   if (knowledge && min === undefined && max === undefined) {
-    const k = knowledge.find((x) => x.name.toLowerCase().trim() === field.name.toLowerCase().trim() || x.alternativeNames?.some(n => n.toLowerCase().trim() === field.name.toLowerCase().trim()));
+    const k = knowledge.find((x) => x.name.toLowerCase().trim() === field.name.toLowerCase().trim() || x.alternativeNames?.some((n: string) => n.toLowerCase().trim() === field.name.toLowerCase().trim()));
     if (k) {
       if (k.defaultRefMin !== undefined && k.defaultRefMin !== "") min = typeof k.defaultRefMin === 'string' ? parseFloat(k.defaultRefMin) : k.defaultRefMin;
       if (k.defaultRefMax !== undefined && k.defaultRefMax !== "") max = typeof k.defaultRefMax === 'string' ? parseFloat(k.defaultRefMax) : k.defaultRefMax;

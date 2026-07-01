@@ -66,8 +66,8 @@ export default function EditLabParameterPage() {
       setKnowledge(k ?? null);
       
       if (p) {
-        const engAka = p.alternativeNames.filter(n => /^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
-        const guAka = p.alternativeNames.filter(n => !/^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
+        const engAka = (p.alternativeNames || []).filter((n: string) => /^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
+        const guAka = (p.alternativeNames || []).filter((n: string) => !/^[a-zA-Z0-9\s,\.\(\)\-]+$/.test(n)).join(", ");
 
         const fullDesc = k?.detailedDescription || "";
         let enBlock = extractLangBlock(fullDesc, "en");
@@ -84,7 +84,7 @@ export default function EditLabParameterPage() {
           nameGu: p.nameGu || "",
           akaEn: engAka,
           akaGu: guAka,
-          unit: p.defaultUnit || "",
+          unit: p.metadata?.unit || "",
           normalRange: k?.normalRangeText || "",
           descEn: parseDescription(enBlock),
           descGu: parseDescription(guBlock),

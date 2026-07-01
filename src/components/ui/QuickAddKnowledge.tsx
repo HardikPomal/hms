@@ -108,7 +108,7 @@ export default function QuickAddKnowledge({
         };
 
         await processRelations(result.relatedSymptoms, "symptom", "causes");
-        await processRelations(result.relatedMedicines, "medicine", "treats");
+        await processRelations(result.relatedMedicines, "medication", "treats");
         await processRelations(result.relatedFoods, "food", "improves");
       }
 
