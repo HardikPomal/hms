@@ -362,7 +362,7 @@ export default function ChemoActiveTrackerPage() {
               </button>
               <button
                 onClick={() => setDoctorDecision("half")}
-                className={`flex-1 py-2 rounded-lg font-bold text-sm border-2 ${doctorDecision === "half" ? "border-warning-500 bg-warning-50 text-warning-700" : "border-base-200 text-base-500"}`}
+                className={`flex-1 py-2 rounded-lg font-bold text-sm border-2 ${doctorDecision === "half" ? "border-amber-500 bg-amber-50 text-amber-700" : "border-base-200 text-base-500"}`}
               >
                 Half Chemo
               </button>
@@ -494,7 +494,7 @@ export default function ChemoActiveTrackerPage() {
                     <button
                       onClick={() => toggleBottleTimer(med.id)}
                       disabled={!!med.endTime}
-                      className={`p-3 rounded-full ${med.endTime ? "bg-success-100 text-success-600" : med.startTime ? "bg-warning-100 text-warning-600 animate-pulse" : "bg-primary-100 text-primary-600"}`}
+                      className={`p-3 rounded-full ${med.endTime ? "bg-success-100 text-success-600" : med.startTime ? "bg-amber-100 text-amber-600 animate-pulse" : "bg-primary-100 text-primary-600"}`}
                       title={med.endTime ? "Finished" : med.startTime ? "Stop Timer" : "Start Timer"}
                     >
                       {med.endTime ? (
@@ -558,11 +558,11 @@ export default function ChemoActiveTrackerPage() {
               </p>
 
               {clarificationQuestion ? (
-                <div className="bg-warning-50 border border-warning-200 rounded-xl p-3 mb-3">
-                  <p className="text-sm font-bold text-warning-800 mb-2">
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-3">
+                  <p className="text-sm font-bold text-amber-800 mb-2">
                     Wait, I need clarification:
                   </p>
-                  <p className="text-sm text-warning-900 mb-3">
+                  <p className="text-sm text-amber-900 mb-3">
                     {clarificationQuestion}
                   </p>
                   <textarea
@@ -574,7 +574,7 @@ export default function ChemoActiveTrackerPage() {
                   <button
                     onClick={handleClarificationSubmit}
                     disabled={isAnalyzing || !clarificationAnswer.trim()}
-                    className="w-full py-2 bg-warning-500 text-white rounded-lg font-bold text-sm disabled:opacity-50"
+                    className="w-full py-2 bg-amber-500 text-white rounded-lg font-bold text-sm disabled:opacity-50"
                   >
                     {isAnalyzing ? "Analyzing..." : "Submit Answer"}
                   </button>
@@ -632,18 +632,18 @@ export default function ChemoActiveTrackerPage() {
             </div>
 
             {session.doctorDecision === "half" && (
-              <div className="p-3 bg-warning-50 border border-warning-200 rounded-xl">
-                <h3 className="font-bold text-warning-800">
+              <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl">
+                <h3 className="font-bold text-amber-800">
                   Second Half Needed
                 </h3>
-                <p className="text-sm text-warning-700 my-2">
+                <p className="text-sm text-amber-700 my-2">
                   Doctor decided on a half-dose. Schedule the second half now.
                 </p>
                 <button
                   onClick={() =>
                     router.push(`/chemo/add?cycle=${session.cycleNumber}`)
                   }
-                  className="px-4 py-2 bg-warning-500 text-white text-sm font-bold rounded-lg"
+                  className="px-4 py-2 bg-amber-500 text-white text-sm font-bold rounded-lg"
                 >
                   Schedule 2nd Half Session
                 </button>

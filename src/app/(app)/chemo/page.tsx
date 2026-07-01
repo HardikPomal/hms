@@ -33,7 +33,7 @@ export default function ChemoPage() {
       case "scheduled": return "bg-base-100 text-base-600";
       case "blood_test_pending": 
       case "doctor_consult":
-      case "approval_pending": return "bg-warning-100 text-warning-700";
+      case "approval_pending": return "bg-amber-100 text-amber-700";
       case "treatment_active": return "bg-primary-100 text-primary-700 animate-pulse";
       case "discharge": return "bg-info-100 text-info-700";
       case "completed": return "bg-success-100 text-success-700";
