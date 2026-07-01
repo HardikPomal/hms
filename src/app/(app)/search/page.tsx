@@ -11,10 +11,11 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import { formatDate } from "@/lib/format";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { searchReports } from "@/lib/db/reports";
 import { searchMedicines } from "@/lib/db/medicines";
-import { searchParameters } from "@/lib/db/knowledge";
+import { searchEntities } from "@/lib/db/knowledge";
 import { getAllChemoSessions } from "@/lib/db/chemo";
 
 export default function SearchPage() {
@@ -36,7 +37,7 @@ export default function SearchPage() {
         const [rep, med, know, chem] = await Promise.all([
           searchReports(query),
           searchMedicines(query),
-          searchParameters(query),
+          searchEntities(query),
           getAllChemoSessions(),
         ]);
 
@@ -54,7 +55,7 @@ export default function SearchPage() {
             type: "reports",
             id: r.id,
             title: r.templateId,
-            subtitle: `${r.reportDate} · ${r.hospitalName}`,
+            subtitle: `${formatDate(r.reportDate)} · ${r.hospitalName}`,
             icon: FileText,
           })),
           ...med.map((m) => ({

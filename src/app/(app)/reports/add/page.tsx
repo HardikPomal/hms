@@ -3,7 +3,18 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
-import { Plus, Trash2, ChevronDown, Info, Sparkles, Search, Link as LinkIcon, FileText, FlaskConical, X } from "lucide-react";
+import {
+  Plus,
+  Trash2,
+  ChevronDown,
+  Info,
+  Sparkles,
+  Search,
+  Link as LinkIcon,
+  FileText,
+  FlaskConical,
+  X,
+} from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { addReport } from "@/lib/db/reports";
 import { updateParameter } from "@/lib/db/knowledge";
@@ -42,6 +53,7 @@ export default function AddReportPage() {
   const [linkModalTitle, setLinkModalTitle] = useState<string | null>(null);
   const [linkSearchQuery, setLinkSearchQuery] = useState("");
   const [linking, setLinking] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState<string | null>(null);
 
   useEffect(() => {
     const draftStr = sessionStorage.getItem("addReportDraft");
@@ -76,9 +88,11 @@ export default function AddReportPage() {
     if (!linkModalTitle) return;
     setLinking(true);
     try {
-      const param = parameters.find(p => p.id === parameterId);
+      const param = parameters.find((p) => p.id === parameterId);
       if (param) {
-        const altNames = Array.from(new Set([...param.alternativeNames, linkModalTitle]));
+        const altNames = Array.from(
+          new Set([...(param.alternativeNames || []), linkModalTitle]),
+        );
         await updateParameter(parameterId, { alternativeNames: altNames });
         await refreshKnowledge();
       }
@@ -94,11 +108,23 @@ export default function AddReportPage() {
   const handleCreateKnowledge = (categoryUrl: string) => {
     if (!linkModalTitle) return;
     const draft = {
-      step, reportType, reportName, hospital, doctor, reportDate,
-      notes, fields, sections, fileData, fileName, fileType,
+      step,
+      reportType,
+      reportName,
+      hospital,
+      doctor,
+      reportDate,
+      notes,
+      fields,
+      sections,
+      fileData,
+      fileName,
+      fileType,
     };
     sessionStorage.setItem("addReportDraft", JSON.stringify(draft));
-    router.push(`${categoryUrl}?title=${encodeURIComponent(linkModalTitle)}&returnTo=/reports/add`);
+    router.push(
+      `${categoryUrl}?title=${encodeURIComponent(linkModalTitle)}&returnTo=/reports/add`,
+    );
   };
 
   const handleAutoFill = async () => {
@@ -152,12 +178,12 @@ export default function AddReportPage() {
         setFields(
           template.fields.map((f) => {
             const dbParam = parameters.find(
-              (p) => p.name.toLowerCase() === f.name.toLowerCase()
+              (p) => p.name.toLowerCase() === f.name.toLowerCase(),
             );
             return {
               id: generateId(),
               name: dbParam ? dbParam.name : f.name,
-              nameGu: dbParam ? (dbParam.nameGu || f.nameGu) : f.nameGu,
+              nameGu: dbParam ? dbParam.nameGu || f.nameGu : f.nameGu,
               value: "",
               unit: dbParam?.defaultUnit || f.unit,
               refMin: (dbParam?.defaultRefMin || f.refMin)?.toString(),
@@ -240,7 +266,11 @@ export default function AddReportPage() {
               status: f.status,
               customNotes: f.notes,
             })),
-        narrativeSections: isNarrative ? sections : undefined,
+        narrativeSections: isNarrative
+          ? sections.filter(
+              (s) => s.sectionName.trim() !== "" || s.content.trim() !== "",
+            )
+          : undefined,
         generalNotes: notes,
         fileData,
         fileName,
@@ -266,7 +296,9 @@ export default function AddReportPage() {
             >
               <div>
                 <p className="font-semibold text-base-900 dark:text-dark-base-900">
-                  {language === "gu" ? template.labelGu : template.label}
+                  {language === "gu"
+                    ? template.labelGu || template.label
+                    : template.label}
                 </p>
                 {language === "en" && template.labelGu && (
                   <p className="text-xs text-base-400 dark:text-dark-base-400">
@@ -301,6 +333,21 @@ export default function AddReportPage() {
               onChange={(e) => setReportName(e.target.value)}
               className="w-full px-4 py-3 bg-white dark:bg-dark-base-100 border border-base-200 dark:border-dark-base-200 rounded-xl text-sm outline-none focus:border-primary-400 dark:focus:border-dark-primary-400 transition-colors"
             />
+            {selectedTemplate?.suggestions &&
+              selectedTemplate.suggestions.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {selectedTemplate.suggestions.map((suggestion, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setReportName(suggestion)}
+                      className="text-xs px-3 py-1.5 rounded-lg bg-base-100 dark:bg-dark-base-200 text-base-600 dark:text-dark-base-500 hover:bg-primary-50 dark:hover:bg-dark-primary-200 hover:text-primary-600 dark:hover:text-dark-primary-500 border border-transparent hover:border-primary-200 dark:hover:border-dark-primary-300 transition-all text-left"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              )}
           </div>
 
           {/* Date */}
@@ -420,17 +467,13 @@ export default function AddReportPage() {
                       placeholder="Section Name"
                       className="font-bold text-base-900 dark:text-dark-base-900 bg-transparent outline-none border-b-2 border-transparent focus:border-primary-500 transition-colors w-full max-w-[250px]"
                     />
-                    {!selectedTemplate.fields.some(
-                      (f) => f.name === section.sectionName,
-                    ) && (
-                      <button
-                        type="button"
-                        onClick={() => removeSection(idx)}
-                        className="p-2 text-danger-500 bg-danger-50 hover:bg-danger-100 dark:bg-dark-danger-200 dark:hover:bg-dark-danger-300 rounded-xl transition-colors"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    )}
+                    <button
+                      type="button"
+                      onClick={() => removeSection(idx)}
+                      className="p-2 text-danger-500 bg-danger-50 hover:bg-danger-100 dark:bg-dark-danger-200 dark:hover:bg-dark-danger-300 rounded-xl transition-colors flex items-center justify-center"
+                    >
+                      <Trash2 size={16} />
+                    </button>
                   </div>
                   <textarea
                     value={section.content}
@@ -456,7 +499,16 @@ export default function AddReportPage() {
             <>
               {fields.length > 0 && (
                 <div className="space-y-3">
-                  {fields.map((field) => (
+                  {fields.map((field) => {
+                    const knownParam = parameters.find((p) => p.name.toLowerCase() === field.name.trim().toLowerCase());
+                    const templateParam = selectedTemplate?.fields.find((tf) => tf.name === field.name);
+                    const isKnownField = !!templateParam || !!knownParam;
+                    
+                    const displayUnit = field.unit || knownParam?.metadata?.unit || knownParam?.defaultUnit || knownParam?.unit || templateParam?.unit || "";
+                    const displayMin = field.refMin || knownParam?.metadata?.refMin || knownParam?.defaultRefMin || knownParam?.refMin || templateParam?.refMin || "";
+                    const displayMax = field.refMax || knownParam?.metadata?.refMax || knownParam?.defaultRefMax || knownParam?.refMax || templateParam?.refMax || "";
+                    
+                    return (
                     <div
                       key={field.id}
                       className="card border border-base-200 dark:border-dark-base-200"
@@ -464,14 +516,12 @@ export default function AddReportPage() {
                       <div className="flex items-start gap-3">
                         <div className="flex-1 space-y-3">
                           {/* Field Name */}
-                          {selectedTemplate?.fields.some(
-                            (tf) => tf.name === field.name,
-                          ) ? (
+                          {isKnownField ? (
                             <div className="font-bold text-base-900 dark:text-dark-base-900 border-b-2 border-base-100 dark:border-dark-base-200 pb-2 mb-1">
                               {field.name}
                             </div>
                           ) : (
-                            <div>
+                            <div className="relative">
                               <label className="text-xs font-bold text-base-500 dark:text-dark-base-500 block mb-1 uppercase tracking-wide">
                                 {t("reports.fieldName")}
                               </label>
@@ -479,11 +529,61 @@ export default function AddReportPage() {
                                 type="text"
                                 placeholder={t("reports.fieldName")}
                                 value={field.name}
-                                onChange={(e) =>
-                                  updateField(field.id, "name", e.target.value)
+                                onChange={(e) => {
+                                  updateField(field.id, "name", e.target.value);
+                                  setShowSuggestions(field.id);
+                                }}
+                                onFocus={() => setShowSuggestions(field.id)}
+                                onBlur={() =>
+                                  setTimeout(
+                                    () => setShowSuggestions(null),
+                                    200,
+                                  )
                                 }
                                 className="w-full px-3 py-2.5 rounded-xl text-sm font-medium border-2 border-base-200 dark:border-dark-base-200 bg-white dark:bg-dark-base-100 outline-none focus:border-primary-500 transition-colors"
                               />
+
+                              {showSuggestions === field.id && field.name && (
+                                <div className="absolute z-10 left-0 right-0 top-full mt-1 bg-white dark:bg-dark-base-100 border border-base-200 dark:border-dark-base-200 rounded-xl shadow-xl max-h-60 overflow-y-auto overflow-x-hidden">
+                                  {parameters
+                                    .filter((p) =>
+                                      p.name
+                                        .toLowerCase()
+                                        .includes(field.name.toLowerCase()),
+                                    )
+                                    .map((p) => (
+                                      <button
+                                        key={p.id}
+                                        type="button"
+                                        onMouseDown={(e) => {
+                                          // Prevent onBlur from firing before click
+                                          e.preventDefault();
+                                        }}
+                                        onClick={() => {
+                                          updateField(field.id, "name", p.name);
+                                          const unit = p.metadata?.unit || p.defaultUnit || p.unit;
+                                          const min = p.metadata?.refMin ?? p.defaultRefMin ?? p.refMin;
+                                          const max = p.metadata?.refMax ?? p.defaultRefMax ?? p.refMax;
+                                          
+                                          if (unit !== undefined) updateField(field.id, "unit", unit);
+                                          if (min !== undefined) updateField(field.id, "refMin", String(min));
+                                          if (max !== undefined) updateField(field.id, "refMax", String(max));
+                                          setShowSuggestions(null);
+                                        }}
+                                        className="w-full text-left px-4 py-2 hover:bg-base-50 dark:hover:bg-dark-base-200 text-sm border-b border-base-100 dark:border-dark-base-200 last:border-0"
+                                      >
+                                        <span className="font-medium text-base-900 dark:text-dark-base-900">
+                                          {p.name}
+                                        </span>
+                                        {p.unit && (
+                                          <span className="text-xs text-base-400 dark:text-dark-base-400 ml-2">
+                                            ({p.unit})
+                                          </span>
+                                        )}
+                                      </button>
+                                    ))}
+                                </div>
+                              )}
                             </div>
                           )}
 
@@ -505,16 +605,14 @@ export default function AddReportPage() {
                             </div>
 
                             {/* Details (Unit & Range) */}
-                            {selectedTemplate?.fields.some(
-                              (tf) => tf.name === field.name,
-                            ) ? (
+                            {isKnownField ? (
                               <div className="flex-1 pt-5">
                                 <div className="text-sm font-bold text-base-700 dark:text-dark-base-700">
-                                  {field.unit}
+                                  {displayUnit}
                                 </div>
-                                {(field.refMin || field.refMax) && (
+                                {(displayMin || displayMax) && (
                                   <div className="text-xs font-medium text-base-500 dark:text-dark-base-500 mt-0.5">
-                                    Normal: {field.refMin} - {field.refMax}
+                                    Normal: {displayMin} - {displayMax}
                                   </div>
                                 )}
                               </div>
@@ -541,9 +639,7 @@ export default function AddReportPage() {
                           </div>
 
                           {/* Custom Reference Range */}
-                          {!selectedTemplate?.fields.some(
-                            (tf) => tf.name === field.name,
-                          ) && (
+                          {!isKnownField && (
                             <div className="grid grid-cols-2 gap-4">
                               <div>
                                 <label className="text-xs font-bold text-base-500 dark:text-dark-base-500 block mb-1 uppercase tracking-wide">
@@ -590,7 +686,7 @@ export default function AddReportPage() {
                           <button
                             type="button"
                             onClick={() => removeField(field.id)}
-                            className="mt-1 p-2 text-danger-500 bg-danger-50 hover:bg-danger-100 dark:bg-dark-danger-200 dark:hover:bg-dark-danger-300 rounded-xl transition-colors"
+                            className="mt-1 p-2 text-danger-500 bg-danger-50 hover:bg-danger-100 dark:bg-dark-danger-200 dark:hover:bg-dark-danger-300 rounded-xl transition-colors flex items-center justify-center"
                           >
                             <Trash2 size={20} />
                           </button>
@@ -617,7 +713,7 @@ export default function AddReportPage() {
                           </div>
                         )}
                     </div>
-                  ))}
+                  )})}
                 </div>
               )}
 
@@ -659,13 +755,18 @@ export default function AddReportPage() {
                 <X size={20} />
               </button>
             </div>
-            
+
             <div className="p-4 flex-1 overflow-y-auto space-y-6">
               {/* Search Existing */}
               <div className="space-y-3">
-                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">Search Existing Brain</h3>
+                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">
+                  Search Existing Brain
+                </h3>
                 <div className="relative">
-                  <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-base-400" />
+                  <Search
+                    size={18}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-base-400"
+                  />
                   <input
                     type="text"
                     placeholder="Search existing parameters..."
@@ -674,16 +775,33 @@ export default function AddReportPage() {
                     className="w-full pl-10 pr-4 py-2.5 bg-base-50 dark:bg-dark-base-200 border-2 border-base-200 dark:border-dark-base-300 rounded-xl text-sm font-medium outline-none focus:border-primary-500 transition-colors"
                   />
                 </div>
-                
+
                 <div className="max-h-[150px] overflow-y-auto space-y-2 pr-1">
                   {parameters
-                    .filter(p => p.name.toLowerCase().includes(linkSearchQuery.toLowerCase()) || p.alternativeNames.some(a => a.toLowerCase().includes(linkSearchQuery.toLowerCase())))
+                    .filter(
+                      (p) =>
+                        p.name
+                          .toLowerCase()
+                          .includes(linkSearchQuery.toLowerCase()) ||
+                        (p.alternativeNames || []).some((a: string) =>
+                          a
+                            .toLowerCase()
+                            .includes(linkSearchQuery.toLowerCase()),
+                        ),
+                    )
                     .slice(0, 5)
-                    .map(p => (
-                      <div key={p.id} className="flex items-center justify-between p-2 rounded-lg border border-base-200 dark:border-dark-base-300 hover:border-primary-300 dark:hover:border-dark-primary-300 bg-white dark:bg-dark-base-100 transition-colors">
+                    .map((p) => (
+                      <div
+                        key={p.id}
+                        className="flex items-center justify-between p-2 rounded-lg border border-base-200 dark:border-dark-base-300 hover:border-primary-300 dark:hover:border-dark-primary-300 bg-white dark:bg-dark-base-100 transition-colors"
+                      >
                         <div>
-                          <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">{p.name}</p>
-                          <p className="text-xs text-base-500 capitalize">{p.category.replace("_", " ")}</p>
+                          <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">
+                            {p.name}
+                          </p>
+                          <p className="text-xs text-base-500 capitalize">
+                            {p.category.replace("_", " ")}
+                          </p>
                         </div>
                         <button
                           onClick={() => handleLinkKnowledge(p.id)}
@@ -693,34 +811,53 @@ export default function AddReportPage() {
                           Link
                         </button>
                       </div>
-                    ))
-                  }
-                  {parameters.filter(p => p.name.toLowerCase().includes(linkSearchQuery.toLowerCase()) || p.alternativeNames.some(a => a.toLowerCase().includes(linkSearchQuery.toLowerCase()))).length === 0 && (
-                    <p className="text-center text-sm text-base-400 py-4">No matching terms found.</p>
+                    ))}
+                  {parameters.filter(
+                    (p) =>
+                      p.name
+                        .toLowerCase()
+                        .includes(linkSearchQuery.toLowerCase()) ||
+                      (p.alternativeNames || []).some((a: string) =>
+                        a.toLowerCase().includes(linkSearchQuery.toLowerCase()),
+                      ),
+                  ).length === 0 && (
+                    <p className="text-center text-sm text-base-400 py-4">
+                      No matching terms found.
+                    </p>
                   )}
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="h-px bg-base-200 dark:bg-dark-base-300 flex-1"></div>
-                <span className="text-xs font-bold text-base-400 uppercase tracking-widest">OR</span>
+                <span className="text-xs font-bold text-base-400 uppercase tracking-widest">
+                  OR
+                </span>
                 <div className="h-px bg-base-200 dark:bg-dark-base-300 flex-1"></div>
               </div>
 
               {/* Add New Knowledge */}
               <div className="space-y-3">
-                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">Add New Knowledge</h3>
+                <h3 className="text-sm font-bold text-base-600 dark:text-dark-base-600">
+                  Add New Knowledge
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <button
-                    onClick={() => handleCreateKnowledge("/knowledge/add/lab-parameter")}
+                    onClick={() =>
+                      handleCreateKnowledge("/knowledge/add/lab-parameter")
+                    }
                     className="flex items-center gap-3 p-3 rounded-xl border-2 border-base-200 dark:border-dark-base-300 hover:border-primary-400 hover:bg-primary-50 dark:hover:bg-dark-primary-100 transition-colors text-left"
                   >
                     <div className="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-lg shrink-0">
                       <FlaskConical size={18} />
                     </div>
                     <div>
-                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">Lab Parameter</p>
-                      <p className="text-xs text-base-500">Normal ranges, uses</p>
+                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">
+                        Lab Parameter
+                      </p>
+                      <p className="text-xs text-base-500">
+                        Normal ranges, uses
+                      </p>
                     </div>
                   </button>
                   <button
@@ -731,8 +868,12 @@ export default function AddReportPage() {
                       <FileText size={18} />
                     </div>
                     <div>
-                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">Generic Term</p>
-                      <p className="text-xs text-base-500">Any other medical info</p>
+                      <p className="font-bold text-sm text-base-900 dark:text-dark-base-900">
+                        Generic Term
+                      </p>
+                      <p className="text-xs text-base-500">
+                        Any other medical info
+                      </p>
                     </div>
                   </button>
                 </div>
@@ -741,7 +882,6 @@ export default function AddReportPage() {
           </div>
         </div>
       )}
-
     </AppShell>
   );
 }

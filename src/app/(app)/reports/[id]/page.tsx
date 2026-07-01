@@ -6,6 +6,7 @@ import AppShell from "@/components/layout/AppShell";
 import { Trash2, TrendingUp, FileImage } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getReportById, deleteReport, getFieldHistory } from "@/lib/db/reports";
+import { formatDate } from "@/lib/format";
 import type { MedicalReport } from "@/types";
 import FieldRow from "@/components/reports/FieldRow";
 import ReportAnalysis from "@/components/reports/ReportAnalysis";
@@ -88,7 +89,7 @@ export default function ReportDetailPage() {
         <div className="grid grid-cols-2 gap-2 text-sm">
           <div>
             <p className="text-xs text-base-400 dark:text-dark-base-400">{t("reports.reportDate")}</p>
-            <p className="font-medium text-base-900 dark:text-dark-base-900">{report.reportDate}</p>
+            <p className="font-medium text-base-900 dark:text-dark-base-900">{formatDate(report.reportDate)}</p>
           </div>
           {report.hospitalName && (
             <div>

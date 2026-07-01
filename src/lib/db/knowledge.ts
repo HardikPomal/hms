@@ -73,6 +73,10 @@ export async function getAllParameters(): Promise<ParameterEntity[]> {
   return getEntitiesByType<ParameterEntity>("parameter");
 }
 
+export async function searchParameters(query: string): Promise<any[]> {
+  return searchEntities(query);
+}
+
 export async function getParameterById(id: string): Promise<ParameterEntity | undefined> {
   const entity = await getEntityById(id);
   if (entity && entity.type === "parameter") return entity as ParameterEntity;

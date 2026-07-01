@@ -422,7 +422,7 @@ export default function ChemoActiveTrackerPage() {
                       const kbMatch = kbParams.find((p) => 
                         p.name.toLowerCase() === med.name.toLowerCase() || 
                         (p.nameGu && p.nameGu.toLowerCase() === med.name.toLowerCase()) ||
-                        p.alternativeNames.some(a => a.toLowerCase() === med.name.toLowerCase())
+                        p.alternativeNames?.some((a: string) => a.toLowerCase() === med.name.toLowerCase())
                       );
                       if (kbMatch) {
                         return (

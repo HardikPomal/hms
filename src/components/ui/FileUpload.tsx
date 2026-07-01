@@ -50,7 +50,7 @@ export default function FileUpload({
           <button
             type="button"
             onClick={onClear}
-            className="shrink-0 p-1 hover:bg-success-200 dark:hover:bg-dark-success-200 rounded-lg transition-colors"
+            className="shrink-0 p-1 hover:bg-success-200 dark:hover:bg-dark-success-200 rounded-lg transition-colors flex items-center justify-center"
           >
             <X size={16} className="text-success-600" />
           </button>

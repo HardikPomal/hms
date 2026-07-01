@@ -9,11 +9,12 @@ import { getAllReports } from "@/lib/db/reports";
 import { getNextChemoAppointment } from "@/lib/db/chemo";
 import { generateTodaySchedule } from "@/lib/db/medicines";
 import { getSettings } from "@/lib/db/settings";
-import { getKnowledgeByParameterId, getRelationshipsForSource, getRelationshipsForTarget } from "@/lib/db/knowledge";
+import { getKnowledgeByParameterId, getRelationshipsForSource, getRelationshipsForTarget, getAllParameters } from "@/lib/db/knowledge";
 import { getDB } from "@/lib/db/db";
 import { getActionPlanState, saveActionPlanState, markActionPlanItem } from "@/lib/db/actionPlan";
 import type { MedicalReport, ChemoSession, MedicineLog, AppSettings, KnowledgeEntry, ParameterDef } from "@/types";
 import { format, isToday, isTomorrow } from "date-fns";
+import { formatDate } from "@/lib/format";
 
 export default function DashboardPage() {
   const { t, language } = useLanguage();
@@ -79,7 +80,7 @@ export default function DashboardPage() {
           };
           
           const foundItems = new Set<string>();
-          const allParams = await db.getAll("parameters");
+          const allParams = await getAllParameters();
 
           for (const reportParam of abnormalParams) {
             if (!reportParam.parameterId) continue;
@@ -87,7 +88,7 @@ export default function DashboardPage() {
             const paramNameLower = reportParam.parameterId.toLowerCase().trim();
             const dbParam = allParams.find(p => 
                p.name.toLowerCase().trim() === paramNameLower || 
-               p.alternativeNames?.some(alt => alt.toLowerCase().trim() === paramNameLower)
+               p.alternativeNames?.some((alt: string) => alt.toLowerCase().trim() === paramNameLower)
             );
 
             if (!dbParam) continue;
@@ -430,7 +431,7 @@ export default function DashboardPage() {
                           {r.templateId}
                         </p>
                         <p className="text-xs text-base-400 dark:text-dark-base-400">
-                          {r.reportDate} • {r.hospitalName}
+                          {formatDate(r.reportDate)} • {r.hospitalName}
                         </p>
                       </div>
                       <div className="flex items-center gap-2">

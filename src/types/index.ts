@@ -336,3 +336,7 @@ export interface FieldTrend {
   direction: "up" | "down" | "stable";
   isImproving: boolean;
 }
+
+// ─── Legacy Type Aliases (For backward compatibility with older components) ───
+export type ParameterDef = any;
+export type KnowledgeEntry = any;

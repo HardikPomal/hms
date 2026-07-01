@@ -3,6 +3,7 @@ export interface UIReportTemplate {
   label: string;
   labelGu?: string;
   format?: "numeric" | "narrative";
+  suggestions?: string[];
   fields: {
     name: string;
     nameGu?: string;
@@ -70,7 +71,7 @@ export const REPORT_TEMPLATES: UIReportTemplate[] = [
     label: "Kidney Function Test",
     labelGu: "કિડની કાર્ય પરીક્ષણ",
     fields: [
-      { name: "Creatinine", nameGu: "ક્રિએટિનાઇન", unit: "mg/dL", refMin: "0.5", refMax: "1.2" },
+      { name: "Creatinine", nameGu: "ક્રિએટિનાઇન", unit: "mg/dL", refMin: "0.60", refMax: "1.20" },
       { name: "eGFR", nameGu: "eGFR", unit: "mL/min", refMin: "90", refMax: "120" },
       { name: "Urea", nameGu: "યૂરિયા", unit: "mg/dL", refMin: "15", refMax: "45" },
       { name: "BUN", nameGu: "BUN", unit: "mg/dL", refMin: "7", refMax: "20" },
@@ -141,10 +142,18 @@ export const REPORT_TEMPLATES: UIReportTemplate[] = [
     label: "CT Scan",
     labelGu: "CT સ્કૅન",
     format: "narrative",
+    suggestions: [
+      "CT Abdomen & Pelvis Plain and Contrast",
+      "Plain and Contrast CT Scan of Abdomen and Pelvis",
+      "Plain and Contrast CT Scan of Abdomen and Pelvis - Female",
+      "CT Scan Thorax, Abdomen and Pelvis"
+    ],
     fields: [
-      { name: "Findings", nameGu: "તારણો", notes: "Radiologist findings" },
-      { name: "Impression", nameGu: "અભિપ્રાય", notes: "Overall impression" },
-      { name: "Lesion Size", nameGu: "ઘા/ગાંઠ નું કદ", unit: "mm" },
+      { name: "Clinical Profile", nameGu: "ક્લિનિકલ પ્રોફાઇલ" },
+      { name: "Technique / Protocol", nameGu: "તકનીક / પ્રોટોકોલ" },
+      { name: "Findings", nameGu: "તારણો", notes: "Radiologist findings (or Nodules/Measurements)" },
+      { name: "Impression", nameGu: "અભિપ્રાય", notes: "Overall impression or Comments" },
+      { name: "Advice", nameGu: "સલાહ", notes: "Doctor's advice/recommendations" },
     ],
   },
   {
@@ -168,6 +177,139 @@ export const REPORT_TEMPLATES: UIReportTemplate[] = [
       { name: "Grade", nameGu: "ગ્રેડ", notes: "Tumor grade if applicable" },
       { name: "Margins", nameGu: "કિનારા", notes: "Clear/Positive margins" },
     ],
+  },
+  {
+    type: "2D_ECHO",
+    label: "2D Echo",
+    labelGu: "2D ઇકો",
+    format: "narrative",
+    fields: [
+      { name: "Findings", notes: "Cardiologist findings (e.g., LV function, valves)" },
+      { name: "Measurements (mm)", notes: "LA/AO, IVSD/PWD, etc." },
+      { name: "Impression" },
+    ],
+  },
+  {
+    type: "B12",
+    label: "B-12 & Ferritin",
+    labelGu: "વિટામિન B-12 અને ફેરિટિન",
+    format: "numeric",
+    fields: [
+      { name: "Vitamin B12", nameGu: "વિટામિન B12", unit: "pg/mL", refMin: "189", refMax: "883" },
+      { name: "Ferritin", nameGu: "ફેરિટિન", unit: "ng/mL", refMin: "4.63", refMax: "204.0" },
+    ],
+  },
+  {
+    type: "BIOCHEMISTRY",
+    label: "Biochemistry",
+    labelGu: "બાયોકેમિસ્ટ્રી",
+    format: "numeric",
+    fields: [
+      { name: "Creatinine", nameGu: "ક્રિએટિનાઇન", unit: "mg/dL", refMin: "0.60", refMax: "1.20" },
+      { name: "SGPT (ALT)", nameGu: "SGPT (ALT)", unit: "U/L", refMin: "0", refMax: "34" },
+    ],
+  },
+  {
+    type: "BRCA",
+    label: "BRCA1/BRCA2 Mutation Analysis",
+    labelGu: "BRCA1/BRCA2 મ્યુટેશન",
+    format: "narrative",
+    fields: [
+      { name: "Clinical Indication" },
+      { name: "Test Result Summary" },
+      { name: "Variant Details" },
+      { name: "Interpretation & Drugs" },
+    ],
+  },
+  {
+    type: "CA125",
+    label: "CA-125",
+    labelGu: "CA-125",
+    fields: [
+      { name: "CA-125", unit: "U/mL", refMin: "0", refMax: "35" },
+    ],
+  },
+  {
+    type: "CYTOPATHOLOGY",
+    label: "Cytopathology",
+    labelGu: "સાયટોપેથોલોજી",
+    format: "narrative",
+    fields: [
+      { name: "Specimen" },
+      { name: "Microscopic Examination" },
+      { name: "Diagnosis" },
+    ],
+  },
+  {
+    type: "HEMATOLOGY",
+    label: "Hematology",
+    labelGu: "હેમેટોલોજી",
+    fields: [],
+  },
+  {
+    type: "IMMUNOLOGY",
+    label: "Immunology",
+    labelGu: "ઇમ્યુનોલોજી",
+    fields: [],
+  },
+  {
+    type: "PROTHROMBIN",
+    label: "Prothrombin",
+    labelGu: "પ્રોથ્રોમ્બિન",
+    fields: [
+      { name: "Prothrombin Time (PT)", unit: "sec" },
+      { name: "INR" },
+    ],
+  },
+  {
+    type: "SONOGRAPHY",
+    label: "Sonography",
+    labelGu: "સોનોગ્રાફી",
+    format: "narrative",
+    fields: [
+      { name: "Findings" },
+      { name: "Impression" },
+    ],
+  },
+  {
+    type: "TAPPING_REPORT",
+    label: "Tapping Report",
+    labelGu: "ટેપિંગ રિપોર્ટ",
+    format: "narrative",
+    fields: [
+      { name: "Physical Appearance" },
+      { name: "Microscopic Examination" },
+      { name: "Biochemical Analysis" },
+    ],
+  },
+  {
+    type: "URINE_EXAMINATION",
+    label: "Urine Examination",
+    labelGu: "યુરિન પરીક્ષણ",
+    fields: [
+      { name: "Color" },
+      { name: "pH" },
+      { name: "Specific Gravity" },
+      { name: "Protein" },
+      { name: "Glucose" },
+    ],
+  },
+  {
+    type: "XRAY_CHEST",
+    label: "X-RAY Chest & PA View",
+    labelGu: "એક્સ-રે છાતી",
+    format: "narrative",
+    fields: [
+      { name: "Findings" },
+      { name: "Impression" },
+    ],
+  },
+  {
+    type: "ATTACHMENT_ONLY",
+    label: "Image / Document Only",
+    labelGu: "ફક્ત છબી / દસ્તાવેજ",
+    format: "narrative",
+    fields: [],
   },
   {
     type: "CUSTOM",

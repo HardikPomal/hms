@@ -39,7 +39,7 @@ export default function EditKnowledgePage() {
         setFormState({
           nameEn: p.name,
           nameGu: p.nameGu || "",
-          akaEn: p.alternativeNames.join(", "),
+          akaEn: (p.alternativeNames || []).join(", "),
           simpleMeaning: k?.simpleMeaning || "",
           detailedDescription: k?.detailedDescription || "",
         });
