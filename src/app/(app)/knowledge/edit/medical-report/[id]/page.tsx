@@ -295,7 +295,7 @@ export default function EditMedicalReportPage() {
                 return (
                   p.name.toLowerCase().includes(search) || 
                   (p.nameGu && p.nameGu.toLowerCase().includes(search)) ||
-                  p.alternativeNames.some(a => a.toLowerCase().includes(search))
+                  (p.alternativeNames || []).some((a: string) => a.toLowerCase().includes(search))
                 );
               });
               

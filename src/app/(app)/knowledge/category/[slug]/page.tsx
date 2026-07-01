@@ -42,7 +42,7 @@ export default function CategoryListPage() {
   const filtered = entries.filter((e) => {
     return !query ||
       e.name.toLowerCase().includes(query.toLowerCase()) ||
-      e.alternativeNames.some(a => a.toLowerCase().includes(query.toLowerCase()));
+      (e.alternativeNames || []).some((a: string) => a.toLowerCase().includes(query.toLowerCase()));
   });
 
   const getAddLink = () => {

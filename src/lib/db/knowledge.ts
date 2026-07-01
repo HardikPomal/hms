@@ -31,7 +31,7 @@ export async function searchEntities(query: string): Promise<MedicalEntity[]> {
   const q = query.toLowerCase();
   return all.filter((e) =>
     e.name.toLowerCase().includes(q) ||
-    (e.alternativeNames && e.alternativeNames.some(a => a.toLowerCase().includes(q))) ||
+    (e.alternativeNames && e.alternativeNames.some((a: string) => a.toLowerCase().includes(q))) ||
     (e.tags && e.tags.some(t => t.toLowerCase().includes(q))) ||
     (e.category && e.category.toLowerCase().includes(q))
   );
