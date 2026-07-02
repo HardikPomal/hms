@@ -2,17 +2,43 @@
 
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
-import { Plus, ChevronRight, FileText, CheckCircle2, X, Activity, Pill, Syringe, BookOpen } from "lucide-react";
+import {
+  Plus,
+  ChevronRight,
+  FileText,
+  CheckCircle2,
+  X,
+  Activity,
+  Pill,
+  Syringe,
+  BookOpen,
+} from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getAllReports } from "@/lib/db/reports";
 import { getNextChemoAppointment } from "@/lib/db/chemo";
 import { generateTodaySchedule } from "@/lib/db/medicines";
 import { getSettings } from "@/lib/db/settings";
-import { getKnowledgeByParameterId, getRelationshipsForSource, getRelationshipsForTarget, getAllParameters } from "@/lib/db/knowledge";
+import {
+  getKnowledgeByParameterId,
+  getRelationshipsForSource,
+  getRelationshipsForTarget,
+  getAllParameters,
+} from "@/lib/db/knowledge";
 import { getDB } from "@/lib/db/db";
-import { getActionPlanState, saveActionPlanState, markActionPlanItem } from "@/lib/db/actionPlan";
-import type { MedicalReport, ChemoSession, MedicineLog, AppSettings, KnowledgeEntry, ParameterDef } from "@/types";
+import {
+  getActionPlanState,
+  saveActionPlanState,
+  markActionPlanItem,
+} from "@/lib/db/actionPlan";
+import type {
+  MedicalReport,
+  ChemoSession,
+  MedicineLog,
+  AppSettings,
+  KnowledgeEntry,
+  ParameterDef,
+} from "@/types";
 import { format, isToday, isTomorrow } from "date-fns";
 import { formatDate } from "@/lib/format";
 
@@ -25,12 +51,14 @@ export default function DashboardPage() {
   const [greeting, setGreeting] = useState("Good Morning");
   const [loading, setLoading] = useState(true);
 
-  const [actionItems, setActionItems] = useState<{
-    param: ParameterDef;
-    kb: KnowledgeEntry;
-    status: "pending" | "taken" | "declined";
-  }[]>([]);
-  
+  const [actionItems, setActionItems] = useState<
+    {
+      param: ParameterDef;
+      kb: KnowledgeEntry;
+      status: "pending" | "taken" | "declined";
+    }[]
+  >([]);
+
   const [selectedActionItem, setSelectedActionItem] = useState<{
     param: ParameterDef;
     kb: KnowledgeEntry;
@@ -44,12 +72,13 @@ export default function DashboardPage() {
 
     async function loadDashboard() {
       const today = new Date().toISOString().split("T")[0];
-      const [sortedReports, nextChemoData, medsData, settingsData] = await Promise.all([
-        getAllReports(),
-        getNextChemoAppointment(),
-        generateTodaySchedule(today),
-        getSettings(),
-      ]);
+      const [sortedReports, nextChemoData, medsData, settingsData] =
+        await Promise.all([
+          getAllReports(),
+          getNextChemoAppointment(),
+          generateTodaySchedule(today),
+          getSettings(),
+        ]);
       setReports(sortedReports.slice(0, 3));
       setNextChemo(nextChemoData ?? null);
       setTodayMeds(medsData);
@@ -58,7 +87,7 @@ export default function DashboardPage() {
       if (sortedReports.length > 0) {
         const latestReport = sortedReports[0];
         const abnormalParams = (latestReport.numericFields || []).filter(
-          (f) => f.status === "high" || f.status === "low"
+          (f) => f.status === "high" || f.status === "low",
         );
 
         let actionPlan = await getActionPlanState();
@@ -76,9 +105,9 @@ export default function DashboardPage() {
             latestReportId: latestReport.id,
             items: [],
             trackingDate: today,
-            version: PLAN_VERSION
+            version: PLAN_VERSION,
           };
-          
+
           const foundItems = new Set<string>();
           const allParams = await getAllParameters();
 
@@ -86,23 +115,38 @@ export default function DashboardPage() {
             if (!reportParam.parameterId) continue;
 
             const paramNameLower = reportParam.parameterId.toLowerCase().trim();
-            const dbParam = allParams.find(p => 
-               p.name.toLowerCase().trim() === paramNameLower || 
-               p.alternativeNames?.some((alt: string) => alt.toLowerCase().trim() === paramNameLower)
+            const dbParam = allParams.find(
+              (p) =>
+                p.name.toLowerCase().trim() === paramNameLower ||
+                p.alternativeNames?.some(
+                  (alt: string) => alt.toLowerCase().trim() === paramNameLower,
+                ),
             );
 
             if (!dbParam) continue;
 
             // What treats/improves this parameter?
-            const directTreatments = await getRelationshipsForTarget(dbParam.id);
+            const directTreatments = await getRelationshipsForTarget(
+              dbParam.id,
+            );
             for (const treatRel of directTreatments) {
-              if (["food", "exercise", "treatment", "medicine", "nutrition"].includes(treatRel.sourceType) && (treatRel.relationType === "improves" || treatRel.relationType === "treats")) {
+              if (
+                [
+                  "food",
+                  "exercise",
+                  "treatment",
+                  "medicine",
+                  "nutrition",
+                ].includes(treatRel.sourceType) &&
+                (treatRel.relationType === "improves" ||
+                  treatRel.relationType === "treats")
+              ) {
                 if (!foundItems.has(treatRel.sourceId)) {
                   foundItems.add(treatRel.sourceId);
                   newPlan.items.push({
                     itemId: treatRel.sourceId,
                     category: treatRel.sourceType,
-                    status: "pending"
+                    status: "pending",
                   });
                 }
               }
@@ -110,19 +154,33 @@ export default function DashboardPage() {
 
             // What causes this abnormal parameter? (e.g. Iron Deficiency)
             const causesRels = await getRelationshipsForSource(dbParam.id);
-            for (const causeRel of causesRels.filter(r => r.relationType === "causes")) {
-              const indirectTreatments = await getRelationshipsForTarget(causeRel.targetId);
+            for (const causeRel of causesRels.filter(
+              (r) => r.relationType === "causes",
+            )) {
+              const indirectTreatments = await getRelationshipsForTarget(
+                causeRel.targetId,
+              );
               for (const treatRel of indirectTreatments) {
-                 if (["food", "exercise", "treatment", "medicine", "nutrition"].includes(treatRel.sourceType) && (treatRel.relationType === "improves" || treatRel.relationType === "treats")) {
-                    if (!foundItems.has(treatRel.sourceId)) {
-                      foundItems.add(treatRel.sourceId);
-                      newPlan.items.push({
-                        itemId: treatRel.sourceId,
-                        category: treatRel.sourceType,
-                        status: "pending"
-                      });
-                    }
-                 }
+                if (
+                  [
+                    "food",
+                    "exercise",
+                    "treatment",
+                    "medicine",
+                    "nutrition",
+                  ].includes(treatRel.sourceType) &&
+                  (treatRel.relationType === "improves" ||
+                    treatRel.relationType === "treats")
+                ) {
+                  if (!foundItems.has(treatRel.sourceId)) {
+                    foundItems.add(treatRel.sourceId);
+                    newPlan.items.push({
+                      itemId: treatRel.sourceId,
+                      category: treatRel.sourceType,
+                      status: "pending",
+                    });
+                  }
+                }
               }
             }
           }
@@ -134,10 +192,11 @@ export default function DashboardPage() {
         const hydratedItems = [];
         for (const itemStatus of actionPlan!.items) {
           let param = await db.get("parameters", itemStatus.itemId);
-          
+
           if (!param) {
             const nameParts = itemStatus.itemId.split("_").slice(2);
-            const name = nameParts.length > 0 ? nameParts.join(" ") : itemStatus.itemId;
+            const name =
+              nameParts.length > 0 ? nameParts.join(" ") : itemStatus.itemId;
             param = {
               id: itemStatus.itemId,
               name: name.charAt(0).toUpperCase() + name.slice(1),
@@ -154,10 +213,11 @@ export default function DashboardPage() {
           let kb = await getKnowledgeByParameterId(itemStatus.itemId);
           if (!kb) {
             kb = {
-              id: 'kb_' + itemStatus.itemId,
+              id: "kb_" + itemStatus.itemId,
               parameterId: itemStatus.itemId,
-              detailedDescription: "Extracted automatically from AI knowledge graph.",
-              simpleMeaning: 'Recommended ' + itemStatus.category,
+              detailedDescription:
+                "Extracted automatically from AI knowledge graph.",
+              simpleMeaning: "Recommended " + itemStatus.category,
               whyImportant: "Helps improve abnormal lab results.",
               normalRangeText: "",
               tags: [],
@@ -167,7 +227,7 @@ export default function DashboardPage() {
               references: [],
               versionHistory: [],
               createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString()
+              updatedAt: new Date().toISOString(),
             } as KnowledgeEntry;
           }
 
@@ -175,15 +235,20 @@ export default function DashboardPage() {
             hydratedItems.push({
               param,
               kb,
-              status: itemStatus.status
+              status: itemStatus.status,
             });
           }
         }
         setActionItems(
           hydratedItems.filter(
-            (item): item is { param: ParameterDef; kb: KnowledgeEntry; status: "pending" | "taken" | "declined" } =>
-              item.kb !== undefined && item.param !== undefined
-          )
+            (
+              item,
+            ): item is {
+              param: ParameterDef;
+              kb: KnowledgeEntry;
+              status: "pending" | "taken" | "declined";
+            } => item.kb !== undefined && item.param !== undefined,
+          ),
         );
       }
 
@@ -192,15 +257,20 @@ export default function DashboardPage() {
     loadDashboard();
   }, []);
 
-  const handleItemAction = async (itemId: string, status: "pending" | "taken" | "declined") => {
+  const handleItemAction = async (
+    itemId: string,
+    status: "pending" | "taken" | "declined",
+  ) => {
     await markActionPlanItem(itemId, status);
-    setActionItems(prev => prev.map(item => 
-      item.param.id === itemId ? { ...item, status } : item
-    ));
+    setActionItems((prev) =>
+      prev.map((item) =>
+        item.param.id === itemId ? { ...item, status } : item,
+      ),
+    );
     setSelectedActionItem(null);
   };
 
-  const pendingItems = actionItems.filter(f => f.status === "pending");
+  const pendingItems = actionItems.filter((f) => f.status === "pending");
   const pendingMeds = todayMeds.filter((m) => m.status === "pending");
   const takenMeds = todayMeds.filter((m) => m.status === "taken");
 
@@ -231,17 +301,19 @@ export default function DashboardPage() {
               {format(new Date(), "EEEE, d MMMM yyyy")}
             </p>
           </div>
-          
+
           {/* Daily Action Plan */}
           <div className="bg-linear-to-br from-primary-600 to-primary-800 rounded-3xl p-5 text-white shadow-xl shadow-primary-500/20 animate-fade-in relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12 blur-xl" />
-            
+
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h2 className="text-xl font-bold">Daily Action Plan</h2>
-                  <p className="text-primary-100 text-sm mt-0.5">Based on latest report</p>
+                  <p className="text-primary-100 text-sm mt-0.5">
+                    Based on latest report
+                  </p>
                 </div>
                 <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
                   <Activity size={24} className="text-white" />
@@ -252,9 +324,12 @@ export default function DashboardPage() {
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 flex items-center gap-3">
                   <Activity size={24} className="text-primary-200" />
                   <div>
-                    <p className="font-semibold text-white">No actions generated yet</p>
+                    <p className="font-semibold text-white">
+                      No actions generated yet
+                    </p>
                     <p className="text-xs text-primary-200">
-                      Add and link foods, medicines, or treatments to your Brain to see suggestions here!
+                      Add and link foods, medicines, or treatments to your Brain
+                      to see suggestions here!
                     </p>
                   </div>
                 </div>
@@ -262,49 +337,63 @@ export default function DashboardPage() {
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 flex items-center gap-3">
                   <CheckCircle2 size={24} className="text-success-300" />
                   <div>
-                    <p className="font-semibold text-success-50">All caught up!</p>
-                    <p className="text-xs text-primary-200">You've completed all actions for today.</p>
+                    <p className="font-semibold text-success-50">
+                      All caught up!
+                    </p>
+                    <p className="text-xs text-primary-200">
+                      You've completed all actions for today.
+                    </p>
                   </div>
                 </div>
               ) : (
                 <div className="space-y-3">
-                    {pendingItems.map((item) => (
-                      <button
-                        key={item.param.id}
-                        onClick={() => setSelectedActionItem(item)}
-                        className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl p-3 flex items-center justify-between transition-colors text-left"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg">
-                            {["food", "nutrition"].includes(item.param.category) ? "🍲" : 
-                             item.param.category === "exercise" ? "🧘" : 
-                             item.param.category === "medicine" ? "💊" : "💡"}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-white">
-                              {language === "gu" && item.param.nameGu
-                                ? item.param.nameGu
-                                : item.param.name}
-                            </p>
-                            <p className="text-xs text-primary-200">
-                               Recommended {item.param.category}
-                            </p>
-                          </div>
+                  {pendingItems.map((item) => (
+                    <button
+                      key={item.param.id}
+                      onClick={() => setSelectedActionItem(item)}
+                      className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl p-3 flex items-center justify-between transition-colors text-left"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg">
+                          {["food", "nutrition"].includes(item.param.category)
+                            ? "🍲"
+                            : item.param.category === "exercise"
+                              ? "🧘"
+                              : item.param.category === "medicine"
+                                ? "💊"
+                                : "💡"}
                         </div>
-                        <ChevronRight size={18} className="text-white/60" />
-                      </button>
-                    ))}
-                  </div>
+                        <div>
+                          <p className="font-semibold text-white">
+                            {language === "gu" && item.param.nameGu
+                              ? item.param.nameGu
+                              : item.param.name}
+                          </p>
+                          <p className="text-xs text-primary-200">
+                            Recommended {item.param.category}
+                          </p>
+                        </div>
+                      </div>
+                      <ChevronRight size={18} className="text-white/60" />
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
           </div>
 
           {/* Today's Medicines */}
-          <div className="card-elevated animate-slide-up" style={{ animationDelay: "50ms" }}>
+          <div
+            className="card-elevated animate-slide-up"
+            style={{ animationDelay: "50ms" }}
+          >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-primary-100 dark:bg-dark-primary-100 rounded-xl flex items-center justify-center">
-                  <Pill size={16} className="text-primary-600 dark:text-dark-primary-600" />
+                  <Pill
+                    size={16}
+                    className="text-primary-600 dark:text-dark-primary-600"
+                  />
                 </div>
                 <h2 className="font-semibold text-base-900 dark:text-dark-base-900">
                   {t("dashboard.todayMeds")}
@@ -327,7 +416,9 @@ export default function DashboardPage() {
                   <div className="flex-1 bg-base-100 dark:bg-dark-base-200 rounded-full h-2">
                     <div
                       className="bg-success-500 h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${todayMeds.length > 0 ? (takenMeds.length / todayMeds.length) * 100 : 0}%` }}
+                      style={{
+                        width: `${todayMeds.length > 0 ? (takenMeds.length / todayMeds.length) * 100 : 0}%`,
+                      }}
                     />
                   </div>
                   <span className="text-xs text-base-500 dark:text-dark-base-500 whitespace-nowrap">
@@ -359,10 +450,16 @@ export default function DashboardPage() {
           </div>
 
           {/* Next Chemo */}
-          <div className="card-elevated animate-slide-up" style={{ animationDelay: "100ms" }}>
+          <div
+            className="card-elevated animate-slide-up"
+            style={{ animationDelay: "100ms" }}
+          >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 bg-secondary-100 dark:bg-dark-secondary-100 rounded-xl flex items-center justify-center">
-                <Syringe size={16} className="text-secondary-600 dark:text-dark-secondary-600" />
+                <Syringe
+                  size={16}
+                  className="text-secondary-600 dark:text-dark-secondary-600"
+                />
               </div>
               <h2 className="font-semibold text-base-900 dark:text-dark-base-900">
                 {t("dashboard.nextChemo")}
@@ -387,7 +484,10 @@ export default function DashboardPage() {
                 <p className="text-sm text-base-400 dark:text-dark-base-400">
                   {t("dashboard.noChemo")}
                 </p>
-                <Link href="/chemo/add" className="text-xs text-primary-500 font-medium">
+                <Link
+                  href="/chemo/add"
+                  className="text-xs text-primary-500 font-medium"
+                >
                   + {t("chemo.addSession")}
                 </Link>
               </div>
@@ -395,17 +495,26 @@ export default function DashboardPage() {
           </div>
 
           {/* Recent Reports */}
-          <div className="card-elevated animate-slide-up" style={{ animationDelay: "150ms" }}>
+          <div
+            className="card-elevated animate-slide-up"
+            style={{ animationDelay: "150ms" }}
+          >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-success-100 dark:bg-dark-success-100 rounded-xl flex items-center justify-center">
-                  <FileText size={16} className="text-success-600 dark:text-dark-success-600" />
+                  <FileText
+                    size={16}
+                    className="text-success-600 dark:text-dark-success-600"
+                  />
                 </div>
                 <h2 className="font-semibold text-base-900 dark:text-dark-base-900">
                   {t("dashboard.recentReports")}
                 </h2>
               </div>
-              <Link href="/reports" className="text-xs text-primary-500 dark:text-dark-primary-500 font-medium hover:underline">
+              <Link
+                href="/reports"
+                className="text-xs text-primary-500 dark:text-dark-primary-500 font-medium hover:underline"
+              >
                 {t("dashboard.viewAll")}
               </Link>
             </div>
@@ -437,7 +546,8 @@ export default function DashboardPage() {
                       <div className="flex items-center gap-2">
                         {abnormal > 0 && (
                           <span className="text-xs badge-high px-2 py-0.5 rounded-full">
-                            {abnormal} {language === "gu" ? "અસામાન્ય" : "abnormal"}
+                            {abnormal}{" "}
+                            {language === "gu" ? "અસામાન્ય" : "abnormal"}
                           </span>
                         )}
                         <ChevronRight size={16} className="text-base-400" />
@@ -449,7 +559,10 @@ export default function DashboardPage() {
             )}
           </div>
 
-          <div className="grid grid-cols-2 gap-3 animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <div
+            className="grid grid-cols-2 gap-3 animate-slide-up"
+            style={{ animationDelay: "200ms" }}
+          >
             <Link
               href="/reports/add"
               className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-primary-50 dark:bg-dark-primary-100 border border-primary-200 dark:border-dark-primary-200 hover:bg-primary-100 dark:hover:bg-dark-primary-200 transition-colors"
@@ -483,9 +596,15 @@ export default function DashboardPage() {
             <div className="p-4 border-b border-base-100 dark:border-dark-base-200 flex items-start justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-primary-100 dark:bg-dark-primary-200 rounded-2xl flex items-center justify-center text-3xl shrink-0">
-                  {["food", "nutrition"].includes(selectedActionItem.param.category) ? "🍲" : 
-                   selectedActionItem.param.category === "exercise" ? "🧘" : 
-                   selectedActionItem.param.category === "medicine" ? "💊" : "💡"}
+                  {["food", "nutrition"].includes(
+                    selectedActionItem.param.category,
+                  )
+                    ? "🍲"
+                    : selectedActionItem.param.category === "exercise"
+                      ? "🧘"
+                      : selectedActionItem.param.category === "medicine"
+                        ? "💊"
+                        : "💡"}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-base-900 dark:text-dark-base-900">
@@ -528,13 +647,17 @@ export default function DashboardPage() {
 
             <div className="p-4 border-t border-base-100 dark:border-dark-base-200 flex gap-3">
               <button
-                onClick={() => handleItemAction(selectedActionItem.param.id, "declined")}
+                onClick={() =>
+                  handleItemAction(selectedActionItem.param.id, "declined")
+                }
                 className="flex-1 py-3 px-4 rounded-xl font-semibold text-danger-600 bg-danger-50 dark:bg-dark-danger-100 hover:bg-danger-100 transition-colors"
               >
                 {language === "gu" ? "મારે નથી લેવું" : "Decline"}
               </button>
               <button
-                onClick={() => handleItemAction(selectedActionItem.param.id, "taken")}
+                onClick={() =>
+                  handleItemAction(selectedActionItem.param.id, "taken")
+                }
                 className="flex-1 py-3 px-4 rounded-xl font-semibold text-white bg-success-500 hover:bg-success-600 transition-colors shadow-sm"
               >
                 {language === "gu" ? "મેં લઈ લીધું છે" : "Done"}

@@ -203,50 +203,58 @@ export default function EditLabParameterPage() {
       <div className="space-y-6 pb-24 max-w-2xl mx-auto w-full px-4 pt-4">
         
         {/* Core Info */}
-        <div className="card-elevated space-y-4 border-l-4 border-l-primary-500">
-          <h3 className="font-bold text-primary-700 flex items-center gap-2">Core Information</h3>
+        <div className="card-elevated space-y-4">
+          <h3 className="font-bold text-primary-700 flex items-center gap-2">
+            Core Information
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><label className={labelCls}>Name (English) *</label><input value={formState.nameEn} onChange={e => handleChange("nameEn", e.target.value)} className={inputCls} /></div>
             <div><label className={labelCls}>Name (Gujarati)</label><input value={formState.nameGu} onChange={e => handleChange("nameGu", e.target.value)} className={inputCls} /></div>
             <div><label className={labelCls}>Also Known As (English)</label><input value={formState.akaEn} onChange={e => handleChange("akaEn", e.target.value)} className={inputCls} /></div>
             <div><label className={labelCls}>Also Known As (Gujarati)</label><input value={formState.akaGu} onChange={e => handleChange("akaGu", e.target.value)} className={inputCls} /></div>
-          </div>
-        </div>
-
-        {/* Clinical Info */}
-        <div className="card-elevated space-y-4 border-l-4 border-l-secondary-500">
-          <h3 className="font-bold text-secondary-700 flex items-center gap-2">Clinical Details</h3>
-          <div className="grid grid-cols-1 gap-4">
-            <div><label className={labelCls}>Unit of Measurement</label><input value={formState.unit} onChange={e => handleChange("unit", e.target.value)} placeholder="e.g. g/dL, %, /c.mm" className={inputCls} /></div>
-            <div><label className={labelCls}>Normal Range</label><input value={formState.normalRange} onChange={e => handleChange("normalRange", e.target.value)} placeholder="e.g. 12.0 - 15.5 or < 5.0" className={inputCls} /></div>
-            <div><label className={labelCls}>Why is this important? (En)</label><textarea value={formState.whyImportantEn} onChange={e => handleChange("whyImportantEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
-            <div><label className={labelCls}>Why is this important? (Gu)</label><textarea value={formState.whyImportantGu} onChange={e => handleChange("whyImportantGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Unit</label><input value={formState.unit} onChange={e => handleChange("unit", e.target.value)} placeholder="e.g. g/dL" className={inputCls} /></div>
+            <div><label className={labelCls}>Normal Range</label><input value={formState.normalRange} onChange={e => handleChange("normalRange", e.target.value)} placeholder="e.g. 13.5 - 17.5" className={inputCls} /></div>
           </div>
         </div>
 
         {/* Details */}
         <div className="card-elevated space-y-4">
-          <h3 className="font-bold text-primary-700 flex items-center gap-2">Parameter Description</h3>
+          <h3 className="font-bold text-primary-700 flex items-center gap-2">
+            Details
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><label className={labelCls}>Description (English)</label><textarea value={formState.descEn} onChange={e => handleChange("descEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
             <div><label className={labelCls}>Description (Gujarati)</label><textarea value={formState.descGu} onChange={e => handleChange("descGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Why It Is Important (English)</label><textarea value={formState.whyImportantEn} onChange={e => handleChange("whyImportantEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Why It Is Important (Gujarati)</label><textarea value={formState.whyImportantGu} onChange={e => handleChange("whyImportantGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+          </div>
+        </div>
+
+        {/* Indications */}
+        <div className="card-elevated space-y-4">
+          <h3 className="font-bold text-primary-700 flex items-center gap-2">
+            Indications & Causes
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><label className={labelCls}>High Value May Indicate (En)</label><textarea value={formState.highIndicateEn} onChange={e => handleChange("highIndicateEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
             <div><label className={labelCls}>High Value May Indicate (Gu)</label><textarea value={formState.highIndicateGu} onChange={e => handleChange("highIndicateGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
             <div><label className={labelCls}>Low Value May Indicate (En)</label><textarea value={formState.lowIndicateEn} onChange={e => handleChange("lowIndicateEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
             <div><label className={labelCls}>Low Value May Indicate (Gu)</label><textarea value={formState.lowIndicateGu} onChange={e => handleChange("lowIndicateGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
-            <div><label className={labelCls}>Common Causes Of Abnormal Results (En)</label><textarea value={formState.causesEn} onChange={e => handleChange("causesEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
-            <div><label className={labelCls}>Common Causes Of Abnormal Results (Gu)</label><textarea value={formState.causesGu} onChange={e => handleChange("causesGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
-            <div><label className={labelCls}>Related Diseases (En)</label><textarea value={formState.relatedDiseasesEn} onChange={e => handleChange("relatedDiseasesEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
-            <div><label className={labelCls}>Related Diseases (Gu)</label><textarea value={formState.relatedDiseasesGu} onChange={e => handleChange("relatedDiseasesGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Common Causes (En)</label><textarea value={formState.causesEn} onChange={e => handleChange("causesEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Common Causes (Gu)</label><textarea value={formState.causesGu} onChange={e => handleChange("causesGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
           </div>
         </div>
 
-        {/* Relationships */}
+        {/* Relations */}
         <div className="card-elevated space-y-4">
-          <h3 className="font-bold text-primary-700 flex items-center gap-2">Relationships</h3>
-          <div className="grid grid-cols-1 gap-4">
-            <div><label className={labelCls}>Related Reports (Comma separated)</label><input value={formState.relatedReports} onChange={e => handleChange("relatedReports", e.target.value)} placeholder="e.g. Complete Blood Count (CBC)" className={inputCls} /></div>
-            <div><label className={labelCls}>Related Parameters (Comma separated)</label><input value={formState.relatedParameters} onChange={e => handleChange("relatedParameters", e.target.value)} placeholder="e.g. RBC Count, Platelet Count" className={inputCls} /></div>
+          <h3 className="font-bold text-primary-700 flex items-center gap-2">
+            Relationships
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div><label className={labelCls}>Related Reports</label><textarea value={formState.relatedReports} onChange={e => handleChange("relatedReports", e.target.value)} placeholder="e.g. - CBC\n- Lipid Profile" className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Related Parameters</label><textarea value={formState.relatedParameters} onChange={e => handleChange("relatedParameters", e.target.value)} placeholder="e.g. - RBC\n- Hemoglobin" className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Related Diseases (English)</label><textarea value={formState.relatedDiseasesEn} onChange={e => handleChange("relatedDiseasesEn", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
+            <div><label className={labelCls}>Related Diseases (Gujarati)</label><textarea value={formState.relatedDiseasesGu} onChange={e => handleChange("relatedDiseasesGu", e.target.value)} className={`${inputCls} min-h-[80px]`} /></div>
           </div>
         </div>
 
