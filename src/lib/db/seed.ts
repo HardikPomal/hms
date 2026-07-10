@@ -1,9 +1,9 @@
-import { addParameter, addKnowledgeEntry, getAllParameters, deleteParameter } from "./knowledge";
 import { getDB } from "./db";
+import { migrateFoodCategories, getAllEntities, deleteEntity } from "./knowledge";
 
 export const seedNutritionData = async () => {
   try {
-    const existingParams = await getAllParameters();
+    const existingParams = await getAllEntities();
     
     // --- 1. Deduplication Logic ---
     const nutritionParams = existingParams.filter(p => p.category === "nutrition" || p.category === "food");
@@ -23,18 +23,16 @@ export const seedNutritionData = async () => {
       console.log(`Found ${toDelete.length} duplicate nutrition entries. Deleting...`);
       const db = await getDB();
       for (const id of toDelete) {
-        await deleteParameter(id);
-        // Delete associated knowledge base entries
-        const kbs = await db.getAllFromIndex("knowledge_base", "by-parameter", id);
-        for (const kb of kbs) {
-          await db.delete("knowledge_base", kb.id);
-        }
+        await deleteEntity(id);
       }
       console.log("Deduplication complete.");
     }
     
     // --- 2. Seeding Logic Removed ---
     // (User opted to rely entirely on manual DB entries for Nutrition)
+    
+    // --- 3. Fix Categories for legacy entries ---
+    await migrateFoodCategories();
   } catch (error) {
     console.error("Failed to seed nutrition data:", error);
   }

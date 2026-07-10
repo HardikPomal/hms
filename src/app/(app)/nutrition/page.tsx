@@ -46,8 +46,7 @@ export default function NutritionPage() {
       try {
         await seedNutritionData();
         const foodEntities = await getEntitiesByType("food");
-        const dietEntities = await getEntitiesByType("diet");
-        setFoods([...foodEntities, ...dietEntities]);
+        setFoods(foodEntities);
       } catch (error) {
         console.error(error);
       } finally {
@@ -103,31 +102,14 @@ export default function NutritionPage() {
           </div>
         ) : (
           filtered.map((item) => {
-            let englishPrep = item.detailedDescription || "";
-            let gujPrep = item.detailedDescription || "";
-            let englishBen = item.simpleMeaning || "";
-            let gujBen = item.simpleMeaning || "";
-            let englishTime = item.whyImportant || "";
-            let gujTime = item.whyImportant || "";
-
-            // Try to extract Guj specific from the new format if it exists
-            const gujPrepMatch = englishPrep.match(/Gujarati:\s*(.*)/i);
-            if (gujPrepMatch) {
-              gujPrep = gujPrepMatch[1];
-              englishPrep = englishPrep.split(/Gujarati:/i)[0].trim();
-            }
+            const englishPrep = item.detailedDescription || "";
+            const gujPrep = item.detailedDescriptionGu || englishPrep;
             
-            const benGujMatch = englishPrep.match(/Benefits \(Gujarati\):\s*(.*)/i);
-            if (benGujMatch) {
-              gujBen = benGujMatch[1];
-            }
-
-            // Time is saved as: Best time to eat: Morning (સવારે)
-            const timeMatch = englishTime.match(/(.*?)\((.*?)\)/);
-            if (timeMatch) {
-              englishTime = timeMatch[1].trim();
-              gujTime = timeMatch[2].trim();
-            }
+            const englishBen = item.simpleMeaning || "";
+            const gujBen = item.simpleMeaningGu || englishBen;
+            
+            const englishTime = item.metadata?.bestTimeToEat || "";
+            const gujTime = item.metadata?.bestTimeToEatGu || englishTime;
             
             const engTitle = item.name;
             const gujTitle = item.nameGu || engTitle;

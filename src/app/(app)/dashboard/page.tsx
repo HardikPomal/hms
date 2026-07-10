@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
 import {
   Plus,
@@ -12,6 +12,8 @@ import {
   Pill,
   Syringe,
   BookOpen,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -31,6 +33,9 @@ import {
   saveActionPlanState,
   markActionPlanItem,
 } from "@/lib/db/actionPlan";
+import { seedComprehensiveKnowledge } from "@/lib/db/seedData/seeder";
+import { seedAllPendingLabParameters } from "@/lib/db/seedLabParameters";
+import RichDescription from "@/components/ui/RichDescription";
 import type {
   MedicalReport,
   ChemoSession,
@@ -64,6 +69,245 @@ export default function DashboardPage() {
     kb: KnowledgeEntry;
   } | null>(null);
 
+  // "nutrition" | "food" | null — which group card is open
+  const [activeGroup, setActiveGroup] = useState<"nutrition" | "food" | null>(
+    null,
+  );
+
+  const [speaking, setSpeaking] = useState(false);
+
+  // Stop speech when the item modal is CLOSED (item becomes null)
+  const prevSelectedItemRef = React.useRef(selectedActionItem);
+  useEffect(() => {
+    const wasOpen = prevSelectedItemRef.current !== null;
+    const isNowClosed = selectedActionItem === null;
+    if (wasOpen && isNowClosed) {
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      // Also clear the keepalive interval
+      if (keepaliveRef.current !== null) {
+        clearInterval(keepaliveRef.current);
+        keepaliveRef.current = null;
+      }
+      setSpeaking(false);
+    }
+    prevSelectedItemRef.current = selectedActionItem;
+  }, [selectedActionItem]);
+
+  // Cleanup speech on component unmount
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      if (keepaliveRef.current !== null) {
+        clearInterval(keepaliveRef.current);
+        keepaliveRef.current = null;
+      }
+    };
+  }, []);
+
+  const cleanTextForSpeech = (raw: string, lang: string): string => {
+    const tag = lang === "gu" ? "gu" : "en";
+    const match = raw.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`, "i"));
+    let text = match ? match[1].trim() : raw;
+
+    if (!match) {
+      const fallbackMatch = raw.match(/<en>([\s\S]*?)<\/en>/i);
+      text = fallbackMatch ? fallbackMatch[1].trim() : raw;
+    }
+
+    text = text.replace(/<[^>]+>/g, "");
+
+    return text
+      .split("\n")
+      .map((line) => {
+        let l = line.trim();
+        if (l.startsWith("### ")) l = l.replace(/^###\s+/, "") + ". ";
+        else if (l.startsWith("## ")) l = l.replace(/^##\s+/, "") + ". ";
+        else if (l.startsWith("- ")) l = l.replace(/^-\s+/, "");
+        return l;
+      })
+      .filter((l) => l.length > 0)
+      .join(" ");
+  };
+
+  const getSpeakText = () => {
+    if (!selectedActionItem) return "";
+
+    const title =
+      language === "gu" && selectedActionItem.param.nameGu
+        ? selectedActionItem.param.nameGu
+        : selectedActionItem.param.name;
+
+    const rawDesc = selectedActionItem.kb.detailedDescription;
+    const descCleaned = cleanTextForSpeech(rawDesc, language);
+
+    const rawWhy = selectedActionItem.kb.whyImportant;
+    const whyCleaned = rawWhy ? cleanTextForSpeech(rawWhy, language) : "";
+
+    const simpleMeaning =
+      language === "gu" && selectedActionItem.kb.simpleMeaningGu
+        ? selectedActionItem.kb.simpleMeaningGu
+        : selectedActionItem.kb.simpleMeaning;
+
+    let speakText = title + ". ";
+    if (simpleMeaning) speakText += simpleMeaning + ". ";
+    speakText += descCleaned;
+    if (whyCleaned) {
+      speakText +=
+        (language === "gu" ? " શા માટે મહત્વપૂર્ણ. " : " Why Important. ") +
+        whyCleaned;
+    }
+
+    return speakText;
+  };
+
+  const getVoicesAsync = (): Promise<SpeechSynthesisVoice[]> => {
+    return new Promise((resolve) => {
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        resolve(voices);
+        return;
+      }
+      const onVoicesChanged = () => {
+        window.speechSynthesis.removeEventListener(
+          "voiceschanged",
+          onVoicesChanged,
+        );
+        resolve(window.speechSynthesis.getVoices());
+      };
+      window.speechSynthesis.addEventListener("voiceschanged", onVoicesChanged);
+      setTimeout(() => {
+        window.speechSynthesis.removeEventListener(
+          "voiceschanged",
+          onVoicesChanged,
+        );
+        resolve(window.speechSynthesis.getVoices());
+      }, 1000);
+    });
+  };
+
+  // Splits text into short chunks at sentence/comma boundaries to avoid
+  // the browser TTS freeze bug that occurs with long non-Latin strings.
+  const chunkText = (text: string, maxLen = 150): string[] => {
+    const chunks: string[] = [];
+    // Split on sentence-ending punctuation (Gujarati । and Latin . ! ?)
+    const sentences = text.split(/(?<=[.!?।])\s+/);
+    let current = "";
+    for (const sentence of sentences) {
+      if ((current + " " + sentence).trim().length <= maxLen) {
+        current = (current + " " + sentence).trim();
+      } else {
+        if (current) chunks.push(current);
+        // If a single sentence is still too long, hard-split it
+        if (sentence.length > maxLen) {
+          const words = sentence.split(" ");
+          let sub = "";
+          for (const w of words) {
+            if ((sub + " " + w).trim().length <= maxLen) {
+              sub = (sub + " " + w).trim();
+            } else {
+              if (sub) chunks.push(sub);
+              sub = w;
+            }
+          }
+          current = sub;
+        } else {
+          current = sentence;
+        }
+      }
+    }
+    if (current) chunks.push(current);
+    return chunks.filter((c) => c.trim().length > 0);
+  };
+
+  const keepaliveRef = React.useRef<ReturnType<typeof setInterval> | null>(
+    null,
+  );
+
+  const stopKeepalive = () => {
+    if (keepaliveRef.current !== null) {
+      clearInterval(keepaliveRef.current);
+      keepaliveRef.current = null;
+    }
+  };
+
+  const handleSpeak = async (textToSpeak: string) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      stopKeepalive();
+      setSpeaking(false);
+      return;
+    }
+
+    if (!textToSpeak.trim()) return;
+
+    const voices = await getVoicesAsync();
+    const voiceLang = language === "gu" ? "gu" : "en";
+    const langTag = language === "gu" ? "gu-IN" : "en-US";
+    const matchingVoice = voices.find((v) =>
+      v.lang.toLowerCase().startsWith(voiceLang),
+    );
+
+    // Gujarati voice not installed on this device — tell the user
+    if (language === "gu" && !matchingVoice) {
+      alert(
+        "તમારા ઉપકરણ પર ગુજરાતી અવાજ ઇન્સ્ટોલ નથી.\nDevice Settings > Language & Input > Text-to-Speech માં Google TTS સક્ષમ કરો.",
+      );
+      return;
+    }
+
+    const chunks = chunkText(textToSpeak);
+    if (chunks.length === 0) return;
+
+    setSpeaking(true);
+
+    // Chrome TTS freeze workaround: pause+resume every 10 seconds
+    keepaliveRef.current = setInterval(() => {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        window.speechSynthesis.resume();
+      }
+    }, 10000);
+
+    let index = 0;
+
+    const speakNext = () => {
+      if (index >= chunks.length || !window.speechSynthesis) {
+        stopKeepalive();
+        setSpeaking(false);
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(chunks[index]);
+      utterance.lang = langTag;
+      utterance.rate = 0.85;
+      utterance.pitch = 1;
+      if (matchingVoice) utterance.voice = matchingVoice;
+
+      utterance.onend = () => {
+        index++;
+        speakNext();
+      };
+
+      utterance.onerror = (e) => {
+        // "interrupted" fires when we cancel intentionally — not an error
+        if ((e as SpeechSynthesisErrorEvent).error !== "interrupted") {
+          stopKeepalive();
+          setSpeaking(false);
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
+    };
+
+    speakNext();
+  };
+
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) setGreeting("Good Morning");
@@ -72,6 +316,11 @@ export default function DashboardPage() {
 
     async function loadDashboard() {
       const today = new Date().toISOString().split("T")[0];
+
+      // Ensure knowledge graph is seeded before generating action plan
+      await seedComprehensiveKnowledge();
+      await seedAllPendingLabParameters();
+
       const [sortedReports, nextChemoData, medsData, settingsData] =
         await Promise.all([
           getAllReports(),
@@ -92,7 +341,7 @@ export default function DashboardPage() {
 
         let actionPlan = await getActionPlanState();
         const db = await getDB();
-        const PLAN_VERSION = "v2_graph";
+        const PLAN_VERSION = "v7_graph";
 
         if (
           !actionPlan ||
@@ -191,53 +440,79 @@ export default function DashboardPage() {
 
         const hydratedItems = [];
         for (const itemStatus of actionPlan!.items) {
-          let param = await db.get("parameters", itemStatus.itemId);
+          // Use 'medical_entities' store (v4) — 'parameters' store was deleted in migration
+          let entity = await db.get("medical_entities", itemStatus.itemId);
 
-          if (!param) {
-            const nameParts = itemStatus.itemId.split("_").slice(2);
-            const name =
-              nameParts.length > 0 ? nameParts.join(" ") : itemStatus.itemId;
-            param = {
-              id: itemStatus.itemId,
-              name: name.charAt(0).toUpperCase() + name.slice(1),
-              nameGu: undefined,
-              alternativeNames: [],
-              category: itemStatus.category,
-              isNumeric: false,
-              knowledgeStatus: "basic" as const,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            } as ParameterDef;
+          let paramCategory = itemStatus.category;
+          if (entity) {
+            const entityType = entity.type as string;
+            if (
+              entityType === "food" ||
+              entityType === "exercise" ||
+              entityType === "nutrition" ||
+              entityType === "treatment"
+            ) {
+              paramCategory = entityType;
+            } else if (entityType === "medication") {
+              paramCategory = "medicine";
+            } else if (entity.category) {
+              paramCategory = entity.category;
+            }
           }
 
-          let kb = await getKnowledgeByParameterId(itemStatus.itemId);
-          if (!kb) {
-            kb = {
-              id: "kb_" + itemStatus.itemId,
-              parameterId: itemStatus.itemId,
-              detailedDescription:
-                "Extracted automatically from AI knowledge graph.",
-              simpleMeaning: "Recommended " + itemStatus.category,
-              whyImportant: "Helps improve abnormal lab results.",
-              normalRangeText: "",
-              tags: [],
-              source: "Graph DB",
-              doctorNotes: "",
-              personalNotes: "",
-              references: [],
-              versionHistory: [],
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            } as KnowledgeEntry;
-          }
+          // Fallback: build a minimal display object if entity not found
+          const param: ParameterDef = entity
+            ? ({
+                id: entity.id,
+                name: entity.name,
+                nameGu: entity.nameGu,
+                alternativeNames: entity.alternativeNames || [],
+                category: paramCategory,
+                isNumeric: false,
+                knowledgeStatus: (entity.knowledgeStatus as any) || "advanced",
+                createdAt: entity.createdAt,
+                updatedAt: entity.updatedAt,
+              } as ParameterDef)
+            : ({
+                id: itemStatus.itemId,
+                name: itemStatus.itemId,
+                nameGu: undefined,
+                alternativeNames: [],
+                category: itemStatus.category,
+                isNumeric: false,
+                knowledgeStatus: "basic" as const,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+              } as ParameterDef);
 
-          if (param && kb) {
-            hydratedItems.push({
-              param,
-              kb,
-              status: itemStatus.status,
-            });
-          }
+          const kb: KnowledgeEntry = {
+            id: "kb_" + itemStatus.itemId,
+            parameterId: itemStatus.itemId,
+            // Store raw description WITH <en>/<gu> tags — RichDescription extracts the right language at render time
+            detailedDescription:
+              entity?.detailedDescription ||
+              "Recommended based on your latest report.",
+            simpleMeaning:
+              entity?.simpleMeaning || "Recommended " + itemStatus.category,
+            simpleMeaningGu: entity?.simpleMeaningGu,
+            whyImportant:
+              entity?.whyImportant || "Helps improve abnormal lab results.",
+            normalRangeText: "",
+            tags: entity?.tags || [],
+            source: entity?.source || "Graph DB",
+            doctorNotes: "",
+            personalNotes: "",
+            references: [],
+            versionHistory: [],
+            createdAt: entity?.createdAt || new Date().toISOString(),
+            updatedAt: entity?.updatedAt || new Date().toISOString(),
+          } as KnowledgeEntry;
+
+          hydratedItems.push({
+            param,
+            kb,
+            status: itemStatus.status,
+          });
         }
         setActionItems(
           hydratedItems.filter(
@@ -270,7 +545,7 @@ export default function DashboardPage() {
     setSelectedActionItem(null);
   };
 
-  const pendingItems = actionItems.filter((f) => f.status === "pending");
+  // All items always shown — never removed. Status is just a badge.
   const pendingMeds = todayMeds.filter((m) => m.status === "pending");
   const takenMeds = todayMeds.filter((m) => m.status === "taken");
 
@@ -325,59 +600,86 @@ export default function DashboardPage() {
                   <Activity size={24} className="text-primary-200" />
                   <div>
                     <p className="font-semibold text-white">
-                      No actions generated yet
+                      {language === "gu"
+                        ? "કોઈ કાર્યયોજના જન઻રાત નથી"
+                        : "No actions generated yet"}
                     </p>
                     <p className="text-xs text-primary-200">
-                      Add and link foods, medicines, or treatments to your Brain
-                      to see suggestions here!
-                    </p>
-                  </div>
-                </div>
-              ) : pendingItems.length === 0 ? (
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 flex items-center gap-3">
-                  <CheckCircle2 size={24} className="text-success-300" />
-                  <div>
-                    <p className="font-semibold text-success-50">
-                      All caught up!
-                    </p>
-                    <p className="text-xs text-primary-200">
-                      You've completed all actions for today.
+                      {language === "gu"
+                        ? "ફૂડ, દવા કે પોષણ ને Brain પર ઉમેરો"
+                        : "Add and link foods or nutrition to your Brain to see suggestions!"}
                     </p>
                   </div>
                 </div>
               ) : (
-                <div className="space-y-3">
-                  {pendingItems.map((item) => (
-                    <button
-                      key={item.param.id}
-                      onClick={() => setSelectedActionItem(item)}
-                      className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl p-3 flex items-center justify-between transition-colors text-left"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg">
-                          {["food", "nutrition"].includes(item.param.category)
-                            ? "🍲"
-                            : item.param.category === "exercise"
-                              ? "🧘"
-                              : item.param.category === "medicine"
-                                ? "💊"
-                                : "💡"}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-white">
-                            {language === "gu" && item.param.nameGu
-                              ? item.param.nameGu
-                              : item.param.name}
-                          </p>
-                          <p className="text-xs text-primary-200">
-                            Recommended {item.param.category}
-                          </p>
-                        </div>
-                      </div>
-                      <ChevronRight size={18} className="text-white/60" />
-                    </button>
-                  ))}
-                </div>
+                (() => {
+                  const nutritionItems = actionItems.filter(
+                    (i) => i.param.category === "nutrition",
+                  );
+                  const foodItems = actionItems.filter(
+                    (i) => i.param.category !== "nutrition",
+                  );
+                  const nutritionDone = nutritionItems.filter(
+                    (i) => i.status === "taken",
+                  ).length;
+                  const foodDone = foodItems.filter(
+                    (i) => i.status === "taken",
+                  ).length;
+
+                  return (
+                    <div className="grid grid-cols-2 gap-3">
+                      {/* Nutrition Tips Card */}
+                      {nutritionItems.length > 0 && (
+                        <button
+                          onClick={() => setActiveGroup("nutrition")}
+                          className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl p-4 flex flex-col items-start gap-2 transition-colors text-left"
+                        >
+                          <span className="text-3xl">💡</span>
+                          <div>
+                            <p className="font-bold text-white text-sm leading-tight">
+                              {language === "gu"
+                                ? "પોષણ સૂચનો"
+                                : "Nutrition Tips"}
+                            </p>
+                            <p className="text-xs text-primary-200 mt-0.5">
+                              {nutritionDone}/{nutritionItems.length}{" "}
+                              {language === "gu" ? "જોયા" : "reviewed"}
+                            </p>
+                          </div>
+                          {nutritionDone === nutritionItems.length && (
+                            <span className="text-[10px] font-bold uppercase bg-success-500/30 text-success-100 px-2 py-0.5 rounded-full">
+                              {language === "gu" ? "પૂર્ણ" : "All done"}
+                            </span>
+                          )}
+                        </button>
+                      )}
+
+                      {/* Food to Eat Card */}
+                      {foodItems.length > 0 && (
+                        <button
+                          onClick={() => setActiveGroup("food")}
+                          className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl p-4 flex flex-col items-start gap-2 transition-colors text-left"
+                        >
+                          <span className="text-3xl">🍲</span>
+                          <div>
+                            <p className="font-bold text-white text-sm leading-tight">
+                              {language === "gu" ? "આજનો ખોરાક" : "Food to Eat"}
+                            </p>
+                            <p className="text-xs text-primary-200 mt-0.5">
+                              {foodDone}/{foodItems.length}{" "}
+                              {language === "gu" ? "ખાધું" : "eaten today"}
+                            </p>
+                          </div>
+                          {foodDone === foodItems.length && (
+                            <span className="text-[10px] font-bold uppercase bg-success-500/30 text-success-100 px-2 py-0.5 rounded-full">
+                              {language === "gu" ? "પૂર્ણ" : "All done"}
+                            </span>
+                          )}
+                        </button>
+                      )}
+                    </div>
+                  );
+                })()
               )}
             </div>
           </div>
@@ -591,76 +893,292 @@ export default function DashboardPage() {
       )}
 
       {selectedActionItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-fade-in">
-          <div className="bg-white dark:bg-dark-base-100 rounded-2xl w-full max-w-sm overflow-hidden animate-slide-up shadow-xl">
-            <div className="p-4 border-b border-base-100 dark:border-dark-base-200 flex items-start justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-primary-100 dark:bg-dark-primary-200 rounded-2xl flex items-center justify-center text-3xl shrink-0">
-                  {["food", "nutrition"].includes(
-                    selectedActionItem.param.category,
-                  )
-                    ? "🍲"
-                    : selectedActionItem.param.category === "exercise"
-                      ? "🧘"
-                      : selectedActionItem.param.category === "medicine"
-                        ? "💊"
-                        : "💡"}
+        <div className="fixed inset-0 z-60 flex items-end justify-center bg-black/60 animate-fade-in">
+          <div className="bg-white dark:bg-dark-base-100 rounded-t-3xl w-full max-w-lg overflow-hidden animate-slide-up shadow-2xl flex flex-col max-h-[92vh]">
+            {/* Drag Handle */}
+            <div className="flex justify-center pt-3 pb-1 shrink-0">
+              <div className="w-10 h-1 bg-base-200 dark:bg-dark-base-300 rounded-full" />
+            </div>
+
+            {/* Header */}
+            <div className="px-4 pt-2 pb-4 border-b border-base-100 dark:border-dark-base-200 shrink-0">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3 flex-1 min-w-0">
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-dark-primary-200 rounded-2xl flex items-center justify-center text-2xl shrink-0 mt-0.5">
+                    {selectedActionItem.param.category === "nutrition"
+                      ? "💡"
+                      : selectedActionItem.param.category === "food"
+                        ? "🍲"
+                        : selectedActionItem.param.category === "exercise"
+                          ? "🧘"
+                          : selectedActionItem.param.category === "medicine"
+                            ? "💊"
+                            : "📝"}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-bold text-base-900 dark:text-dark-base-900 leading-snug flex-1">
+                        {language === "gu" && selectedActionItem.param.nameGu
+                          ? selectedActionItem.param.nameGu
+                          : selectedActionItem.param.name}
+                      </h3>
+                      <button
+                        onClick={() => handleSpeak(getSpeakText())}
+                        className={`p-2 rounded-full shrink-0 transition-colors flex items-center justify-center ${
+                          speaking
+                            ? "bg-danger-100 text-danger-600"
+                            : "bg-primary-100 dark:bg-dark-primary-100/30 text-primary-600"
+                        }`}
+                        title={speaking ? "Stop" : "Read Aloud"}
+                      >
+                        {speaking ? (
+                          <VolumeX size={15} />
+                        ) : (
+                          <Volume2 size={15} />
+                        )}
+                      </button>
+                    </div>
+                    <p className="text-xs text-base-500 dark:text-dark-base-500 mt-1 leading-snug">
+                      {language === "gu" &&
+                      selectedActionItem.kb.simpleMeaningGu
+                        ? selectedActionItem.kb.simpleMeaningGu
+                        : selectedActionItem.kb.simpleMeaning}
+                    </p>
+                  </div>
                 </div>
+                <button
+                  onClick={() => setSelectedActionItem(null)}
+                  className="p-1.5 text-base-400 bg-base-100 dark:bg-dark-base-200 rounded-full flex items-center justify-center shrink-0"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable content */}
+            <div className="px-4 py-4 space-y-3 overflow-y-auto flex-1">
+              <div className="p-3 bg-base-50 dark:bg-dark-base-200 rounded-xl">
+                <p className="text-[11px] font-bold text-base-500 dark:text-dark-base-500 uppercase tracking-wider mb-2">
+                  {language === "gu" ? "વિગતો" : "Details"}
+                </p>
+                <RichDescription
+                  text={selectedActionItem.kb.detailedDescription}
+                  language={language}
+                />
+              </div>
+
+              <div className="p-3 bg-primary-50 dark:bg-dark-primary-300 rounded-xl border border-primary-100 dark:border-dark-primary-400">
+                <p className="text-[11px] font-bold text-primary-600 dark:text-dark-primary-700 uppercase tracking-wider mb-2">
+                  {language === "gu" ? "શા માટે મહત્વપૂર્ણ" : "Why Important"}
+                </p>
+                <RichDescription
+                  text={selectedActionItem.kb.whyImportant}
+                  language={language}
+                />
+              </div>
+            </div>
+
+            {/* Action footer */}
+            <div className="px-4 py-4 border-t border-base-100 dark:border-dark-base-200 flex gap-2 shrink-0 pb-safe">
+              {selectedActionItem.param.category === "nutrition" ? (
+                <button
+                  onClick={() =>
+                    handleItemAction(selectedActionItem.param.id, "taken")
+                  }
+                  className="flex-1 py-3.5 px-4 rounded-2xl font-bold text-white bg-primary-600 active:bg-primary-700 transition-colors text-sm"
+                >
+                  {language === "gu" ? "સમજ્યા, બંધ કરો" : "Got it, Close"}
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={() =>
+                      handleItemAction(selectedActionItem.param.id, "declined")
+                    }
+                    className="flex-1 py-3.5 px-3 rounded-2xl font-bold text-danger-600 bg-danger-50 dark:bg-dark-danger-100 active:bg-danger-100 transition-colors text-sm"
+                  >
+                    {language === "gu" ? "આજે નહીં" : "Skip"}
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleItemAction(selectedActionItem.param.id, "taken")
+                    }
+                    className="flex-1 py-3.5 px-3 rounded-2xl font-bold text-white bg-success-500 active:bg-success-600 transition-colors shadow-sm text-sm"
+                  >
+                    {language === "gu" ? "મેં ખાધું" : "Done ✓"}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeGroup && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 animate-fade-in">
+          <div className="bg-white dark:bg-dark-base-100 rounded-t-3xl w-full max-w-lg overflow-hidden animate-slide-up shadow-2xl flex flex-col max-h-[88vh]">
+            {/* Drag Handle */}
+            <div className="flex justify-center pt-3 pb-1 shrink-0">
+              <div className="w-10 h-1 bg-base-200 dark:bg-dark-base-300 rounded-full" />
+            </div>
+
+            {/* Modal Header */}
+            <div className="px-4 pt-2 pb-3 border-b border-base-100 dark:border-dark-base-200 flex items-center justify-between shrink-0">
+              <div className="flex items-center gap-2.5">
+                <span className="text-2xl">
+                  {activeGroup === "nutrition" ? "💡" : "🍲"}
+                </span>
                 <div>
-                  <h3 className="text-xl font-bold text-base-900 dark:text-dark-base-900">
-                    {language === "gu" && selectedActionItem.param.nameGu
-                      ? selectedActionItem.param.nameGu
-                      : selectedActionItem.param.name}
+                  <h3 className="text-base font-bold text-base-900 dark:text-dark-base-900">
+                    {activeGroup === "nutrition"
+                      ? language === "gu"
+                        ? "પોષણ સૂચનો"
+                        : "Nutrition Tips"
+                      : language === "gu"
+                        ? "આજનો ખોરાક"
+                        : "Food to Eat"}
                   </h3>
-                  <p className="text-sm text-base-500 dark:text-dark-base-500 mt-1">
-                    {selectedActionItem.kb.simpleMeaning}
+                  <p className="text-xs text-base-500 dark:text-dark-base-500">
+                    {activeGroup === "nutrition"
+                      ? `${actionItems.filter((i) => i.param.category === "nutrition" && i.status === "taken").length}/${actionItems.filter((i) => i.param.category === "nutrition").length} ` +
+                        (language === "gu" ? "જોયા" : "reviewed")
+                      : `${actionItems.filter((i) => i.param.category === "food" && i.status === "taken").length}/${actionItems.filter((i) => i.param.category === "food").length} ` +
+                        (language === "gu" ? "ખાધું" : "completed")}
                   </p>
                 </div>
               </div>
               <button
-                onClick={() => setSelectedActionItem(null)}
-                className="p-2 text-base-400 hover:text-base-600 dark:hover:text-dark-base-400 bg-base-50 dark:bg-dark-base-200 rounded-full"
+                onClick={() => setActiveGroup(null)}
+                className="p-1.5 text-base-400 bg-base-100 dark:bg-dark-base-200 rounded-full flex items-center justify-center"
               >
-                <X size={20} />
+                <X size={18} />
               </button>
             </div>
 
-            <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
-              <div className="p-4 bg-base-50 dark:bg-dark-base-200 rounded-xl">
-                <p className="text-xs font-bold text-base-500 dark:text-dark-base-500 uppercase tracking-wider mb-2">
-                  {language === "gu" ? "વિગતો" : "Details"}
-                </p>
-                <p className="text-sm text-base-700 dark:text-dark-base-400 whitespace-pre-wrap">
-                  {selectedActionItem.kb.detailedDescription}
-                </p>
-              </div>
+            {/* Modal Content - List of Items */}
+            <div className="px-3 py-3 overflow-y-auto space-y-2 flex-1">
+              {actionItems
+                .filter((i) =>
+                  activeGroup === "nutrition"
+                    ? i.param.category === "nutrition"
+                    : i.param.category === "food",
+                )
+                .map((item) => {
+                  const isCompleted = item.status === "taken";
+                  const isDeclined = item.status === "declined";
+                  return (
+                    <div
+                      key={item.param.id}
+                      onClick={() => setSelectedActionItem(item)}
+                      className={`flex items-center gap-3 p-3 rounded-2xl border cursor-pointer transition-all active:scale-[0.98] ${
+                        isCompleted
+                          ? "border-success-200 dark:border-dark-success-300 bg-success-50/50 dark:bg-dark-success-100/10"
+                          : "border-base-100 dark:border-dark-base-200 bg-white dark:bg-dark-base-100"
+                      }`}
+                    >
+                      {/* Status dot */}
+                      <div
+                        className={`w-2 h-2 rounded-full shrink-0 ${
+                          isCompleted
+                            ? "bg-success-500"
+                            : isDeclined
+                              ? "bg-danger-400"
+                              : "bg-base-300"
+                        }`}
+                      />
 
-              <div className="p-4 bg-primary-50 dark:bg-dark-primary-300 rounded-xl border border-primary-100 dark:border-dark-primary-400">
-                <p className="text-xs font-bold text-primary-600 dark:text-dark-primary-700 uppercase tracking-wider mb-2">
-                  {language === "gu" ? "શા માટે મહત્વપૂર્ણ" : "Why Important"}
-                </p>
-                <p className="text-sm text-primary-900 dark:text-dark-primary-800">
-                  {selectedActionItem.kb.whyImportant}
-                </p>
-              </div>
+                      {/* Text */}
+                      <div className="flex-1 min-w-0">
+                        <p
+                          className={`font-semibold text-sm leading-snug ${
+                            isCompleted
+                              ? "text-base-400 dark:text-dark-base-400 line-through"
+                              : "text-base-900 dark:text-dark-base-900"
+                          }`}
+                        >
+                          {language === "gu" && item.param.nameGu
+                            ? item.param.nameGu
+                            : item.param.name}
+                        </p>
+                        <p className="text-xs text-base-400 dark:text-dark-base-400 mt-0.5 line-clamp-1">
+                          {language === "gu" && item.kb.simpleMeaningGu
+                            ? item.kb.simpleMeaningGu
+                            : item.kb.simpleMeaning}
+                        </p>
+                      </div>
+
+                      {/* Action buttons - stop propagation so row click still opens detail */}
+                      <div
+                        className="flex items-center gap-1.5 shrink-0"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {activeGroup === "nutrition" ? (
+                          <button
+                            onClick={() =>
+                              handleItemAction(
+                                item.param.id,
+                                isCompleted ? "pending" : "taken",
+                              )
+                            }
+                            className={`p-2 rounded-xl transition-colors flex items-center justify-center ${
+                              isCompleted
+                                ? "bg-success-100 text-success-600"
+                                : "bg-base-100 dark:bg-dark-base-200 text-base-400"
+                            }`}
+                          >
+                            <CheckCircle2 size={17} />
+                          </button>
+                        ) : (
+                          <>
+                            <button
+                              onClick={() =>
+                                handleItemAction(
+                                  item.param.id,
+                                  isDeclined ? "pending" : "declined",
+                                )
+                              }
+                              className={`px-2 py-1 text-xs font-bold rounded-lg transition-colors ${
+                                isDeclined
+                                  ? "bg-danger-100 text-danger-600"
+                                  : "bg-base-100 dark:bg-dark-base-200 text-base-500"
+                              }`}
+                            >
+                              {language === "gu" ? "નહીં" : "Skip"}
+                            </button>
+                            <button
+                              onClick={() =>
+                                handleItemAction(
+                                  item.param.id,
+                                  isCompleted ? "pending" : "taken",
+                                )
+                              }
+                              className={`px-2 py-1 text-xs font-bold rounded-lg transition-colors ${
+                                isCompleted
+                                  ? "bg-success-100 text-success-600"
+                                  : "bg-primary-600 text-white"
+                              }`}
+                            >
+                              {isCompleted
+                                ? "✓"
+                                : language === "gu"
+                                  ? "ખાધું"
+                                  : "Eat"}
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
 
-            <div className="p-4 border-t border-base-100 dark:border-dark-base-200 flex gap-3">
+            {/* Modal Footer */}
+            <div className="px-4 pt-2 pb-5 border-t border-base-100 dark:border-dark-base-200 shrink-0">
               <button
-                onClick={() =>
-                  handleItemAction(selectedActionItem.param.id, "declined")
-                }
-                className="flex-1 py-3 px-4 rounded-xl font-semibold text-danger-600 bg-danger-50 dark:bg-dark-danger-100 hover:bg-danger-100 transition-colors"
+                onClick={() => setActiveGroup(null)}
+                className="w-full py-3.5 rounded-2xl font-bold text-base-700 dark:text-dark-base-700 bg-base-100 dark:bg-dark-base-200 active:bg-base-200 transition-colors text-sm"
               >
-                {language === "gu" ? "મારે નથી લેવું" : "Decline"}
-              </button>
-              <button
-                onClick={() =>
-                  handleItemAction(selectedActionItem.param.id, "taken")
-                }
-                className="flex-1 py-3 px-4 rounded-xl font-semibold text-white bg-success-500 hover:bg-success-600 transition-colors shadow-sm"
-              >
-                {language === "gu" ? "મેં લઈ લીધું છે" : "Done"}
+                {language === "gu" ? "બંધ કરો" : "Close"}
               </button>
             </div>
           </div>

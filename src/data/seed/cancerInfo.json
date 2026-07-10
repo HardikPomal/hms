@@ -1,0 +1,1206 @@
+[
+  {
+    "type": "cancer_info",
+    "name": "High-Grade Serous Ovarian Carcinoma (HGSOC)",
+    "nameGu": "હાઈ-ગ્રેડ સિરસ ઓવેરિયન કેન્સર (HGSOC)",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "most common",
+      "aggressive"
+    ],
+    "simpleMeaning": "The most common and aggressive type of ovarian cancer, usually diagnosed at an advanced stage.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરનો સૌથી સામાન્ય અને ઝડપથી ફેલાતો પ્રકાર, જે મોટાભાગે એડવાન્સ સ્ટેજમાં જ પકડાય છે.",
+    "detailedDescription": "HGSOC accounts for about 70-80% of all ovarian cancer deaths. It typically originates in the fimbriated end of the fallopian tube. It is characterized by a very fast growth rate and widespread metastasis throughout the peritoneal cavity (abdomen) before causing any symptoms.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સરના 70-80% કેસ આ પ્રકારના હોય છે. તેની શરૂઆત મોટાભાગે ગર્ભાશયની નળીઓ (ફેલોપિયન ટ્યુબ) ના છેડેથી થાય છે. આ કેન્સર એટલું ઝડપથી વધે છે કે કોઈ લક્ષણો દેખાય તે પહેલાં તે આખા પેટમાં (પેરિટોનિયમ) ફેલાઈ ગયું હોય છે.",
+    "whyImportant": "Because it grows rapidly (high cell division rate), it is extremely sensitive to platinum-based chemotherapy (Carboplatin). However, it also has a high rate of recurrence.",
+    "whyImportantGu": "આ કેન્સર ખૂબ ઝડપથી વધતું હોવાથી (હાઈ-ગ્રેડ), કીમોથેરાપી (કાર્બોપ્લેટિન) તેને બહુ જલ્દી ખતમ કરી શકે છે. પરંતુ આ જ પ્રકારનું કેન્સર ભવિષ્યમાં પાછું આવવાની શક્યતા પણ સૌથી વધુ હોય છે.",
+    "source": "Medical Oncology Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Stage 3 Ovarian Cancer",
+    "nameGu": "સ્ટેજ 3 ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "staging",
+      "advanced",
+      "peritoneum"
+    ],
+    "simpleMeaning": "Cancer that has spread from the ovaries to the lining of the abdomen or lymph nodes.",
+    "simpleMeaningGu": "જ્યારે કેન્સર અંડાશયમાંથી બહાર નીકળીને પેટની દીવાલો કે લસિકાગ્રંથિઓમાં ફેલાઈ ગયું હોય.",
+    "detailedDescription": "In Stage III, the cancer involves one or both ovaries/fallopian tubes and has spread beyond the pelvis into the abdominal cavity (peritoneum), the omentum, or the retroperitoneal lymph nodes. It has NOT spread to the inside of the liver or lungs.",
+    "detailedDescriptionGu": "સ્ટેજ 3 માં, કેન્સર અંડાશય કે નળીઓમાંથી બહાર નીકળીને પેટની અંદર (પેરિટોનિયમ), ચરબીના પડદા (ઓમેન્ટમ) અથવા લસિકાગ્રંથિઓમાં પહોંચી ગયું હોય છે. જોકે, તે હજુ લિવર કે ફેફસાંની અંદર સુધી ફેલાયું હોતું નથી.",
+    "whyImportant": "This is the most common stage at diagnosis (~60% of patients). It requires aggressive combination treatment: major debulking surgery plus systemic chemotherapy.",
+    "whyImportantGu": "મોટાભાગની સ્ત્રીઓને (લગભગ 60%) આ સ્ટેજ પર જ કેન્સરની ખબર પડે છે. આ સ્ટેજમાં મોટી સર્જરી અને કીમોથેરાપી બંનેની જરૂર પડે છે.",
+    "source": "FIGO Staging System"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Stage 4 Ovarian Cancer",
+    "nameGu": "સ્ટેજ 4 ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "staging",
+      "advanced",
+      "metastatic"
+    ],
+    "simpleMeaning": "Cancer that has spread to distant organs like the liver, lungs, or spleen.",
+    "simpleMeaningGu": "જ્યારે કેન્સર પેટની બહાર નીકળીને ફેફસાં કે લિવર જેવા અવયવોની અંદર સુધી ફેલાઈ ગયું હોય.",
+    "detailedDescription": "Stage IV is the most advanced stage. The cancer has metastasized distantly. Stage IVA means there are cancer cells in the fluid around the lungs (pleural effusion). Stage IVB means cancer has grown into the solid tissue of the liver, spleen, or organs outside the abdomen.",
+    "detailedDescriptionGu": "આ કેન્સરનું છેલ્લું અને સૌથી એડવાન્સ સ્ટેજ છે. સ્ટેજ 4A નો અર્થ છે કે ફેફસાંની આજુબાજુના પાણીમાં કેન્સરના કોષો છે. સ્ટેજ 4B નો અર્થ છે કે કેન્સર લિવર કે બરોળની અંદર ઘર કરી ગયું છે.",
+    "whyImportant": "Stage 4 is generally considered incurable, but it is highly treatable. The goal of treatment shifts to controlling the disease, extending life, and maintaining quality of life using chemo, targeted therapy, and maintenance drugs.",
+    "whyImportantGu": "સ્ટેજ 4 ના કેન્સરને જડમૂળથી મટાડવું મુશ્કેલ હોય છે, પરંતુ તેની સારવાર ચોક્કસ શક્ય છે. સારવારનો મુખ્ય હેતુ કેન્સરને કાબૂમાં રાખવો, આયુષ્ય વધારવું અને દર્દીને તકલીફ ન પડે તે જોવાનો હોય છે.",
+    "source": "FIGO Staging System"
+  },
+  {
+    "type": "cancer_info",
+    "name": "BRCA1 / BRCA2 Mutation (Hereditary)",
+    "nameGu": "BRCA1 / BRCA2 મ્યુટેશન (વારસાગત ખામી)",
+    "category": "cancer_info",
+    "tags": [
+      "genetics",
+      "hereditary",
+      "PARP"
+    ],
+    "simpleMeaning": "An inherited genetic flaw that severely limits the body's ability to repair damaged DNA.",
+    "simpleMeaningGu": "એક વારસાગત જનીનીક ખામી જેના કારણે શરીર પોતાના ડીએનએ(DNA) નું સમારકામ કરી શકતું નથી.",
+    "detailedDescription": "BRCA1 and BRCA2 genes produce proteins that mend broken DNA (tumor suppressors). When a person inherits a mutated version of these genes, their DNA repair is faulty. Over time, unrepaired DNA damage accumulates, leading to a high lifetime risk of breast (up to 70%) and ovarian (up to 45%) cancer.",
+    "detailedDescriptionGu": "BRCA1 અને BRCA2 જનીનો તૂટેલા ડીએનએ(DNA) નું સમારકામ કરે છે. જો વારસામાં આ જનીન ખામીયુક્ત મળે, તો શરીર પોતાની ખામીઓ સુધારી શકતું નથી. સમય જતાં આ ખામીઓ વધે છે અને બ્રેસ્ટ કેન્સર (70% જોખમ) અથવા ઓવેરિયન કેન્સર (45% જોખમ) થાય છે.",
+    "whyImportant": "While it causes cancer, it also makes the cancer cells extremely vulnerable. BRCA-mutated tumors are highly sensitive to Platinum chemotherapy and respond dramatically to PARP inhibitors (like Olaparib), leading to much better overall survival rates.",
+    "whyImportantGu": "ભલે આ ખામીને કારણે કેન્સર થયું હોય, પણ તેનાથી કેન્સરના કોષો નબળા પણ પડે છે. આ ખામીવાળા કેન્સર પર કીમોથેરાપી અને 'ઓલાપેરીબ' જેવી ટાર્ગેટેડ દવાઓ રામબાણ ઈલાજ સાબિત થાય છે, જેનાથી દર્દી લાંબુ અને સ્વસ્થ જીવન જીવી શકે છે.",
+    "source": "Clinical Genetics"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Low-Grade Serous Ovarian Carcinoma (LGSOC)",
+    "nameGu": "લો-ગ્રેડ સિરસ ઓવેરિયન કેન્સર (LGSOC)",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "rare",
+      "hormone driven"
+    ],
+    "simpleMeaning": "A rare, slow-growing type of ovarian cancer that often affects younger women.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરનો એક દુર્લભ અને ધીમો વધતો પ્રકાર, જે મોટાભાગે યુવાન સ્ત્રીઓમાં જોવા મળે છે.",
+    "detailedDescription": "Unlike HGSOC, Low-Grade Serous Carcinoma (LGSOC) grows sluggishly and is often driven by estrogen. Because chemotherapy targets rapidly dividing cells, LGSOC is notoriously resistant to standard platinum-based chemotherapy.",
+    "detailedDescriptionGu": "હાઈ-ગ્રેડ કેન્સરથી વિપરીત, 'લો-ગ્રેડ' કેન્સર બહુ ધીમે ધીમે વધે છે અને મોટાભાગે એસ્ટ્રોજન (હોર્મોન્સ) ના કારણે વધે છે. કીમોથેરાપી ઝડપથી વધતા કોષોને મારે છે, તેથી આ ધીમા કેન્સર પર કીમોથેરાપીની બહુ ઓછી અસર થાય છે.",
+    "whyImportant": "Since chemotherapy is less effective, treatment relies heavily on surgical removal (debulking) and hormone therapies (like Letrozole or Anastrozole) to starve the cancer of estrogen.",
+    "whyImportantGu": "કીમોથેરાપી વધુ અસર કરતી ન હોવાથી, આની મુખ્ય સારવાર સર્જરી દ્વારા બધી જ ગાંઠો કાઢી નાખવી એ છે. ત્યારબાદ લેટ્રોઝોલ (Letrozole) જેવી ગોળીઓ આપીને શરીરમાં હોર્મોન્સ ઘટાડવામાં આવે છે.",
+    "source": "Medical Oncology Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Clear Cell Carcinoma (Ovarian)",
+    "nameGu": "ક્લિયર સેલ ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "endometriosis linked",
+      "chemo-resistant"
+    ],
+    "simpleMeaning": "A rare subtype of ovarian cancer heavily linked to endometriosis, known for being resistant to standard chemo.",
+    "simpleMeaningGu": "એક દુર્લભ પ્રકારનું ઓવેરિયન કેન્સર જે મોટાભાગે 'એન્ડોમેટ્રિયોસિસ' સાથે જોડાયેલું હોય છે અને કીમોથેરાપીને ખાસ દાદ આપતું નથી.",
+    "detailedDescription": "Clear cell ovarian cancer makes up about 5-10% of cases. Under a microscope, the cells look 'clear' because they are filled with glycogen. It is strongly associated with a history of endometriosis. It often presents at an earlier stage but behaves aggressively.",
+    "detailedDescriptionGu": "આ પ્રકારનું કેન્સર 5-10% દર્દીઓમાં જ જોવા મળે છે. માઈક્રોસ્કોપમાં આ કોષો ખાલી કે પારદર્શક દેખાય છે. જે સ્ત્રીઓને ભૂતકાળમાં 'એન્ડોમેટ્રિયોસિસ' (ગર્ભાશયની તકલીફ) હોય તેમને આ કેન્સર થવાની શક્યતા વધુ હોય છે.",
+    "whyImportant": "Clear cell is often highly resistant to the standard Carboplatin/Paclitaxel regimen. If it is caught early (Stage 1), surgery alone may cure it. In advanced stages, clinical trials involving immunotherapy or targeted therapy are highly recommended.",
+    "whyImportantGu": "આ કેન્સર પર સામાન્ય કીમોથેરાપી કામ કરતી નથી. જો તે પહેલા સ્ટેજમાં જ પકડાઈ જાય તો માત્ર સર્જરીથી મટી શકે છે. જો કેન્સર ફેલાયેલું હોય તો ઈમ્યુનોથેરાપી જેવી આધુનિક સારવારની જરૂર પડે છે.",
+    "source": "Medical Oncology Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Mucinous Ovarian Cancer",
+    "nameGu": "મ્યુસીનસ ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "large tumors",
+      "appendix"
+    ],
+    "simpleMeaning": "A rare type of ovarian cancer that forms massive, jelly-filled cysts.",
+    "simpleMeaningGu": "એક દુર્લભ પ્રકારનું ઓવેરિયન કેન્સર જેમાં પ્રવાહી (જેલી) થી ભરેલી ખૂબ મોટી ગાંઠો બને છે.",
+    "detailedDescription": "Mucinous tumors represent ~3% of ovarian cancers. They can grow to enormous sizes (sometimes weighing several kilograms) while remaining confined to the ovary (Stage 1). They often mimic cancers of the gastrointestinal tract (like the appendix).",
+    "detailedDescriptionGu": "આ કેન્સર માત્ર 3% દર્દીઓમાં જ થાય છે. તેની ગાંઠો એટલી મોટી હોય છે કે તેનું વજન અમુક કિલોગ્રામ સુધી હોઈ શકે છે. તેમ છતાં તે મોટાભાગે અંડાશય પૂરતું જ સીમિત રહે છે (સ્ટેજ 1).",
+    "whyImportant": "Because it acts more like a digestive system cancer, if it is advanced, oncologists may use chemotherapy drugs designed for gastrointestinal cancers (like capecitabine or oxaliplatin) instead of standard ovarian chemo.",
+    "whyImportantGu": "આ કેન્સર આંતરડાના કેન્સર જેવું વર્તન કરતું હોવાથી, જો તે ફેલાયેલું હોય તો તેમાં ઓવેરિયન કેન્સરની દવાઓને બદલે આંતરડાના કેન્સરની દવાઓ (જેવી કે ઓક્સાલીપ્લેટિન) વાપરવામાં આવે છે.",
+    "source": "Medical Oncology Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "CA-125 Dynamics",
+    "nameGu": "CA-125 રિપોર્ટના ફેરફારો",
+    "category": "cancer_info",
+    "tags": [
+      "tumor marker",
+      "monitoring"
+    ],
+    "simpleMeaning": "How the CA-125 tumor marker blood test behaves before, during, and after treatment.",
+    "simpleMeaningGu": "સારવાર પહેલાં, દરમિયાન અને પછી CA-125 બ્લડ ટેસ્ટમાં કેવા ફેરફારો થાય છે તે સમજવું.",
+    "detailedDescription": "CA-125 is highly reliable for tracking *existing* epithelial ovarian cancer. A 'half-life' concept applies: effective chemotherapy should cause CA-125 levels to drop by half continuously. A CA-125 that normalizes (< 35) after 3 cycles indicates an excellent response.",
+    "detailedDescriptionGu": "CA-125 રિપોર્ટ કેન્સરની સ્થિતિ જાણવા માટેનો અરીસો છે. કીમોથેરાપી લીધા પછી આ રિપોર્ટ ઝડપથી નીચે આવવો જોઈએ. જો 3 કીમો સાયકલ પછી તે નોર્મલ (<35) થઈ જાય, તો તેનો અર્થ એ છે કે દવા ખૂબ સારી અસર કરી રહી છે.",
+    "whyImportant": "During maintenance or surveillance, a rising CA-125 (even if it is still within the 'normal' range, e.g., jumping from 10 to 25) can be the very first sign of cancer returning—often months before it shows up on a CT scan.",
+    "whyImportantGu": "સારવાર પૂરી થયા પછી, જો CA-125 ધીમે ધીમે વધવા માંડે (ભલે તે હજુ નોર્મલ રેન્જમાં જ હોય, જેમ કે 10 થી વધીને 25 થાય), તો તે સીટી સ્કેનમાં દેખાય તેના મહિનાઓ પહેલા જ કેન્સર પાછું આવવાનો સંકેત આપે છે.",
+    "source": "Oncology Monitoring Protocols"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Fallopian Tube Origin Theory",
+    "nameGu": "ફેલોપિયન ટ્યુબ ઓરિજિન થીયરી (ગર્ભાશયની નળીઓ)",
+    "category": "cancer_info",
+    "tags": [
+      "anatomy",
+      "origins"
+    ],
+    "simpleMeaning": "The modern medical discovery that most 'ovarian' cancer actually starts in the fallopian tubes.",
+    "simpleMeaningGu": "આધુનિક વિજ્ઞાનની શોધ કે મોટાભાગનું 'ઓવેરિયન' કેન્સર અંડાશયમાંથી નહીં, પણ ગર્ભાશયની નળીઓ (ફેલોપિયન ટ્યુબ) માંથી શરૂ થાય છે.",
+    "detailedDescription": "Extensive research has proven that High-Grade Serous Carcinoma (the most common type) almost exclusively originates as tiny pre-cancerous lesions (STIC) on the fimbriae—the finger-like ends of the fallopian tubes. These cells then drop onto the ovary and into the pelvis.",
+    "detailedDescriptionGu": "આધુનિક સંશોધનોએ સાબિત કર્યું છે કે સૌથી સામાન્ય કેન્સર (હાઈ-ગ્રેડ સિરસ) અંડાશયમાંથી શરૂ થતું જ નથી. તે ગર્ભાશયની નળીઓના છેડે આવેલા નાના વાળ જેવા ભાગમાં શરૂ થાય છે, અને ત્યાંથી તે નીચે અંડાશય પર પડે છે અને ફેલાય છે.",
+    "whyImportant": "This discovery revolutionized prevention. Women at high genetic risk (BRCA positive) can now opt to have only their fallopian tubes removed first (to prevent the cancer) while keeping their ovaries to avoid early menopause.",
+    "whyImportantGu": "આ શોધના કારણે કેન્સરને રોકવાની રીત બદલાઈ ગઈ છે. જે સ્ત્રીઓને વારસાગત કેન્સરનું જોખમ હોય, તેઓ માત્ર ગર્ભાશયની નળીઓ કઢાવી શકે છે અને અંડાશય સુરક્ષિત રાખી શકે છે, જેથી તેમને વહેલા મેનોપોઝ (માસિક બંધ થવું) ની સમસ્યા ન આવે.",
+    "source": "Modern Gynecologic Oncology"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Krukenberg Tumor",
+    "nameGu": "ક્રુકેનબર્ગ ટ્યુમર (Krukenberg Tumor)",
+    "category": "cancer_info",
+    "tags": [
+      "metastasis",
+      "stomach",
+      "ovaries"
+    ],
+    "simpleMeaning": "Cancer that started in the stomach or intestines and spread to the ovaries.",
+    "simpleMeaningGu": "એવું કેન્સર જે શરૂ પેટ કે આંતરડામાં થયું હોય, પણ ફેલાઈને અંડાશય (ઓવરી) સુધી પહોંચી ગયું હોય.",
+    "detailedDescription": "A Krukenberg tumor is a metastatic malignancy of the ovary. It is not a primary ovarian cancer. Most commonly, the primary cancer is in the stomach or colon. These tumors are distinct because they are filled with mucin-secreting 'signet-ring' cells. The ovaries often become massively enlarged.",
+    "detailedDescriptionGu": "આ ખરેખર અંડાશયનું કેન્સર નથી. મોટાભાગે આ કેન્સરની શરૂઆત હોજરી (stomach) અથવા આંતરડામાંથી થાય છે, અને પછી તે અંડાશયમાં ફેલાય છે. આ કેન્સરના કોષો ખાસ પ્રકારના (સિગ્નેટ-રિંગ સેલ્સ) હોય છે, જેનાથી અંડાશયની સાઇઝ ખૂબ મોટી થઈ જાય છે.",
+    "whyImportant": "It requires treating the original cancer (e.g., gastric cancer chemo protocols), not standard ovarian cancer treatments.",
+    "whyImportantGu": "આની સારવાર ઓવેરિયન કેન્સર જેવી હોતી નથી, પરંતુ કેન્સર જ્યાંથી શરૂ થયું હોય (જેમ કે હોજરી) તેની સારવાર કરવી પડે છે.",
+    "source": "Oncology Pathology"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Borderline Ovarian Tumor (BOT)",
+    "nameGu": "બોર્ડરલાઇન ઓવેરિયન ટ્યુમર (BOT)",
+    "category": "cancer_info",
+    "tags": [
+      "low malignant potential",
+      "slow growing",
+      "survival"
+    ],
+    "simpleMeaning": "A tumor that is abnormal but not completely cancerous, growing very slowly.",
+    "simpleMeaningGu": "એક એવી ગાંઠ જે પૂરેપૂરી કેન્સરની પણ નથી અને સાદી પણ નથી. તે ખૂબ જ ધીમી વધે છે.",
+    "detailedDescription": "Also known as a tumor of low malignant potential. Unlike invasive carcinomas, borderline tumors grow slowly and rarely spread deep into surrounding tissues. They are usually diagnosed at an early stage and have an excellent prognosis.",
+    "detailedDescriptionGu": "આને 'લો મેલિગ્નન્ટ પોટેન્શિયલ' (LMP) ગાંઠ પણ કહેવાય છે. ભયાનક કેન્સરથી વિપરીત, આ ગાંઠ બહુ ધીમી વધે છે અને આસપાસના અવયવોમાં જલ્દી ફેલાતી નથી. મોટાભાગે આ પહેલા જ સ્ટેજમાં પકડાઈ જાય છે અને તેમાંથી સાજા થવાની શક્યતા ખૂબ વધારે હોય છે.",
+    "whyImportant": "Surgery alone is often entirely curative. Chemotherapy is rarely needed unless the tumor transforms into an invasive cancer.",
+    "whyImportantGu": "મોટાભાગના કિસ્સામાં માત્ર સર્જરી કરવાથી જ આ બીમારી મટી જાય છે. આમાં કીમોથેરાપી લેવાની ભાગ્યે જ જરૂર પડે છે.",
+    "source": "Gynecologic Oncology Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Platinum-Resistant Ovarian Cancer",
+    "nameGu": "પ્લેટિનમ-રેઝિસ્ટન્ટ ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "recurrence",
+      "carboplatin",
+      "treatment options"
+    ],
+    "simpleMeaning": "Ovarian cancer that comes back less than 6 months after finishing platinum-based chemotherapy.",
+    "simpleMeaningGu": "એવું ઓવેરિયન કેન્સર જે કીમોથેરાપી (કાર્બોપ્લેટિન) પૂરી થયાના ૬ મહિનાની અંદર જ પાછું આવી જાય.",
+    "detailedDescription": "If a patient's cancer recurs within 6 months of their last dose of a platinum drug (like Carboplatin), the tumor cells have developed a resistance to that drug family. Giving Carboplatin again will likely not work.",
+    "detailedDescriptionGu": "જો પ્લેટિનમ દવાઓ (જેમ કે કાર્બોપ્લેટિન) પૂરી કર્યાના ૬ મહિનામાં જ કેન્સર ફરીથી દેખાય, તો તેનો અર્થ છે કે કેન્સરના કોષોએ એ દવા સામે રક્ષણ મેળવી લીધું છે. હવે ફરીથી કાર્બોપ્લેટિન આપવાથી કોઈ ફાયદો થશે નહીં.",
+    "whyImportant": "The treatment strategy changes entirely. Non-platinum drugs (like Doxorubicin, Paclitaxel alone, or targeted therapies) must be used instead.",
+    "whyImportantGu": "આવા કિસ્સામાં સારવારની પદ્ધતિ આખી બદલાઈ જાય છે. પ્લેટિનમ વગરની દવાઓ (જેમ કે માત્ર પેક્લિટેક્સેલ અથવા નવી ટાર્ગેટેડ થેરાપી) વાપરવી પડે છે.",
+    "source": "NCCN Treatment Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Platinum-Sensitive Ovarian Cancer",
+    "nameGu": "પ્લેટિનમ-સેન્સિટિવ ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "recurrence",
+      "carboplatin",
+      "treatment options"
+    ],
+    "simpleMeaning": "Ovarian cancer that comes back more than 6 months after finishing platinum-based chemotherapy.",
+    "simpleMeaningGu": "એવું ઓવેરિયન કેન્સર જે કીમોથેરાપી (કાર્બોપ્લેટિન) પૂરી થયાના ૬ મહિના *પછી* પાછું આવે છે.",
+    "detailedDescription": "If the cancer remains in remission for more than 6 months after the last platinum dose before returning, the cells are still considered 'sensitive' to the drug. The longer the remission interval, the higher the chance it will respond well again.",
+    "detailedDescriptionGu": "જો પ્લેટિનમ દવાનો છેલ્લો ડોઝ લીધાના ૬ મહિના પછી પણ કેન્સર શાંત રહે અને ત્યાર બાદ પાછું આવે, તો તેને સેન્સિટિવ કહેવાય છે. જેટલો સમય કેન્સર પાછું ન આવે, તેટલો જ ફરીથી કાર્બોપ્લેટિન દવાથી ફાયદો થવાનો ચાન્સ વધારે રહે છે.",
+    "whyImportant": "The standard treatment is to reuse a platinum-based chemotherapy combination, often followed by maintenance therapy (like a PARP inhibitor).",
+    "whyImportantGu": "આવા કિસ્સામાં ડોક્ટર ફરીથી કાર્બોપ્લેટિન જેવી જ દવાઓનો ઉપયોગ કરે છે, જે ખૂબ સારી રીતે કામ કરે છે.",
+    "source": "NCCN Treatment Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Maintenance Therapy",
+    "nameGu": "મેઈન્ટેનન્સ થેરાપી (કેન્સરને દબાવી રાખવાની સારવાર)",
+    "category": "cancer_info",
+    "tags": [
+      "parp inhibitors",
+      "bevacizumab",
+      "remission"
+    ],
+    "simpleMeaning": "Long-term medication given after the main chemo is finished, to keep the cancer from coming back.",
+    "simpleMeaningGu": "મુખ્ય કીમોથેરાપી પૂરી થયા પછી, કેન્સરને પાછું આવતું રોકવા માટે લાંબા સમય સુધી અપાતી ગોળી કે દવા.",
+    "detailedDescription": "Once initial chemotherapy has shrunk or eliminated the tumor, maintenance therapy is started to prolong the remission. In ovarian cancer, this usually involves targeted therapies like PARP inhibitors (Olaparib/Niraparib) pills or Bevacizumab infusions, taken for 2-3 years or indefinitely.",
+    "detailedDescriptionGu": "જ્યારે મુખ્ય કીમોથેરાપીથી કેન્સર ખતમ થઈ જાય કે કાબૂમાં આવી જાય, ત્યારે તેને લાંબા સમય સુધી દબાવી રાખવા આ સારવાર શરૂ કરાય છે. ઓવેરિયન કેન્સરમાં સામાન્ય રીતે PARP ઇન્હિબિટરની ગોળીઓ (જેમ કે ઓલાપારીબ) ૨ થી ૩ વર્ષ સુધી લેવાની હોય છે.",
+    "whyImportant": "It has revolutionized ovarian cancer care, vastly increasing the time women live cancer-free (Progression-Free Survival) after front-line treatment.",
+    "whyImportantGu": "આ દવાથી ઓવેરિયન કેન્સરની સારવારમાં ક્રાંતિ આવી છે. આનાથી સ્ત્રીઓ લાંબા સમય સુધી બીમારી વગરની સામાન્ય જિંદગી જીવી શકે છે.",
+    "source": "ASCO Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Stage 1 Ovarian Cancer",
+    "nameGu": "સ્ટેજ 1 ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "staging",
+      "early stage",
+      "FIGO"
+    ],
+    "simpleMeaning": "The earliest stage, where cancer is confined to one or both ovaries and has not spread outside them.",
+    "simpleMeaningGu": "સૌથી શરૂઆતનો સ્ટેજ, જેમાં કેન્સર ફક્ત એક અથવા બંને અંડાશય (ઓવરી) પૂરતું જ મર્યાદિત હોય છે અને બહાર ફેલાયું નથી હોતું.",
+    "detailedDescription": "Stage 1 is subdivided into 1A (one ovary, capsule intact), 1B (both ovaries, capsule intact), and 1C (capsule ruptured, tumor on surface, or malignant cells found in ascites/washings). It is the most curable stage of ovarian cancer, though it is diagnosed in only about 15-20% of cases due to the lack of early symptoms.",
+    "detailedDescriptionGu": "સ્ટેજ 1 ના ત્રણ ભાગ છે: 1A (એક જ ઓવરીમાં, બહારનું પડ અકબંધ), 1B (બંને ઓવરીમાં, બહારનું પડ અકબંધ), અને 1C (પડ ફાટેલું હોય, ગાંઠ સપાટી પર દેખાય, અથવા પેટના પ્રવાહીમાં કેન્સરના કોષો મળે). આ ઓવેરિયન કેન્સરનો સૌથી વધુ સાજા થઈ શકે તેવો સ્ટેજ છે, પરંતુ શરૂઆતમાં લક્ષણો ન દેખાવાના કારણે માત્ર 15-20% કેસ જ આ સ્ટેજમાં પકડાય છે.",
+    "whyImportant": "Five-year survival rates for Stage 1 are typically above 90%. Treatment may involve surgery alone or surgery followed by a shorter course of chemotherapy, depending on the sub-stage and grade.",
+    "whyImportantGu": "સ્ટેજ 1 માં 5 વર્ષ સુધી જીવિત રહેવાની શક્યતા સામાન્ય રીતે 90% થી વધુ હોય છે. સારવારમાં ફક્ત સર્જરી અથવા સર્જરી પછી થોડા સમય માટે કીમોથેરાપીનો સમાવેશ થઈ શકે છે, જે ગાંઠના પ્રકાર અને ગ્રેડ પર આધાર રાખે છે.",
+    "source": "FIGO Staging Classification"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Stage 2 Ovarian Cancer",
+    "nameGu": "સ્ટેજ 2 ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "staging",
+      "pelvic extension",
+      "FIGO"
+    ],
+    "simpleMeaning": "Cancer that has spread from the ovary or ovaries to other organs within the pelvis, such as the uterus or fallopian tubes.",
+    "simpleMeaningGu": "એવું કેન્સર જે ઓવરીમાંથી પેલ્વિસ (પેટના નીચેના ભાગ) ની અંદરના બીજા અવયવો સુધી ફેલાયું હોય, જેમ કે ગર્ભાશય કે ફેલોપિયન ટ્યુબ.",
+    "detailedDescription": "Stage 2 is divided into 2A (extension to uterus or fallopian tubes) and 2B (extension to other pelvic tissues like the bladder or rectum). The disease is still contained within the pelvic region and has not reached the upper abdomen or distant organs.",
+    "detailedDescriptionGu": "સ્ટેજ 2 ના બે ભાગ છે: 2A (ગર્ભાશય કે ફેલોપિયન ટ્યુબ સુધી ફેલાવો) અને 2B (પેશાબની થેલી કે મળાશય જેવા બીજા પેલ્વિક અવયવો સુધી ફેલાવો). આ સ્ટેજમાં કેન્સર હજુ પેલ્વિસ પૂરતું જ મર્યાદિત હોય છે અને પેટના ઉપરના ભાગ કે દૂરના અવયવો સુધી પહોંચ્યું નથી હોતું.",
+    "whyImportant": "Standard treatment involves debulking surgery followed by chemotherapy. Staging accuracy at this point directly guides how aggressive the follow-up chemotherapy plan needs to be.",
+    "whyImportantGu": "સામાન્ય સારવારમાં ડિબલ્કિંગ સર્જરી પછી કીમોથેરાપીનો સમાવેશ થાય છે. આ તબક્કે સ્ટેજ ચોક્કસ રીતે નક્કી કરવું જરૂરી છે કારણ કે તેના પરથી પછીની કીમોથેરાપી કેટલી સખત રાખવી તે નક્કી થાય છે.",
+    "source": "FIGO Staging Classification"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Endometrioid Ovarian Carcinoma",
+    "nameGu": "એન્ડોમેટ્રિઓઇડ ઓવેરિયન કાર્સિનોમા",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "subtype",
+      "endometriosis"
+    ],
+    "simpleMeaning": "A type of ovarian cancer made of cells that resemble the lining of the uterus, sometimes linked to endometriosis.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરનો એક પ્રકાર જેના કોષો ગર્ભાશયના અંદરના પડ (એન્ડોમેટ્રિયમ) જેવા દેખાય છે, જે ક્યારેક એન્ડોમેટ્રિઓસિસ સાથે સંકળાયેલો હોય છે.",
+    "detailedDescription": "Endometrioid carcinoma accounts for roughly 10% of epithelial ovarian cancers. It is often diagnosed at an earlier stage than HGSOC and tends to have a better prognosis. A subset of patients also have a synchronous cancer of the uterine lining.",
+    "detailedDescriptionGu": "એન્ડોમેટ્રિઓઇડ કાર્સિનોમા લગભગ 10% એપિથેલિયલ ઓવેરિયન કેન્સર કેસમાં જોવા મળે છે. તે સામાન્ય રીતે HGSOC કરતાં વહેલા સ્ટેજમાં પકડાય છે અને તેનું પરિણામ થોડું સારું હોય છે. કેટલાક દર્દીઓમાં ગર્ભાશયના અંદરના પડનું કેન્સર પણ સાથે જ જોવા મળે છે.",
+    "whyImportant": "Because of the endometriosis link and better differentiation, treatment response and long-term outlook can differ from high-grade serous cancer, so pathology subtype guides the oncologist's specific plan.",
+    "whyImportantGu": "એન્ડોમેટ્રિઓસિસ સાથેના જોડાણ અને કોષોના સારા બંધારણને કારણે, સારવારનો પ્રતિભાવ અને લાંબાગાળાનું પરિણામ હાઈ-ગ્રેડ સિરસ કેન્સર કરતાં અલગ હોઈ શકે છે, તેથી પેથોલોજી રિપોર્ટના આધારે ડોક્ટર ચોક્કસ સારવાર યોજના બનાવે છે.",
+    "source": "Gynecologic Pathology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Homologous Recombination Deficiency (HRD)",
+    "nameGu": "હોમોલોગસ રિકોમ્બિનેશન ડેફિશિયન્સી (HRD)",
+    "category": "cancer_info",
+    "tags": [
+      "genetics",
+      "biomarker",
+      "PARP inhibitor"
+    ],
+    "simpleMeaning": "A test result showing that a tumor's cells have trouble repairing damaged DNA, which makes them more sensitive to certain drugs.",
+    "simpleMeaningGu": "એક ટેસ્ટ પરિણામ જે દર્શાવે છે કે ગાંઠના કોષો પોતાના તૂટેલા DNA ને સરખું કરવામાં નબળા છે, જેના કારણે તે અમુક ચોક્કસ દવાઓ પ્રત્યે વધુ સંવેદનશીલ બને છે.",
+    "detailedDescription": "HRD includes BRCA-mutated tumors as well as tumors with other defects in the DNA repair pathway. HRD status is determined via specialized tumor tissue testing (genomic scarring assays) done alongside or instead of standard BRCA testing.",
+    "detailedDescriptionGu": "HRD માં BRCA મ્યુટેશનવાળી ગાંઠો ઉપરાંત, DNA સમારકામની બીજી ખામીઓ ધરાવતી ગાંઠોનો પણ સમાવેશ થાય છે. HRD સ્ટેટસ ગાંઠના ટિશ્યુ પર ખાસ ટેસ્ટ (જિનોમિક સ્કારિંગ) દ્વારા ચકાસવામાં આવે છે, જે સામાન્ય BRCA ટેસ્ટ સાથે અથવા તેના બદલે કરવામાં આવે છે.",
+    "whyImportant": "Patients with HRD-positive tumors, even without a BRCA mutation, show a strong benefit from PARP inhibitor maintenance therapy, so this test can expand who qualifies for these drugs.",
+    "whyImportantGu": "HRD-પોઝિટિવ ગાંઠ ધરાવતા દર્દીઓ, ભલે તેમને BRCA મ્યુટેશન ન હોય, તેમને PARP ઇન્હિબિટર મેઇન્ટેનન્સ થેરાપીથી સારો ફાયદો થાય છે, તેથી આ ટેસ્ટના કારણે વધુ દર્દીઓ આ દવાઓ માટે લાયક ઠરે છે.",
+    "source": "Genomic Biomarker Testing Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Primary Peritoneal Cancer",
+    "nameGu": "પ્રાયમરી પેરિટોનિયલ કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "peritoneum",
+      "related to ovarian"
+    ],
+    "simpleMeaning": "A cancer that behaves and is treated exactly like ovarian cancer but starts in the lining of the abdomen instead of the ovary itself.",
+    "simpleMeaningGu": "એક કેન્સર જે ઓવેરિયન કેન્સર જેવું જ વર્તન કરે છે અને તેની જ સારવાર થાય છે, પરંતુ તે ઓવરીને બદલે પેટની અંદરના પડ (પેરિટોનિયમ) માંથી શરૂ થાય છે.",
+    "detailedDescription": "Primary peritoneal cancer arises from the same type of cells that line the ovaries and fallopian tubes, since the peritoneum, fallopian tubes, and ovarian surface all originate from the same embryonic tissue. It is diagnosed when a woman has widespread peritoneal disease with normal-sized ovaries.",
+    "detailedDescriptionGu": "પ્રાયમરી પેરિટોનિયલ કેન્સર એ જ પ્રકારના કોષોમાંથી શરૂ થાય છે જે ઓવરી અને ફેલોપિયન ટ્યુબમાં હોય છે, કારણ કે પેરિટોનિયમ, ફેલોપિયન ટ્યુબ અને ઓવરીની સપાટી બધા એક જ ગર્ભસ્થ પેશીમાંથી બને છે. જ્યારે સ્ત્રીની ઓવરી સામાન્ય કદની હોય પણ પેટમાં કેન્સર ફેલાયેલું જોવા મળે, ત્યારે આ નિદાન કરવામાં આવે છે.",
+    "whyImportant": "Because it is biologically identical to ovarian cancer, it is staged, treated, and monitored (including CA-125 tracking) using the exact same protocols, so a patient should not be alarmed by this distinct-sounding name.",
+    "whyImportantGu": "તે ઓવેરિયન કેન્સર જેવું જ હોવાથી, તેનું સ્ટેજિંગ, સારવાર અને દેખરેખ (CA-125 સહિત) બરાબર એ જ પદ્ધતિથી કરવામાં આવે છે, તેથી આ અલગ નામથી દર્દીએ ગભરાવાની જરૂર નથી.",
+    "source": "Gynecologic Oncology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Recurrent Ovarian Cancer",
+    "nameGu": "ફરી ઉથલો મારેલું ઓવેરિયન કેન્સર (રિકરન્સ)",
+    "category": "cancer_info",
+    "tags": [
+      "recurrence",
+      "follow-up",
+      "relapse"
+    ],
+    "simpleMeaning": "When ovarian cancer comes back after a period of successful treatment where no disease was detectable.",
+    "simpleMeaningGu": "જ્યારે સફળ સારવાર પછી, જ્યાં કોઈ કેન્સર દેખાતું ન હતું ત્યાં, ઓવેરિયન કેન્સર ફરીથી પાછું આવે.",
+    "detailedDescription": "Recurrence is common in advanced-stage ovarian cancer and is usually first detected through a rising CA-125 level, sometimes before symptoms or imaging changes appear. It is classified as platinum-sensitive or platinum-resistant based on the time elapsed since the last platinum chemotherapy.",
+    "detailedDescriptionGu": "એડવાન્સ સ્ટેજના ઓવેરિયન કેન્સરમાં રિકરન્સ સામાન્ય છે અને તે મોટાભાગે CA-125 ના સ્તરમાં વધારો થવાથી સૌથી પહેલા ખબર પડે છે, ક્યારેક લક્ષણો કે સ્કેનમાં ફેરફાર દેખાય તે પહેલાં જ. છેલ્લી પ્લેટિનમ કીમોથેરાપી પછી કેટલો સમય પસાર થયો તેના આધારે તેને 'પ્લેટિનમ-સેન્સિટિવ' કે 'પ્લેટિનમ-રેઝિસ્ટન્ટ' તરીકે વર્ગીકૃત કરવામાં આવે છે.",
+    "whyImportant": "Regular follow-up visits and CA-125 monitoring are designed specifically to catch recurrence early, giving the oncology team more options for further treatment lines.",
+    "whyImportantGu": "નિયમિત ફોલો-અપ મુલાકાતો અને CA-125 ની દેખરેખ ખાસ કરીને રિકરન્સને વહેલી પકડવા માટે જ રાખવામાં આવે છે, જેથી ડોક્ટરની ટીમ પાસે આગળની સારવાર માટે વધુ વિકલ્પો રહે.",
+    "source": "Oncology Follow-Up Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Optimal vs Suboptimal Debulking (R0/R1/R2)",
+    "nameGu": "ઓપ્ટિમલ vs સબઓપ્ટિમલ ડિબલ્કિંગ (R0/R1/R2)",
+    "category": "cancer_info",
+    "tags": [
+      "surgery",
+      "outcome",
+      "grading"
+    ],
+    "simpleMeaning": "A grading system that describes how much visible tumor was left behind after debulking surgery.",
+    "simpleMeaningGu": "એક ગ્રેડિંગ પદ્ધતિ જે દર્શાવે છે કે ડિબલ્કિંગ સર્જરી પછી કેટલી દેખાતી ગાંઠ પાછળ રહી ગઈ.",
+    "detailedDescription": "R0 means no visible residual tumor remains (complete/optimal cytoreduction). R1 means residual disease is present but each nodule is smaller than 1 cm (optimal). R2 means residual tumor larger than 1 cm remains (suboptimal). Surgeons record this rating in the operative notes immediately after surgery.",
+    "detailedDescriptionGu": "R0 એટલે સર્જરી પછી કોઈ ગાંઠ દેખાતી બાકી ન રહી હોય (સંપૂર્ણ/ઓપ્ટિમલ). R1 એટલે થોડી ગાંઠ બાકી છે પણ દરેક ટુકડો 1 સેમી થી નાનો છે (ઓપ્ટિમલ). R2 એટલે 1 સેમી થી મોટી ગાંઠ પાછળ રહી ગઈ છે (સબઓપ્ટિમલ). સર્જન સર્જરી પછી તરત જ ઓપરેશન નોંધમાં આ રેટિંગ લખે છે.",
+    "whyImportant": "This is one of the single strongest predictors of long-term survival in ovarian cancer — patients achieving R0 resection have significantly better outcomes than those with suboptimal debulking.",
+    "whyImportantGu": "ઓવેરિયન કેન્સરમાં લાંબાગાળે જીવિત રહેવાની શક્યતાનું આ સૌથી મજબૂત સૂચક છે — R0 (સંપૂર્ણ) સર્જરી કરાવનાર દર્દીઓનું પરિણામ સબઓપ્ટિમલ સર્જરી કરાવનાર કરતાં ઘણું સારું હોય છે.",
+    "source": "Surgical Oncology Outcomes Data"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Omental Caking",
+    "nameGu": "ઓમેન્ટલ કેકિંગ",
+    "category": "cancer_info",
+    "tags": [
+      "imaging finding",
+      "spread pattern",
+      "omentum"
+    ],
+    "simpleMeaning": "A finding on a CT scan where cancer has thickened and hardened the fatty apron-like tissue that covers the abdominal organs.",
+    "simpleMeaningGu": "CT સ્કેનમાં જોવા મળતું એક તારણ, જ્યાં કેન્સરના કારણે પેટના અવયવોને ઢાંકતી ચરબીવાળી પડદા જેવી પેશી (ઓમેન્ટમ) જાડી અને કડક થઈ ગઈ હોય.",
+    "detailedDescription": "The omentum is a fold of fatty tissue that drapes over the intestines. Ovarian cancer cells frequently seed onto this tissue, causing it to become a solid, cake-like mass visible on imaging — hence the term 'omental caking'. It is a classic sign of advanced peritoneal spread.",
+    "detailedDescriptionGu": "ઓમેન્ટમ એ આંતરડા પર ઢંકાયેલી ચરબીની એક પડ છે. ઓવેરિયન કેન્સરના કોષો વારંવાર આ પેશી પર જમા થાય છે, જેના કારણે તે સ્કેનમાં એક કડક, કેક જેવા ગઠ્ઠા તરીકે દેખાય છે — તેથી તેને 'ઓમેન્ટલ કેકિંગ' કહેવાય છે. તે એડવાન્સ સ્ટેજમાં પેટમાં ફેલાવાનું એક લાક્ષણિક ચિહ્ન છે.",
+    "whyImportant": "Removal of the omentum (omentectomy) is a standard part of debulking surgery precisely because this tissue is such a common site for cancer to spread.",
+    "whyImportantGu": "ડિબલ્કિંગ સર્જરીમાં ઓમેન્ટમ કાઢવું (ઓમેન્ટેક્ટોમી) એ પ્રમાણભૂત ભાગ છે, કારણ કે આ પેશી કેન્સર ફેલાવા માટેની ખૂબ સામાન્ય જગ્યા છે.",
+    "source": "Radiology & Surgical Oncology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Malignant Ascites",
+    "nameGu": "મેલિગ્નન્ટ એસાઇટ્સ (કેન્સરના કારણે પેટમાં પાણી)",
+    "category": "cancer_info",
+    "tags": [
+      "symptom",
+      "fluid buildup",
+      "abdomen"
+    ],
+    "simpleMeaning": "Fluid buildup in the abdomen caused directly by cancer cells irritating the peritoneal lining.",
+    "simpleMeaningGu": "કેન્સરના કોષો પેટની અંદરના પડને (પેરિટોનિયમને) બળતરા કરવાના કારણે પેટમાં થતો પ્રવાહીનો ભરાવો.",
+    "detailedDescription": "Malignant ascites is common in advanced ovarian cancer and can cause abdominal swelling, pain, breathlessness, and early satiety. It may require a drainage procedure called paracentesis for symptom relief, in addition to systemic chemotherapy to control the underlying cancer.",
+    "detailedDescriptionGu": "એડવાન્સ ઓવેરિયન કેન્સરમાં મેલિગ્નન્ટ એસાઇટ્સ સામાન્ય છે અને તેના કારણે પેટ ફૂલવું, દુખાવો, શ્વાસ ચડવો અને થોડું ખાવાથી જ પેટ ભરાઈ ગયું હોય તેવું લાગવું જેવા લક્ષણો થાય છે. લક્ષણોમાં રાહત માટે 'પેરાસેન્ટેસિસ' નામની પ્રક્રિયા દ્વારા પ્રવાહી કાઢવું જરૂરી બની શકે છે, સાથે કેન્સરને કાબૂમાં રાખવા કીમોથેરાપી પણ ચાલુ રખાય છે.",
+    "whyImportant": "Sudden or rapid abdominal swelling and breathlessness should be reported to the oncology team promptly, as repeated large-volume ascites can also signal disease progression.",
+    "whyImportantGu": "પેટ અચાનક કે ઝડપથી ફૂલવું અને શ્વાસ ચડવો, આ બંનેની જાણ તરત જ ડોક્ટરની ટીમને કરવી જોઈએ, કારણ કે વારંવાર મોટા પ્રમાણમાં એસાઇટ્સ થવું એ કેન્સર વધવાનો સંકેત પણ હોઈ શકે છે.",
+    "source": "Clinical Oncology Symptom Guide"
+  },
+  {
+    "type": "cancer_info",
+    "name": "HE4 (Human Epididymis Protein 4)",
+    "nameGu": "HE4 (હ્યુમન એપિડિડાયમિસ પ્રોટીન 4)",
+    "category": "cancer_info",
+    "tags": [
+      "biomarker",
+      "blood test",
+      "diagnosis"
+    ],
+    "simpleMeaning": "A second blood-marker test, used alongside CA-125, that helps assess the likelihood that a pelvic mass is cancerous.",
+    "simpleMeaningGu": "CA-125 સાથે વપરાતો બીજો બ્લડ માર્કર ટેસ્ટ, જે પેલ્વિસમાં જોવા મળેલી ગાંઠ કેન્સરની હોવાની શક્યતા આકારવામાં મદદ કરે છે.",
+    "detailedDescription": "HE4 tends to be more specific to ovarian cancer than CA-125, meaning it is less likely to be falsely elevated by benign conditions like endometriosis or fibroids. It is most often used in combination with CA-125 as part of the ROMA score calculation.",
+    "detailedDescriptionGu": "HE4 સામાન્ય રીતે CA-125 કરતાં ઓવેરિયન કેન્સર માટે વધુ ચોક્કસ હોય છે, એટલે કે એન્ડોમેટ્રિઓસિસ કે ફાઇબ્રોઇડ જેવી બિન-કેન્સર સ્થિતિઓમાં તે ખોટી રીતે વધવાની શક્યતા ઓછી છે. તેનો સૌથી વધુ ઉપયોગ CA-125 સાથે મળીને ROMA સ્કોર કાઢવા માટે થાય છે.",
+    "whyImportant": "Combining HE4 and CA-125 improves the accuracy of distinguishing a benign ovarian mass from a malignant one before surgery, helping plan the right type of operation and surgical team.",
+    "whyImportantGu": "HE4 અને CA-125 ને એકસાથે જોવાથી, સર્જરી પહેલા ઓવેરિયન ગાંઠ કેન્સરની છે કે નહીં તે વધુ ચોકસાઈથી નક્કી કરવામાં મદદ મળે છે, જેનાથી યોગ્ય પ્રકારની સર્જરી અને ટીમનું આયોજન થઈ શકે છે.",
+    "source": "Tumor Marker Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "ROMA Score",
+    "nameGu": "ROMA સ્કોર",
+    "category": "cancer_info",
+    "tags": [
+      "diagnosis",
+      "risk assessment",
+      "biomarker"
+    ],
+    "simpleMeaning": "A calculated score combining CA-125, HE4, and menopausal status to estimate the risk that a pelvic mass is ovarian cancer.",
+    "simpleMeaningGu": "CA-125, HE4 અને મેનોપોઝની સ્થિતિને એકસાથે જોડીને ગણવામાં આવતો સ્કોર, જે પેલ્વિક ગાંઠ ઓવેરિયન કેન્સર હોવાનું જોખમ આકારે છે.",
+    "detailedDescription": "ROMA stands for Risk of Ovarian Malignancy Algorithm. It categorizes a patient as low-risk or high-risk for malignancy, which helps decide whether the case should be referred to a gynecologic oncologist for surgery rather than a general gynecologist.",
+    "detailedDescriptionGu": "ROMA એટલે 'રિસ્ક ઓફ ઓવેરિયન મેલિગ્નન્સી અલ્ગોરિધમ'. તે દર્દીને ઓછા જોખમ કે વધુ જોખમની શ્રેણીમાં મૂકે છે, જેનાથી નક્કી થાય છે કે સર્જરી માટે સામાન્ય ગાયનેકોલોજિસ્ટને બદલે ગાયનેકોલોજિક ઓન્કોલોજિસ્ટ પાસે મોકલવું જોઈએ કે નહીં.",
+    "whyImportant": "Being operated on by a specialized gynecologic oncologist from the start (rather than needing a second surgery later) is linked to better staging accuracy and survival outcomes.",
+    "whyImportantGu": "શરૂઆતથી જ નિષ્ણાત ગાયનેકોલોજિક ઓન્કોલોજિસ્ટ પાસે સર્જરી કરાવવાથી (પછીથી બીજી સર્જરીની જરૂર પડવાને બદલે) સ્ટેજિંગ વધુ ચોકસાઈથી થાય છે અને પરિણામ પણ સારું રહે છે.",
+    "source": "Risk of Malignancy Algorithm Studies"
+  },
+  {
+    "type": "cancer_info",
+    "name": "FIGO Staging System",
+    "nameGu": "FIGO સ્ટેજિંગ પદ્ધતિ",
+    "category": "cancer_info",
+    "tags": [
+      "staging",
+      "classification",
+      "overview"
+    ],
+    "simpleMeaning": "The internationally standard system doctors use to describe how far ovarian cancer has spread, using stages 1 through 4.",
+    "simpleMeaningGu": "ડોક્ટરો ઓવેરિયન કેન્સર કેટલું ફેલાયું છે તે દર્શાવવા માટે વાપરતી આંતરરાષ્ટ્રીય પ્રમાણભૂત પદ્ધતિ, જેમાં સ્ટેજ 1 થી 4 હોય છે.",
+    "detailedDescription": "FIGO (International Federation of Gynecology and Obstetrics) staging is based on findings during surgery, not just imaging. Stage 1 is confined to the ovaries, Stage 2 involves pelvic extension, Stage 3 involves spread to the abdomen or lymph nodes, and Stage 4 involves distant organ spread like the liver or lungs.",
+    "detailedDescriptionGu": "FIGO (ઇન્ટરનેશનલ ફેડરેશન ઓફ ગાયનેકોલોજી એન્ડ ઓબ્સ્ટેટ્રિક્સ) સ્ટેજિંગ ફક્ત સ્કેન પર નહીં પરંતુ સર્જરી દરમિયાન મળેલા તારણો પર આધારિત છે. સ્ટેજ 1 ફક્ત ઓવરી પૂરતું, સ્ટેજ 2 પેલ્વિસ સુધી ફેલાવો, સ્ટેજ 3 પેટ કે લસિકા ગ્રંથિ સુધી ફેલાવો, અને સ્ટેજ 4 લિવર કે ફેફસાં જેવા દૂરના અવયવો સુધી ફેલાવો દર્શાવે છે.",
+    "whyImportant": "The FIGO stage is the single biggest factor doctors use to plan the treatment sequence (surgery-first vs chemo-first) and to estimate prognosis.",
+    "whyImportantGu": "સારવારનો ક્રમ (પહેલા સર્જરી કે પહેલા કીમો) નક્કી કરવા અને પરિણામનો અંદાજ કાઢવા માટે FIGO સ્ટેજ એ ડોક્ટરો માટેનું સૌથી મોટું પરિબળ છે.",
+    "source": "FIGO Committee on Gynecologic Oncology"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Lynch Syndrome and Ovarian Cancer",
+    "nameGu": "લિન્ચ સિન્ડ્રોમ અને ઓવેરિયન કેન્સર",
+    "category": "cancer_info",
+    "tags": [
+      "genetics",
+      "hereditary",
+      "family risk"
+    ],
+    "simpleMeaning": "An inherited genetic condition that raises the risk of ovarian cancer along with colon and uterine cancers.",
+    "simpleMeaningGu": "એક વારસાગત જીનેટિક સ્થિતિ, જે કોલોન અને ગર્ભાશયના કેન્સર સાથે ઓવેરિયન કેન્સરનું જોખમ પણ વધારે છે.",
+    "detailedDescription": "Lynch syndrome is caused by mutations in DNA mismatch-repair genes (such as MLH1, MSH2, MSH6, PMS2). It accounts for a smaller share of hereditary ovarian cancer than BRCA mutations, but families with a strong history of colon and uterine cancer should be tested for it.",
+    "detailedDescriptionGu": "લિન્ચ સિન્ડ્રોમ DNA સમારકામ કરતા જનીનોમાં (જેમ કે MLH1, MSH2, MSH6, PMS2) ખામીના કારણે થાય છે. વારસાગત ઓવેરિયન કેન્સરમાં તેનો હિસ્સો BRCA કરતાં ઓછો છે, પરંતુ જે પરિવારોમાં કોલોન અને ગર્ભાશયના કેન્સરનો મજબૂત ઇતિહાસ હોય તેમની આ માટે તપાસ કરાવવી જોઈએ.",
+    "whyImportant": "Identifying Lynch syndrome affects surveillance recommendations for the patient's relatives and may also open up eligibility for certain immunotherapy options.",
+    "whyImportantGu": "લિન્ચ સિન્ડ્રોમ ઓળખવાથી દર્દીના પરિવારજનો માટે તપાસની ભલામણો બદલાય છે અને અમુક ઇમ્યુનોથેરાપી વિકલ્પો માટે લાયકાત પણ ખૂલી શકે છે.",
+    "source": "Hereditary Cancer Genetics Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Germline vs Somatic Mutation",
+    "nameGu": "જર્મલાઈન vs સોમેટિક મ્યુટેશન",
+    "category": "cancer_info",
+    "tags": [
+      "genetics",
+      "testing",
+      "BRCA"
+    ],
+    "simpleMeaning": "The difference between a genetic mutation inherited from a parent (germline) and one that developed only inside the tumor itself (somatic).",
+    "simpleMeaningGu": "માતાપિતા પાસેથી વારસામાં મળેલા જીનેટિક મ્યુટેશન (જર્મલાઈન) અને ફક્ત ગાંઠની અંદર જ વિકસેલા મ્યુટેશન (સોમેટિક) વચ્ચેનો તફાવત.",
+    "detailedDescription": "Germline mutations are present in every cell of the body and can be passed to children, tested for via a blood or saliva sample. Somatic mutations exist only within the tumor tissue and are found through tumor biopsy testing; they are not inherited and cannot be passed on.",
+    "detailedDescriptionGu": "જર્મલાઈન મ્યુટેશન શરીરના દરેક કોષમાં હોય છે અને બાળકોમાં ઉતરી શકે છે, જેની તપાસ લોહી કે લાળના નમૂનાથી થાય છે. સોમેટિક મ્યુટેશન ફક્ત ગાંઠની પેશીમાં જ હોય છે અને તે બાયોપ્સી ટેસ્ટ દ્વારા શોધાય છે; તે વારસાગત નથી અને આગળ ઉતરતું નથી.",
+    "whyImportant": "Both types of BRCA mutation can make a tumor eligible for PARP inhibitor therapy, but only a germline mutation carries implications for genetic counseling of family members.",
+    "whyImportantGu": "બંને પ્રકારના BRCA મ્યુટેશન ગાંઠને PARP ઇન્હિબિટર થેરાપી માટે લાયક બનાવી શકે છે, પરંતુ ફક્ત જર્મલાઈન મ્યુટેશન જ પરિવારજનો માટે જિનેટિક કાઉન્સેલિંગની જરૂરિયાત સૂચવે છે.",
+    "source": "Clinical Genetics Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Peritoneal Carcinomatosis",
+    "nameGu": "પેરિટોનિયલ કાર્સિનોમેટોસિસ",
+    "category": "cancer_info",
+    "tags": [
+      "spread pattern",
+      "advanced disease",
+      "peritoneum"
+    ],
+    "simpleMeaning": "Widespread scattering of cancer nodules across the lining of the entire abdominal cavity.",
+    "simpleMeaningGu": "પેટની આખી અંદરની પોલાણના પડ પર કેન્સરના નાના-નાના ગઠ્ઠાઓ ફેલાયેલા હોવાની સ્થિતિ.",
+    "detailedDescription": "Ovarian cancer commonly spreads via direct shedding of cells into the peritoneal fluid rather than through the bloodstream, which is why it frequently coats the surfaces of the bowel, liver capsule, diaphragm, and pelvic organs. This pattern is a hallmark of Stage 3 disease.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સર સામાન્ય રીતે લોહી મારફતે નહીં, પરંતુ પેટના પ્રવાહીમાં કોષો સીધા ખરી પડવાથી ફેલાય છે, તેથી તે વારંવાર આંતરડા, લિવરના પડ, ડાયાફ્રામ અને પેલ્વિક અવયવોની સપાટી પર જમા થાય છે. આ ફેલાવાની રીત સ્ટેજ 3 ની ખાસ ઓળખ છે.",
+    "whyImportant": "This spread pattern explains why debulking surgery for ovarian cancer often requires removing or scraping tissue from multiple abdominal surfaces, not just the ovaries.",
+    "whyImportantGu": "આ ફેલાવાની રીતના કારણે જ ઓવેરિયન કેન્સરની ડિબલ્કિંગ સર્જરીમાં ફક્ત ઓવરી જ નહીં, પરંતુ પેટની અંદરની અનેક સપાટીઓ પરથી પેશી કાઢવી કે ખોતરવી પડે છે.",
+    "source": "Surgical Oncology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Tumor Grade (Grade 1, 2, 3)",
+    "nameGu": "ટ્યુમર ગ્રેડ (ગ્રેડ 1, 2, 3)",
+    "category": "cancer_info",
+    "tags": [
+      "pathology",
+      "diagnosis",
+      "aggressiveness"
+    ],
+    "simpleMeaning": "A pathology score describing how abnormal the cancer cells look under a microscope, which reflects how fast the cancer is likely to grow.",
+    "simpleMeaningGu": "એક પેથોલોજી સ્કોર જે દર્શાવે છે કે માઈક્રોસ્કોપ નીચે કેન્સરના કોષો કેટલા અસામાન્ય દેખાય છે, જે કેન્સર કેટલી ઝડપથી વધી શકે તે દર્શાવે છે.",
+    "detailedDescription": "Grade is different from Stage — grade describes the cell appearance while stage describes spread. Grade 1 cells look close to normal (well-differentiated, slower growing) while Grade 3 cells look very abnormal (poorly-differentiated, fast growing, more likely to be HGSOC).",
+    "detailedDescriptionGu": "ગ્રેડ એ સ્ટેજથી અલગ છે — ગ્રેડ કોષોના દેખાવ વિશે છે જ્યારે સ્ટેજ ફેલાવા વિશે છે. ગ્રેડ 1 ના કોષો સામાન્ય કોષો જેવા દેખાય છે (ધીમે વધનારા), જ્યારે ગ્રેડ 3 ના કોષો ખૂબ અસામાન્ય દેખાય છે (ઝડપથી વધનારા, મોટાભાગે HGSOC પ્રકારના).",
+    "whyImportant": "Grade, along with stage, helps determine whether chemotherapy is needed after surgery even in early-stage disease, since high-grade tumors carry a higher risk of hidden spread.",
+    "whyImportantGu": "સ્ટેજ સાથે ગ્રેડ પણ નક્કી કરવામાં મદદ કરે છે કે શરૂઆતના સ્ટેજમાં પણ સર્જરી પછી કીમોથેરાપીની જરૂર છે કે નહીં, કારણ કે હાઈ-ગ્રેડ ગાંઠોમાં છુપાયેલા ફેલાવાનું જોખમ વધારે હોય છે.",
+    "source": "Pathology Grading Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "CA-125 Nadir",
+    "nameGu": "CA-125 નાડિર (સૌથી નીચું સ્તર)",
+    "category": "cancer_info",
+    "tags": [
+      "biomarker",
+      "monitoring",
+      "treatment response"
+    ],
+    "simpleMeaning": "The lowest CA-125 level a patient reaches during or after chemotherapy, used as a reference point for future monitoring.",
+    "simpleMeaningGu": "કીમોથેરાપી દરમિયાન કે પછી દર્દીનું CA-125 જે સૌથી નીચા સ્તરે પહોંચે તે, જેને ભવિષ્યની દેખરેખ માટે સંદર્ભ બિંદુ તરીકે વાપરવામાં આવે છે.",
+    "detailedDescription": "After each chemotherapy cycle, CA-125 typically falls. The lowest value reached, called the nadir, is recorded and compared against future test results. A rise of a certain percentage above this nadir is one of the earliest indicators used to flag possible recurrence.",
+    "detailedDescriptionGu": "દરેક કીમોથેરાપી સાયકલ પછી CA-125 સામાન્ય રીતે ઘટે છે. જે સૌથી નીચું સ્તર આવે તેને 'નાડિર' કહેવાય છે અને તેને ભવિષ્યના રિપોર્ટ સાથે સરખાવવામાં આવે છે. આ નાડિરથી ચોક્કસ ટકા વધારો થાય તો તે રિકરન્સ થવાની શક્યતાનું સૌથી વહેલું સંકેત ગણાય છે.",
+    "whyImportant": "Tracking the nadir gives the care team an individualized baseline for each patient, since 'normal' CA-125 can vary from person to person even without active disease.",
+    "whyImportantGu": "નાડિર પર નજર રાખવાથી ડોક્ટરની ટીમને દરેક દર્દી માટે અલગ-અલગ સંદર્ભ સ્તર મળે છે, કારણ કે કેન્સર ન હોય તો પણ 'સામાન્ય' CA-125 વ્યક્તિએ વ્યક્તિએ અલગ હોઈ શકે છે.",
+    "source": "Tumor Marker Monitoring Protocol"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Neoadjuvant Chemotherapy (NACT)",
+    "nameGu": "નિયોએડજ્યુવેન્ટ કીમોથેરાપી (NACT)",
+    "category": "cancer_info",
+    "tags": [
+      "chemotherapy",
+      "treatment timing",
+      "advanced stage"
+    ],
+    "simpleMeaning": "Chemotherapy given before surgery to shrink the tumor and make the operation safer and more successful.",
+    "simpleMeaningGu": "સર્જરી પહેલાં ગાંઠને નાની કરવા અને ઓપરેશન વધુ સુરક્ષિત અને સફળ બનાવવા માટે અપાતી કીમોથેરાપી.",
+    "detailedDescription": "For patients with advanced ovarian cancer (Stage 3 or 4) where upfront surgery might not successfully remove all tumors (or if the patient is too weak), NACT is used. Typically, 3 to 4 cycles are given, followed by interval debulking surgery, and then more chemotherapy.",
+    "detailedDescriptionGu": "એડવાન્સ ઓવેરિયન કેન્સર (સ્ટેજ 3 કે 4) ના દર્દીઓમાં, જ્યાં શરૂઆતમાં જ સર્જરીથી બધી ગાંઠ કાઢવી મુશ્કેલ હોય અથવા દર્દી નબળા હોય, ત્યારે NACT અપાય છે. સામાન્ય રીતે કીમોથેરાપીની 3 થી 4 સાયકલ અપાય છે, પછી સર્જરી થાય છે અને ત્યારબાદ બાકીની કીમો અપાય છે.",
+    "whyImportant": "It reduces the size and spread of the cancer, significantly increasing the chances of achieving an optimal (R0) surgical outcome with fewer surgical complications.",
+    "whyImportantGu": "તેનાથી કેન્સરની સાઇઝ અને ફેલાવો ઘટે છે, જેના કારણે સર્જરી દ્વારા ગાંઠને પૂરેપૂરી કાઢવાની શક્યતા વધે છે અને સર્જરીના જોખમો ઘટે છે.",
+    "source": "NCCN Treatment Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Adjuvant Chemotherapy",
+    "nameGu": "એડજ્યુવેન્ટ કીમોથેરાપી",
+    "category": "cancer_info",
+    "tags": [
+      "chemotherapy",
+      "treatment timing",
+      "post-surgery"
+    ],
+    "simpleMeaning": "Chemotherapy given after surgery to destroy any microscopic cancer cells that might have been left behind.",
+    "simpleMeaningGu": "સર્જરી પછી અપાતી કીમોથેરાપી, જેનો હેતુ શરીરમાં રહી ગયેલા અત્યંત ઝીણા કેન્સરના કોષોનો નાશ કરવાનો છે.",
+    "detailedDescription": "Even when a surgeon removes all visible cancer during primary debulking surgery, microscopic cancer cells usually remain in the body or bloodstream. Adjuvant chemotherapy is standard practice to eradicate these unseen cells.",
+    "detailedDescriptionGu": "જ્યારે સર્જન ઓપરેશન દરમિયાન દેખાતી બધી જ ગાંઠો કાઢી નાખે, તો પણ માઇક્રોસ્કોપિક (અત્યંત ઝીણા) કેન્સરના કોષો શરીરમાં રહી ગયા હોઈ શકે છે. આ અદ્રશ્ય કોષોને ખતમ કરવા માટે સર્જરી પછી એડજ્યુવેન્ટ કીમોથેરાપી આપવી એ સામાન્ય પ્રથા છે.",
+    "whyImportant": "It is crucial for preventing or delaying the recurrence of ovarian cancer, heavily impacting long-term survival.",
+    "whyImportantGu": "ઓવેરિયન કેન્સરને પાછું આવતું રોકવા અથવા વિલંબિત કરવા માટે આ ખૂબ મહત્વપૂર્ણ છે, જે દર્દીના લાંબા આયુષ્ય પર મોટી અસર કરે છે.",
+    "source": "Medical Oncology Protocols"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Paclitaxel (Taxol)",
+    "nameGu": "પેક્લિટેક્સેલ (ટેક્સોલ)",
+    "category": "cancer_info",
+    "tags": [
+      "chemotherapy",
+      "medication",
+      "taxane"
+    ],
+    "simpleMeaning": "A common chemotherapy drug used in combination with platinum drugs as the standard first-line treatment for ovarian cancer.",
+    "simpleMeaningGu": "પ્લેટિનમ દવાઓ સાથે વપરાતી એક સામાન્ય કીમોથેરાપીની દવા, જે ઓવેરિયન કેન્સરની પ્રથમ અને મુખ્ય સારવાર ગણાય છે.",
+    "detailedDescription": "Paclitaxel belongs to a class of drugs called taxanes, originally derived from the bark of the Pacific yew tree. It works by interfering with the cancer cell's ability to divide. It is usually administered intravenously along with Carboplatin.",
+    "detailedDescriptionGu": "પેક્લિટેક્સેલ એ 'ટેક્સેન' વર્ગની દવા છે. તે કેન્સરના કોષોને વિભાજિત થતા અને વધતા રોકે છે. સામાન્ય રીતે આ દવા કાર્બોપ્લેટિન સાથે નસમાં બોટલ દ્વારા (IV) આપવામાં આવે છે.",
+    "whyImportant": "The Carboplatin/Paclitaxel combination has been the gold standard for decades, offering the best initial response rates for epithelial ovarian cancer. Common side effects include hair loss and neuropathy (numbness in hands/feet).",
+    "whyImportantGu": "કાર્બોપ્લેટિન અને પેક્લિટેક્સેલનું મિશ્રણ દાયકાઓથી શ્રેષ્ઠ સારવાર મનાય છે, જે કેન્સર પર ખૂબ સારી અસર કરે છે. વાળ ખરવા અને હાથ-પગમાં ખાલી ચડવી એ આની સામાન્ય આડઅસર છે.",
+    "source": "Pharmacology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Carboplatin",
+    "nameGu": "કાર્બોપ્લેટિન",
+    "category": "cancer_info",
+    "tags": [
+      "chemotherapy",
+      "medication",
+      "platinum-based"
+    ],
+    "simpleMeaning": "The foundational platinum-based chemotherapy drug used to treat most forms of ovarian cancer.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરની સારવારમાં વપરાતી સૌથી મુખ્ય પ્લેટિનમ-આધારિત કીમોથેરાપીની દવા.",
+    "detailedDescription": "Carboplatin is a heavy metal compound that forms cross-links inside the DNA of fast-dividing cancer cells, stopping them from replicating and triggering cell death. It is preferred over its predecessor (Cisplatin) because it causes less nausea and kidney toxicity.",
+    "detailedDescriptionGu": "કાર્બોપ્લેટિન એવું તત્વ છે જે ઝડપથી વધતા કેન્સરના કોષોના DNA માં જઈને તેમને તોડે છે, જેનાથી કોષો મરી જાય છે. જૂની દવા સિસ્પ્લેટિન કરતાં આ વધુ સારી છે કારણ કે તેમાં ઉબકા કે કિડનીને નુકસાન થવાની શક્યતા ઓછી હોય છે.",
+    "whyImportant": "Ovarian cancer's sensitivity to Carboplatin is the defining factor in categorizing the disease as 'platinum-sensitive' or 'platinum-resistant', which dictates all future treatment decisions.",
+    "whyImportantGu": "ઓવેરિયન કેન્સર કાર્બોપ્લેટિનને કેટલી સારી રીતે દાદ આપે છે, તેના પરથી જ ભવિષ્યની બધી સારવાર નક્કી થાય છે (તેને પ્લેટિનમ-સેન્સિટિવ કે રેઝિસ્ટન્ટ ગણાય છે).",
+    "source": "Pharmacology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Bevacizumab (Avastin)",
+    "nameGu": "બેવાસીઝુમેબ (એવાસ્ટિન)",
+    "category": "cancer_info",
+    "tags": [
+      "targeted therapy",
+      "angiogenesis inhibitor",
+      "maintenance"
+    ],
+    "simpleMeaning": "A targeted therapy drug that starves the tumor by preventing it from growing its own blood vessels.",
+    "simpleMeaningGu": "એક ટાર્ગેટેડ થેરાપી જે કેન્સરની ગાંઠને નવી લોહીની નળીઓ બનાવતા રોકે છે, જેથી ગાંઠને પોષણ મળતું બંધ થાય છે.",
+    "detailedDescription": "Bevacizumab is a monoclonal antibody that binds to VEGF (Vascular Endothelial Growth Factor). Tumors need to create new blood vessels to grow beyond a tiny size (angiogenesis). This drug stops that process. It is given as an IV infusion.",
+    "detailedDescriptionGu": "બેવાસીઝુમેબ ગાંઠને મોટી થવા માટે જરૂરી નવી રક્તવાહિનીઓ બનવાની પ્રક્રિયા (એન્જીયોજેનેસિસ) અટકાવે છે. તેનાથી ગાંઠ ભૂખે મરે છે અને નાશ પામે છે. આ દવા IV ઇન્ફ્યુઝન દ્વારા અપાય છે.",
+    "whyImportant": "It is often added to standard chemotherapy and continued afterward as maintenance therapy, especially for patients with severe ascites or Stage 4 disease, to keep the cancer suppressed.",
+    "whyImportantGu": "આ દવા મોટાભાગે કીમોથેરાપી સાથે અપાય છે અને પછી તેને મેઇન્ટેનન્સ થેરાપી તરીકે ચાલુ રખાય છે, ખાસ કરીને જે દર્દીઓને પેટમાં પાણી ભરાતું હોય અથવા સ્ટેજ 4 હોય તેમને ફાયદો કરે છે.",
+    "source": "Targeted Oncology Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Bilateral Salpingo-Oophorectomy (BSO)",
+    "nameGu": "બાયલેટરલ સાલ્પિંગો-ઓફોરેક્ટોમી (BSO)",
+    "category": "cancer_info",
+    "tags": [
+      "surgery",
+      "anatomy",
+      "prevention"
+    ],
+    "simpleMeaning": "The surgical removal of both ovaries and both fallopian tubes.",
+    "simpleMeaningGu": "બંને અંડાશય (ઓવરી) અને બંને ગર્ભાશયની નળીઓ (ફેલોપિયન ટ્યુબ) કાઢવાની સર્જરી.",
+    "detailedDescription": "This is a fundamental component of both ovarian cancer staging/treatment and risk-reducing surgery for women with BRCA mutations. When performed on a pre-menopausal woman, it instantly induces surgical menopause.",
+    "detailedDescriptionGu": "આ ઓવેરિયન કેન્સરની સારવાર તેમજ BRCA મ્યુટેશનવાળી સ્ત્રીઓમાં કેન્સર રોકવા માટેની મુખ્ય સર્જરી છે. જો માસિક ચાલુ હોય તેવી સ્ત્રીઓમાં આ સર્જરી થાય, તો તરત જ મેનોપોઝ (માસિક બંધ થવું) આવી જાય છે.",
+    "whyImportant": "For ovarian cancer treatment, leaving any ovarian or tube tissue behind poses a severe risk of relapse. For prevention in high-risk women, BSO dramatically lowers the risk of ever developing the disease.",
+    "whyImportantGu": "કેન્સરની સારવારમાં આ જરૂરી છે જેથી ભવિષ્યમાં જોખમ ન રહે. જ્યારે હાઇ-રિસ્ક સ્ત્રીઓમાં આ સર્જરી કરાવવાથી કેન્સર થવાની શક્યતા ખૂબ ઘટી જાય છે.",
+    "source": "Surgical Gynecology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Total Abdominal Hysterectomy (TAH)",
+    "nameGu": "ટોટલ એબ્ડોમિનલ હિસ્ટરેક્ટોમી (TAH)",
+    "category": "cancer_info",
+    "tags": [
+      "surgery",
+      "uterus",
+      "treatment"
+    ],
+    "simpleMeaning": "The surgical removal of the entire uterus, including the cervix, usually through a cut in the abdomen.",
+    "simpleMeaningGu": "પેટમાં કાપો મૂકીને સર્વાઇક્સ (ગર્ભાશયનું મુખ) સહિત આખું ગર્ભાશય કાઢવાની સર્જરી.",
+    "detailedDescription": "In ovarian cancer surgery, TAH is almost always performed alongside the removal of the ovaries and tubes (BSO). This is because the uterus is a nearby structure where microscopic cancer cells can easily spread and hide.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સરની સર્જરીમાં, ઓવરી અને નળીઓ કાઢવાની સાથે મોટાભાગે આખું ગર્ભાશય પણ કાઢી નાખવામાં આવે છે. કારણ કે ગર્ભાશય બહુ નજીક હોય છે અને ત્યાં કેન્સરના કોષો છુપાયેલા હોઈ શકે છે.",
+    "whyImportant": "Removing the uterus helps ensure the most complete clearing of pelvic disease (optimal debulking) and prevents the cancer from spreading to or returning in the uterine tissue.",
+    "whyImportantGu": "ગર્ભાશય કાઢવાથી પેલ્વિસના ભાગમાંથી કેન્સર પૂરેપૂરું સાફ થઈ જાય છે અને ત્યાં ફરી કેન્સર થવાનું જોખમ ટળે છે.",
+    "source": "Surgical Oncology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Progression-Free Survival (PFS)",
+    "nameGu": "પ્રોગ્રેશન-ફ્રી સર્વાઇવલ (PFS)",
+    "category": "cancer_info",
+    "tags": [
+      "statistics",
+      "outcomes",
+      "remission"
+    ],
+    "simpleMeaning": "The length of time during and after treatment that a patient lives with the disease without it getting worse.",
+    "simpleMeaningGu": "સારવાર દરમિયાન અને તે પૂરી થયા પછીનો એવો સમયગાળો જેમાં દર્દી જીવિત હોય અને કેન્સર જરાય વધ્યું ન હોય.",
+    "detailedDescription": "PFS is a key metric in oncology clinical trials. It tracks the time from the start of treatment until the cancer either grows, spreads further, or returns (progresses). A longer PFS means the treatment is effectively controlling the disease.",
+    "detailedDescriptionGu": "PFS એ કેન્સરના સંશોધનોનો મુખ્ય માપદંડ છે. તે દર્શાવે છે કે સારવાર શરૂ થયા પછી કેટલા સમય સુધી કેન્સર વધ્યું કે પાછું નથી આવ્યું. PFS જેટલો લાંબો, સારવારની અસર તેટલી જ સારી ગણાય.",
+    "whyImportant": "For ovarian cancer, extending PFS is a primary goal of maintenance therapies like PARP inhibitors, giving patients long stretches of good quality life without needing active IV chemotherapy.",
+    "whyImportantGu": "ઓવેરિયન કેન્સરમાં, મેઇન્ટેનન્સ થેરાપીનો મુખ્ય હેતુ આ સમયગાળો (PFS) વધારવાનો છે, જેથી દર્દી વારંવાર કીમોથેરાપી લીધા વગર લાંબો સમય સારી જિંદગી જીવી શકે.",
+    "source": "Oncology Statistics Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Overall Survival (OS)",
+    "nameGu": "ઓવરઓલ સર્વાઇવલ (OS)",
+    "category": "cancer_info",
+    "tags": [
+      "statistics",
+      "outcomes",
+      "lifespan"
+    ],
+    "simpleMeaning": "The total length of time patients are still alive from the date of their diagnosis or the start of treatment.",
+    "simpleMeaningGu": "નિદાન થયાના અથવા સારવાર શરૂ કર્યાના દિવસથી દર્દી કુલ કેટલો સમય જીવિત રહે છે તેની ગણતરી.",
+    "detailedDescription": "Unlike PFS, Overall Survival does not factor in whether the cancer has returned or progressed; it only measures the duration of the patient's life. It is the ultimate gold standard for evaluating whether a new cancer drug truly benefits patients.",
+    "detailedDescriptionGu": "PFS થી વિપરીત, 'ઓવરઓલ સર્વાઇવલ' માં કેન્સર પાછું આવ્યું કે કેમ તે જોવાતું નથી; તે ફક્ત દર્દીના કુલ આયુષ્યને માપે છે. કોઈ નવી દવા ખરેખર દર્દીનું આયુષ્ય વધારે છે કે નહીં તે ચકાસવાનો આ સૌથી પાક્કો માપદંડ છે.",
+    "whyImportant": "While extending PFS is great, extending OS proves that the treatment genuinely gives the patient more time on earth, which is the most meaningful outcome.",
+    "whyImportantGu": "કેન્સર ન વધે તે સારો સમય છે (PFS), પરંતુ OS વધારવાનો અર્થ છે કે દર્દીને ખરેખર નવું અને લાંબુ આયુષ્ય મળ્યું છે, જે સૌથી મોટું પરિણામ છે.",
+    "source": "Oncology Statistics Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Lymphadenectomy",
+    "nameGu": "લિમ્ફેડેનેક્ટોમી (લસિકાગ્રંથિઓ કાઢવી)",
+    "category": "cancer_info",
+    "tags": [
+      "surgery",
+      "lymph nodes",
+      "staging"
+    ],
+    "simpleMeaning": "The surgical removal of lymph nodes in the pelvis and along the main blood vessels to check for cancer spread.",
+    "simpleMeaningGu": "પેલ્વિસમાં અને મુખ્ય રક્તવાહિનીઓ પાસે આવેલી લસિકાગ્રંથિઓને સર્જરી દ્વારા કાઢીને કેન્સર ફેલાયું છે કે કેમ તેની તપાસ કરવી.",
+    "detailedDescription": "In ovarian cancer staging surgery, the surgeon may remove pelvic and para-aortic lymph nodes. This is done to accurately determine the FIGO stage and remove any hidden pockets of disease, although its routine use in advanced stages with complete debulking has been debated.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સરની સ્ટેજિંગ સર્જરીમાં, સર્જન લસિકાગ્રંથિઓ કાઢીને બાયોપ્સીમાં મોકલે છે. આનાથી FIGO સ્ટેજ ચોક્કસપણે નક્કી થાય છે અને છુપાયેલું કેન્સર પણ દૂર થાય છે.",
+    "whyImportant": "Knowing whether the lymph nodes are positive for cancer is crucial for confirming Stage 3 disease and customizing the post-surgery chemotherapy plan.",
+    "whyImportantGu": "જો લસિકાગ્રંથિઓમાં કેન્સર હોય તો તે સ્ટેજ 3 ગણાય છે. આ માહિતી પરથી સર્જરી પછી કીમોથેરાપી કેટલી જરૂરી છે તે નક્કી થાય છે.",
+    "source": "Surgical Oncology Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Paracentesis",
+    "nameGu": "પેરાસેન્ટેસિસ (પેટમાંથી પાણી કાઢવું)",
+    "category": "cancer_info",
+    "tags": [
+      "procedure",
+      "symptom management",
+      "ascites"
+    ],
+    "simpleMeaning": "A procedure where a needle is inserted into the abdomen to drain off excess fluid (ascites).",
+    "simpleMeaningGu": "એક એવી પ્રક્રિયા જેમાં પેટમાં સોય નાખીને ભરાયેલું વધારાનું પ્રવાહી (એસાઇટ્સ) કાઢવામાં આવે છે.",
+    "detailedDescription": "Usually done under ultrasound guidance, the doctor numbs the skin and drains liters of fluid that have accumulated due to the cancer. The fluid is often sent to the lab (cytology) to confirm the presence of malignant cells.",
+    "detailedDescriptionGu": "સોનોગ્રાફીના માર્ગદર્શન હેઠળ, ડોક્ટર ચામડીને બહેરી કરીને કેન્સરના કારણે જમા થયેલું લિટરો પ્રવાહી બહાર કાઢે છે. આ પ્રવાહીને લેબમાં તપાસ માટે મોકલાય છે જેથી કેન્સરના કોષોની ખાતરી થઈ શકે.",
+    "whyImportant": "It provides rapid and immediate relief from the pain, bloating, and shortness of breath caused by severe ascites, vastly improving the patient's comfort.",
+    "whyImportantGu": "આ પ્રક્રિયાથી પેટમાં ફૂલવા, દુખાવો થવા અને શ્વાસ ચડવામાં તત્કાળ રાહત મળે છે, જેનાથી દર્દીને ખૂબ સારું લાગે છે.",
+    "source": "Clinical Oncology Procedures"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Clinical Trials",
+    "nameGu": "ક્લિનિકલ ટ્રાયલ્સ (તબીબી સંશોધન)",
+    "category": "cancer_info",
+    "tags": [
+      "research",
+      "new treatments",
+      "hope"
+    ],
+    "simpleMeaning": "Research studies that test new, promising treatments for cancer that are not yet widely available.",
+    "simpleMeaningGu": "કેન્સર માટેની નવી અને આશાસ્પદ સારવારની ચકાસણી કરતા સંશોધનો, જે દવાઓ હજુ બજારમાં વ્યાપકપણે ઉપલબ્ધ ન હોય.",
+    "detailedDescription": "Patients in clinical trials receive either the current best standard of care or a new experimental therapy (like novel immunotherapies or targeted drugs). Trials are rigorously monitored for safety and efficacy.",
+    "detailedDescriptionGu": "ક્લિનિકલ ટ્રાયલ્સમાં દર્દીઓને કાં તો શ્રેષ્ઠ વર્તમાન સારવાર અપાય છે અથવા નવી પ્રાયોગિક દવાઓ અપાય છે. દર્દીની સુરક્ષા અને દવાની અસર માટે આની ખૂબ કડક દેખરેખ રખાય છે.",
+    "whyImportant": "For patients with recurrent or resistant ovarian cancer, clinical trials offer access to cutting-edge therapies that might work when standard drugs have stopped being effective.",
+    "whyImportantGu": "જે દર્દીઓનું કેન્સર વારંવાર પાછું આવતું હોય અથવા સામાન્ય દવાઓ કામ ન કરતી હોય, તેમના માટે ક્લિનિકલ ટ્રાયલ નવી અને અત્યાધુનિક સારવારનો વિકલ્પ પૂરો પાડે છે.",
+    "source": "Oncology Research Definition"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Pegylated Liposomal Doxorubicin (PLD)",
+    "nameGu": "પેગિલેટેડ લિપોસોમલ ડોક્સોરુબિસિન (PLD)",
+    "category": "cancer_info",
+    "tags": [
+      "chemotherapy",
+      "medication",
+      "recurrent"
+    ],
+    "simpleMeaning": "A chemotherapy drug encapsulated in tiny fat particles, commonly used when ovarian cancer returns.",
+    "simpleMeaningGu": "ચરબીના અતિસૂક્ષ્મ કણો (લિપોસોમ) માં વીંટળાયેલી કીમોથેરાપીની દવા, જે ઓવેરિયન કેન્સર પાછું આવે ત્યારે વારંવાર વપરાય છે.",
+    "detailedDescription": "By wrapping the toxic doxorubicin inside a liposome, the drug evades the immune system longer and specifically targets tumor tissues where blood vessels are leaky. This reduces heart toxicity and hair loss compared to traditional doxorubicin.",
+    "detailedDescriptionGu": "દવાને લિપોસોમમાં રાખવાથી તે સીધી ગાંઠ પાસે પહોંચે છે અને સામાન્ય કોષોને ઓછું નુકસાન કરે છે. સાદી ડોક્સોરુબિસિન કરતા આમાં હૃદયને નુકસાન અને વાળ ખરવાનું જોખમ ઓછું હોય છે.",
+    "whyImportant": "It is a highly effective, widely used secondary treatment for platinum-resistant ovarian cancer or used in combination for platinum-sensitive recurrence. A unique side effect to watch for is 'hand-foot syndrome' (redness and peeling on palms/soles).",
+    "whyImportantGu": "કેન્સર પાછું આવે ત્યારે આ ખૂબ અસરકારક દવા છે. આની એક ખાસ આડઅસર 'હેન્ડ-ફૂટ સિન્ડ્રોમ' છે જેમાં હાથ-પગના તળિયા લાલ થઈને ચામડી ઉખડે છે.",
+    "source": "Pharmacology Reference"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Palliative Care",
+    "nameGu": "પેલિએટિવ કેર (રાહતદાયક સારવાર)",
+    "category": "cancer_info",
+    "tags": [
+      "supportive care",
+      "quality of life",
+      "symptoms"
+    ],
+    "simpleMeaning": "Specialized medical care focused on providing relief from the symptoms and stress of a serious illness like cancer.",
+    "simpleMeaningGu": "કેન્સર જેવી ગંભીર બીમારીના લક્ષણો અને તાણમાંથી રાહત આપવા પર કેન્દ્રિત વિશેષ તબીબી સારવાર.",
+    "detailedDescription": "Palliative care is NOT the same as hospice care; it can be provided alongside active curative treatments like chemotherapy. The goal is to improve the quality of life for both the patient and the family by managing pain, nausea, fatigue, and emotional distress.",
+    "detailedDescriptionGu": "પેલિએટિવ કેર એ માત્ર અંતિમ સમયની સારવાર નથી; તે કીમોથેરાપી જેવી મુખ્ય સારવારની સાથે પણ આપી શકાય છે. તેનો હેતુ દુખાવો, ઉબકા, થાક અને માનસિક તણાવને કાબૂમાં રાખીને દર્દીનું જીવનધોરણ સુધારવાનો છે.",
+    "whyImportant": "Integrating palliative care early in an advanced ovarian cancer diagnosis has been shown to not only make patients feel much better but sometimes even help them live longer.",
+    "whyImportantGu": "એડવાન્સ કેન્સરના નિદાન સાથે શરૂઆતથી જ આ સારવાર જોડવાથી દર્દીને ઘણી રાહત મળે છે અને કેટલીકવાર તેમનું આયુષ્ય પણ વધે છે.",
+    "source": "Supportive Oncology Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Clear Cell Ovarian Carcinoma",
+    "nameGu": "ક્લિયર સેલ ઓવેરિયન કાર્સિનોમા",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "endometriosis associated",
+      "chemo-resistant"
+    ],
+    "simpleMeaning": "A rare but aggressive subtype of ovarian cancer that is often linked to endometriosis.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરનો એક દુર્લભ પરંતુ આક્રમક પ્રકાર જે ઘણીવાર એન્ડોમેટ્રિયોસિસ સાથે સંકળાયેલો હોય છે.",
+    "detailedDescription": "Clear cell carcinoma accounts for about 5-10% of epithelial ovarian cancers. It is heavily associated with a history of endometriosis. This subtype tends to be diagnosed at an earlier stage than high-grade serous carcinoma but is notoriously more resistant to standard platinum-based chemotherapy.",
+    "detailedDescriptionGu": "ક્લિયર સેલ કાર્સિનોમા એ ઓવેરિયન કેન્સરના 5-10% કિસ્સાઓમાં જોવા મળે છે. જે સ્ત્રીઓને એન્ડોમેટ્રિયોસિસની તકલીફ હોય તેમનામાં આનું જોખમ વધુ હોય છે. આ કેન્સર સામાન્ય રીતે વહેલા તબક્કામાં પકડાઈ જાય છે, પરંતુ તે પરંપરાગત કીમોથેરાપી સામે વધુ પ્રતિકાર (resistance) આપે છે.",
+    "whyImportant": "Because it is often resistant to standard chemo, alternative targeted treatments or clinical trials are often considered early in the treatment plan.",
+    "whyImportantGu": "કારણ કે આ પ્રકારની ગાંઠ પર સામાન્ય કીમોથેરાપીની અસર ઓછી થાય છે, તેથી શરૂઆતથી જ અન્ય ટાર્ગેટેડ સારવાર વિશે વિચારવું પડે છે.",
+    "source": "NCBI StatPearls / Wikipedia"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Mucinous Ovarian Carcinoma",
+    "nameGu": "મ્યુસિનસ ઓવેરિયન કાર્સિનોમા",
+    "category": "cancer_info",
+    "tags": [
+      "cancer type",
+      "large tumors",
+      "rare"
+    ],
+    "simpleMeaning": "A rare subtype of ovarian cancer known for growing into extremely large, mucus-filled cysts.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સરનો એક દુર્લભ પ્રકાર, જે ખૂબ જ મોટી અને ચીકણા પ્રવાહી (મ્યુકસ) થી ભરેલી ગાંઠો બનાવે છે.",
+    "detailedDescription": "Mucinous ovarian tumors typically grow to very large sizes (often filling the entire pelvis and abdomen) and are filled with a thick, gelatinous fluid. True primary mucinous ovarian cancer is rare (about 3%), and doctors must always rule out if the cancer actually started in the appendix or gastrointestinal tract and spread to the ovary.",
+    "detailedDescriptionGu": "મ્યુસિનસ ગાંઠો સામાન્ય રીતે ખૂબ મોટી સાઈઝની હોય છે અને તેમાં જાડું જેલી જેવું પ્રવાહી ભરેલું હોય છે. મૂળ ઓવરીમાંથી શરૂ થતું મ્યુસિનસ કેન્સર દુર્લભ (માત્ર 3%) છે. ઘણીવાર તે આંતરડા કે એપેન્ડિક્સનું કેન્સર હોય છે જે ફેલાઈને ઓવરી સુધી પહોંચ્યું હોય છે, તેથી તેનું યોગ્ય નિદાન જરૂરી છે.",
+    "whyImportant": "Surgical removal (complete excision) is the most critical treatment, as these massive tumors do not shrink well with standard chemotherapy.",
+    "whyImportantGu": "આ ગાંઠોને સર્જરી દ્વારા સંપૂર્ણ કાઢવી એ સૌથી અગત્યની સારવાર છે, કારણ કે કીમોથેરાપીથી આ ગાંઠો ઝાઝી નાની થતી નથી.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Borderline Ovarian Tumors",
+    "nameGu": "બોર્ડરલાઈન ઓવેરિયન ટ્યુમર (ગાંઠ)",
+    "category": "cancer_info",
+    "tags": [
+      "low malignant potential",
+      "slow growing",
+      "excellent prognosis"
+    ],
+    "simpleMeaning": "Tumors that are not completely benign, but not fully cancerous either. They grow very slowly.",
+    "simpleMeaningGu": "એવી ગાંઠો જે સંપૂર્ણપણે સાદી પણ નથી અને સંપૂર્ણપણે કેન્સર પણ નથી. તે ખૂબ જ ધીમે વધે છે.",
+    "detailedDescription": "Also known as 'Low Malignant Potential' tumors, these abnormal growths do not aggressively invade surrounding ovarian tissue like true cancers do. They usually affect younger women, grow slowly, and are almost always cured with surgery alone without the need for chemotherapy.",
+    "detailedDescriptionGu": "આને 'લો મેલિગ્નન્ટ પોટેન્શિયલ' ગાંઠો પણ કહેવાય છે. આ ગાંઠો સાચા કેન્સરની જેમ આસપાસના ભાગોમાં ઝડપથી ફેલાતી નથી. તે સામાન્ય રીતે નાની ઉંમરની સ્ત્રીઓમાં જોવા મળે છે, ધીમે વધે છે, અને મોટાભાગે માત્ર સર્જરીથી મટી જાય છે (કીમોથેરાપીની જરૂર પડતી નથી).",
+    "whyImportant": "Offers an excellent survival rate, and fertility-sparing surgery (keeping the uterus and one ovary) is often an option for young women.",
+    "whyImportantGu": "આમાં સાજા થવાની શક્યતા ખૂબ વધારે છે, અને નાની ઉંમરની સ્ત્રીઓ માટે ગર્ભાશય અને એક ઓવરી બચાવીને ભવિષ્યમાં માતા બની શકાય તેવી સર્જરી શક્ય છે.",
+    "source": "Wikipedia / NCBI"
+  },
+  {
+    "type": "medical_term",
+    "name": "BRCA1 and BRCA2 Mutations",
+    "nameGu": "BRCA1 અને BRCA2 જીન મ્યુટેશન",
+    "category": "medical_term",
+    "tags": [
+      "genetics",
+      "hereditary",
+      "PARP inhibitors"
+    ],
+    "simpleMeaning": "Genetic mutations passed down in families that significantly increase the risk of getting ovarian and breast cancer.",
+    "simpleMeaningGu": "પરિવારમાંથી વારસામાં મળતી જીનની ખામી, જે ઓવેરિયન અને બ્રેસ્ટ (સ્તન) કેન્સર થવાનું જોખમ ખૂબ વધારે છે.",
+    "detailedDescription": "BRCA genes normally repair damaged DNA, preventing cancer. If a woman inherits a mutated BRCA gene, she lacks this repair mechanism, drastically raising her lifetime risk of ovarian cancer (up to 40-50%). Testing for BRCA is now standard for all ovarian cancer patients because it guides treatment options.",
+    "detailedDescriptionGu": "BRCA જીન સામાન્ય રીતે શરીરના ખરાબ DNA નું સમારકામ કરે છે. જો સ્ત્રીને વારસામાં ખામીયુક્ત BRCA જીન મળે, તો તે રિપેર સિસ્ટમ કામ કરતી નથી, જેથી ઓવેરિયન કેન્સર થવાનું જોખમ 40-50% જેટલું વધી જાય છે. હવે દરેક ઓવેરિયન કેન્સરના દર્દીનો BRCA ટેસ્ટ કરવો સામાન્ય છે કારણ કે તેનાથી સારવાર નક્કી થાય છે.",
+    "whyImportant": "Patients who test positive for a BRCA mutation often respond exceptionally well to a specific class of targeted drugs called PARP inhibitors (e.g., Olaparib).",
+    "whyImportantGu": "જે દર્દીનો BRCA રિપોર્ટ પોઝિટિવ આવે છે, તેમના પર PARP ઇન્હિબિટર્સ (જેમ કે ઓલાપારિબ) નામની ટાર્ગેટેડ દવાઓ ખૂબ જ સારી અસર કરે છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "medical_term",
+    "name": "Lynch Syndrome (HNPCC)",
+    "nameGu": "લિન્ચ સિન્ડ્રોમ (Lynch Syndrome)",
+    "category": "medical_term",
+    "tags": [
+      "genetics",
+      "hereditary",
+      "colon cancer link"
+    ],
+    "simpleMeaning": "An inherited genetic condition that raises the risk of colon, endometrial, and ovarian cancers.",
+    "simpleMeaningGu": "એક વારસાગત જિનેટિક બીમારી જે આંતરડા, ગર્ભાશય અને ઓવરીના કેન્સરનું જોખમ વધારે છે.",
+    "detailedDescription": "Lynch Syndrome is caused by mutations in DNA mismatch repair (MMR) genes. While primarily known for causing colorectal cancer, it also significantly increases a woman's risk of developing ovarian and endometrial (uterine) cancers. Women with Lynch syndrome often develop ovarian cancer earlier than the general population.",
+    "detailedDescriptionGu": "લિન્ચ સિન્ડ્રોમ DNA માં રહેલી ભૂલો સુધારતા જીનની ખામીને કારણે થાય છે. તે મુખ્યત્વે આંતરડાનું કેન્સર કરે છે, પરંતુ તે સ્ત્રીઓમાં ઓવરી અને ગર્ભાશયના કેન્સરનું જોખમ પણ ખૂબ વધારે છે. લિન્ચ સિન્ડ્રોમ ધરાવતી સ્ત્રીઓને સામાન્ય કરતાં નાની ઉંમરે ઓવેરિયન કેન્સર થઈ શકે છે.",
+    "whyImportant": "Identifying this syndrome is vital not just for the patient's treatment, but so that family members can undergo genetic screening and preventative surveillance.",
+    "whyImportantGu": "આ સિન્ડ્રોમની જાણકારી માત્ર દર્દીની સારવાર માટે જ નહીં, પરંતુ તેમના પરિવારના સભ્યોના જિનેટિક ટેસ્ટ અને અગમચેતી માટે પણ અત્યંત જરૂરી છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "treatment",
+    "name": "PARP Inhibitors (Olaparib, Niraparib)",
+    "nameGu": "PARP ઇન્હિબિટર્સ (ઓલાપારિબ, નિરાપારિબ)",
+    "category": "treatment",
+    "tags": [
+      "targeted therapy",
+      "maintenance",
+      "BRCA mutated"
+    ],
+    "simpleMeaning": "A modern targeted daily pill that prevents cancer cells from repairing themselves, causing them to die.",
+    "simpleMeaningGu": "એક આધુનિક ટાર્ગેટેડ દવાની ગોળી, જે કેન્સરના કોષોને જાતે સાજા થતા અટકાવે છે, જેથી તેઓ નાશ પામે છે.",
+    "detailedDescription": "Poly (ADP-ribose) polymerase (PARP) inhibitors are a revolutionary class of targeted therapies. They block an enzyme that cancer cells use to repair their DNA. When given as maintenance therapy after chemotherapy, especially in women with BRCA mutations or HRD (Homologous Recombination Deficiency), they significantly delay the cancer from returning.",
+    "detailedDescriptionGu": "PARP ઇન્હિબિટર્સ એ ટાર્ગેટેડ થેરાપીનો ક્રાંતિકારી પ્રકાર છે. તે કેન્સરના કોષો જે એન્ઝાઇમનો ઉપયોગ કરીને પોતાનું DNA રિપેર કરે છે તેને રોકે છે. કીમોથેરાપી પૂરી થયા પછી મેન્ટેનન્સ દવા તરીકે (ખાસ કરીને BRCA મ્યુટેશનવાળી સ્ત્રીઓમાં) આ દવા આપવાથી કેન્સરને પાછું આવતું ખૂબ લાંબા સમય સુધી રોકી શકાય છે.",
+    "whyImportant": "It has completely transformed the survival and recurrence timelines for advanced ovarian cancer, turning a rapidly fatal disease into a manageable chronic condition for many.",
+    "whyImportantGu": "આ દવાએ એડવાન્સ્ડ ઓવેરિયન કેન્સરની સારવારમાં મોટી ક્રાંતિ લાવી છે, જેનાથી કેન્સર જલ્દી પાછું આવતું નથી અને દર્દીઓ વધુ લાંબુ જીવી શકે છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "medical_term",
+    "name": "Primary Debulking Surgery (PDS)",
+    "nameGu": "પ્રાઈમરી ડિબલ્કિંગ સર્જરી (PDS)",
+    "category": "medical_term",
+    "tags": [
+      "surgery",
+      "cytoreduction",
+      "first-line"
+    ],
+    "simpleMeaning": "Doing a massive surgery first to remove as much cancer as humanly possible before starting any chemotherapy.",
+    "simpleMeaningGu": "કીમોથેરાપી શરૂ કરતા પહેલા સૌથી પહેલું મોટું ઓપરેશન કરીને શરીરમાંથી શક્ય તેટલું બધું જ કેન્સર કાઢી નાખવું.",
+    "detailedDescription": "When an oncologist assesses that all visible cancer can be surgically removed safely right at diagnosis, Primary Debulking Surgery is performed. The goal is 'R0 resection'—leaving zero visible tumor behind. This offers the absolute best chance for long-term survival in advanced ovarian cancer.",
+    "detailedDescriptionGu": "જ્યારે ડોક્ટરને લાગે કે શરૂઆતમાં જ સર્જરી કરીને બધું દેખીતું કેન્સર સુરક્ષિત રીતે કાઢી શકાશે, ત્યારે 'પ્રાઈમરી ડિબલ્કિંગ સર્જરી' કરવામાં આવે છે. આનો મુખ્ય હેતુ શરીરમાં 0% દેખીતું કેન્સર છોડવાનો છે. એડવાન્સ્ડ ઓવેરિયન કેન્સરમાં લાંબુ જીવવા માટે આ સૌથી શ્રેષ્ઠ પદ્ધતિ છે.",
+    "whyImportant": "The success of this surgery (leaving less than 1cm of tumor behind) is the single most important predictor of how long the patient will survive.",
+    "whyImportantGu": "આ સર્જરીની સફળતા (શરીરમાં 1 સેમી કરતાં પણ ઓછી ગાંઠ બાકી રહેવી) એ દર્દી કેટલું લાંબુ જીવશે તે નક્કી કરતું સૌથી મહત્વનું પરિબળ છે.",
+    "source": "Wikipedia / Clinical Oncology"
+  },
+  {
+    "type": "medical_term",
+    "name": "Neoadjuvant Chemotherapy (NACT)",
+    "nameGu": "નિયોએડજ્યુવેન્ટ કીમોથેરાપી (NACT)",
+    "category": "medical_term",
+    "tags": [
+      "chemotherapy",
+      "pre-surgery",
+      "tumor shrinkage"
+    ],
+    "simpleMeaning": "Giving chemotherapy before surgery to shrink the tumors and make the operation easier and safer.",
+    "simpleMeaningGu": "સર્જરીને સરળ અને સુરક્ષિત બનાવવા માટે ઓપરેશન પહેલા ગાંઠને નાની કરવા અપાતી કીમોથેરાપી.",
+    "detailedDescription": "If the ovarian cancer is too widespread or the patient is too weak for immediate major surgery, doctors use NACT. They give 3-4 cycles of chemotherapy to shrink the tumors and dry up ascites (abdominal fluid). Then, they perform 'Interval Debulking Surgery', followed by the remaining chemo cycles.",
+    "detailedDescriptionGu": "જો કેન્સર ખૂબ ફેલાઈ ગયું હોય અથવા દર્દી શરૂઆતમાં મોટી સર્જરી સહન કરવા જેટલો સક્ષમ ન હોય, તો NACT નો ઉપયોગ થાય છે. પહેલા કીમોથેરાપીના 3-4 સાયકલ આપીને ગાંઠને નાની કરાય છે અને પેટનું પાણી સુકવાય છે. ત્યારબાદ વચ્ચે સર્જરી કરાય છે, અને પછી બાકીની કીમોથેરાપી અપાય છે.",
+    "whyImportant": "It reduces the risk of severe surgical complications and blood loss for patients with very advanced, bulky disease.",
+    "whyImportantGu": "ખૂબ ફેલાયેલા કેન્સરમાં આ પદ્ધતિ વાપરવાથી ઓપરેશનમાં જોખમ અને લોહી વહેવાની શક્યતા ખૂબ ઘટી જાય છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Nulliparity",
+    "nameGu": "જોખમનું પરિબળ: નલ્લીપેરિટી (ક્યારેય ગર્ભ ન ધારણ કરવો)",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "ovulation",
+      "pregnancy"
+    ],
+    "simpleMeaning": "Never having been pregnant or never giving birth, which slightly increases the risk of ovarian cancer.",
+    "simpleMeaningGu": "સ્ત્રી ક્યારેય ગર્ભવતી ન થઈ હોય અથવા બાળકને જન્મ ન આપ્યો હોય, જે ઓવેરિયન કેન્સરનું જોખમ થોડું વધારે છે.",
+    "detailedDescription": "The risk of developing ovarian cancer is directly tied to the number of times a woman ovulates in her lifetime. Pregnancy naturally stops ovulation for 9 months. Therefore, women who have never been pregnant (nulliparity) have undergone more total ovulations, increasing the wear-and-tear on the ovarian surface and thus raising cancer risk.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સર થવાનું જોખમ સ્ત્રીના જીવનમાં કેટલી વાર અંડબીજ (ovulation) છૂટું પડે છે તેના પર આધારિત છે. ગર્ભાવસ્થા દરમિયાન 9 મહિના સુધી આ પ્રક્રિયા કુદરતી રીતે બંધ રહે છે. તેથી, જે સ્ત્રી ક્યારેય ગર્ભવતી નથી થઈ, તેમનામાં અંડબીજ વધુ વાર છૂટા પડ્યા હોય છે, જેનાથી ઓવરીને નુકસાન થવાનું અને કેન્સરનું જોખમ વધે છે.",
+    "whyImportant": "Conversely, taking birth control pills, having multiple pregnancies, and breastfeeding all reduce the number of ovulations and are proven protective factors against ovarian cancer.",
+    "whyImportantGu": "આની સામે, ગર્ભનિરોધક ગોળીઓ (Birth control pills) લેવી, વધુ વાર ગર્ભ ધારણ કરવો અને સ્તનપાન કરાવવાથી આ પ્રક્રિયા ઘટે છે, જે ઓવેરિયન કેન્સર સામે રક્ષણ આપે છે.",
+    "source": "Wikipedia"
+  },
+  {
+    "type": "medical_term",
+    "name": "Ascites in Ovarian Cancer",
+    "nameGu": "ઓવેરિયન કેન્સરમાં એસાઈટીસ (પેટમાં પાણી ભરાવું)",
+    "category": "medical_term",
+    "tags": [
+      "symptom",
+      "fluid accumulation",
+      "advanced stage"
+    ],
+    "simpleMeaning": "The abnormal buildup of fluid in the abdomen, causing severe bloating and breathing difficulty.",
+    "simpleMeaningGu": "પેટમાં અસાધારણ રીતે પાણી (પ્રવાહી) ભરાઈ જવું, જેનાથી પેટ ખૂબ ફૂલી જાય અને શ્વાસ લેવામાં તકલીફ પડે.",
+    "detailedDescription": "Ovarian cancer often spreads small seeds (carcinomatosis) across the peritoneum (the lining of the abdomen). These cancer seeds irritate the lining, causing it to weep liters of protein-rich fluid into the belly. This causes the classic symptom of rapid abdominal swelling (bloating) and feeling full quickly.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સર ઘણીવાર પેટના અંદરના પડ (પેરીટોનિયમ) પર નાના બીજની જેમ ફેલાય છે. આ કેન્સરના કણો પડને નુકસાન કરે છે, જેના લીધે પેટમાં લિટરો જેટલું પ્રવાહી (પાણી) ભરાય છે. આનાથી પેટ ઝડપથી ફૂલી જાય છે અને થોડું ખાવાથી પણ પેટ ભરાઈ ગયું હોય તેવું લાગે છે.",
+    "whyImportant": "If the fluid causes severe breathing issues, a doctor may perform a 'paracentesis' (tapping) to drain the fluid with a needle, providing immediate relief.",
+    "whyImportantGu": "જો પાણી ભરાવાને કારણે શ્વાસ લેવામાં ખૂબ તકલીફ પડતી હોય, તો ડોક્ટર સોય વડે આ પાણી બહાર કાઢી શકે છે (જેને પેરાસેન્ટેસીસ કહેવાય છે), જેનાથી તાત્કાલિક રાહત મળે છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "treatment",
+    "name": "Bevacizumab (Avastin)",
+    "nameGu": "બેવાસિઝુમેબ (અવાસ્ટિન)",
+    "category": "treatment",
+    "tags": [
+      "targeted therapy",
+      "anti-angiogenesis",
+      "maintenance"
+    ],
+    "simpleMeaning": "A targeted drug that starves the cancer by preventing it from growing its own blood vessels.",
+    "simpleMeaningGu": "એક ટાર્ગેટેડ દવા જે કેન્સરની ગાંઠને પોતાની નવી લોહીની નસો બનાવતા અટકાવીને તેને ભૂખે મારે છે.",
+    "detailedDescription": "Tumors need a massive blood supply to grow. They secrete a protein called VEGF to grow new blood vessels. Bevacizumab (Avastin) is a targeted antibody that blocks VEGF, effectively choking off the tumor's blood supply. It is often given via IV alongside chemotherapy and continued as maintenance.",
+    "detailedDescriptionGu": "ગાંઠને મોટી થવા માટે લોહીની ખૂબ જરૂર પડે છે, તેથી તે નવી લોહીની નસો બનાવવા માટે VEGF નામનું પ્રોટીન છોડે છે. બેવાસિઝુમેબ (અવાસ્ટિન) આ પ્રોટીનને બ્લોક કરીને ગાંઠનો લોહીનો પુરવઠો કાપી નાખે છે. તે સામાન્ય રીતે કીમોથેરાપી સાથે બાટલામાં અપાય છે અને પછી મેન્ટેનન્સ તરીકે ચાલુ રખાય છે.",
+    "whyImportant": "It is particularly effective in shrinking tumors and severely reducing the accumulation of ascites (abdominal fluid).",
+    "whyImportantGu": "આ દવા ગાંઠને નાની કરવામાં અને ખાસ કરીને પેટમાં ભરાતા પાણી (એસાઈટીસ) ને રોકવામાં ખૂબ જ અસરકારક છે.",
+    "source": "NCBI StatPearls"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Endometriosis",
+    "nameGu": "જોખમનું પરિબળ: એન્ડોમેટ્રિયોસિસ",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "benign condition",
+      "clear cell"
+    ],
+    "simpleMeaning": "A condition where uterine lining tissue grows outside the uterus, increasing the risk for certain rare ovarian cancers.",
+    "simpleMeaningGu": "એક બીમારી જેમાં ગર્ભાશયની અંદરનું પડ (એન્ડોમેટ્રિયમ) ગર્ભાશયની બહાર વધે છે, જે અમુક પ્રકારના ઓવેરિયન કેન્સરનું જોખમ વધારે છે.",
+    "detailedDescription": "Endometriosis is a common benign condition causing painful periods and pelvic pain. However, it is a well-established risk factor for two specific, rarer types of ovarian cancer: Clear Cell Carcinoma and Endometrioid Ovarian Carcinoma. The chronic inflammation and iron buildup from internal bleeding are thought to trigger these cancers.",
+    "detailedDescriptionGu": "એન્ડોમેટ્રિયોસિસ એક સામાન્ય બીમારી છે જેનાથી માસિક દરમિયાન ખૂબ દુખાવો થાય છે. પરંતુ, તે બે ખાસ પ્રકારના ઓવેરિયન કેન્સર (ક્લિયર સેલ અને એન્ડોમેટ્રિયોઇડ) માટે મોટું જોખમ છે. આંતરિક રક્તસ્ત્રાવથી થતો સતત સોજો અને આયર્નનો જમાવડો આ કેન્સરનું કારણ બની શકે છે.",
+    "whyImportant": "Women with a strong history of severe endometriosis should be vigilant about any new pelvic masses or unusual symptoms.",
+    "whyImportantGu": "જે સ્ત્રીઓને ગંભીર એન્ડોમેટ્રિયોસિસની તકલીફ હોય, તેમણે પેડુમાં કોઈપણ નવી ગાંઠ કે અસામાન્ય લક્ષણો જોવા મળે તો તરત ડોક્ટરની સલાહ લેવી જોઈએ.",
+    "source": "Wikipedia"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Age and Menopause",
+    "nameGu": "જોખમનું પરિબળ: વધતી ઉંમર અને મેનોપોઝ",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "age",
+      "menopause"
+    ],
+    "simpleMeaning": "The risk of ovarian cancer increases significantly as a woman gets older, especially after menopause.",
+    "simpleMeaningGu": "જેમ જેમ સ્ત્રીની ઉંમર વધે છે, ખાસ કરીને મેનોપોઝ (માસિક બંધ થવા) પછી, ઓવેરિયન કેન્સર થવાનું જોખમ નોંધપાત્ર રીતે વધે છે.",
+    "detailedDescription": "Ovarian cancer is rare in women younger than 40. Most ovarian cancers develop after menopause. Half of all ovarian cancers are found in women 63 years of age or older. The risk is highest for women in their late 60s and 70s.",
+    "detailedDescriptionGu": "40 વર્ષથી નાની ઉંમરની સ્ત્રીઓમાં ઓવેરિયન કેન્સર ભાગ્યે જ જોવા મળે છે. મોટાભાગના ઓવેરિયન કેન્સર મેનોપોઝ પછી થાય છે. અડધાથી વધુ કિસ્સાઓ 63 વર્ષ કે તેથી વધુ ઉંમરની સ્ત્રીઓમાં જોવા મળે છે. 60 થી 70 વર્ષની ઉંમરની સ્ત્રીઓમાં આનું જોખમ સૌથી વધુ હોય છે.",
+    "whyImportant": "Older women, particularly those past menopause, should be aware of vague abdominal symptoms (like bloating or feeling full quickly) and not dismiss them as just 'signs of aging'.",
+    "whyImportantGu": "મોટી ઉંમરની સ્ત્રીઓ, ખાસ કરીને જેમને માસિક બંધ થઈ ગયું હોય, તેમણે પેટની તકલીફો (જેમ કે પેટ ફૂલવું કે જલ્દી ધરાઈ જવું) ને માત્ર 'ઉંમરની અસર' સમજીને અવગણવી જોઈએ નહીં.",
+    "source": "American Cancer Society"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Obesity",
+    "nameGu": "જોખમનું પરિબળ: સ્થૂળતા (વધુ પડતું વજન)",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "obesity",
+      "lifestyle"
+    ],
+    "simpleMeaning": "Being very overweight is linked to a higher risk of developing many cancers, including ovarian cancer.",
+    "simpleMeaningGu": "ખૂબ જ વધારે વજન હોવું એ ઓવેરિયન કેન્સર સહિત ઘણા કેન્સર થવાના ઊંચા જોખમ સાથે સંકળાયેલું છે.",
+    "detailedDescription": "Obesity (having a body mass index [BMI] of at least 30) is linked to a higher risk of developing many cancers. For ovarian cancer, obese women have a higher risk of developing the disease than non-obese women, and it may also negatively affect survival rates.",
+    "detailedDescriptionGu": "સ્થૂળતા (BMI 30 કે તેથી વધુ હોવો) એ ઘણા કેન્સર થવાના જોખમ સાથે જોડાયેલી છે. જે સ્ત્રીઓનું વજન ખૂબ વધારે છે તેમને ઓવેરિયન કેન્સર થવાનું જોખમ સામાન્ય વજનવાળી સ્ત્રીઓ કરતાં વધુ હોય છે. સ્થૂળતા કેન્સરની સારવાર અને સાજા થવાની શક્યતાઓ પર પણ ખરાબ અસર કરી શકે છે.",
+    "whyImportant": "Maintaining a healthy weight through diet and exercise is a modifiable risk factor that can lower the chances of developing ovarian cancer.",
+    "whyImportantGu": "આહાર અને કસરત દ્વારા યોગ્ય વજન જાળવી રાખવું એ એક એવું પરિબળ છે જેને આપણે બદલી શકીએ છીએ અને તેનાથી કેન્સર થવાનું જોખમ ઘટાડી શકાય છે.",
+    "source": "American Cancer Society"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Hormone Replacement Therapy (HRT)",
+    "nameGu": "જોખમનું પરિબળ: હોર્મોન રિપ્લેસમેન્ટ થેરાપી (HRT)",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "estrogen",
+      "menopause treatment"
+    ],
+    "simpleMeaning": "Taking estrogen after menopause can slightly increase the risk of getting ovarian cancer.",
+    "simpleMeaningGu": "મેનોપોઝ પછી એસ્ટ્રોજન (હોર્મોન) ની દવાઓ લેવાથી ઓવેરિયન કેન્સર થવાનું જોખમ થોડું વધી શકે છે.",
+    "detailedDescription": "Women using estrogens after menopause have an increased risk of developing ovarian cancer. The risk seems to be higher for women taking estrogen alone (without progesterone) for many years (at least 5 to 10 years). The increased risk falls over time after the hormones are stopped.",
+    "detailedDescriptionGu": "જે સ્ત્રીઓ મેનોપોઝ પછી એસ્ટ્રોજન હોર્મોન લે છે તેમને ઓવેરિયન કેન્સર થવાનું જોખમ વધુ હોય છે. જો સ્ત્રી ઘણા વર્ષો (5 થી 10 વર્ષ) સુધી માત્ર એસ્ટ્રોજન (પ્રોજેસ્ટેરોન વગર) લે, તો આ જોખમ સૌથી વધુ હોય છે. દવાઓ બંધ કર્યા પછી સમય જતાં આ જોખમ ઘટે છે.",
+    "whyImportant": "Women considering HRT for severe menopausal symptoms should discuss the lowest possible dose for the shortest possible time with their doctors to minimize cancer risks.",
+    "whyImportantGu": "મેનોપોઝની તકલીફો માટે HRT લેવાનું વિચારતી સ્ત્રીઓએ કેન્સરનું જોખમ ઘટાડવા માટે ડોક્ટર સાથે શક્ય તેટલા ઓછા ડોઝ અને ઓછા સમય માટે દવા લેવા વિશે ચર્ચા કરવી જોઈએ.",
+    "source": "American Cancer Society"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Risk Factor: Fertility Treatments",
+    "nameGu": "જોખમનું પરિબળ: વંધ્યત્વની સારવાર (Fertility Treatments)",
+    "category": "cancer_info",
+    "tags": [
+      "risk factor",
+      "IVF",
+      "fertility drugs"
+    ],
+    "simpleMeaning": "Using certain fertility drugs (like IVF medications) for longer than a year may slightly raise the risk of ovarian tumors.",
+    "simpleMeaningGu": "વંધ્યત્વ (બાળક ન થવું) માટેની અમુક દવાઓ એક વર્ષથી વધુ સમય માટે વાપરવાથી ઓવરીની ગાંઠો થવાનું જોખમ થોડું વધી શકે છે.",
+    "detailedDescription": "Some studies have found that using the fertility drug clomiphene citrate (Clomid) for longer than one year might increase the risk for developing ovarian tumors (often borderline tumors). However, infertility itself is also a known risk factor, so it is complex to separate the drug's effect from the condition itself.",
+    "detailedDescriptionGu": "કેટલાક અભ્યાસોમાં જાણવા મળ્યું છે કે ક્લોમિફેન જેવી વંધ્યત્વની દવાઓ એક વર્ષથી વધુ સમય માટે લેવાથી ઓવરીમાં ગાંઠ (મોટાભાગે બોર્ડરલાઈન) થવાનું જોખમ વધી શકે છે. જોકે, વંધ્યત્વ પોતે પણ એક મોટું જોખમ છે, તેથી માત્ર દવાનો જ વાંક કાઢવો મુશ્કેલ છે.",
+    "whyImportant": "Women undergoing prolonged fertility treatments should stay in close contact with their gynecologist and monitor for any unusual pelvic symptoms.",
+    "whyImportantGu": "જે સ્ત્રીઓ લાંબા સમયથી બાળક થવા માટેની સારવાર લઈ રહી હોય, તેમણે તેમના ગાયનેકોલોજિસ્ટના સંપર્કમાં રહેવું જોઈએ અને પેડુમાં કોઈપણ નવી તકલીફ જણાય તો તરત તપાસ કરાવવી જોઈએ.",
+    "source": "American Cancer Society"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Fallopian Tube Origin (STIC)",
+    "nameGu": "ફેલોપિયન ટ્યુબમાંથી ઉદ્ભવ (STIC)",
+    "category": "cancer_info",
+    "tags": [
+      "origin",
+      "fallopian tubes",
+      "prevention"
+    ],
+    "simpleMeaning": "A modern discovery showing that most 'ovarian' cancers actually start in the fallopian tubes, not the ovaries themselves.",
+    "simpleMeaningGu": "એક આધુનિક શોધ દર્શાવે છે કે મોટાભાગના 'ઓવેરિયન' કેન્સર ખરેખર અંડાશય (ઓવરી) ની બદલે ફેલોપિયન ટ્યુબ (ગર્ભાશયની નળીઓ) માંથી શરૂ થાય છે.",
+    "detailedDescription": "Recent groundbreaking research (cited in multiple NCBI studies) indicates that High-Grade Serous Ovarian Carcinoma usually originates as Serous Tubal Intraepithelial Carcinoma (STIC) at the fimbriated end of the fallopian tube. The cancer cells then drop down onto the surface of the ovary. This completely changed how doctors view ovarian cancer prevention.",
+    "detailedDescriptionGu": "તાજેતરના સંશોધનો (NCBI ના અભ્યાસો) દર્શાવે છે કે સૌથી ખતરનાક ઓવેરિયન કેન્સર (HGSOC) ની શરૂઆત ખરેખર ગર્ભાશયની નળીઓ (ફેલોપિયન ટ્યુબ) ના છેડેથી થાય છે, અને પછી કેન્સરના કોષો ઓવરી પર પડે છે. આ શોધે ઓવેરિયન કેન્સરને રોકવા વિશે ડોક્ટરોના વિચારને સંપૂર્ણપણે બદલી નાખ્યો છે.",
+    "whyImportant": "Because of this, doctors often recommend removing the fallopian tubes (opportunistic salpingectomy) during other routine pelvic surgeries (like hysterectomies) to drastically reduce ovarian cancer risk.",
+    "whyImportantGu": "આના કારણે જ, જ્યારે અન્ય કારણોસર ગર્ભાશયની સર્જરી કરવામાં આવે છે, ત્યારે ડોક્ટરો કેન્સરનું જોખમ ઘટાડવા માટે નળીઓ (ફેલોપિયન ટ્યુબ) ને પણ કાઢી નાખવાની સલાહ આપે છે.",
+    "source": "NCBI StatPearls / Gynecologic Oncology"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Prophylactic Salpingo-oophorectomy",
+    "nameGu": "પ્રોફિલેક્ટિક સાલ્પિંગો-ઓફોરેક્ટોમી (બચાવ સર્જરી)",
+    "category": "cancer_info",
+    "tags": [
+      "surgery",
+      "prevention",
+      "BRCA mutation"
+    ],
+    "simpleMeaning": "Surgery to remove the ovaries and fallopian tubes specifically to prevent cancer before it even starts.",
+    "simpleMeaningGu": "કેન્સર શરૂ થાય તે પહેલાં જ તેનાથી બચવા માટે અંડાશય (ઓવરી) અને નળીઓ કાઢી નાખવાની સર્જરી.",
+    "detailedDescription": "For women with BRCA1 or BRCA2 mutations or Lynch syndrome, the risk of ovarian cancer is so high that doctors highly recommend a risk-reducing surgery (BSO). This involves removing both ovaries and fallopian tubes once the woman has finished having children, typically around age 35 to 40.",
+    "detailedDescriptionGu": "જે સ્ત્રીઓમાં વારસાગત BRCA1, BRCA2 મ્યુટેશન કે લિન્ચ સિન્ડ્રોમ હોય, તેમનામાં કેન્સરનું જોખમ એટલું ઊંચું હોય છે કે ડોક્ટરો બચાવ સર્જરીની ભલામણ કરે છે. આમાં સ્ત્રીનું કુટુંબ નિયોજન પૂરું થયા પછી (સામાન્ય રીતે 35 થી 40 વર્ષની ઉંમરે) બંને ઓવરી અને નળીઓ કાઢી નાખવામાં આવે છે.",
+    "whyImportant": "This surgery reduces the risk of developing ovarian cancer by up to 90%, making it the most effective preventative measure available for high-risk patients.",
+    "whyImportantGu": "આ સર્જરી ઓવેરિયન કેન્સર થવાનું જોખમ 90% સુધી ઘટાડી દે છે, જે હાઈ-રિસ્ક દર્દીઓ માટે બચાવનો સૌથી અસરકારક અને શ્રેષ્ઠ ઉપાય છે.",
+    "source": "American Cancer Society / NCBI"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Why There Is No Routine Screening Test",
+    "nameGu": "નિયમિત ચેકઅપ (સ્ક્રીનિંગ) ટેસ્ટ કેમ નથી?",
+    "category": "cancer_info",
+    "tags": [
+      "screening",
+      "CA-125",
+      "ultrasound"
+    ],
+    "simpleMeaning": "Unlike breast cancer (mammograms), there is no reliable test to catch ovarian cancer early in healthy women.",
+    "simpleMeaningGu": "બ્રેસ્ટ કેન્સર (મેમોગ્રામ) ની જેમ, સ્વસ્થ સ્ત્રીઓમાં ઓવેરિયન કેન્સર વહેલું પકડવા માટે કોઈ ચોક્કસ અને ભરોસાપાત્ર ટેસ્ટ ઉપલબ્ધ નથી.",
+    "detailedDescription": "Massive clinical trials involving hundreds of thousands of women evaluated using CA-125 blood tests and transvaginal ultrasounds for routine screening. The results proved that these tests do NOT save lives in the general population, because they cause too many false alarms resulting in unnecessary, dangerous surgeries for benign cysts.",
+    "detailedDescriptionGu": "લાખો સ્ત્રીઓ પર થયેલા મોટા અભ્યાસોમાં તપાસવામાં આવ્યું કે શું નિયમિત CA-125 બ્લડ ટેસ્ટ અને સોનોગ્રાફી કરવાથી ફાયદો થાય છે? પરિણામમાં જાણવા મળ્યું કે આનાથી સામાન્ય સ્ત્રીઓનો જીવ બચતો નથી, કારણ કે આ ટેસ્ટ ઘણીવાર સાદી ગાંઠ માટે પણ ખોટો ડર ઊભો કરે છે, જેના લીધે નકામી અને જોખમી સર્જરીઓ કરાવવી પડે છે.",
+    "whyImportant": "This means women must rely on knowing the subtle symptoms (bloating, pelvic pain, feeling full quickly, urinary urgency) rather than waiting for a screening test.",
+    "whyImportantGu": "આનો અર્થ એ છે કે સ્ત્રીઓએ કોઈ રિપોર્ટની રાહ જોવાને બદલે તેના છુપા લક્ષણો (પેટ ફૂલવું, પેડુમાં દુખાવો, જલ્દી ધરાઈ જવું, વારંવાર પેશાબ જવું) ને જાતે જ ઓળખવા પડે.",
+    "source": "NCBI / Clinical Trials"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Immunotherapy (Pembrolizumab) for MSI-H Tumors",
+    "nameGu": "MSI-H ગાંઠો માટે ઇમ્યુનોથેરાપી (પેમ્બ્રોલિઝુમેબ)",
+    "category": "cancer_info",
+    "tags": [
+      "immunotherapy",
+      "advanced treatment",
+      "MSI-H"
+    ],
+    "simpleMeaning": "A treatment that helps the body's own immune system find and destroy cancer cells, used for specific genetic subtypes.",
+    "simpleMeaningGu": "એક એવી સારવાર જે શરીરની પોતાની રોગપ્રતિકારક શક્તિને કેન્સરના કોષો શોધીને તેનો નાશ કરવામાં મદદ કરે છે.",
+    "detailedDescription": "While standard ovarian cancers do not respond well to immunotherapy, a specific subset of tumors that test positive for Microsatellite Instability-High (MSI-H) or mismatch repair deficiency (dMMR) respond incredibly well to drugs like Pembrolizumab (Keytruda). These drugs unmask the cancer cells so the immune system attacks them.",
+    "detailedDescriptionGu": "સામાન્ય રીતે ઓવેરિયન કેન્સર પર ઇમ્યુનોથેરાપીની સારી અસર થતી નથી. પરંતુ જો કેન્સરના કોષોમાં MSI-H (Microsatellite Instability-High) અથવા dMMR નામની ખામી જોવા મળે, તો પેમ્બ્રોલિઝુમેબ જેવી ઇમ્યુનોથેરાપી દવાઓ જબરદસ્ત અસર કરે છે. આ દવાઓ કેન્સરના કોષોનો નકાબ હટાવે છે જેથી શરીરના સૈનિકો (રોગપ્રતિકારક શક્તિ) તેને મારી શકે.",
+    "whyImportant": "Testing for MSI-H/dMMR is now highly recommended for recurrent ovarian cancer to see if the patient is a candidate for immunotherapy.",
+    "whyImportantGu": "જ્યારે ઓવેરિયન કેન્સર પાછું આવે છે, ત્યારે દર્દીને ઇમ્યુનોથેરાપી આપી શકાય કે નહીં તે નક્કી કરવા માટે MSI-H/dMMR રિપોર્ટ કરાવવો ખૂબ જ જરૂરી છે.",
+    "source": "NCBI StatPearls / FDA Guidelines"
+  },
+  {
+    "type": "cancer_info",
+    "name": "Symptom: Abnormal Vaginal Bleeding",
+    "nameGu": "લક્ષણ: અસામાન્ય યોનિમાર્ગ રક્તસ્ત્રાવ",
+    "category": "cancer_info",
+    "tags": [
+      "symptom",
+      "post-menopausal bleeding",
+      "warning sign"
+    ],
+    "simpleMeaning": "Bleeding between periods or any bleeding at all after menopause is a red flag that requires immediate testing.",
+    "simpleMeaningGu": "બે માસિક વચ્ચેના સમયમાં લોહી પડવું, અથવા મેનોપોઝ પછી કોઈપણ પ્રકારનું લોહી પડવું એ જોખમની નિશાની છે.",
+    "detailedDescription": "While ovarian cancer is most famous for causing vague digestive symptoms (bloating), some subtypes—like granulosa cell tumors or those associated with endometriosis—can produce hormones that cause abnormal vaginal bleeding. Any bleeding that occurs after a woman has gone through menopause is highly abnormal and must be investigated via ultrasound and biopsy.",
+    "detailedDescriptionGu": "જોકે ઓવેરિયન કેન્સર મુખ્યત્વે પાચનની તકલીફો (પેટ ફૂલવું) માટે જાણીતું છે, પરંતુ તેના અમુક પ્રકારો (જેમ કે ગ્રેન્યુલોસા સેલ ટ્યુમર) એવા હોર્મોન્સ બનાવે છે જેનાથી માસિક સિવાય પણ લોહી પડી શકે છે. ખાસ કરીને મેનોપોઝ (માસિક કાયમ માટે બંધ થઈ ગયા) પછી જો એક ટીપું પણ લોહી પડે, તો તે અત્યંત અસામાન્ય છે અને તરત સોનોગ્રાફી કરાવવી ફરજિયાત છે.",
+    "whyImportant": "Post-menopausal bleeding is never normal. While it often points to uterine cancer, it can also be a key warning sign of an ovarian tumor.",
+    "whyImportantGu": "મેનોપોઝ પછી લોહી પડવું ક્યારેય સામાન્ય હોતું નથી. જોકે તે ગર્ભાશયના કેન્સરની નિશાની હોઈ શકે છે, પણ તે ઓવરીની ગાંઠની મોટી ચેતવણી પણ હોઈ શકે છે.",
+    "source": "American Cancer Society / Gynecological Guidelines"
+  },
+  {
+    "type": "medical_term",
+    "name": "CA-125 Tumor Marker Limitations",
+    "nameGu": "CA-125 રિપોર્ટની મર્યાદાઓ",
+    "category": "medical_term",
+    "tags": [
+      "blood test",
+      "tumor marker",
+      "false positives"
+    ],
+    "simpleMeaning": "A blood test used to track ovarian cancer, but it is not perfect because many benign things can cause it to be high.",
+    "simpleMeaningGu": "ઓવેરિયન કેન્સર પર નજર રાખવા માટે થતો બ્લડ ટેસ્ટ, પણ તે 100% ચોક્કસ નથી કારણ કે ઘણી સાદી બીમારીઓમાં પણ આ રિપોર્ટ ઊંચો આવી શકે છે.",
+    "detailedDescription": "CA-125 is a protein found in the blood. In ovarian cancer, it is incredibly useful for tracking if the cancer is responding to chemotherapy (the number should go down). However, it is poor for diagnosing cancer initially because it can be elevated by menstruation, endometriosis, fibroids, pregnancy, or even liver disease (false positives).",
+    "detailedDescriptionGu": "CA-125 એ લોહીમાં જોવા મળતું એક પ્રોટીન છે. ઓવેરિયન કેન્સરના દર્દીમાં કીમોથેરાપીની અસર થાય છે કે નહીં તે જાણવા આ રિપોર્ટ ખૂબ કામનો છે (સારવારથી નંબર નીચે આવવો જોઈએ). પરંતુ, આનાથી કેન્સરનું ફાઇનલ નિદાન કરી શકાતું નથી કારણ કે માસિક, એન્ડોમેટ્રિયોસિસ, ગર્ભાશયની સાદી ગાંઠ, પ્રેગ્નેન્સી કે લીવરની બીમારીમાં પણ આ રિપોર્ટ ઊંચો આવી શકે છે.",
+    "whyImportant": "A high CA-125 does not automatically mean a patient has cancer, and conversely, a normal CA-125 does not completely rule out early-stage ovarian cancer.",
+    "whyImportantGu": "CA-125 નો રિપોર્ટ ઊંચો આવે એનો અર્થ એ નથી કે દર્દીને કેન્સર જ છે, અને જો રિપોર્ટ નોર્મલ આવે તો પણ તેનો અર્થ એ નથી કે શરૂઆતનું ઓવેરિયન કેન્સર નથી.",
+    "source": "NCBI StatPearls"
+  }
+]

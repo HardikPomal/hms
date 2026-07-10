@@ -175,6 +175,7 @@ export type EntityType =
   | "condition"    // e.g., "Iron Deficiency Anemia"
   | "food" 
   | "diet"
+  | "nutrition"
   | "supplement" 
   | "medication" 
   | "symptom" 
@@ -197,6 +198,8 @@ export interface FoodMetadata {
   preparationMethods?: string;
   storage?: string;
   nutritionFacts?: Record<string, string>;
+  bestTimeToEat?: string;
+  bestTimeToEatGu?: string;
 }
 
 export interface ConditionMetadata {
@@ -213,8 +216,11 @@ export interface BaseEntity {
   
   // Previously from KnowledgeEntry:
   simpleMeaning?: string;
+  simpleMeaningGu?: string; // Gujarati Simple Meaning
   detailedDescription?: string;
+  detailedDescriptionGu?: string;
   whyImportant?: string;
+  whyImportantGu?: string;
   normalRangeText?: string;
   
   tags: string[];

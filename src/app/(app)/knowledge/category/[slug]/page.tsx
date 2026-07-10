@@ -6,8 +6,8 @@ import AppShell from "@/components/layout/AppShell";
 import { Plus, BookOpen, ChevronRight, Search } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getAllParameters } from "@/lib/db/knowledge";
-import type { ParameterDef } from "@/types";
+import { getAllEntities } from "@/lib/db/knowledge";
+import type { MedicalEntity } from "@/types";
 
 const CATEGORY_ICONS: Record<string, string> = {
   medical_report: "📋",
@@ -17,6 +17,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   cancer_info: "🎗️",
   treatment: "🏥",
   nutrition: "🥗",
+  food: "🍎",
   exercise: "🧘",
   doctor_advice: "👨‍⚕️",
   general: "📝",
@@ -28,12 +29,12 @@ export default function CategoryListPage() {
   const { slug } = useParams<{ slug: string }>();
   const router = useRouter();
 
-  const [entries, setEntries] = useState<ParameterDef[]>([]);
+  const [entries, setEntries] = useState<MedicalEntity[]>([]);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getAllParameters().then((k) => {
+    getAllEntities().then((k) => {
       setEntries(k.filter(e => e.category === slug));
       setLoading(false);
     });
@@ -110,7 +111,7 @@ export default function CategoryListPage() {
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-base-100 dark:bg-dark-base-200 rounded-xl flex items-center justify-center text-xl shrink-0">
-                  {CATEGORY_ICONS[entry.category] || "📝"}
+                  {entry.category ? CATEGORY_ICONS[entry.category] : "📝"}
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-base-900 dark:text-dark-base-900 truncate">

@@ -6,14 +6,16 @@ import { Plus, BookOpen, BrainCircuit, Play, Search } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
-  getAllParameters, 
+  getAllEntities, 
   updateEntity,
   addRelationship,
   findEntityByNameAndType,
   addEntity
 } from "@/lib/db/knowledge";
+import { seedAllPendingLabParameters } from "@/lib/db/seedLabParameters";
+import { seedComprehensiveKnowledge } from "@/lib/db/seedData/seeder";
 import { analyzeUserKnowledgeNotes } from "@/app/actions/ai";
-import type { EntityType, RelationType, ParameterEntity } from "@/types";
+import type { EntityType, RelationType, MedicalEntity } from "@/types";
 
 const CATEGORY_ICONS: Record<string, string> = {
   medical_report: "📋",
@@ -23,6 +25,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   cancer_info: "🎗️",
   treatment: "🏥",
   nutrition: "🥗",
+  food: "🍎",
   exercise: "🧘",
   doctor_advice: "👨‍⚕️",
   general: "📝",
@@ -31,13 +34,15 @@ const CATEGORY_ICONS: Record<string, string> = {
 
 export default function KnowledgePage() {
   const { t, language } = useLanguage();
-  const [entries, setEntries] = useState<ParameterEntity[]>([]);
+  const [entries, setEntries] = useState<MedicalEntity[]>([]);
   const [loading, setLoading] = useState(true);
   const [analyzing, setAnalyzing] = useState(false);
   const [analyzeProgress, setAnalyzeProgress] = useState({ current: 0, total: 0 });
 
-  const loadData = () => {
-    getAllParameters().then(async (k) => {
+  const loadData = async () => {
+    await seedComprehensiveKnowledge();
+    await seedAllPendingLabParameters();
+    getAllEntities().then(async (k) => {
       let needsRefresh = false;
       for (const param of k) {
         if (param.knowledgeStatus === "basic") {
@@ -47,7 +52,7 @@ export default function KnowledgePage() {
       }
       
       if (needsRefresh) {
-        const updatedK = await getAllParameters();
+        const updatedK = await getAllEntities();
         setEntries(updatedK as any);
       } else {
         setEntries(k as any);
@@ -60,7 +65,7 @@ export default function KnowledgePage() {
     loadData();
   }, []);
 
-  const categories = ["medical_report", "lab_parameter", "medical_term", "medicine", "cancer_info", "treatment", "nutrition", "exercise", "doctor_advice", "general", "Hematology"];
+  const categories = ["medical_report", "lab_parameter", "medical_term", "medicine", "cancer_info", "treatment", "nutrition", "food", "exercise", "doctor_advice", "general", "Hematology"];
   const pendingItems = entries.filter((e) => e.knowledgeStatus === "needs_analysis");
 
   const handleAnalyzeAll = async () => {

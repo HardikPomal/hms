@@ -1,0 +1,846 @@
+[
+  {
+    "type": "nutrition",
+    "name": "High-Protein, High-Calorie Diet (During Chemo)",
+    "nameGu": "ઉચ્ચ-પ્રોટીન, ઉચ્ચ-કેલરીયુક્ત આહાર (કીમો દરમિયાન)",
+    "category": "nutrition",
+    "tags": ["protein", "calories", "chemotherapy", "weight loss"],
+    "simpleMeaning": "A diet focused on maintaining weight and energy during intense treatments.",
+    "simpleMeaningGu": "સઘન સારવાર દરમિયાન વજન અને ઊર્જા જાળવવા પર કેન્દ્રિત આહાર.",
+    "detailedDescription": "During chemotherapy, the body requires extra calories and protein to repair damaged tissues and fight infection. Eat small, frequent meals enriched with protein sources like eggs, lentils, paneer, and calorie-dense foods like nuts and ghee.",
+    "detailedDescriptionGu": "કીમોથેરાપી દરમિયાન, શરીરને નુકસાન પામેલા પેશીઓને સુધારવા અને ચેપ સામે લડવા માટે વધારાની કેલરી અને પ્રોટીનની જરૂર પડે છે. ઈંડા, દાળ, પનીર જેવા પ્રોટીન સ્ત્રોતો અને બદામ અને ઘી જેવા કેલરીથી ભરપૂર ખોરાક સાથે નાના, વારંવાર ભોજન લો.",
+    "whyImportant": "Helps prevent severe weight loss, supports the immune system, and ensures the patient remains strong enough for subsequent chemo cycles.",
+    "whyImportantGu": "વજનમાં થતો ભારે ઘટાડો અટકાવવામાં મદદ કરે છે, રોગપ્રતિકારક શક્તિને ટેકો આપે છે, અને ખાતરી કરે છે કે દર્દી આગળની કીમો સાયકલ માટે પૂરતો મજબૂત રહે.",
+    "source": "Clinical Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "High-Protein Diet for Tissue Repair",
+    "nameGu": "પેશીઓના સમારકામ માટે પ્રોટીનયુક્ત આહાર",
+    "category": "nutrition",
+    "tags": [
+      "protein",
+      "recovery",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Eating foods rich in protein to help the body heal from surgery and chemotherapy damage.",
+    "simpleMeaningGu": "સર્જરી અને કીમોથેરાપીથી થયેલા નુકસાનને ઝડપથી રૂઝાવવા માટે પ્રોટીનવાળો આહાર લેવો.",
+    "detailedDescription": "Chemotherapy and major surgery severely break down muscle tissue and lower blood counts. Protein is the building block the body uses to repair tissues and create new immune cells. Good sources include eggs, lentils (dals), paneer, tofu, lean chicken, fish, and Greek yogurt.",
+    "detailedDescriptionGu": "કીમોથેરાપી અને મોટી સર્જરીને કારણે સ્નાયુઓ નબળા પડે છે અને લોહીના કોષો ઘટે છે. પેશીઓને (tissues) ફરીથી બનાવવા અને નવી રોગપ્રતિકારક શક્તિ ઊભી કરવા શરીરને પ્રોટીનની સખત જરૂર હોય છે. ઈંડા, દાળ, પનીર, સોયાબીન (ટોફુ), ચિકન, માછલી અને દહીં એ પ્રોટીનના ઉત્તમ સ્ત્રોત છે.",
+    "whyImportant": "Prevents severe muscle wasting (cachexia) and speeds up wound healing after debulking surgery. Aim for at least 1.2 to 1.5 grams of protein per kilogram of body weight daily during active treatment.",
+    "whyImportantGu": "આનાથી સ્નાયુઓ સાવ સુકાઈ જતા અટકે છે અને સર્જરીના ઘા જલ્દી રૂઝાય છે. સારવાર ચાલુ હોય ત્યારે દર્દીએ પોતાના વજનના પ્રતિ કિલો દીઠ 1.2 થી 1.5 ગ્રામ પ્રોટીન રોજ લેવું જોઈએ.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Nausea with Diet",
+    "nameGu": "આહાર દ્વારા ઉબકા (Nausea) નિયંત્રિત કરવા",
+    "category": "nutrition",
+    "tags": [
+      "nausea",
+      "chemo side effects",
+      "bland diet"
+    ],
+    "simpleMeaning": "Eating specific mild foods to prevent or reduce the feeling of throwing up after chemotherapy.",
+    "simpleMeaningGu": "કીમોથેરાપી પછી ઉલટી કે ઉબકા ન આવે તે માટે સાદો અને હળવો ખોરાક લેવો.",
+    "detailedDescription": "Strong smells and spicy, greasy foods can trigger severe nausea. Patients should switch to the 'BRAT' diet (Bananas, Rice, Applesauce, Toast) or other bland, room-temperature foods on the days immediately following chemotherapy. Clear broths, plain crackers, and boiled potatoes are excellent choices.",
+    "detailedDescriptionGu": "તીવ્ર સુગંધવાળો, તીખો કે તેલવાળો ખોરાક ઉબકા લાવી શકે છે. કીમોથેરાપી લીધા પછીના દિવસોમાં દર્દીએ સાદો ખોરાક (જેમ કે ભાત, કેળાં, ટોસ્ટ, બાફેલા બટાકા) ખાવો જોઈએ. બહુ ગરમ ખોરાકની જગ્યાએ સામાન્ય તાપમાનવાળો ખોરાક લેવો વધુ સારો છે.",
+    "whyImportant": "Ensures the patient retains some caloric intake even when they feel terrible. Eating absolutely nothing worsens stomach acid build-up, which paradoxically makes nausea worse.",
+    "whyImportantGu": "જ્યારે દર્દીને કશું ખાવાનું મન ન થતું હોય ત્યારે પણ થોડી કેલરી મળવી જરૂરી છે. સાવ ભૂખ્યા રહેવાથી પેટમાં એસિડ વધે છે, જેનાથી ઉબકા વધુ આવે છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Hydration and Electrolytes",
+    "nameGu": "હાઈડ્રેશન (પાણી અને પ્રવાહી)",
+    "category": "nutrition",
+    "tags": [
+      "hydration",
+      "kidneys",
+      "carboplatin"
+    ],
+    "simpleMeaning": "Drinking plenty of fluids to help the kidneys flush out chemotherapy drugs.",
+    "simpleMeaningGu": "કિડનીમાંથી કીમોથેરાપીના ઝેરી તત્વોને બહાર કાઢવા માટે પુષ્કળ પ્રવાહી પીવું.",
+    "detailedDescription": "Platinum-based drugs (Carboplatin, Cisplatin) are highly toxic to the kidneys. Adequate hydration is mandatory to keep the kidneys flushing these toxins. Water is good, but electrolyte-rich fluids like coconut water, ORS, or light clear soups help maintain the body's salt balance, especially if the patient has had vomiting.",
+    "detailedDescriptionGu": "પ્લેટિનમ દવાઓ (કાર્બોપ્લેટિન) કિડનીને નુકસાન કરી શકે છે. આ ઝેરને શરીરમાંથી બહાર કાઢવા માટે ખૂબ પાણી પીવું ફરજિયાત છે. જો દર્દીને ઉલટી થઈ હોય તો માત્ર પાણી પીવાને બદલે નાળિયેર પાણી, ઓઆરએસ (ORS) કે સૂપ લેવા જોઈએ જેથી શરીરમાં મીઠાનું સંતુલન જળવાઈ રહે.",
+    "whyImportant": "Severe dehydration can lead to acute kidney injury, which will force the oncologist to halt or delay the next chemotherapy cycle.",
+    "whyImportantGu": "જો શરીરમાં પાણી ઘટી જાય તો કિડની ફેલ થઈ શકે છે, જેના કારણે ડોક્ટરે આગળની કીમોથેરાપી બંધ કરવી પડે કે મોડી કરવી પડે છે.",
+    "source": "Clinical Oncology Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Iron-Rich Foods for Anemia",
+    "nameGu": "એનિમિયા માટે આયર્નયુક્ત (લોહતત્વ) આહાર",
+    "category": "nutrition",
+    "tags": [
+      "anemia",
+      "hemoglobin",
+      "blood building"
+    ],
+    "simpleMeaning": "Eating foods high in iron to help the body rebuild red blood cells destroyed by chemotherapy.",
+    "simpleMeaningGu": "કીમોથેરાપીથી નાશ પામેલા લાલ રક્તકણો (હિમોગ્લોબિન) ફરી બનાવવા માટે લોહતત્વ (આયર્ન) થી ભરપૂર ખોરાક ખાવો.",
+    "detailedDescription": "Anemia (low hemoglobin) is a universal side effect of ovarian cancer treatment. The body needs iron, folate, and Vitamin B12 to manufacture new red blood cells. Excellent sources include spinach, beetroot, pomegranate, dates (khajoor), jaggery (gud), legumes, and lean red meats.",
+    "detailedDescriptionGu": "લોહીની ઉણપ (એનિમિયા) એ કેન્સરની સારવારની સામાન્ય આડઅસર છે. નવા રક્તકણો બનાવવા માટે શરીરને આયર્નની જરૂર પડે છે. પાલક, બીટ, દાડમ, ખજૂર, ગોળ, કઠોળ અને માંસાહારી ખોરાક તેના ઉત્તમ સ્ત્રોત છે.",
+    "whyImportant": "Combats the extreme, debilitating fatigue caused by anemia. Consuming these iron-rich foods along with a source of Vitamin C (like lemon juice or oranges) vastly improves iron absorption in the gut.",
+    "whyImportantGu": "આનાથી લોહીની ઉણપને કારણે લાગતો સખત થાક ઓછો થાય છે. જો આ ખોરાક સાથે થોડું વિટામિન C (જેમ કે લીંબુ કે સંતરા) લેવામાં આવે, તો શરીર આયર્નને વધુ સારી રીતે પચાવી શકે છે.",
+    "source": "Dietary Guidelines for Cancer"
+  },
+  {
+    "type": "nutrition",
+    "name": "Neutropenic Diet (Avoiding Raw Foods)",
+    "nameGu": "ન્યુટ્રોપિનિક ડાયેટ (કાચો ખોરાક ટાળવો)",
+    "category": "nutrition",
+    "tags": [
+      "neutropenia",
+      "immunity",
+      "food safety"
+    ],
+    "simpleMeaning": "Eating only fully cooked foods to avoid getting an infection from bacteria in raw food when immunity is zero.",
+    "simpleMeaningGu": "રોગપ્રતિકારક શક્તિ શૂન્ય હોય ત્યારે કાચા ખોરાકના બેક્ટેરિયાથી બચવા માટે માત્ર સંપૂર્ણ રાંધેલો ખોરાક જ ખાવો.",
+    "detailedDescription": "When a patient's ANC (white blood cell count) drops severely post-chemo, they have no defense against bacteria. The neutropenic diet forbids raw vegetables, salads, unpeeled fresh fruits, unpasteurized milk, and raw eggs. Everything must be thoroughly cooked (boiled, baked, or fried) to kill all potential pathogens.",
+    "detailedDescriptionGu": "જ્યારે કીમો પછી દર્દીના શ્વેતકણો ખૂબ ઘટી જાય, ત્યારે તેમનું શરીર બેક્ટેરિયા સામે લડી શકતું નથી. આવા સમયે કાચા શાકભાજી, સલાડ, છોલ્યા વગરના ફળો, કાચું દૂધ કે અડધા રાંધેલા ઈંડા ખાવાની સખત મનાઈ હોય છે. બધો જ ખોરાક બરાબર બાફેલો કે રાંધેલો હોવો જોઈએ.",
+    "whyImportant": "A simple salad could introduce bacteria (like E. coli or Listeria) that would be harmless to a healthy person but deadly to a neutropenic cancer patient.",
+    "whyImportantGu": "એક સાદું સલાડ પણ એવા બેક્ટેરિયા લાવી શકે છે જે સામાન્ય માણસને નુકસાન ન કરે, પણ શ્વેતકણો વગરના કેન્સરના દર્દી માટે જીવલેણ સાબિત થઈ શકે છે.",
+    "source": "Oncology Food Safety Standards"
+  },
+  {
+    "type": "nutrition",
+    "name": "Constipation Relief Diet",
+    "nameGu": "કબજિયાત માટે આહાર",
+    "category": "nutrition",
+    "tags": [
+      "constipation",
+      "fiber",
+      "side effects"
+    ],
+    "simpleMeaning": "Eating high-fiber foods to relieve severe constipation caused by anti-nausea drugs.",
+    "simpleMeaningGu": "ઉલટી રોકવાની દવાઓને કારણે થતી સખત કબજિયાત દૂર કરવા માટે ફાઇબર(રેસા)વાળો ખોરાક ખાવો.",
+    "detailedDescription": "Drugs like Ondansetron (Zofran) and pain medications frequently cause severe constipation. Patients should increase their intake of soluble and insoluble fiber. Good options include oats, prunes (dried plums), papaya, whole grains, and chia seeds soaked in water.",
+    "detailedDescriptionGu": "ઓન્ડાન્સેટ્રોન જેવી ઉલટી રોકવાની દવાઓ અને દુખાવાની દવાઓ ભારે કબજિયાત કરે છે. આ માટે દર્દીએ ફાઈબર (રેસા) વાળો ખોરાક લેવો જોઈએ. ઓટ્સ, પપૈયું, કાળા મરી, આખા અનાજ અને પલાળેલા ચિયા સીડ્સ (તકમરિયાં) ખૂબ ફાયદાકારક છે.",
+    "whyImportant": "Severe constipation can cause painful bowel obstructions, especially if the patient has had recent abdominal surgery or tumors pressing against the intestines.",
+    "whyImportantGu": "સખત કબજિયાતને કારણે આંતરડામાં અવરોધ ઊભો થઈ શકે છે, ખાસ કરીને જો પેટની સર્જરી થઈ હોય અથવા ગાંઠ આંતરડા પર દબાણ કરતી હોય.",
+    "source": "Clinical Dietetics"
+  },
+  {
+    "type": "nutrition",
+    "name": "Ginger and Peppermint",
+    "nameGu": "આદુ અને ફુદીનો",
+    "category": "nutrition",
+    "tags": [
+      "nausea",
+      "natural remedies",
+      "digestion"
+    ],
+    "simpleMeaning": "Natural herbs that soothe the stomach and help control mild nausea.",
+    "simpleMeaningGu": "કુદરતી ઔષધિઓ જે પેટને શાંત રાખે છે અને હળવા ઉબકા ઘટાડવામાં મદદ કરે છે.",
+    "detailedDescription": "Ginger contains gingerols that naturally speed up stomach emptying and block serotonin receptors in the gut, effectively reducing nausea. Peppermint acts as a muscle relaxant for the gastrointestinal tract, relieving stomach cramps.",
+    "detailedDescriptionGu": "આદુમાં રહેલા તત્વો પેટને જલ્દી ખાલી કરવામાં અને ઉબકા લાવતા રસાયણોને રોકવામાં મદદ કરે છે. ફુદીનો પેટના સ્નાયુઓને આરામ આપે છે, જેનાથી પેટમાં આવતી ચૂંક (cramps) મટે છે.",
+    "whyImportant": "They serve as excellent, side-effect-free complementary treatments to medical anti-emetics. Ginger tea, peppermint candies, or simply chewing a small slice of fresh ginger can provide immediate relief.",
+    "whyImportantGu": "દવાઓની સાથે સાથે આ કુદરતી ઉપાયો ખૂબ જ અસરકારક છે અને તેની કોઈ આડઅસર નથી. આદુની ચા, ફુદીનાની ગોળી અથવા તાજા આદુનો નાનો ટુકડો ચાવવાથી તરત રાહત મળે છે.",
+    "source": "Integrative Oncology"
+  },
+  {
+    "type": "nutrition",
+    "name": "Small, Frequent Meals",
+    "nameGu": "થોડું થોડું પણ વારંવાર જમવું",
+    "category": "nutrition",
+    "tags": [
+      "appetite",
+      "early satiety",
+      "eating habits"
+    ],
+    "simpleMeaning": "Eating 5-6 small meals a day instead of 3 large ones to avoid feeling overly full or sick.",
+    "simpleMeaningGu": "3 વખત પેટ ભરીને જમવાને બદલે, દિવસમાં 5-6 વખત થોડું-થોડું જમવું, જેથી ઉબકા કે પેટ ભારી ન લાગે.",
+    "detailedDescription": "Ovarian cancer (and its resulting ascites) physically presses against the stomach, preventing it from expanding normally (early satiety). Furthermore, chemotherapy destroys appetite. Switching to a 'grazing' method—eating nutrient-dense snacks every 2-3 hours—ensures the patient gets enough calories without overwhelming their digestive system.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સરની ગાંઠ અને પેટમાં ભરાયેલું પાણી જઠર પર દબાણ કરે છે, જેથી થોડું જમવાથી પણ પેટ ભરાઈ ગયું હોય તેવું લાગે છે. કીમોથેરાપીથી ભૂખ પણ મરી જાય છે. દર 2-3 કલાકે થોડો-થોડો પોષ્ટિક ખોરાક લેવાથી પાચનતંત્ર પર ભાર પડતો નથી અને શરીરને જરૂરી તાકાત મળી રહે છે.",
+    "whyImportant": "Helps maintain body weight and energy levels throughout the day while minimizing bloating, acid reflux, and nausea.",
+    "whyImportantGu": "આનાથી વજન જળવાઈ રહે છે અને આખો દિવસ શક્તિ રહે છે, સાથે જ પેટ ફૂલવું, એસિડિટી અને ઉબકા જેવી સમસ્યાઓ ઓછી થાય છે.",
+    "source": "Clinical Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Constipation with Fiber",
+    "nameGu": "ફાઈબરવાળા આહારથી કબજિયાત દૂર કરવી",
+    "category": "nutrition",
+    "tags": [
+      "constipation",
+      "fiber",
+      "bowel health"
+    ],
+    "simpleMeaning": "Eating foods like oats, fruits, and vegetables to keep the bowels moving during chemo.",
+    "simpleMeaningGu": "કીમોથેરાપી દરમિયાન કબજિયાત દૂર કરવા માટે ઓટ્સ, ફળ અને શાકભાજી જેવો રેસાવાળો (ફાઈબર) ખોરાક ખાવો.",
+    "detailedDescription": "Anti-nausea drugs (like Ondansetron) and pain medications (like Morphine) drastically slow down the bowels, causing severe constipation. Soluble fiber (oats, apples) and insoluble fiber (whole wheat, green leafy veg) add bulk and moisture to the stool, promoting regular movements.",
+    "detailedDescriptionGu": "ઉલટી રોકવાની દવાઓ (ઓન્ડાન્સેટ્રોન) અને દુખાવાની ગોળીઓ (મોર્ફિન) આંતરડાની ગતિ ધીમી પાડી દે છે, જેનાથી ભયંકર કબજિયાત થાય છે. ફાઈબરવાળો ખોરાક (જેમ કે ઓટ્સ, સફરજન, ઘઉં અને લીલા શાકભાજી) મળને પોચો બનાવે છે અને આંતરડા સાફ રાખે છે.",
+    "whyImportant": "Severe constipation can lead to bowel obstruction, a surgical emergency. Adequate water intake MUST accompany increased fiber, otherwise the fiber will act like cement in the gut.",
+    "whyImportantGu": "જો કબજિયાત બહુ વધી જાય તો આંતરડા બ્લોક થઈ શકે છે, જેનું ઓપરેશન કરવું પડે. ખાસ યાદ રાખો કે ફાઈબર ખાવાની સાથે ખૂબ પાણી પીવું જરૂરી છે, નહીંતર પેટમાં મળ પથ્થર જેવો થઈ જશે.",
+    "source": "Dietary Guidelines for Cancer"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Taste Changes (Dysgeusia)",
+    "nameGu": "સ્વાદમાં ફેરફાર (ડિસજ્યુસિયા) નું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "taste changes",
+      "chemotherapy",
+      "appetite"
+    ],
+    "simpleMeaning": "Practical food adjustments to cope with the metallic or altered taste that chemotherapy can cause.",
+    "simpleMeaningGu": "કીમોથેરાપીના કારણે થતા ધાતુ જેવો કે બદલાયેલો સ્વાદ સહન કરવા માટેના વ્યવહારુ ખોરાક ફેરફારો.",
+    "detailedDescription": "Many chemotherapy drugs alter taste bud function temporarily. Using plastic cutlery instead of metal, marinating meats in sweet or citrus sauces, and adding extra herbs and spices can help make food more palatable when this happens.",
+    "detailedDescriptionGu": "ઘણી કીમોથેરાપી દવાઓ સ્વાદની કળીઓની કામગીરીને અસ્થાયી રૂપે બદલી નાખે છે. ધાતુના વાસણને બદલે પ્લાસ્ટિકના ચમચી-કાંટા વાપરવા, માંસને મીઠી કે ખાટી ચટણીમાં પલાળવું, અને વધુ મસાલા-જડીબુટ્ટી ઉમેરવાથી આ સમયે ખોરાક વધુ સ્વાદિષ્ટ લાગી શકે છે.",
+    "whyImportant": "Taste changes are usually temporary and improve between and after treatment cycles, so experimenting with different flavor combinations during this period can help maintain adequate food intake.",
+    "whyImportantGu": "સ્વાદમાં ફેરફાર સામાન્ય રીતે અસ્થાયી હોય છે અને સાયકલ વચ્ચે તથા સારવાર પછી સુધરે છે, તેથી આ સમયગાળામાં અલગ-અલગ સ્વાદના સંયોજનો અજમાવવાથી પૂરતો ખોરાક લેવામાં મદદ મળે છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Diarrhea with Diet",
+    "nameGu": "ઝાડા (ડાયેરિયા) નું આહાર દ્વારા સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "diarrhea",
+      "digestion",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Simple, low-fiber, easy-to-digest foods that help settle the digestive system during chemotherapy-related diarrhea.",
+    "simpleMeaningGu": "સાદો, ઓછો ફાઈબર ધરાવતો, સહેલાઈથી પચે તેવો ખોરાક, જે કીમોથેરાપીના કારણે થતા ઝાડા દરમિયાન પાચનતંત્રને શાંત કરવામાં મદદ કરે છે.",
+    "detailedDescription": "During episodes of diarrhea, foods like bananas, plain rice, applesauce, and toast (the BRAT approach) are gentle on the gut. Spicy, fried, high-fiber, and very sugary foods should be avoided until symptoms settle.",
+    "detailedDescriptionGu": "ઝાડા થાય ત્યારે, કેળા, સાદા ભાત, સફરજનની ચટણી અને ટોસ્ટ (BRAT પદ્ધતિ) જેવો ખોરાક આંતરડા માટે હળવો હોય છે. લક્ષણો ઠીક ન થાય ત્યાં સુધી તીખો, તળેલો, વધુ ફાઈબરવાળો અને વધુ ગળપણવાળો ખોરાક ટાળવો.",
+    "whyImportant": "Replacing lost fluids and electrolytes is just as important as adjusting food, and diarrhea lasting more than 24 hours or accompanied by fever should be reported to the oncology team.",
+    "whyImportantGu": "ગુમાવેલા પ્રવાહી અને ક્ષારો ફરી ભરવા એ ખોરાકના ફેરફાર જેટલું જ મહત્વનું છે, અને 24 કલાકથી વધુ ચાલતા ઝાડા કે તાવ સાથે ઝાડા થાય તો ડોક્ટરની ટીમને જાણ કરવી.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Calorie-Dense Foods for Weight Maintenance",
+    "nameGu": "વજન જાળવવા માટે વધુ કેલરીવાળો ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "weight loss",
+      "calories",
+      "appetite"
+    ],
+    "simpleMeaning": "Foods that pack more energy into smaller portions, useful when appetite is low but the body still needs enough fuel.",
+    "simpleMeaningGu": "એવો ખોરાક જે નાના પ્રમાણમાં પણ વધુ ઊર્જા આપે છે, જે ભૂખ ઓછી હોય પણ શરીરને પૂરતી ઊર્જાની જરૂર હોય ત્યારે ઉપયોગી છે.",
+    "detailedDescription": "Adding ghee, nut butters, full-fat milk or paneer, and healthy oils to regular meals boosts calorie content without requiring the patient to eat larger volumes of food, which is helpful when nausea limits appetite.",
+    "detailedDescriptionGu": "રોજિંદા ભોજનમાં ઘી, બદામ-કાજુની પેસ્ટ, ફૂલ-ફેટ દૂધ કે પનીર, અને તંદુરસ્ત તેલ ઉમેરવાથી, ખોરાકનું પ્રમાણ વધાર્યા વગર જ કેલરી વધે છે, જે ઉલટીના કારણે ભૂખ ઓછી હોય ત્યારે ઉપયોગી છે.",
+    "whyImportant": "Unintentional weight loss during treatment can weaken the body's ability to tolerate chemotherapy, so maintaining calorie intake is directly linked to staying on schedule with treatment.",
+    "whyImportantGu": "સારવાર દરમિયાન અજાણતા વજન ઘટવાથી શરીરની કીમોથેરાપી સહન કરવાની ક્ષમતા નબળી પડી શકે છે, તેથી કેલરીનું પ્રમાણ જાળવવું એ સારવારના સમયપત્રક પર રહેવા સાથે સીધું જોડાયેલું છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Diet for Mouth Sores (Mucositis)",
+    "nameGu": "મોઢાના ચાંદા (મ્યુકોસાઈટિસ) માટે આહાર",
+    "category": "nutrition",
+    "tags": [
+      "mouth sores",
+      "mucositis",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Soft, mild-tasting foods that are gentle on a sore mouth or throat during chemotherapy.",
+    "simpleMeaningGu": "નરમ, હળવા સ્વાદવાળો ખોરાક, જે કીમોથેરાપી દરમિયાન દુખતા મોઢા કે ગળા માટે હળવો હોય.",
+    "detailedDescription": "When mouth sores occur, softer foods like khichdi, mashed potatoes, curd, smoothies, and well-cooked dals are easier to eat. Acidic, spicy, salty, and very hot or very cold foods should be avoided as they can irritate open sores.",
+    "detailedDescriptionGu": "મોઢામાં ચાંદા હોય ત્યારે, ખીચડી, બટાકાની ભાજી, દહીં, સ્મૂધી અને સારી રીતે રંધાયેલી દાળ જેવો નરમ ખોરાક ખાવો સહેલો રહે છે. ખાટો, તીખો, ખારો, અને ખૂબ ગરમ કે ખૂબ ઠંડો ખોરાક ટાળવો, કારણ કે તે ખુલ્લા ચાંદાને બળતરા કરી શકે છે.",
+    "whyImportant": "Severe mouth sores can make it hard to eat or drink enough, so a lukewarm saltwater rinse before meals and reporting worsening pain early can prevent dehydration and weight loss.",
+    "whyImportantGu": "ગંભીર મોઢાના ચાંદા ખાવા-પીવાનું મુશ્કેલ બનાવી શકે છે, તેથી ભોજન પહેલા હૂંફાળા મીઠાના પાણીના કોગળા કરવા અને દુખાવો વધે તો વહેલા જાણ કરવાથી ડિહાઇડ્રેશન અને વજન ઘટતું અટકાવી શકાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Low-Sodium Diet for Fluid Retention",
+    "nameGu": "શરીરમાં પાણી ભરાવા માટે ઓછા મીઠાવાળો આહાર",
+    "category": "nutrition",
+    "tags": [
+      "fluid retention",
+      "sodium",
+      "steroids",
+      "bevacizumab"
+    ],
+    "simpleMeaning": "Reducing salty foods to help manage swelling caused by steroids or certain targeted therapy drugs like Bevacizumab.",
+    "simpleMeaningGu": "સ્ટીરોઈડ કે બેવાસિઝુમેબ જેવી ટાર્ગેટેડ થેરાપી દવાઓના કારણે થતો સોજો કાબૂમાં રાખવા ખારો ખોરાક ઘટાડવો.",
+    "detailedDescription": "Steroids given as chemotherapy premedication and drugs like Bevacizumab can cause fluid retention and puffiness, especially in the legs and face. Limiting packaged snacks, pickles, papad, and added table salt can help reduce this effect.",
+    "detailedDescriptionGu": "કીમોથેરાપી પહેલા અપાતા સ્ટીરોઈડ અને બેવાસિઝુમેબ જેવી દવાઓ, ખાસ કરીને પગ અને ચહેરા પર, પાણી ભરાવો અને સોજો લાવી શકે છે. પેકેટવાળા નાસ્તા, અથાણાં, પાપડ અને ઉપરથી ઉમેરાતું મીઠું ઘટાડવાથી આ અસર ઓછી કરવામાં મદદ મળે છે.",
+    "whyImportant": "Sudden or rapidly worsening swelling, especially with shortness of breath, should be reported promptly since it can occasionally indicate a more serious cardiovascular effect.",
+    "whyImportantGu": "અચાનક કે ઝડપથી વધતો સોજો, ખાસ કરીને શ્વાસ ચડવા સાથે, તરત જ જણાવવો જોઈએ, કારણ કે તે ક્યારેક હૃદય-સંબંધિત વધુ ગંભીર અસર દર્શાવી શકે છે.",
+    "source": "Supportive Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Gut-Friendly Probiotic Foods",
+    "nameGu": "આંતરડા માટે સારા પ્રોબાયોટિક ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "gut health",
+      "digestion",
+      "probiotics"
+    ],
+    "simpleMeaning": "Foods like curd (yogurt) that support healthy gut bacteria, which can help with digestion during and after chemotherapy.",
+    "simpleMeaningGu": "દહીં જેવો ખોરાક જે આંતરડાના તંદુરસ્ત બેક્ટેરિયાને ટેકો આપે છે, જે કીમોથેરાપી દરમિયાન અને પછી પાચનમાં મદદ કરી શકે છે.",
+    "detailedDescription": "Plain curd/yogurt with live cultures is generally a safe and helpful source of probiotics for most patients. However, during periods of neutropenia (very low white cell counts), only well-processed, pasteurized dairy should be used, and probiotic supplements should be discussed with the oncologist first.",
+    "detailedDescriptionGu": "જીવંત કલ્ચરવાળું સાદું દહીં મોટાભાગના દર્દીઓ માટે સામાન્ય રીતે સલામત અને ઉપયોગી પ્રોબાયોટિક સ્ત્રોત છે. પરંતુ ન્યુટ્રોપેનિયા (શ્વેતકણો ખૂબ ઓછા) ના સમયગાળામાં, ફક્ત સારી રીતે પ્રોસેસ કરેલા, પાશ્ચરાઇઝ્ડ ડેરી ઉત્પાદનો જ વાપરવા, અને પ્રોબાયોટિક સપ્લિમેન્ટ વિશે પહેલા ડોક્ટરને પૂછવું.",
+    "whyImportant": "A healthy gut microbiome may help ease chemotherapy-related digestive side effects, but supplement capsules containing live bacteria carry infection risk during neutropenia and should be avoided in that window.",
+    "whyImportantGu": "તંદુરસ્ત આંતરડાના બેક્ટેરિયા કીમોથેરાપી-સંબંધિત પાચનની આડઅસરો ઓછી કરવામાં મદદ કરી શકે છે, પરંતુ જીવંત બેક્ટેરિયાવાળી સપ્લિમેન્ટ કેપ્સ્યુલમાં ન્યુટ્રોપેનિયા દરમિયાન ઈન્ફેક્શનનું જોખમ હોય છે, તેથી તે સમયે તે ટાળવી.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Foods and Supplements to Avoid During Chemotherapy",
+    "nameGu": "કીમોથેરાપી દરમિયાન ટાળવાના ખોરાક અને સપ્લિમેન્ટ",
+    "category": "nutrition",
+    "tags": [
+      "interactions",
+      "safety",
+      "supplements"
+    ],
+    "simpleMeaning": "Certain foods and herbal supplements that can interfere with how chemotherapy or targeted drugs work in the body.",
+    "simpleMeaningGu": "અમુક ખોરાક અને હર્બલ સપ્લિમેન્ટ, જે શરીરમાં કીમોથેરાપી કે ટાર્ગેટેડ દવાઓ કેવી રીતે કામ કરે છે તેમાં દખલ કરી શકે છે.",
+    "detailedDescription": "Grapefruit and its juice can interfere with how the liver processes several chemotherapy and targeted drugs. High-dose herbal or antioxidant supplements (like high-dose Vitamin C or turmeric extracts) should also be discussed with the oncologist before starting, as some may reduce chemotherapy effectiveness.",
+    "detailedDescriptionGu": "ગ્રેપફ્રૂટ અને તેનો રસ, લિવર દ્વારા ઘણી કીમોથેરાપી અને ટાર્ગેટેડ દવાઓની પ્રક્રિયામાં દખલ કરી શકે છે. વધુ માત્રામાં હર્બલ કે એન્ટિઓક્સિડન્ટ સપ્લિમેન્ટ (જેમ કે વધુ ડોઝનું વિટામિન C કે હળદરના અર્ક) પણ શરૂ કરતા પહેલા ડોક્ટરને પૂછવું જોઈએ, કારણ કે તેમાંથી કેટલાક કીમોથેરાપીની અસર ઘટાડી શકે છે.",
+    "whyImportant": "Always disclose every supplement, even 'natural' ones, to the oncology team, since some can either weaken chemotherapy or dangerously intensify its side effects.",
+    "whyImportantGu": "દરેક સપ્લિમેન્ટ, 'કુદરતી' ગણાતું હોય તો પણ, ડોક્ટરની ટીમને જણાવવું જોઈએ, કારણ કે તેમાંથી કેટલાક કીમોથેરાપીને નબળી પાડી શકે છે અથવા તેની આડઅસરોને ખતરનાક રીતે વધારી શકે છે.",
+    "source": "Oncology Drug Interaction Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Loss of Appetite",
+    "nameGu": "ભૂખ ન લાગવાનું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "appetite loss",
+      "eating strategies",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Practical strategies to help eat enough food when chemotherapy or the cancer itself has reduced hunger.",
+    "simpleMeaningGu": "કીમોથેરાપી કે કેન્સરના કારણે ભૂખ ઘટી હોય ત્યારે પૂરતો ખોરાક ખાવામાં મદદરૂપ વ્યવહારુ યુક્તિઓ.",
+    "detailedDescription": "Eating by the clock rather than waiting for hunger, keeping easy-to-grab nutritious snacks visible, and eating the largest meal earlier in the day (when appetite tends to be better) can all help maintain intake despite low appetite.",
+    "detailedDescriptionGu": "ભૂખ લાગવાની રાહ જોવાને બદલે ઘડિયાળ પ્રમાણે ખાવું, હાથવગા પોષણયુક્ત નાસ્તા દેખાય તેમ રાખવા, અને દિવસના શરૂઆતના ભાગમાં (જ્યારે ભૂખ સામાન્ય રીતે વધુ સારી હોય) સૌથી મોટું ભોજન લેવું, આ બધું ઓછી ભૂખ છતાં ખોરાકનું પ્રમાણ જાળવવામાં મદદ કરે છે.",
+    "whyImportant": "Persistent appetite loss lasting more than a few days, or accompanied by significant weight loss, should prompt a conversation with the care team about appetite-stimulating medicines or a dietitian referral.",
+    "whyImportantGu": "થોડા દિવસો કરતાં વધુ સમય સુધી ભૂખ ન લાગવી, અથવા નોંધપાત્ર વજન ઘટવા સાથે હોય, તો ડોક્ટરની ટીમ સાથે ભૂખ વધારતી દવાઓ કે ડાયેટિશિયન રેફરલ વિશે વાત કરવી જોઈએ.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Vitamin D and Calcium for Bone Health",
+    "nameGu": "હાડકાના સ્વાસ્થ્ય માટે વિટામિન D અને કેલ્શિયમ",
+    "category": "nutrition",
+    "tags": [
+      "bone health",
+      "supplement",
+      "surgical menopause"
+    ],
+    "simpleMeaning": "Nutrients important for bone strength, especially relevant after surgery-induced menopause from ovary removal.",
+    "simpleMeaningGu": "હાડકાની મજબૂતાઈ માટે જરૂરી પોષક તત્વો, ખાસ કરીને ઓવરી કાઢ્યા પછી થતા સર્જિકલ મેનોપોઝ પછી મહત્વના.",
+    "detailedDescription": "Removal of both ovaries causes an abrupt drop in estrogen, which accelerates bone density loss. Dairy products, sesame seeds (til), ragi, and adequate sun exposure support calcium and Vitamin D levels; supplements may be recommended based on blood test results.",
+    "detailedDescriptionGu": "બંને ઓવરી કાઢવાથી એસ્ટ્રોજનમાં અચાનક ઘટાડો થાય છે, જે હાડકાની ઘનતા ઘટવાની ઝડપ વધારે છે. ડેરી ઉત્પાદનો, તલ, રાગી, અને પૂરતો સૂર્યપ્રકાશ કેલ્શિયમ અને વિટામિન D નું સ્તર જાળવવામાં મદદ કરે છે; બ્લડ ટેસ્ટના પરિણામ પ્રમાણે સપ્લિમેન્ટની ભલામણ થઈ શકે છે.",
+    "whyImportant": "A baseline bone density (DEXA) scan and periodic monitoring is often recommended after surgical menopause, since early attention to bone health can prevent fractures later.",
+    "whyImportantGu": "સર્જિકલ મેનોપોઝ પછી, હાડકાની ઘનતાનો પ્રારંભિક (DEXA) સ્કેન અને સમયાંતરે તપાસ ઘણી વખત ભલામણ કરવામાં આવે છે, કારણ કે હાડકાના સ્વાસ્થ્ય પર વહેલું ધ્યાન આપવાથી ભવિષ્યમાં ફ્રેક્ચર અટકાવી શકાય છે.",
+    "source": "Survivorship Care Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Dry Mouth (Xerostomia)",
+    "nameGu": "મોઢું સુકાવું (ઝેરોસ્ટોમિયા) નું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "dry mouth",
+      "eating difficulty",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Eating and drinking strategies to make food easier to swallow when chemotherapy causes persistent dry mouth.",
+    "simpleMeaningGu": "કીમોથેરાપીના કારણે મોઢું સતત સુકાયેલું રહે ત્યારે ખોરાક ગળવામાં સરળતા લાવવા માટેની ખાવા-પીવાની યુક્તિઓ.",
+    "detailedDescription": "Moistening food with extra gravy, dal, or curd, sipping water frequently through meals, and sucking on ice chips or tart candies (if mouth sores are not present) can help manage dry mouth and make eating more comfortable.",
+    "detailedDescriptionGu": "ખોરાકને વધારાની ગ્રેવી, દાળ કે દહીંથી ભેજવાળો બનાવવો, ભોજન દરમિયાન વારંવાર પાણી પીવું, અને (જો મોઢામાં ચાંદા ન હોય તો) બરફના ટુકડા કે ખાટી ગોળી ચૂસવી, આ મોઢું સુકાવાનું સંચાલન કરવામાં અને ખાવાનું વધુ આરામદાયક બનાવવામાં મદદ કરે છે.",
+    "whyImportant": "Persistent dry mouth also raises the risk of dental issues, so maintaining oral hygiene and staying hydrated becomes doubly important during this side effect.",
+    "whyImportantGu": "સતત મોઢું સુકાવાથી દાંતની સમસ્યાઓનું જોખમ પણ વધે છે, તેથી આ આડઅસર દરમિયાન મોઢાની સ્વચ્છતા જાળવવી અને પૂરતું પાણી પીવું બમણું મહત્વનું બની જાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Blood Sugar While on Steroids",
+    "nameGu": "સ્ટીરોઈડ લેતી વખતે બ્લડ સુગરનું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "blood sugar",
+      "steroids",
+      "diabetes"
+    ],
+    "simpleMeaning": "Dietary adjustments to help keep blood sugar stable on the days steroids are given as chemotherapy premedication.",
+    "simpleMeaningGu": "કીમોથેરાપી પહેલા સ્ટીરોઈડ અપાય તે દિવસોમાં બ્લડ સુગર સ્થિર રાખવા માટે આહારમાં ફેરફારો.",
+    "detailedDescription": "Dexamethasone, commonly given before chemotherapy, can temporarily raise blood sugar, even in people without diabetes. Choosing lower-glycemic foods, spacing carbohydrates through the day, and monitoring sugar levels more closely on treatment days can help.",
+    "detailedDescriptionGu": "કીમોથેરાપી પહેલા સામાન્ય રીતે અપાતું ડેક્સામેથાસોન, ડાયાબિટીસ ન હોય તેવા લોકોમાં પણ, અસ્થાયી રૂપે બ્લડ સુગર વધારી શકે છે. ઓછો ગ્લાયસેમિક ઈન્ડેક્સ ધરાવતો ખોરાક પસંદ કરવો, દિવસભર કાર્બોહાઈડ્રેટને વહેંચીને લેવા, અને સારવારના દિવસોમાં સુગર લેવલ વધુ નજીકથી તપાસવું મદદરૂપ થાય છે.",
+    "whyImportant": "Patients with pre-existing diabetes should coordinate closely with both their oncologist and diabetes doctor around steroid days, as insulin or medication doses may need temporary adjustment.",
+    "whyImportantGu": "પહેલેથી ડાયાબિટીસ ધરાવતા દર્દીઓએ સ્ટીરોઈડના દિવસોમાં ઓન્કોલોજિસ્ટ અને ડાયાબિટીસના ડોક્ટર બંને સાથે નજીકથી સંકલન રાખવું જોઈએ, કારણ કે ઇન્સ્યુલિન કે દવાના ડોઝમાં અસ્થાયી ફેરફારની જરૂર પડી શકે છે.",
+    "source": "Supportive Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Post-Surgery Soft Diet Progression",
+    "nameGu": "સર્જરી પછી નરમ આહારનો ક્રમશઃ વધારો",
+    "category": "nutrition",
+    "tags": [
+      "post-surgery",
+      "recovery",
+      "diet progression"
+    ],
+    "simpleMeaning": "The step-by-step return from clear liquids to normal food that the digestive system follows after abdominal surgery.",
+    "simpleMeaningGu": "પેટની સર્જરી પછી પાચનતંત્ર જે ક્રમશઃ પ્રવાહીથી સામાન્ય ખોરાક તરફ પાછું આવે છે તે તબક્કાવાર પ્રક્રિયા.",
+    "detailedDescription": "After major abdominal surgery like a hysterectomy or debulking procedure, the diet typically progresses from clear liquids, to full liquids, to soft foods, and finally to a regular diet, guided by the surgical team based on bowel recovery signs like passing gas.",
+    "detailedDescriptionGu": "હિસ્ટરેક્ટોમી કે ડિબલ્કિંગ જેવી મોટી પેટની સર્જરી પછી, આહાર સામાન્ય રીતે સ્પષ્ટ પ્રવાહીથી, પૂર્ણ પ્રવાહી, પછી નરમ ખોરાક, અને છેલ્લે સામાન્ય આહાર તરફ ક્રમશઃ વધે છે, જે આંતરડું કેટલું સાજું થયું છે (જેમ કે વાછૂટ થવી) તેના આધારે સર્જિકલ ટીમ દ્વારા માર્ગદર્શન અપાય છે.",
+    "whyImportant": "Jumping to solid or heavy foods too early after bowel surgery can cause discomfort or complications, so following the surgical team's specific pace, rather than a generic timeline, is important.",
+    "whyImportantGu": "આંતરડાની સર્જરી પછી ખૂબ વહેલા ઘન કે ભારે ખોરાક તરફ જવાથી અસ્વસ્થતા કે ગૂંચવણો થઈ શકે છે, તેથી સામાન્ય સમયપત્રકને બદલે સર્જિકલ ટીમે આપેલી ચોક્કસ ગતિને અનુસરવી જરૂરી છે.",
+    "source": "Post-Surgical Recovery Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Neutropenic-Safe Immune-Supportive Foods",
+    "nameGu": "ન્યુટ્રોપેનિયા-સલામત, રોગપ્રતિકારક શક્તિ ટેકારૂપ ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "neutropenia",
+      "immune support",
+      "food safety"
+    ],
+    "simpleMeaning": "Well-cooked, food-safety-conscious meals that support the immune system without adding infection risk during low white blood cell periods.",
+    "simpleMeaningGu": "સારી રીતે રંધાયેલ, ફૂડ-સેફ્ટીનું ધ્યાન રાખતું ભોજન, જે ઓછા શ્વેતકણોના સમયગાળામાં ઈન્ફેક્શનનું જોખમ વધાર્યા વગર રોગપ્રતિકારક શક્તિને ટેકો આપે.",
+    "detailedDescription": "During neutropenic periods, well-cooked lentils, thoroughly cooked vegetables, pasteurized dairy, and freshly prepared home meals provide nutrients safely. Raw sprouts, unpasteurized products, and pre-cut fruit from outside are avoided due to bacterial risk, not because these foods lack nutrition.",
+    "detailedDescriptionGu": "ન્યુટ્રોપેનિયાના સમયગાળા દરમિયાન, સારી રીતે રંધાયેલી દાળ, બરાબર રંધાયેલા શાકભાજી, પાશ્ચરાઇઝ્ડ ડેરી, અને તાજું બનાવેલું ઘરનું ભોજન સુરક્ષિત રીતે પોષણ આપે છે. કાચા ફણગાવેલા કઠોળ, અનપાશ્ચરાઇઝ્ડ ઉત્પાદનો, અને બહારથી લાવેલા કાપેલા ફળ, બેક્ટેરિયાના જોખમના કારણે ટાળવામાં આવે છે, પોષણની ઓછપના કારણે નહીં.",
+    "whyImportant": "This is separate from general healthy eating — it is specifically about food safety during a vulnerable immune window, and the restrictions can be relaxed once counts recover.",
+    "whyImportantGu": "આ સામાન્ય તંદુરસ્ત આહારથી અલગ છે — તે ખાસ કરીને નબળી રોગપ્રતિકારક શક્તિના સંવેદનશીલ સમયગાળા દરમિયાન ફૂડ સેફ્ટી વિશે છે, અને કાઉન્ટ સુધર્યા પછી આ પ્રતિબંધો હળવા કરી શકાય છે.",
+    "source": "Neutropenic Diet Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Metallic Taste on Infusion Days",
+    "nameGu": "ઈન્જેક્શનના દિવસોમાં ધાતુ જેવો સ્વાદ સંભાળવો",
+    "category": "nutrition",
+    "tags": [
+      "metallic taste",
+      "infusion day",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Small tricks to make eating easier on the day of the chemotherapy infusion itself, when a metallic taste is often strongest.",
+    "simpleMeaningGu": "કીમોથેરાપીના ઈન્જેક્શનના દિવસે જ, જ્યારે ધાતુ જેવો સ્વાદ સૌથી વધુ તીવ્ર હોય, ત્યારે ખાવાનું સરળ બનાવવા માટેની નાની યુક્તિઓ.",
+    "detailedDescription": "Sucking on a hard candy or chewing gum before and during the infusion, choosing tangy or citrus-based foods, and avoiding red meat on infusion days (when the metallic taste is most associated with it) are commonly recommended strategies.",
+    "detailedDescriptionGu": "ઈન્જેક્શન પહેલા અને દરમિયાન સખત ગોળી ચૂસવી કે ચ્યુઈંગ ગમ ચાવવી, ખાટા કે લીંબુ જેવો ખોરાક પસંદ કરવો, અને ઈન્જેક્શનના દિવસે લાલ માંસ (જેની સાથે ધાતુ જેવો સ્વાદ સૌથી વધુ સંકળાયેલો છે) ટાળવો, આ સામાન્ય રીતે ભલામણ કરાતી યુક્તિઓ છે.",
+    "whyImportant": "Since this taste change is usually most intense during and right after the infusion itself, planning simple, mild meals specifically for infusion day can prevent unnecessary food aversions later.",
+    "whyImportantGu": "આ સ્વાદનો ફેરફાર સામાન્ય રીતે ઈન્જેક્શન દરમિયાન અને તરત પછી સૌથી વધુ તીવ્ર હોય છે, તેથી ખાસ ઈન્જેક્શનના દિવસ માટે સાદું, હળવું ભોજન આયોજિત કરવાથી પછીથી બિનજરૂરી ખોરાક પ્રત્યેની અણગમો અટકાવી શકાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "High-Protein Diet for Tissue Repair",
+    "nameGu": "પેશીઓના સમારકામ માટે પ્રોટીનયુક્ત આહાર",
+    "category": "nutrition",
+    "tags": [
+      "protein",
+      "recovery",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Eating foods rich in protein to help the body heal from surgery and chemotherapy damage.",
+    "simpleMeaningGu": "સર્જરી અને કીમોથેરાપીથી થયેલા નુકસાનને ઝડપથી રૂઝાવવા માટે પ્રોટીનવાળો આહાર લેવો.",
+    "detailedDescription": "Chemotherapy and major surgery severely break down muscle tissue and lower blood counts. Protein is the building block the body uses to repair tissues and create new immune cells. Good sources include eggs, lentils (dals), paneer, tofu, lean chicken, fish, and Greek yogurt.",
+    "detailedDescriptionGu": "કીમોથેરાપી અને મોટી સર્જરીને કારણે સ્નાયુઓ નબળા પડે છે અને લોહીના કોષો ઘટે છે. પેશીઓને (tissues) ફરીથી બનાવવા અને નવી રોગપ્રતિકારક શક્તિ ઊભી કરવા શરીરને પ્રોટીનની સખત જરૂર હોય છે. ઈંડા, દાળ, પનીર, સોયાબીન (ટોફુ), ચિકન, માછલી અને દહીં એ પ્રોટીનના ઉત્તમ સ્ત્રોત છે.",
+    "whyImportant": "Prevents severe muscle wasting (cachexia) and speeds up wound healing after debulking surgery. Aim for at least 1.2 to 1.5 grams of protein per kilogram of body weight daily during active treatment.",
+    "whyImportantGu": "આનાથી સ્નાયુઓ સાવ સુકાઈ જતા અટકે છે અને સર્જરીના ઘા જલ્દી રૂઝાય છે. સારવાર ચાલુ હોય ત્યારે દર્દીએ પોતાના વજનના પ્રતિ કિલો દીઠ 1.2 થી 1.5 ગ્રામ પ્રોટીન રોજ લેવું જોઈએ.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Nausea with Diet",
+    "nameGu": "આહાર દ્વારા ઉબકા (Nausea) નિયંત્રિત કરવા",
+    "category": "nutrition",
+    "tags": [
+      "nausea",
+      "chemo side effects",
+      "bland diet"
+    ],
+    "simpleMeaning": "Eating specific mild foods to prevent or reduce the feeling of throwing up after chemotherapy.",
+    "simpleMeaningGu": "કીમોથેરાપી પછી ઉલટી કે ઉબકા ન આવે તે માટે સાદો અને હળવો ખોરાક લેવો.",
+    "detailedDescription": "Strong smells and spicy, greasy foods can trigger severe nausea. Patients should switch to the 'BRAT' diet (Bananas, Rice, Applesauce, Toast) or other bland, room-temperature foods on the days immediately following chemotherapy. Clear broths, plain crackers, and boiled potatoes are excellent choices.",
+    "detailedDescriptionGu": "તીવ્ર સુગંધવાળો, તીખો કે તેલવાળો ખોરાક ઉબકા લાવી શકે છે. કીમોથેરાપી લીધા પછીના દિવસોમાં દર્દીએ સાદો ખોરાક (જેમ કે ભાત, કેળાં, ટોસ્ટ, બાફેલા બટાકા) ખાવો જોઈએ. બહુ ગરમ ખોરાકની જગ્યાએ સામાન્ય તાપમાનવાળો ખોરાક લેવો વધુ સારો છે.",
+    "whyImportant": "Ensures the patient retains some caloric intake even when they feel terrible. Eating absolutely nothing worsens stomach acid build-up, which paradoxically makes nausea worse.",
+    "whyImportantGu": "જ્યારે દર્દીને કશું ખાવાનું મન ન થતું હોય ત્યારે પણ થોડી કેલરી મળવી જરૂરી છે. સાવ ભૂખ્યા રહેવાથી પેટમાં એસિડ વધે છે, જેનાથી ઉબકા વધુ આવે છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Hydration and Electrolytes",
+    "nameGu": "હાઈડ્રેશન (પાણી અને પ્રવાહી)",
+    "category": "nutrition",
+    "tags": [
+      "hydration",
+      "kidneys",
+      "carboplatin"
+    ],
+    "simpleMeaning": "Drinking plenty of fluids to help the kidneys flush out chemotherapy drugs.",
+    "simpleMeaningGu": "કિડનીમાંથી કીમોથેરાપીના ઝેરી તત્વોને બહાર કાઢવા માટે પુષ્કળ પ્રવાહી પીવું.",
+    "detailedDescription": "Platinum-based drugs (Carboplatin, Cisplatin) are highly toxic to the kidneys. Adequate hydration is mandatory to keep the kidneys flushing these toxins. Water is good, but electrolyte-rich fluids like coconut water, ORS, or light clear soups help maintain the body's salt balance, especially if the patient has had vomiting.",
+    "detailedDescriptionGu": "પ્લેટિનમ દવાઓ (કાર્બોપ્લેટિન) કિડનીને નુકસાન કરી શકે છે. આ ઝેરને શરીરમાંથી બહાર કાઢવા માટે ખૂબ પાણી પીવું ફરજિયાત છે. જો દર્દીને ઉલટી થઈ હોય તો માત્ર પાણી પીવાને બદલે નાળિયેર પાણી, ઓઆરએસ (ORS) કે સૂપ લેવા જોઈએ જેથી શરીરમાં મીઠાનું સંતુલન જળવાઈ રહે.",
+    "whyImportant": "Severe dehydration can lead to acute kidney injury, which will force the oncologist to halt or delay the next chemotherapy cycle.",
+    "whyImportantGu": "જો શરીરમાં પાણી ઘટી જાય તો કિડની ફેલ થઈ શકે છે, જેના કારણે ડોક્ટરે આગળની કીમોથેરાપી બંધ કરવી પડે કે મોડી કરવી પડે છે.",
+    "source": "Clinical Oncology Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Iron-Rich Foods for Anemia",
+    "nameGu": "એનિમિયા માટે આયર્નયુક્ત (લોહતત્વ) આહાર",
+    "category": "nutrition",
+    "tags": [
+      "anemia",
+      "hemoglobin",
+      "blood building"
+    ],
+    "simpleMeaning": "Eating foods high in iron to help the body rebuild red blood cells destroyed by chemotherapy.",
+    "simpleMeaningGu": "કીમોથેરાપીથી નાશ પામેલા લાલ રક્તકણો (હિમોગ્લોબિન) ફરી બનાવવા માટે લોહતત્વ (આયર્ન) થી ભરપૂર ખોરાક ખાવો.",
+    "detailedDescription": "Anemia (low hemoglobin) is a universal side effect of ovarian cancer treatment. The body needs iron, folate, and Vitamin B12 to manufacture new red blood cells. Excellent sources include spinach, beetroot, pomegranate, dates (khajoor), jaggery (gud), legumes, and lean red meats.",
+    "detailedDescriptionGu": "લોહીની ઉણપ (એનિમિયા) એ કેન્સરની સારવારની સામાન્ય આડઅસર છે. નવા રક્તકણો બનાવવા માટે શરીરને આયર્નની જરૂર પડે છે. પાલક, બીટ, દાડમ, ખજૂર, ગોળ, કઠોળ અને માંસાહારી ખોરાક તેના ઉત્તમ સ્ત્રોત છે.",
+    "whyImportant": "Combats the extreme, debilitating fatigue caused by anemia. Consuming these iron-rich foods along with a source of Vitamin C (like lemon juice or oranges) vastly improves iron absorption in the gut.",
+    "whyImportantGu": "આનાથી લોહીની ઉણપને કારણે લાગતો સખત થાક ઓછો થાય છે. જો આ ખોરાક સાથે થોડું વિટામિન C (જેમ કે લીંબુ કે સંતરા) લેવામાં આવે, તો શરીર આયર્નને વધુ સારી રીતે પચાવી શકે છે.",
+    "source": "Dietary Guidelines for Cancer"
+  },
+  {
+    "type": "nutrition",
+    "name": "Neutropenic Diet (Avoiding Raw Foods)",
+    "nameGu": "ન્યુટ્રોપિનિક ડાયેટ (કાચો ખોરાક ટાળવો)",
+    "category": "nutrition",
+    "tags": [
+      "neutropenia",
+      "immunity",
+      "food safety"
+    ],
+    "simpleMeaning": "Eating only fully cooked foods to avoid getting an infection from bacteria in raw food when immunity is zero.",
+    "simpleMeaningGu": "રોગપ્રતિકારક શક્તિ શૂન્ય હોય ત્યારે કાચા ખોરાકના બેક્ટેરિયાથી બચવા માટે માત્ર સંપૂર્ણ રાંધેલો ખોરાક જ ખાવો.",
+    "detailedDescription": "When a patient's ANC (white blood cell count) drops severely post-chemo, they have no defense against bacteria. The neutropenic diet forbids raw vegetables, salads, unpeeled fresh fruits, unpasteurized milk, and raw eggs. Everything must be thoroughly cooked (boiled, baked, or fried) to kill all potential pathogens.",
+    "detailedDescriptionGu": "જ્યારે કીમો પછી દર્દીના શ્વેતકણો ખૂબ ઘટી જાય, ત્યારે તેમનું શરીર બેક્ટેરિયા સામે લડી શકતું નથી. આવા સમયે કાચા શાકભાજી, સલાડ, છોલ્યા વગરના ફળો, કાચું દૂધ કે અડધા રાંધેલા ઈંડા ખાવાની સખત મનાઈ હોય છે. બધો જ ખોરાક બરાબર બાફેલો કે રાંધેલો હોવો જોઈએ.",
+    "whyImportant": "A simple salad could introduce bacteria (like E. coli or Listeria) that would be harmless to a healthy person but deadly to a neutropenic cancer patient.",
+    "whyImportantGu": "એક સાદું સલાડ પણ એવા બેક્ટેરિયા લાવી શકે છે જે સામાન્ય માણસને નુકસાન ન કરે, પણ શ્વેતકણો વગરના કેન્સરના દર્દી માટે જીવલેણ સાબિત થઈ શકે છે.",
+    "source": "Oncology Food Safety Standards"
+  },
+  {
+    "type": "nutrition",
+    "name": "Constipation Relief Diet",
+    "nameGu": "કબજિયાત માટે આહાર",
+    "category": "nutrition",
+    "tags": [
+      "constipation",
+      "fiber",
+      "side effects"
+    ],
+    "simpleMeaning": "Eating high-fiber foods to relieve severe constipation caused by anti-nausea drugs.",
+    "simpleMeaningGu": "ઉલટી રોકવાની દવાઓને કારણે થતી સખત કબજિયાત દૂર કરવા માટે ફાઇબર(રેસા)વાળો ખોરાક ખાવો.",
+    "detailedDescription": "Drugs like Ondansetron (Zofran) and pain medications frequently cause severe constipation. Patients should increase their intake of soluble and insoluble fiber. Good options include oats, prunes (dried plums), papaya, whole grains, and chia seeds soaked in water.",
+    "detailedDescriptionGu": "ઓન્ડાન્સેટ્રોન જેવી ઉલટી રોકવાની દવાઓ અને દુખાવાની દવાઓ ભારે કબજિયાત કરે છે. આ માટે દર્દીએ ફાઈબર (રેસા) વાળો ખોરાક લેવો જોઈએ. ઓટ્સ, પપૈયું, કાળા મરી, આખા અનાજ અને પલાળેલા ચિયા સીડ્સ (તકમરિયાં) ખૂબ ફાયદાકારક છે.",
+    "whyImportant": "Severe constipation can cause painful bowel obstructions, especially if the patient has had recent abdominal surgery or tumors pressing against the intestines.",
+    "whyImportantGu": "સખત કબજિયાતને કારણે આંતરડામાં અવરોધ ઊભો થઈ શકે છે, ખાસ કરીને જો પેટની સર્જરી થઈ હોય અથવા ગાંઠ આંતરડા પર દબાણ કરતી હોય.",
+    "source": "Clinical Dietetics"
+  },
+  {
+    "type": "nutrition",
+    "name": "Ginger and Peppermint",
+    "nameGu": "આદુ અને ફુદીનો",
+    "category": "nutrition",
+    "tags": [
+      "nausea",
+      "natural remedies",
+      "digestion"
+    ],
+    "simpleMeaning": "Natural herbs that soothe the stomach and help control mild nausea.",
+    "simpleMeaningGu": "કુદરતી ઔષધિઓ જે પેટને શાંત રાખે છે અને હળવા ઉબકા ઘટાડવામાં મદદ કરે છે.",
+    "detailedDescription": "Ginger contains gingerols that naturally speed up stomach emptying and block serotonin receptors in the gut, effectively reducing nausea. Peppermint acts as a muscle relaxant for the gastrointestinal tract, relieving stomach cramps.",
+    "detailedDescriptionGu": "આદુમાં રહેલા તત્વો પેટને જલ્દી ખાલી કરવામાં અને ઉબકા લાવતા રસાયણોને રોકવામાં મદદ કરે છે. ફુદીનો પેટના સ્નાયુઓને આરામ આપે છે, જેનાથી પેટમાં આવતી ચૂંક (cramps) મટે છે.",
+    "whyImportant": "They serve as excellent, side-effect-free complementary treatments to medical anti-emetics. Ginger tea, peppermint candies, or simply chewing a small slice of fresh ginger can provide immediate relief.",
+    "whyImportantGu": "દવાઓની સાથે સાથે આ કુદરતી ઉપાયો ખૂબ જ અસરકારક છે અને તેની કોઈ આડઅસર નથી. આદુની ચા, ફુદીનાની ગોળી અથવા તાજા આદુનો નાનો ટુકડો ચાવવાથી તરત રાહત મળે છે.",
+    "source": "Integrative Oncology"
+  },
+  {
+    "type": "nutrition",
+    "name": "Small, Frequent Meals",
+    "nameGu": "થોડું થોડું પણ વારંવાર જમવું",
+    "category": "nutrition",
+    "tags": [
+      "appetite",
+      "early satiety",
+      "eating habits"
+    ],
+    "simpleMeaning": "Eating 5-6 small meals a day instead of 3 large ones to avoid feeling overly full or sick.",
+    "simpleMeaningGu": "3 વખત પેટ ભરીને જમવાને બદલે, દિવસમાં 5-6 વખત થોડું-થોડું જમવું, જેથી ઉબકા કે પેટ ભારી ન લાગે.",
+    "detailedDescription": "Ovarian cancer (and its resulting ascites) physically presses against the stomach, preventing it from expanding normally (early satiety). Furthermore, chemotherapy destroys appetite. Switching to a 'grazing' method—eating nutrient-dense snacks every 2-3 hours—ensures the patient gets enough calories without overwhelming their digestive system.",
+    "detailedDescriptionGu": "ઓવેરિયન કેન્સરની ગાંઠ અને પેટમાં ભરાયેલું પાણી જઠર પર દબાણ કરે છે, જેથી થોડું જમવાથી પણ પેટ ભરાઈ ગયું હોય તેવું લાગે છે. કીમોથેરાપીથી ભૂખ પણ મરી જાય છે. દર 2-3 કલાકે થોડો-થોડો પોષ્ટિક ખોરાક લેવાથી પાચનતંત્ર પર ભાર પડતો નથી અને શરીરને જરૂરી તાકાત મળી રહે છે.",
+    "whyImportant": "Helps maintain body weight and energy levels throughout the day while minimizing bloating, acid reflux, and nausea.",
+    "whyImportantGu": "આનાથી વજન જળવાઈ રહે છે અને આખો દિવસ શક્તિ રહે છે, સાથે જ પેટ ફૂલવું, એસિડિટી અને ઉબકા જેવી સમસ્યાઓ ઓછી થાય છે.",
+    "source": "Clinical Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Constipation with Fiber",
+    "nameGu": "ફાઈબરવાળા આહારથી કબજિયાત દૂર કરવી",
+    "category": "nutrition",
+    "tags": [
+      "constipation",
+      "fiber",
+      "bowel health"
+    ],
+    "simpleMeaning": "Eating foods like oats, fruits, and vegetables to keep the bowels moving during chemo.",
+    "simpleMeaningGu": "કીમોથેરાપી દરમિયાન કબજિયાત દૂર કરવા માટે ઓટ્સ, ફળ અને શાકભાજી જેવો રેસાવાળો (ફાઈબર) ખોરાક ખાવો.",
+    "detailedDescription": "Anti-nausea drugs (like Ondansetron) and pain medications (like Morphine) drastically slow down the bowels, causing severe constipation. Soluble fiber (oats, apples) and insoluble fiber (whole wheat, green leafy veg) add bulk and moisture to the stool, promoting regular movements.",
+    "detailedDescriptionGu": "ઉલટી રોકવાની દવાઓ (ઓન્ડાન્સેટ્રોન) અને દુખાવાની ગોળીઓ (મોર્ફિન) આંતરડાની ગતિ ધીમી પાડી દે છે, જેનાથી ભયંકર કબજિયાત થાય છે. ફાઈબરવાળો ખોરાક (જેમ કે ઓટ્સ, સફરજન, ઘઉં અને લીલા શાકભાજી) મળને પોચો બનાવે છે અને આંતરડા સાફ રાખે છે.",
+    "whyImportant": "Severe constipation can lead to bowel obstruction, a surgical emergency. Adequate water intake MUST accompany increased fiber, otherwise the fiber will act like cement in the gut.",
+    "whyImportantGu": "જો કબજિયાત બહુ વધી જાય તો આંતરડા બ્લોક થઈ શકે છે, જેનું ઓપરેશન કરવું પડે. ખાસ યાદ રાખો કે ફાઈબર ખાવાની સાથે ખૂબ પાણી પીવું જરૂરી છે, નહીંતર પેટમાં મળ પથ્થર જેવો થઈ જશે.",
+    "source": "Dietary Guidelines for Cancer"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Taste Changes (Dysgeusia)",
+    "nameGu": "સ્વાદમાં ફેરફાર (ડિસજ્યુસિયા) નું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "taste changes",
+      "chemotherapy",
+      "appetite"
+    ],
+    "simpleMeaning": "Practical food adjustments to cope with the metallic or altered taste that chemotherapy can cause.",
+    "simpleMeaningGu": "કીમોથેરાપીના કારણે થતા ધાતુ જેવો કે બદલાયેલો સ્વાદ સહન કરવા માટેના વ્યવહારુ ખોરાક ફેરફારો.",
+    "detailedDescription": "Many chemotherapy drugs alter taste bud function temporarily. Using plastic cutlery instead of metal, marinating meats in sweet or citrus sauces, and adding extra herbs and spices can help make food more palatable when this happens.",
+    "detailedDescriptionGu": "ઘણી કીમોથેરાપી દવાઓ સ્વાદની કળીઓની કામગીરીને અસ્થાયી રૂપે બદલી નાખે છે. ધાતુના વાસણને બદલે પ્લાસ્ટિકના ચમચી-કાંટા વાપરવા, માંસને મીઠી કે ખાટી ચટણીમાં પલાળવું, અને વધુ મસાલા-જડીબુટ્ટી ઉમેરવાથી આ સમયે ખોરાક વધુ સ્વાદિષ્ટ લાગી શકે છે.",
+    "whyImportant": "Taste changes are usually temporary and improve between and after treatment cycles, so experimenting with different flavor combinations during this period can help maintain adequate food intake.",
+    "whyImportantGu": "સ્વાદમાં ફેરફાર સામાન્ય રીતે અસ્થાયી હોય છે અને સાયકલ વચ્ચે તથા સારવાર પછી સુધરે છે, તેથી આ સમયગાળામાં અલગ-અલગ સ્વાદના સંયોજનો અજમાવવાથી પૂરતો ખોરાક લેવામાં મદદ મળે છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Diarrhea with Diet",
+    "nameGu": "ઝાડા (ડાયેરિયા) નું આહાર દ્વારા સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "diarrhea",
+      "digestion",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Simple, low-fiber, easy-to-digest foods that help settle the digestive system during chemotherapy-related diarrhea.",
+    "simpleMeaningGu": "સાદો, ઓછો ફાઈબર ધરાવતો, સહેલાઈથી પચે તેવો ખોરાક, જે કીમોથેરાપીના કારણે થતા ઝાડા દરમિયાન પાચનતંત્રને શાંત કરવામાં મદદ કરે છે.",
+    "detailedDescription": "During episodes of diarrhea, foods like bananas, plain rice, applesauce, and toast (the BRAT approach) are gentle on the gut. Spicy, fried, high-fiber, and very sugary foods should be avoided until symptoms settle.",
+    "detailedDescriptionGu": "ઝાડા થાય ત્યારે, કેળા, સાદા ભાત, સફરજનની ચટણી અને ટોસ્ટ (BRAT પદ્ધતિ) જેવો ખોરાક આંતરડા માટે હળવો હોય છે. લક્ષણો ઠીક ન થાય ત્યાં સુધી તીખો, તળેલો, વધુ ફાઈબરવાળો અને વધુ ગળપણવાળો ખોરાક ટાળવો.",
+    "whyImportant": "Replacing lost fluids and electrolytes is just as important as adjusting food, and diarrhea lasting more than 24 hours or accompanied by fever should be reported to the oncology team.",
+    "whyImportantGu": "ગુમાવેલા પ્રવાહી અને ક્ષારો ફરી ભરવા એ ખોરાકના ફેરફાર જેટલું જ મહત્વનું છે, અને 24 કલાકથી વધુ ચાલતા ઝાડા કે તાવ સાથે ઝાડા થાય તો ડોક્ટરની ટીમને જાણ કરવી.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Calorie-Dense Foods for Weight Maintenance",
+    "nameGu": "વજન જાળવવા માટે વધુ કેલરીવાળો ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "weight loss",
+      "calories",
+      "appetite"
+    ],
+    "simpleMeaning": "Foods that pack more energy into smaller portions, useful when appetite is low but the body still needs enough fuel.",
+    "simpleMeaningGu": "એવો ખોરાક જે નાના પ્રમાણમાં પણ વધુ ઊર્જા આપે છે, જે ભૂખ ઓછી હોય પણ શરીરને પૂરતી ઊર્જાની જરૂર હોય ત્યારે ઉપયોગી છે.",
+    "detailedDescription": "Adding ghee, nut butters, full-fat milk or paneer, and healthy oils to regular meals boosts calorie content without requiring the patient to eat larger volumes of food, which is helpful when nausea limits appetite.",
+    "detailedDescriptionGu": "રોજિંદા ભોજનમાં ઘી, બદામ-કાજુની પેસ્ટ, ફૂલ-ફેટ દૂધ કે પનીર, અને તંદુરસ્ત તેલ ઉમેરવાથી, ખોરાકનું પ્રમાણ વધાર્યા વગર જ કેલરી વધે છે, જે ઉલટીના કારણે ભૂખ ઓછી હોય ત્યારે ઉપયોગી છે.",
+    "whyImportant": "Unintentional weight loss during treatment can weaken the body's ability to tolerate chemotherapy, so maintaining calorie intake is directly linked to staying on schedule with treatment.",
+    "whyImportantGu": "સારવાર દરમિયાન અજાણતા વજન ઘટવાથી શરીરની કીમોથેરાપી સહન કરવાની ક્ષમતા નબળી પડી શકે છે, તેથી કેલરીનું પ્રમાણ જાળવવું એ સારવારના સમયપત્રક પર રહેવા સાથે સીધું જોડાયેલું છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Diet for Mouth Sores (Mucositis)",
+    "nameGu": "મોઢાના ચાંદા (મ્યુકોસાઈટિસ) માટે આહાર",
+    "category": "nutrition",
+    "tags": [
+      "mouth sores",
+      "mucositis",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Soft, mild-tasting foods that are gentle on a sore mouth or throat during chemotherapy.",
+    "simpleMeaningGu": "નરમ, હળવા સ્વાદવાળો ખોરાક, જે કીમોથેરાપી દરમિયાન દુખતા મોઢા કે ગળા માટે હળવો હોય.",
+    "detailedDescription": "When mouth sores occur, softer foods like khichdi, mashed potatoes, curd, smoothies, and well-cooked dals are easier to eat. Acidic, spicy, salty, and very hot or very cold foods should be avoided as they can irritate open sores.",
+    "detailedDescriptionGu": "મોઢામાં ચાંદા હોય ત્યારે, ખીચડી, બટાકાની ભાજી, દહીં, સ્મૂધી અને સારી રીતે રંધાયેલી દાળ જેવો નરમ ખોરાક ખાવો સહેલો રહે છે. ખાટો, તીખો, ખારો, અને ખૂબ ગરમ કે ખૂબ ઠંડો ખોરાક ટાળવો, કારણ કે તે ખુલ્લા ચાંદાને બળતરા કરી શકે છે.",
+    "whyImportant": "Severe mouth sores can make it hard to eat or drink enough, so a lukewarm saltwater rinse before meals and reporting worsening pain early can prevent dehydration and weight loss.",
+    "whyImportantGu": "ગંભીર મોઢાના ચાંદા ખાવા-પીવાનું મુશ્કેલ બનાવી શકે છે, તેથી ભોજન પહેલા હૂંફાળા મીઠાના પાણીના કોગળા કરવા અને દુખાવો વધે તો વહેલા જાણ કરવાથી ડિહાઇડ્રેશન અને વજન ઘટતું અટકાવી શકાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Low-Sodium Diet for Fluid Retention",
+    "nameGu": "શરીરમાં પાણી ભરાવા માટે ઓછા મીઠાવાળો આહાર",
+    "category": "nutrition",
+    "tags": [
+      "fluid retention",
+      "sodium",
+      "steroids",
+      "bevacizumab"
+    ],
+    "simpleMeaning": "Reducing salty foods to help manage swelling caused by steroids or certain targeted therapy drugs like Bevacizumab.",
+    "simpleMeaningGu": "સ્ટીરોઈડ કે બેવાસિઝુમેબ જેવી ટાર્ગેટેડ થેરાપી દવાઓના કારણે થતો સોજો કાબૂમાં રાખવા ખારો ખોરાક ઘટાડવો.",
+    "detailedDescription": "Steroids given as chemotherapy premedication and drugs like Bevacizumab can cause fluid retention and puffiness, especially in the legs and face. Limiting packaged snacks, pickles, papad, and added table salt can help reduce this effect.",
+    "detailedDescriptionGu": "કીમોથેરાપી પહેલા અપાતા સ્ટીરોઈડ અને બેવાસિઝુમેબ જેવી દવાઓ, ખાસ કરીને પગ અને ચહેરા પર, પાણી ભરાવો અને સોજો લાવી શકે છે. પેકેટવાળા નાસ્તા, અથાણાં, પાપડ અને ઉપરથી ઉમેરાતું મીઠું ઘટાડવાથી આ અસર ઓછી કરવામાં મદદ મળે છે.",
+    "whyImportant": "Sudden or rapidly worsening swelling, especially with shortness of breath, should be reported promptly since it can occasionally indicate a more serious cardiovascular effect.",
+    "whyImportantGu": "અચાનક કે ઝડપથી વધતો સોજો, ખાસ કરીને શ્વાસ ચડવા સાથે, તરત જ જણાવવો જોઈએ, કારણ કે તે ક્યારેક હૃદય-સંબંધિત વધુ ગંભીર અસર દર્શાવી શકે છે.",
+    "source": "Supportive Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Gut-Friendly Probiotic Foods",
+    "nameGu": "આંતરડા માટે સારા પ્રોબાયોટિક ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "gut health",
+      "digestion",
+      "probiotics"
+    ],
+    "simpleMeaning": "Foods like curd (yogurt) that support healthy gut bacteria, which can help with digestion during and after chemotherapy.",
+    "simpleMeaningGu": "દહીં જેવો ખોરાક જે આંતરડાના તંદુરસ્ત બેક્ટેરિયાને ટેકો આપે છે, જે કીમોથેરાપી દરમિયાન અને પછી પાચનમાં મદદ કરી શકે છે.",
+    "detailedDescription": "Plain curd/yogurt with live cultures is generally a safe and helpful source of probiotics for most patients. However, during periods of neutropenia (very low white cell counts), only well-processed, pasteurized dairy should be used, and probiotic supplements should be discussed with the oncologist first.",
+    "detailedDescriptionGu": "જીવંત કલ્ચરવાળું સાદું દહીં મોટાભાગના દર્દીઓ માટે સામાન્ય રીતે સલામત અને ઉપયોગી પ્રોબાયોટિક સ્ત્રોત છે. પરંતુ ન્યુટ્રોપેનિયા (શ્વેતકણો ખૂબ ઓછા) ના સમયગાળામાં, ફક્ત સારી રીતે પ્રોસેસ કરેલા, પાશ્ચરાઇઝ્ડ ડેરી ઉત્પાદનો જ વાપરવા, અને પ્રોબાયોટિક સપ્લિમેન્ટ વિશે પહેલા ડોક્ટરને પૂછવું.",
+    "whyImportant": "A healthy gut microbiome may help ease chemotherapy-related digestive side effects, but supplement capsules containing live bacteria carry infection risk during neutropenia and should be avoided in that window.",
+    "whyImportantGu": "તંદુરસ્ત આંતરડાના બેક્ટેરિયા કીમોથેરાપી-સંબંધિત પાચનની આડઅસરો ઓછી કરવામાં મદદ કરી શકે છે, પરંતુ જીવંત બેક્ટેરિયાવાળી સપ્લિમેન્ટ કેપ્સ્યુલમાં ન્યુટ્રોપેનિયા દરમિયાન ઈન્ફેક્શનનું જોખમ હોય છે, તેથી તે સમયે તે ટાળવી.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Foods and Supplements to Avoid During Chemotherapy",
+    "nameGu": "કીમોથેરાપી દરમિયાન ટાળવાના ખોરાક અને સપ્લિમેન્ટ",
+    "category": "nutrition",
+    "tags": [
+      "interactions",
+      "safety",
+      "supplements"
+    ],
+    "simpleMeaning": "Certain foods and herbal supplements that can interfere with how chemotherapy or targeted drugs work in the body.",
+    "simpleMeaningGu": "અમુક ખોરાક અને હર્બલ સપ્લિમેન્ટ, જે શરીરમાં કીમોથેરાપી કે ટાર્ગેટેડ દવાઓ કેવી રીતે કામ કરે છે તેમાં દખલ કરી શકે છે.",
+    "detailedDescription": "Grapefruit and its juice can interfere with how the liver processes several chemotherapy and targeted drugs. High-dose herbal or antioxidant supplements (like high-dose Vitamin C or turmeric extracts) should also be discussed with the oncologist before starting, as some may reduce chemotherapy effectiveness.",
+    "detailedDescriptionGu": "ગ્રેપફ્રૂટ અને તેનો રસ, લિવર દ્વારા ઘણી કીમોથેરાપી અને ટાર્ગેટેડ દવાઓની પ્રક્રિયામાં દખલ કરી શકે છે. વધુ માત્રામાં હર્બલ કે એન્ટિઓક્સિડન્ટ સપ્લિમેન્ટ (જેમ કે વધુ ડોઝનું વિટામિન C કે હળદરના અર્ક) પણ શરૂ કરતા પહેલા ડોક્ટરને પૂછવું જોઈએ, કારણ કે તેમાંથી કેટલાક કીમોથેરાપીની અસર ઘટાડી શકે છે.",
+    "whyImportant": "Always disclose every supplement, even 'natural' ones, to the oncology team, since some can either weaken chemotherapy or dangerously intensify its side effects.",
+    "whyImportantGu": "દરેક સપ્લિમેન્ટ, 'કુદરતી' ગણાતું હોય તો પણ, ડોક્ટરની ટીમને જણાવવું જોઈએ, કારણ કે તેમાંથી કેટલાક કીમોથેરાપીને નબળી પાડી શકે છે અથવા તેની આડઅસરોને ખતરનાક રીતે વધારી શકે છે.",
+    "source": "Oncology Drug Interaction Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Loss of Appetite",
+    "nameGu": "ભૂખ ન લાગવાનું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "appetite loss",
+      "eating strategies",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Practical strategies to help eat enough food when chemotherapy or the cancer itself has reduced hunger.",
+    "simpleMeaningGu": "કીમોથેરાપી કે કેન્સરના કારણે ભૂખ ઘટી હોય ત્યારે પૂરતો ખોરાક ખાવામાં મદદરૂપ વ્યવહારુ યુક્તિઓ.",
+    "detailedDescription": "Eating by the clock rather than waiting for hunger, keeping easy-to-grab nutritious snacks visible, and eating the largest meal earlier in the day (when appetite tends to be better) can all help maintain intake despite low appetite.",
+    "detailedDescriptionGu": "ભૂખ લાગવાની રાહ જોવાને બદલે ઘડિયાળ પ્રમાણે ખાવું, હાથવગા પોષણયુક્ત નાસ્તા દેખાય તેમ રાખવા, અને દિવસના શરૂઆતના ભાગમાં (જ્યારે ભૂખ સામાન્ય રીતે વધુ સારી હોય) સૌથી મોટું ભોજન લેવું, આ બધું ઓછી ભૂખ છતાં ખોરાકનું પ્રમાણ જાળવવામાં મદદ કરે છે.",
+    "whyImportant": "Persistent appetite loss lasting more than a few days, or accompanied by significant weight loss, should prompt a conversation with the care team about appetite-stimulating medicines or a dietitian referral.",
+    "whyImportantGu": "થોડા દિવસો કરતાં વધુ સમય સુધી ભૂખ ન લાગવી, અથવા નોંધપાત્ર વજન ઘટવા સાથે હોય, તો ડોક્ટરની ટીમ સાથે ભૂખ વધારતી દવાઓ કે ડાયેટિશિયન રેફરલ વિશે વાત કરવી જોઈએ.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Vitamin D and Calcium for Bone Health",
+    "nameGu": "હાડકાના સ્વાસ્થ્ય માટે વિટામિન D અને કેલ્શિયમ",
+    "category": "nutrition",
+    "tags": [
+      "bone health",
+      "supplement",
+      "surgical menopause"
+    ],
+    "simpleMeaning": "Nutrients important for bone strength, especially relevant after surgery-induced menopause from ovary removal.",
+    "simpleMeaningGu": "હાડકાની મજબૂતાઈ માટે જરૂરી પોષક તત્વો, ખાસ કરીને ઓવરી કાઢ્યા પછી થતા સર્જિકલ મેનોપોઝ પછી મહત્વના.",
+    "detailedDescription": "Removal of both ovaries causes an abrupt drop in estrogen, which accelerates bone density loss. Dairy products, sesame seeds (til), ragi, and adequate sun exposure support calcium and Vitamin D levels; supplements may be recommended based on blood test results.",
+    "detailedDescriptionGu": "બંને ઓવરી કાઢવાથી એસ્ટ્રોજનમાં અચાનક ઘટાડો થાય છે, જે હાડકાની ઘનતા ઘટવાની ઝડપ વધારે છે. ડેરી ઉત્પાદનો, તલ, રાગી, અને પૂરતો સૂર્યપ્રકાશ કેલ્શિયમ અને વિટામિન D નું સ્તર જાળવવામાં મદદ કરે છે; બ્લડ ટેસ્ટના પરિણામ પ્રમાણે સપ્લિમેન્ટની ભલામણ થઈ શકે છે.",
+    "whyImportant": "A baseline bone density (DEXA) scan and periodic monitoring is often recommended after surgical menopause, since early attention to bone health can prevent fractures later.",
+    "whyImportantGu": "સર્જિકલ મેનોપોઝ પછી, હાડકાની ઘનતાનો પ્રારંભિક (DEXA) સ્કેન અને સમયાંતરે તપાસ ઘણી વખત ભલામણ કરવામાં આવે છે, કારણ કે હાડકાના સ્વાસ્થ્ય પર વહેલું ધ્યાન આપવાથી ભવિષ્યમાં ફ્રેક્ચર અટકાવી શકાય છે.",
+    "source": "Survivorship Care Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Dry Mouth (Xerostomia)",
+    "nameGu": "મોઢું સુકાવું (ઝેરોસ્ટોમિયા) નું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "dry mouth",
+      "eating difficulty",
+      "chemotherapy side effect"
+    ],
+    "simpleMeaning": "Eating and drinking strategies to make food easier to swallow when chemotherapy causes persistent dry mouth.",
+    "simpleMeaningGu": "કીમોથેરાપીના કારણે મોઢું સતત સુકાયેલું રહે ત્યારે ખોરાક ગળવામાં સરળતા લાવવા માટેની ખાવા-પીવાની યુક્તિઓ.",
+    "detailedDescription": "Moistening food with extra gravy, dal, or curd, sipping water frequently through meals, and sucking on ice chips or tart candies (if mouth sores are not present) can help manage dry mouth and make eating more comfortable.",
+    "detailedDescriptionGu": "ખોરાકને વધારાની ગ્રેવી, દાળ કે દહીંથી ભેજવાળો બનાવવો, ભોજન દરમિયાન વારંવાર પાણી પીવું, અને (જો મોઢામાં ચાંદા ન હોય તો) બરફના ટુકડા કે ખાટી ગોળી ચૂસવી, આ મોઢું સુકાવાનું સંચાલન કરવામાં અને ખાવાનું વધુ આરામદાયક બનાવવામાં મદદ કરે છે.",
+    "whyImportant": "Persistent dry mouth also raises the risk of dental issues, so maintaining oral hygiene and staying hydrated becomes doubly important during this side effect.",
+    "whyImportantGu": "સતત મોઢું સુકાવાથી દાંતની સમસ્યાઓનું જોખમ પણ વધે છે, તેથી આ આડઅસર દરમિયાન મોઢાની સ્વચ્છતા જાળવવી અને પૂરતું પાણી પીવું બમણું મહત્વનું બની જાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Blood Sugar While on Steroids",
+    "nameGu": "સ્ટીરોઈડ લેતી વખતે બ્લડ સુગરનું સંચાલન",
+    "category": "nutrition",
+    "tags": [
+      "blood sugar",
+      "steroids",
+      "diabetes"
+    ],
+    "simpleMeaning": "Dietary adjustments to help keep blood sugar stable on the days steroids are given as chemotherapy premedication.",
+    "simpleMeaningGu": "કીમોથેરાપી પહેલા સ્ટીરોઈડ અપાય તે દિવસોમાં બ્લડ સુગર સ્થિર રાખવા માટે આહારમાં ફેરફારો.",
+    "detailedDescription": "Dexamethasone, commonly given before chemotherapy, can temporarily raise blood sugar, even in people without diabetes. Choosing lower-glycemic foods, spacing carbohydrates through the day, and monitoring sugar levels more closely on treatment days can help.",
+    "detailedDescriptionGu": "કીમોથેરાપી પહેલા સામાન્ય રીતે અપાતું ડેક્સામેથાસોન, ડાયાબિટીસ ન હોય તેવા લોકોમાં પણ, અસ્થાયી રૂપે બ્લડ સુગર વધારી શકે છે. ઓછો ગ્લાયસેમિક ઈન્ડેક્સ ધરાવતો ખોરાક પસંદ કરવો, દિવસભર કાર્બોહાઈડ્રેટને વહેંચીને લેવા, અને સારવારના દિવસોમાં સુગર લેવલ વધુ નજીકથી તપાસવું મદદરૂપ થાય છે.",
+    "whyImportant": "Patients with pre-existing diabetes should coordinate closely with both their oncologist and diabetes doctor around steroid days, as insulin or medication doses may need temporary adjustment.",
+    "whyImportantGu": "પહેલેથી ડાયાબિટીસ ધરાવતા દર્દીઓએ સ્ટીરોઈડના દિવસોમાં ઓન્કોલોજિસ્ટ અને ડાયાબિટીસના ડોક્ટર બંને સાથે નજીકથી સંકલન રાખવું જોઈએ, કારણ કે ઇન્સ્યુલિન કે દવાના ડોઝમાં અસ્થાયી ફેરફારની જરૂર પડી શકે છે.",
+    "source": "Supportive Oncology Nutrition Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Post-Surgery Soft Diet Progression",
+    "nameGu": "સર્જરી પછી નરમ આહારનો ક્રમશઃ વધારો",
+    "category": "nutrition",
+    "tags": [
+      "post-surgery",
+      "recovery",
+      "diet progression"
+    ],
+    "simpleMeaning": "The step-by-step return from clear liquids to normal food that the digestive system follows after abdominal surgery.",
+    "simpleMeaningGu": "પેટની સર્જરી પછી પાચનતંત્ર જે ક્રમશઃ પ્રવાહીથી સામાન્ય ખોરાક તરફ પાછું આવે છે તે તબક્કાવાર પ્રક્રિયા.",
+    "detailedDescription": "After major abdominal surgery like a hysterectomy or debulking procedure, the diet typically progresses from clear liquids, to full liquids, to soft foods, and finally to a regular diet, guided by the surgical team based on bowel recovery signs like passing gas.",
+    "detailedDescriptionGu": "હિસ્ટરેક્ટોમી કે ડિબલ્કિંગ જેવી મોટી પેટની સર્જરી પછી, આહાર સામાન્ય રીતે સ્પષ્ટ પ્રવાહીથી, પૂર્ણ પ્રવાહી, પછી નરમ ખોરાક, અને છેલ્લે સામાન્ય આહાર તરફ ક્રમશઃ વધે છે, જે આંતરડું કેટલું સાજું થયું છે (જેમ કે વાછૂટ થવી) તેના આધારે સર્જિકલ ટીમ દ્વારા માર્ગદર્શન અપાય છે.",
+    "whyImportant": "Jumping to solid or heavy foods too early after bowel surgery can cause discomfort or complications, so following the surgical team's specific pace, rather than a generic timeline, is important.",
+    "whyImportantGu": "આંતરડાની સર્જરી પછી ખૂબ વહેલા ઘન કે ભારે ખોરાક તરફ જવાથી અસ્વસ્થતા કે ગૂંચવણો થઈ શકે છે, તેથી સામાન્ય સમયપત્રકને બદલે સર્જિકલ ટીમે આપેલી ચોક્કસ ગતિને અનુસરવી જરૂરી છે.",
+    "source": "Post-Surgical Recovery Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Neutropenic-Safe Immune-Supportive Foods",
+    "nameGu": "ન્યુટ્રોપેનિયા-સલામત, રોગપ્રતિકારક શક્તિ ટેકારૂપ ખોરાક",
+    "category": "nutrition",
+    "tags": [
+      "neutropenia",
+      "immune support",
+      "food safety"
+    ],
+    "simpleMeaning": "Well-cooked, food-safety-conscious meals that support the immune system without adding infection risk during low white blood cell periods.",
+    "simpleMeaningGu": "સારી રીતે રંધાયેલ, ફૂડ-સેફ્ટીનું ધ્યાન રાખતું ભોજન, જે ઓછા શ્વેતકણોના સમયગાળામાં ઈન્ફેક્શનનું જોખમ વધાર્યા વગર રોગપ્રતિકારક શક્તિને ટેકો આપે.",
+    "detailedDescription": "During neutropenic periods, well-cooked lentils, thoroughly cooked vegetables, pasteurized dairy, and freshly prepared home meals provide nutrients safely. Raw sprouts, unpasteurized products, and pre-cut fruit from outside are avoided due to bacterial risk, not because these foods lack nutrition.",
+    "detailedDescriptionGu": "ન્યુટ્રોપેનિયાના સમયગાળા દરમિયાન, સારી રીતે રંધાયેલી દાળ, બરાબર રંધાયેલા શાકભાજી, પાશ્ચરાઇઝ્ડ ડેરી, અને તાજું બનાવેલું ઘરનું ભોજન સુરક્ષિત રીતે પોષણ આપે છે. કાચા ફણગાવેલા કઠોળ, અનપાશ્ચરાઇઝ્ડ ઉત્પાદનો, અને બહારથી લાવેલા કાપેલા ફળ, બેક્ટેરિયાના જોખમના કારણે ટાળવામાં આવે છે, પોષણની ઓછપના કારણે નહીં.",
+    "whyImportant": "This is separate from general healthy eating — it is specifically about food safety during a vulnerable immune window, and the restrictions can be relaxed once counts recover.",
+    "whyImportantGu": "આ સામાન્ય તંદુરસ્ત આહારથી અલગ છે — તે ખાસ કરીને નબળી રોગપ્રતિકારક શક્તિના સંવેદનશીલ સમયગાળા દરમિયાન ફૂડ સેફ્ટી વિશે છે, અને કાઉન્ટ સુધર્યા પછી આ પ્રતિબંધો હળવા કરી શકાય છે.",
+    "source": "Neutropenic Diet Guidelines"
+  },
+  {
+    "type": "nutrition",
+    "name": "Managing Metallic Taste on Infusion Days",
+    "nameGu": "ઈન્જેક્શનના દિવસોમાં ધાતુ જેવો સ્વાદ સંભાળવો",
+    "category": "nutrition",
+    "tags": [
+      "metallic taste",
+      "infusion day",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Small tricks to make eating easier on the day of the chemotherapy infusion itself, when a metallic taste is often strongest.",
+    "simpleMeaningGu": "કીમોથેરાપીના ઈન્જેક્શનના દિવસે જ, જ્યારે ધાતુ જેવો સ્વાદ સૌથી વધુ તીવ્ર હોય, ત્યારે ખાવાનું સરળ બનાવવા માટેની નાની યુક્તિઓ.",
+    "detailedDescription": "Sucking on a hard candy or chewing gum before and during the infusion, choosing tangy or citrus-based foods, and avoiding red meat on infusion days (when the metallic taste is most associated with it) are commonly recommended strategies.",
+    "detailedDescriptionGu": "ઈન્જેક્શન પહેલા અને દરમિયાન સખત ગોળી ચૂસવી કે ચ્યુઈંગ ગમ ચાવવી, ખાટા કે લીંબુ જેવો ખોરાક પસંદ કરવો, અને ઈન્જેક્શનના દિવસે લાલ માંસ (જેની સાથે ધાતુ જેવો સ્વાદ સૌથી વધુ સંકળાયેલો છે) ટાળવો, આ સામાન્ય રીતે ભલામણ કરાતી યુક્તિઓ છે.",
+    "whyImportant": "Since this taste change is usually most intense during and right after the infusion itself, planning simple, mild meals specifically for infusion day can prevent unnecessary food aversions later.",
+    "whyImportantGu": "આ સ્વાદનો ફેરફાર સામાન્ય રીતે ઈન્જેક્શન દરમિયાન અને તરત પછી સૌથી વધુ તીવ્ર હોય છે, તેથી ખાસ ઈન્જેક્શનના દિવસ માટે સાદું, હળવું ભોજન આયોજિત કરવાથી પછીથી બિનજરૂરી ખોરાક પ્રત્યેની અણગમો અટકાવી શકાય છે.",
+    "source": "Oncology Nutrition Guidelines"
+  }
+]

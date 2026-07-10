@@ -1,0 +1,584 @@
+[
+  {
+    "type": "report_template",
+    "name": "Liver Function Test",
+    "nameGu": "લિવર ફંક્શન ટેસ્ટ",
+    "category": "medical_report",
+    "tags": [],
+    "simpleMeaning": "Liver Function Test (LFT) is a group of blood tests used to evaluate the health and functioning of the liver.",
+    "simpleMeaningGu": "લિવર ફંક્શન ટેસ્ટ (LFT) રક્ત પરીક્ષણોનો સમૂહ છે જે લિવરની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા માટે કરવામાં આવે છે.",
+    "detailedDescription": "<en>\nLiver Function Test (LFT) is a group of blood tests used to evaluate the health and functioning of the liver. It measures various enzymes, proteins, and waste products that help assess liver cell integrity, bile flow, and the liver's ability to perform its essential functions.\n\n### Why This Report Is Ordered\n- To assess liver health and function\n- To diagnose liver diseases\n- To investigate jaundice\n- To monitor liver damage caused by medications\n- To evaluate alcohol-related liver injury\n- To monitor chronic liver conditions\n- To assess bile duct disorders\n\n### When It Is Commonly Recommended\n- Jaundice (yellowing of skin and eyes)\n- Abdominal pain or swelling\n- Fatigue and weakness\n- Dark-colored urine\n- Suspected hepatitis\n- Alcohol abuse\n- Long-term medication use\n- Routine health checkups\n- Monitoring known liver disease\n\n### How To Prepare For The Test\n- Fasting may be recommended for 8–12 hours depending on the laboratory.\n- Drink adequate water unless instructed otherwise.\n- Inform your doctor about all medications and supplements.\n- Avoid alcohol consumption for at least 24 hours before the test if possible.\n- Follow specific instructions provided by your healthcare provider.\n\n**Parameters Included:** Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, SGOT (AST), SGPT (ALT), Alkaline Phosphatase (ALP), Gamma-Glutamyl Transferase (GGT), Total Protein, Albumin, Globulin, A/G Ratio, Lactate Dehydrogenase (LDH) (in some panels)\n\n### Important Notes\n- Abnormal LFT results do not always indicate liver disease.\n- Results should be interpreted along with symptoms, medical history, and other investigations.\n- Certain medications, alcohol, obesity, infections, and strenuous exercise can affect test results.\n- Individual parameters may be normal even when another liver parameter is abnormal.\n- Follow-up testing may be required if abnormalities are detected.\n</en>",
+    "detailedDescriptionGu": "<gu>\nલિવર ફંક્શન ટેસ્ટ (LFT) રક્ત પરીક્ષણોનો સમૂહ છે જે લિવરની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા માટે કરવામાં આવે છે. આ પરીક્ષણ વિવિધ એન્ઝાઇમ્સ, પ્રોટીન અને કચરા પદાર્થોનું માપન કરીને લિવર કોષોની સ્થિતિ, પિત્તના પ્રવાહ અને લિવરની કાર્યક્ષમતાની માહિતી આપે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- લિવરની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા\n- લિવરના રોગોનું નિદાન કરવા\n- કમળા (જૉન્ડિસ)ના કારણોની તપાસ કરવા\n- દવાઓથી થયેલ લિવર નુકસાનનું નિરીક્ષણ કરવા\n- આલ્કોહોલ સંબંધિત લિવર નુકસાનનું મૂલ્યાંકન કરવા\n- લાંબા ગાળાના લિવર રોગોની દેખરેખ રાખવા\n- પિત્ત નળીઓના રોગોની તપાસ કરવા\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- કમળો (ત્વચા અને આંખો પીળી થવી)\n- પેટમાં દુખાવો અથવા સોજો\n- થાક અને નબળાઈ\n- ગાઢ રંગનું મૂત્ર\n- હેપેટાઇટિસની શંકા\n- વધુ આલ્કોહોલનું સેવન\n- લાંબા સમયથી દવાઓનો ઉપયોગ\n- નિયમિત આરોગ્ય તપાસ\n- જાણીતા લિવર રોગોની દેખરેખ\n\n### કેવી રીતે તૈયારી કરવી\n- પ્રયોગશાળાની જરૂરિયાત મુજબ 8–12 કલાક ઉપવાસ રાખવો પડી શકે.\n- પૂરતું પાણી પીવું (જો અન્ય સૂચના ન હોય તો).\n- તમે લેતા તમામ દવાઓ અને સપ્લિમેન્ટ્સ વિશે ડૉક્ટરને જાણ કરો.\n- શક્ય હોય તો પરીક્ષણ પહેલાં ઓછામાં ઓછા 24 કલાક આલ્કોહોલથી દૂર રહો.\n- તમારા ડૉક્ટર દ્વારા આપવામાં આવેલી ખાસ સૂચનાઓનું પાલન કરો.\n\n**Parameters Included:** Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, SGOT (AST), SGPT (ALT), Alkaline Phosphatase (ALP), Gamma-Glutamyl Transferase (GGT), Total Protein, Albumin, Globulin, A/G Ratio, Lactate Dehydrogenase (LDH) (in some panels)\n\n### અગત્યની નોંધ\n- LFT ના અસામાન્ય પરિણામો હંમેશા લિવર રોગ દર્શાવતા નથી.\n- પરિણામોનું અર્થઘટન લક્ષણો, તબીબી ઇતિહાસ અને અન્ય તપાસો સાથે કરવું જોઈએ.\n- કેટલીક દવાઓ, આલ્કોહોલ, સ્થૂળતા, ચેપ અને ભારે કસરત પરિણામોને અસર કરી શકે છે.\n- એક પરિમાણ સામાન્ય હોવા છતાં બીજું લિવર પરિમાણ અસામાન્ય હોઈ શકે છે.\n- અસામાન્યતા જણાય તો વધુ તપાસોની જરૂર પડી શકે છે.\n</gu>",
+    "whyImportant": "- To assess liver health and function\n- To diagnose liver diseases\n- To investigate jaundice\n- To monitor liver damage caused by medications\n- To evaluate alcohol-related liver injury\n- To monitor chronic liver conditions\n- To assess bile duct disorders",
+    "whyImportantGu": "- લિવરની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા\n- લિવરના રોગોનું નિદાન કરવા\n- કમળા (જૉન્ડિસ)ના કારણોની તપાસ કરવા\n- દવાઓથી થયેલ લિવર નુકસાનનું નિરીક્ષણ કરવા\n- આલ્કોહોલ સંબંધિત લિવર નુકસાનનું મૂલ્યાંકન કરવા\n- લાંબા ગાળાના લિવર રોગોની દેખરેખ રાખવા\n- પિત્ત નળીઓના રોગોની તપાસ કરવા",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": [
+      "LFT",
+      "Hepatic Function Panel",
+      "Liver Profile",
+      "Liver Panel",
+      "LFT",
+      "હેપેટિક ફંક્શન પેનલ",
+      "લિવર પ્રોફાઇલ",
+      "લિવર પેનલ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Kidney Function Test",
+    "nameGu": "કિડની ફંક્શન ટેસ્ટ",
+    "category": "medical_report",
+    "tags": [],
+    "simpleMeaning": "Kidney Function Test (KFT) is a group of blood and sometimes urine tests used to assess how well the kidneys are functioning.",
+    "simpleMeaningGu": "કિડની ફંક્શન ટેસ્ટ (KFT) એ રક્ત અને ક્યારેક મૂત્રના પરીક્ષણોનો સમૂહ છે જે કિડની કેટલી સારી રીતે કાર્ય કરી રહી છે તેનું મૂલ્યાંકન કરવા માટે કરવામાં આવે છે.",
+    "detailedDescription": "<en>\nKidney Function Test (KFT) is a group of blood and sometimes urine tests used to assess how well the kidneys are functioning. These tests measure waste products, electrolytes, and other substances that help evaluate the kidneys' ability to filter blood, maintain fluid balance, and regulate essential body functions.\n\n### Why This Report Is Ordered\n- To assess kidney health and function\n- To diagnose kidney diseases\n- To monitor chronic kidney disease (CKD)\n- To evaluate abnormal urine findings\n- To investigate fluid and electrolyte imbalances\n- To monitor the effects of medications on the kidneys\n- To assess kidney function in patients with diabetes or hypertension\n\n### When It Is Commonly Recommended\n- Swelling of legs, feet, or face\n- High blood pressure\n- Diabetes mellitus\n- Abnormal urine output\n- Blood in urine\n- Persistent fatigue\n- Suspected kidney disease\n- Routine health checkups\n- Monitoring chronic kidney disease\n- Before major surgery\n\n### How To Prepare For The Test\n- Follow your doctor's instructions regarding fasting requirements.\n- Drink normal amounts of water unless advised otherwise.\n- Inform your doctor about all medications and supplements you are taking.\n- Avoid excessive protein intake before the test if advised.\n- Avoid strenuous exercise before sample collection.\n\n**Parameters Included:** Blood Urea, Blood Urea Nitrogen (BUN), Serum Creatinine, Uric Acid, Sodium, Potassium, Chloride, Calcium, Phosphorus, Estimated Glomerular Filtration Rate (eGFR), BUN/Creatinine Ratio\n\n### Important Notes\n- Abnormal KFT results do not always indicate permanent kidney disease.\n- Results should be interpreted along with symptoms, urine tests, imaging studies, and medical history.\n- Dehydration, medications, infections, and dietary factors can affect results.\n- eGFR is one of the most important indicators of kidney function.\n- Regular monitoring may be required in patients with diabetes, hypertension, or known kidney disease.\n</en>",
+    "detailedDescriptionGu": "<gu>\nકિડની ફંક્શન ટેસ્ટ (KFT) એ રક્ત અને ક્યારેક મૂત્રના પરીક્ષણોનો સમૂહ છે જે કિડની કેટલી સારી રીતે કાર્ય કરી રહી છે તેનું મૂલ્યાંકન કરવા માટે કરવામાં આવે છે. આ પરીક્ષણો કચરા પદાર્થો, ઇલેક્ટ્રોલાઇટ્સ અને અન્ય ઘટકોનું માપન કરીને કિડનીની રક્ત શુદ્ધિકરણ, પ્રવાહી સંતુલન અને શરીરના મહત્વપૂર્ણ કાર્યો જાળવવાની ક્ષમતા વિશે માહિતી આપે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- કિડનીની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા\n- કિડનીના રોગોનું નિદાન કરવા\n- ક્રોનિક કિડની ડિસીઝ (CKD) ની દેખરેખ રાખવા\n- મૂત્રમાં જોવા મળતી અસામાન્યતાઓની તપાસ કરવા\n- શરીરમાં પ્રવાહી અને ઇલેક્ટ્રોલાઇટ અસંતુલનની તપાસ કરવા\n- દવાઓના કિડની પર થતા પ્રભાવનું નિરીક્ષણ કરવા\n- ડાયાબિટીસ અથવા હાઇપરટેન્શન ધરાવતા દર્દીઓમાં કિડની કાર્યનું મૂલ્યાંકન કરવા\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- પગ, ચહેરા અથવા શરીરમાં સોજો\n- ઉચ્ચ રક્તચાપ (હાઇ બ્લડ પ્રેશર)\n- ડાયાબિટીસ\n- મૂત્રની માત્રામાં અસામાન્ય ફેરફાર\n- મૂત્રમાં લોહી આવવું\n- સતત થાક લાગવો\n- કિડની રોગની શંકા\n- નિયમિત આરોગ્ય તપાસ\n- ક્રોનિક કિડની રોગની દેખરેખ\n- મોટી સર્જરી પહેલાં\n\n### કેવી રીતે તૈયારી કરવી\n- ઉપવાસ સંબંધિત ડૉક્ટરની સૂચનાઓનું પાલન કરો.\n- અન્ય સૂચના ન હોય તો સામાન્ય પ્રમાણમાં પાણી પીવો.\n- તમે લેતા તમામ દવાઓ અને સપ્લિમેન્ટ્સ વિશે ડૉક્ટરને જાણ કરો.\n- જો સલાહ આપવામાં આવી હોય તો પરીક્ષણ પહેલાં વધુ પ્રોટીનવાળો આહાર ટાળો.\n- નમૂનો આપતા પહેલાં ભારે કસરત ટાળો.\n\n**Parameters Included:** Blood Urea, Blood Urea Nitrogen (BUN), Serum Creatinine, Uric Acid, Sodium, Potassium, Chloride, Calcium, Phosphorus, Estimated Glomerular Filtration Rate (eGFR), BUN/Creatinine Ratio\n\n### અગત્યની નોંધ\n- KFT ના અસામાન્ય પરિણામો હંમેશા કાયમી કિડની રોગ દર્શાવતા નથી.\n- પરિણામોનું અર્થઘટન લક્ષણો, મૂત્ર પરીક્ષણો, ઇમેજિંગ તપાસો અને તબીબી ઇતિહાસ સાથે કરવું જોઈએ.\n- ડિહાઇડ્રેશન, દવાઓ, ચેપ અને આહાર સંબંધિત પરિબળો પરિણામોને અસર કરી શકે છે.\n- eGFR કિડની કાર્યનું એક મહત્વપૂર્ણ સૂચક છે.\n- ડાયાબિટીસ, હાઇપરટેન્શન અથવા જાણીતા કિડની રોગ ધરાવતા દર્દીઓમાં નિયમિત મોનિટરિંગ જરૂરી બની શકે છે.\n</gu>",
+    "whyImportant": "- To assess kidney health and function\n- To diagnose kidney diseases\n- To monitor chronic kidney disease (CKD)\n- To evaluate abnormal urine findings\n- To investigate fluid and electrolyte imbalances\n- To monitor the effects of medications on the kidneys\n- To assess kidney function in patients with diabetes or hypertension",
+    "whyImportantGu": "- કિડનીની તંદુરસ્તી અને કાર્યક્ષમતાનું મૂલ્યાંકન કરવા\n- કિડનીના રોગોનું નિદાન કરવા\n- ક્રોનિક કિડની ડિસીઝ (CKD) ની દેખરેખ રાખવા\n- મૂત્રમાં જોવા મળતી અસામાન્યતાઓની તપાસ કરવા\n- શરીરમાં પ્રવાહી અને ઇલેક્ટ્રોલાઇટ અસંતુલનની તપાસ કરવા\n- દવાઓના કિડની પર થતા પ્રભાવનું નિરીક્ષણ કરવા\n- ડાયાબિટીસ અથવા હાઇપરટેન્શન ધરાવતા દર્દીઓમાં કિડની કાર્યનું મૂલ્યાંકન કરવા",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": [
+      "KFT",
+      "Renal Function Test (RFT)",
+      "Kidney Profile",
+      "Renal Panel",
+      "KFT",
+      "RFT",
+      "રીનલ ફંક્શન ટેસ્ટ",
+      "કિડની પ્રોફાઇલ",
+      "રીનલ પેનલ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Complete Blood Count (CBC)",
+    "nameGu": "કમ્પ્લીટ બ્લડ કાઉન્ટ (CBC)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "hematology",
+      "monitoring",
+      "chemotherapy"
+    ],
+    "simpleMeaning": "Complete Blood Count (CBC) is a common blood test that measures different components of blood, including red blood cells, white blood cells, hemoglobin, platelets, and related indices.",
+    "simpleMeaningGu": "કમ્પ્લીટ બ્લડ કાઉન્ટ (CBC) એક સામાન્ય રક્ત પરીક્ષણ છે જે રક્તના વિવિધ ઘટકો જેમ કે લાલ રક્તકણો, શ્વેત રક્તકણો, હિમોગ્લોબિન, પ્લેટલેટ્સ અને સંબંધિત સૂચકોનું માપન કરે છે.",
+    "detailedDescription": "<en>\nComplete Blood Count (CBC) is a common blood test that measures different components of blood, including red blood cells, white blood cells, hemoglobin, platelets, and related indices. It provides an overall assessment of a person's health and helps detect a wide range of medical conditions.\n\n### Why This Report Is Ordered\n- To evaluate overall health\n- To detect anemia\n- To identify infections\n- To assess inflammation\n- To investigate unexplained fatigue or weakness\n- To monitor blood disorders\n- To evaluate treatment response\n\n### When It Is Commonly Recommended\n- Routine health checkups\n- Persistent fever or infection\n- Unexplained fatigue\n- Weakness or dizziness\n- Suspected anemia\n- Before surgery\n- During treatment monitoring\n- Evaluation of blood disorders\n\n### How To Prepare For The Test\n- Usually no fasting is required.\n- Drink adequate water unless instructed otherwise.\n- Inform the doctor about any medications being taken.\n- Follow any specific instructions provided by the healthcare provider.\n\n**Parameters Included:** Hemoglobin (Hb), RBC Count, WBC Count, Platelet Count, Hematocrit (PCV/HCT), MCV, MCH, MCHC, RDW-CV, MPV, Neutrophils / Polymorphs, Lymphocytes, Monocytes, Eosinophils, Basophils, Absolute Neutrophil Count (ANC), Absolute Lymphocyte Count (ALC), Absolute Monocyte Count, Absolute Eosinophil Count, Absolute Basophil Count, RBC Morphology, WBC Morphology, Platelet Morphology\n\n### Important Notes\n- Reference ranges may vary between laboratories.\n- Results should always be interpreted along with symptoms and medical history.\n- Abnormal values do not necessarily indicate a disease and may require further evaluation.\n- CBC is often the first step in investigating many medical conditions.\n</en>",
+    "detailedDescriptionGu": "<gu>\nકમ્પ્લીટ બ્લડ કાઉન્ટ (CBC) એક સામાન્ય રક્ત પરીક્ષણ છે જે રક્તના વિવિધ ઘટકો જેમ કે લાલ રક્તકણો, શ્વેત રક્તકણો, હિમોગ્લોબિન, પ્લેટલેટ્સ અને સંબંધિત સૂચકોનું માપન કરે છે. તે વ્યક્તિના સમગ્ર સ્વાસ્થ્યનું મૂલ્યાંકન કરવામાં મદદ કરે છે અને વિવિધ રોગોની ઓળખ માટે ઉપયોગી છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- સમગ્ર સ્વાસ્થ્યનું મૂલ્યાંકન કરવા\n- એનિમિયા શોધવા\n- ચેપની ઓળખ કરવા\n- સોજાની સ્થિતિ જાણવા\n- થાક અથવા નબળાઈના કારણો તપાસવા\n- રક્ત સંબંધિત રોગોનું નિરીક્ષણ કરવા\n- સારવારના પરિણામોનું મૂલ્યાંકન કરવા\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- નિયમિત આરોગ્ય તપાસ દરમિયાન\n- સતત તાવ અથવા ચેપ હોય ત્યારે\n- અસ્પષ્ટ થાક અનુભવાતો હોય ત્યારે\n- નબળાઈ અથવા ચક્કર આવતા હોય ત્યારે\n- એનિમિયાની શંકા હોય ત્યારે\n- સર્જરી પહેલાં\n- સારવાર દરમિયાન મોનિટરિંગ માટે\n- રક્ત સંબંધિત રોગોના મૂલ્યાંકન માટે\n\n### કેવી રીતે તૈયારી કરવી\n- સામાન્ય રીતે ઉપવાસ (Fasting) કરવાની જરૂર નથી.\n- પૂરતું પાણી પીવું, જો ડૉક્ટરે અન્ય સૂચના ન આપી હોય.\n- લેવામાં આવતી તમામ દવાઓ વિશે ડૉક્ટરને જાણ કરવી.\n- આરોગ્ય નિષ્ણાત દ્વારા આપવામાં આવેલી ખાસ સૂચનાઓનું પાલન કરવું.\n\n**Parameters Included:** Hemoglobin (Hb), RBC Count, WBC Count, Platelet Count, Hematocrit (PCV/HCT), MCV, MCH, MCHC, RDW-CV, MPV, Neutrophils / Polymorphs, Lymphocytes, Monocytes, Eosinophils, Basophils, Absolute Neutrophil Count (ANC), Absolute Lymphocyte Count (ALC), Absolute Monocyte Count, Absolute Eosinophil Count, Absolute Basophil Count, RBC Morphology, WBC Morphology, Platelet Morphology\n\n### અગત્યની નોંધ\n- રેફરન્સ રેન્જ વિવિધ લેબોરેટરીઓમાં અલગ હોઈ શકે છે.\n- પરિણામોનું મૂલ્યાંકન હંમેશા લક્ષણો અને તબીબી ઇતિહાસ સાથે કરવું જોઈએ.\n- અસામાન્ય મૂલ્યો હંમેશા કોઈ રોગ દર્શાવતા નથી; વધુ તપાસની જરૂર પડી શકે છે.\n- અનેક તબીબી સ્થિતિઓની તપાસ માટે CBC ઘણી વખત પ્રથમ પરીક્ષણ તરીકે કરવામાં આવે છે.\n</gu>",
+    "whyImportant": "- To evaluate overall health\n- To detect anemia\n- To identify infections\n- To assess inflammation\n- To investigate unexplained fatigue or weakness\n- To monitor blood disorders\n- To evaluate treatment response",
+    "whyImportantGu": "- સમગ્ર સ્વાસ્થ્યનું મૂલ્યાંકન કરવા\n- એનિમિયા શોધવા\n- ચેપની ઓળખ કરવા\n- સોજાની સ્થિતિ જાણવા\n- થાક અથવા નબળાઈના કારણો તપાસવા\n- રક્ત સંબંધિત રોગોનું નિરીક્ષણ કરવા\n- સારવારના પરિણામોનું મૂલ્યાંકન કરવા",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": [
+      "CBC",
+      "Complete Blood Count",
+      "Full Blood Count (FBC)",
+      "Hemogram",
+      "સીબીસી (CBC)",
+      "કમ્પ્લીટ બ્લડ કાઉન્ટ",
+      "ફુલ બ્લડ કાઉન્ટ (FBC)",
+      "હિમોગ્રામ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Liver Function Test (LFT)",
+    "nameGu": "લિવર ફંક્શન ટેસ્ટ (LFT)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "liver",
+      "toxicity monitoring"
+    ],
+    "simpleMeaning": "A blood test to check how well the liver is working and detect liver damage.",
+    "simpleMeaningGu": "લિવર કેટલું સારી રીતે કામ કરી રહ્યું છે તે તપાસવા અને નુકસાન શોધવા માટેનો બ્લડ ટેસ્ટ.",
+    "detailedDescription": "<en>\nLFT includes markers such as SGOT (AST), SGPT (ALT), ALP (Alkaline Phosphatase), GGT, Total/Direct Bilirubin, Total Protein, and Albumin. These markers reflect cellular liver damage, bile duct obstruction, and the liver's synthetic function.\n\n### Why This Report Is Ordered\n- To assess how well the liver is functioning\n- To detect liver damage or bile duct obstruction\n- To ensure the liver can safely process chemotherapy drugs\n- Most chemotherapy drugs are metabolized by the liver. Elevated AST/ALT indicates hepatotoxicity (liver damage), requiring chemotherapy dose reduction or delay. Low albumin indicates poor nutritional status.\n\n### When It Is Commonly Recommended\n- Before and during chemotherapy treatments\n- If experiencing jaundice (yellowing of skin/eyes) or severe abdominal pain\n\n### How To Prepare For The Test\n- Fasting for 8-12 hours may be required; ask your doctor\n- Avoid alcohol and certain medications prior to the test\n\n**Parameters Included:** Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, SGPT (ALT), SGOT (AST), Alkaline Phosphatase (ALP), Gamma-GT (GGT), Total Protein, Albumin, Globulin, A/G Ratio\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nLFT માં SGOT, SGPT, આલ્કલાઇન ફોસ્ફેટ અને બિલીરૂબિન (કમળો) જેવા માર્કર્સ તપાસવામાં આવે છે. આનાથી લિવરને થયેલું નુકસાન, પિત્તાશયની નળીમાં અવરોધ અને લિવરની કામ કરવાની ક્ષમતા જાણી શકાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- લિવર કેટલું સારી રીતે કામ કરી રહ્યું છે તે તપાસવા\n- લિવરને થયેલું નુકસાન કે પિત્તાશયની નળીમાં અવરોધ શોધવા\n- લિવર કીમોથેરાપીની દવાઓ સહન કરી શકશે કે કેમ તેની ખાતરી કરવા\n- મોટાભાગની કીમોથેરાપી દવાઓ લિવર દ્વારા પચાવવામાં આવે છે. જો રિપોર્ટમાં SGOT/SGPT વધારે આવે તો તેનો અર્થ એ છે કે લિવરને નુકસાન થઈ રહ્યું છે, જેથી દવાનો ડોઝ ઘટાડવો પડે છે. જો આલ્બ્યુમિન ઓછું આવે તો તે નબળા પોષણની નિશાની છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- કીમોથેરાપી પહેલાં અને દરમિયાન\n- જો કમળો (આંખ/ચામડી પીળી થવી) અથવા પેટમાં સખત દુખાવો થતો હોય\n\n### કેવી રીતે તૈયારી કરવી\n- ૮-૧૨ કલાક ભૂખ્યા રહેવાની જરૂર પડી શકે છે; તમારા ડોક્ટરને પૂછો\n- રિપોર્ટ પહેલાં દારૂ અને અમુક દવાઓ ટાળો\n\n**Parameters Included:** Total Bilirubin, Direct Bilirubin, Indirect Bilirubin, SGPT (ALT), SGOT (AST), Alkaline Phosphatase (ALP), Gamma-GT (GGT), Total Protein, Albumin, Globulin, A/G Ratio\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Most chemotherapy drugs are metabolized by the liver. Elevated AST/ALT indicates hepatotoxicity (liver damage), requiring chemotherapy dose reduction or delay. Low albumin indicates poor nutritional status.",
+    "whyImportantGu": "મોટાભાગની કીમોથેરાપી દવાઓ લિવર દ્વારા પચાવવામાં આવે છે. જો રિપોર્ટમાં SGOT/SGPT વધારે આવે તો તેનો અર્થ એ છે કે લિવરને નુકસાન થઈ રહ્યું છે, જેથી દવાનો ડોઝ ઘટાડવો પડે છે. જો આલ્બ્યુમિન ઓછું આવે તો તે નબળા પોષણની નિશાની છે.",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Kidney Function Test (KFT / RFT)",
+    "nameGu": "કિડની ફંક્શન ટેસ્ટ (KFT / RFT)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "kidney",
+      "nephrotoxicity",
+      "carboplatin dosing"
+    ],
+    "simpleMeaning": "A blood test to check how well the kidneys are filtering waste from the blood.",
+    "simpleMeaningGu": "કિડની લોહીમાંથી કચરો કેટલી સારી રીતે સાફ કરી રહી છે તે તપાસવાનો રિપોર્ટ.",
+    "detailedDescription": "<en>\nKFT includes Serum Creatinine, Blood Urea Nitrogen (BUN), eGFR (estimated Glomerular Filtration Rate), Uric Acid, and Electrolytes (Sodium, Potassium, Chloride). eGFR is critical because it directly measures kidney filtration efficiency.\n\n### Why This Report Is Ordered\n- To measure how effectively the kidneys filter waste\n- To calculate the precise dosage for chemotherapy drugs like Carboplatin\n- Carboplatin (the main ovarian chemo drug) dosage is calculated directly using the patient's GFR. Poor kidney function can lead to severe drug toxicity. It must be checked before every platinum-based chemotherapy cycle.\n\n### When It Is Commonly Recommended\n- Before starting any platinum-based chemotherapy\n- If experiencing changes in urination, swelling in the legs, or fatigue\n\n### How To Prepare For The Test\n- Fasting is usually not required\n- Drink adequate water to prevent dehydration before the test\n\n**Parameters Included:** Serum Creatinine, Blood Urea Nitrogen (BUN), eGFR, Uric Acid, Sodium, Potassium, Chloride, Calcium\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nKFT માં સીરમ ક્રિએટિનાઇન, યુરિયા, eGFR અને ઈલેક્ટ્રોલાઈટ્સ (સોડિયમ, પોટેશિયમ) તપાસવામાં આવે છે. eGFR એ કિડનીની ગાળણ ક્ષમતાનું સીધું માપ છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- કિડની લોહીમાંથી કચરો કેટલી સારી રીતે સાફ કરે છે તે માપવા\n- કાર્બોપ્લેટિન જેવી કીમોથેરાપી દવાઓનો યોગ્ય ડોઝ નક્કી કરવા\n- કાર્બોપ્લેટિન (મુખ્ય કીમો દવા) નો ડોઝ સીધો દર્દીના eGFR ના આધારે ગણવામાં આવે છે. નબળી કિડની દવાના ઝેરી પ્રભાવને વધારી શકે છે. તેથી દરેક કીમો સાયકલ પહેલા આ રિપોર્ટ અત્યંત જરૂરી છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- પ્લેટિનમ આધારિત કીમોથેરાપી શરૂ કરતા પહેલા\n- જો પેશાબમાં ફેરફાર થાય, પગમાં સોજા આવે અથવા થાક લાગે\n\n### કેવી રીતે તૈયારી કરવી\n- સામાન્ય રીતે ભૂખ્યા રહેવાની જરૂર નથી\n- ડિહાઇડ્રેશન ટાળવા માટે પૂરતું પાણી પીવો\n\n**Parameters Included:** Serum Creatinine, Blood Urea Nitrogen (BUN), eGFR, Uric Acid, Sodium, Potassium, Chloride, Calcium\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Carboplatin (the main ovarian chemo drug) dosage is calculated directly using the patient's GFR. Poor kidney function can lead to severe drug toxicity. It must be checked before every platinum-based chemotherapy cycle.",
+    "whyImportantGu": "કાર્બોપ્લેટિન (મુખ્ય કીમો દવા) નો ડોઝ સીધો દર્દીના eGFR ના આધારે ગણવામાં આવે છે. નબળી કિડની દવાના ઝેરી પ્રભાવને વધારી શકે છે. તેથી દરેક કીમો સાયકલ પહેલા આ રિપોર્ટ અત્યંત જરૂરી છે.",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Tumor Marker Panel (CA-125, HE4, CEA)",
+    "nameGu": "ટ્યુમર માર્કર પેનલ (CA-125, HE4)",
+    "category": "medical_report",
+    "tags": [
+      "tumor marker",
+      "monitoring",
+      "CA-125",
+      "recurrence"
+    ],
+    "simpleMeaning": "Blood tests that measure proteins produced by cancer cells to monitor disease activity.",
+    "simpleMeaningGu": "કેન્સરના કોષો દ્વારા બનતા પ્રોટીનને માપવા માટેનો બ્લડ ટેસ્ટ, જેનાથી કેન્સરની સ્થિતિ જાણી શકાય.",
+    "detailedDescription": "<en>\nCA-125 (Cancer Antigen 125) is the primary marker for epithelial ovarian cancer, elevated in ~80% of advanced cases. HE4 is more specific to ovarian cancer and less affected by benign conditions. The ROMA score combines both for risk stratification.\n\n### Why This Report Is Ordered\n- To measure specific proteins produced by cancer cells\n- To help diagnose and risk-stratify ovarian cancer\n- To monitor how the tumor is responding to treatment\n- Used to monitor the response to chemotherapy—levels should fall significantly with effective treatment. A consistently rising CA-125 often precedes clinical recurrence by months.\n\n### When It Is Commonly Recommended\n- Before surgery or treatment to establish a baseline\n- During chemotherapy to track tumor shrinkage\n- Post-treatment for early detection of cancer recurrence\n\n### How To Prepare For The Test\n- No fasting is required\n- Inform your doctor if you have other inflammatory conditions or are menstruating, as this can affect CA-125 levels\n\n**Parameters Included:** CA-125, HE4, ROMA Score, CEA, CA 19-9\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nCA-125 એ ઓવેરિયન કેન્સર માટેનું મુખ્ય માર્કર છે, જે મોટાભાગના કેસમાં વધેલું જોવા મળે છે. HE4 એ માત્ર ઓવેરિયન કેન્સર માટે વધુ ચોક્કસ છે. આ બંને રિપોર્ટ કેન્સરનું પ્રમાણ દર્શાવે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- કેન્સરના કોષો દ્વારા બનતા ચોક્કસ પ્રોટીનને માપવા\n- ઓવેરિયન કેન્સરના નિદાન અને જોખમનો અંદાજ કાઢવામાં મદદ કરવા\n- સારવારથી ગાંઠ પર કેટલી અસર થઈ રહી છે તે જાણવા\n- સારવારની કેટલી અસર થઈ છે તે જાણવા માટે આ રિપોર્ટ વપરાય છે. અસરકારક સારવારથી આ સ્તર ઝડપથી નીચે આવવું જોઈએ. જો CA-125 સતત વધતું હોય, તો તે કેન્સર પાછું આવવાનો સંકેત હોઈ શકે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- સર્જરી કે સારવાર પહેલાં બેઝલાઇન જાણવા\n- કીમોથેરાપી દરમિયાન ગાંઠ કેટલી નાની થઈ તે તપાસવા\n- સારવાર પૂરી થયા પછી કેન્સર પાછું નથી આવ્યું તેની ખાતરી કરવા\n\n### કેવી રીતે તૈયારી કરવી\n- કોઈ ખાસ તૈયારી કે ભૂખ્યા રહેવાની જરૂર નથી\n- જો તમને અન્ય કોઈ સોજાની બીમારી હોય અથવા માસિક ધર્મ ચાલુ હોય તો ડોક્ટરને જણાવો, કારણ કે તેનાથી CA-125 રિપોર્ટ બદલાઈ શકે છે\n\n**Parameters Included:** CA-125, HE4, ROMA Score, CEA, CA 19-9\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Used to monitor the response to chemotherapy—levels should fall significantly with effective treatment. A consistently rising CA-125 often precedes clinical recurrence by months.",
+    "whyImportantGu": "સારવારની કેટલી અસર થઈ છે તે જાણવા માટે આ રિપોર્ટ વપરાય છે. અસરકારક સારવારથી આ સ્તર ઝડપથી નીચે આવવું જોઈએ. જો CA-125 સતત વધતું હોય, તો તે કેન્સર પાછું આવવાનો સંકેત હોઈ શકે છે.",
+    "source": "NCCN / ESMO Guidelines",
+    "alternativeNames": [
+      "Ovarian Cancer Marker Panel",
+      "CA-125 Profile",
+      "ટ્યુમર માર્કર"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "CT Scan of Abdomen and Pelvis",
+    "nameGu": "પેટ અને પેલ્વિસનું સીટી સ્કેન (CT Scan)",
+    "category": "medical_report",
+    "tags": [
+      "imaging",
+      "staging",
+      "ascites",
+      "response assessment"
+    ],
+    "simpleMeaning": "A detailed 3D X-ray of the belly and pelvic area to look for tumors, fluid, or enlarged lymph nodes.",
+    "simpleMeaningGu": "પેટ અને પેલ્વિસના ભાગમાં ગાંઠ, પાણી કે ફૂલેલી લસિકાગ્રંથિઓ જોવા માટેનો 3D એક્સ-રે (સ્કેન).",
+    "detailedDescription": "<en>\nPerformed with oral and IV contrast dye, providing cross-sectional anatomy of the abdominal cavity. Radiologists look for primary ovarian masses, peritoneal carcinomatosis (cancer spread on the abdominal lining), omental caking, retroperitoneal lymphadenopathy, ascites, and liver metastases.\n\n### Why This Report Is Ordered\n- To obtain detailed 3D cross-sectional images of the abdominal organs\n- To evaluate the size, location, and spread of ovarian tumors\n- To check for fluid accumulation (ascites) and enlarged lymph nodes\n- Standard imaging for initial staging of ovarian cancer and for monitoring tumor shrinkage during chemotherapy (using RECIST criteria). Required before surgery to assess if the tumors can be completely removed.\n\n### When It Is Commonly Recommended\n- For initial staging after an abnormal ultrasound\n- Mid-way through chemotherapy to assess treatment response\n- If experiencing severe abdominal pain or suspected recurrence\n\n### How To Prepare For The Test\n- You will need to fast for 4-6 hours before the scan\n- You may need to drink an oral contrast liquid 1-2 hours prior\n- Inform the technician if you have any allergies to iodine or contrast dye\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nમોં વાટે અને નસમાં કલર (કોન્ટ્રાસ્ટ) આપીને કરવામાં આવતો સ્કેન. આનાથી પેટના તમામ અવયવો સ્પષ્ટ દેખાય છે. રેડિયોલોજિસ્ટ આમાં કેન્સરની ગાંઠ, આંતરડા પર કેન્સરનો ફેલાવો, પેટમાં પાણી (જલોદર) અને લિવર પર ડાઘાઓ તપાસે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- પેટના અવયવોના વિગતવાર 3D ચિત્રો મેળવવા\n- અંડાશયની ગાંઠનું કદ, સ્થાન અને ફેલાવો તપાસવા\n- પેટમાં પાણી (જલોદર) અને ફૂલેલી લસિકાગ્રંથિઓ તપાસવા\n- કેન્સર કયા સ્ટેજ પર છે તે જાણવા અને કીમોથેરાપીથી ગાંઠ કેટલી નાની થઈ તે માપવા માટે આ સ્ટાન્ડર્ડ સ્કેન છે. સર્જરી કરતા પહેલા ગાંઠ કાઢી શકાય તેમ છે કે નહીં તે જાણવા માટે આ રિપોર્ટ જરૂરી છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- સોનોગ્રાફીમાં ખામી દેખાયા પછી કેન્સરનું સ્ટેજ નક્કી કરવા\n- કીમોથેરાપી વચ્ચે સારવારની અસર તપાસવા\n- જો પેટમાં સખત દુખાવો થાય અથવા કેન્સર પાછું આવ્યાની શંકા હોય\n\n### કેવી રીતે તૈયારી કરવી\n- સ્કેન પહેલાં તમારે ૪-૬ કલાક ભૂખ્યા રહેવું પડશે\n- તમારે ૧-૨ કલાક પહેલાં કોન્ટ્રાસ્ટ (દવાવાળું પાણી) પીવું પડી શકે છે\n- જો તમને આયોડિન કે કોન્ટ્રાસ્ટ દવાની એલર્જી હોય તો ટેકનિશિયનને જણાવો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Standard imaging for initial staging of ovarian cancer and for monitoring tumor shrinkage during chemotherapy (using RECIST criteria). Required before surgery to assess if the tumors can be completely removed.",
+    "whyImportantGu": "કેન્સર કયા સ્ટેજ પર છે તે જાણવા અને કીમોથેરાપીથી ગાંઠ કેટલી નાની થઈ તે માપવા માટે આ સ્ટાન્ડર્ડ સ્કેન છે. સર્જરી કરતા પહેલા ગાંઠ કાઢી શકાય તેમ છે કે નહીં તે જાણવા માટે આ રિપોર્ટ જરૂરી છે.",
+    "source": "ACR Appropriateness Criteria",
+    "alternativeNames": [
+      "CT Abdomen",
+      "CECT Abdomen Pelvis",
+      "સીટી સ્કેન"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "PET-CT Scan",
+    "nameGu": "પેટ-સીટી સ્કેન (PET-CT Scan)",
+    "category": "medical_report",
+    "tags": [
+      "imaging",
+      "staging",
+      "nuclear medicine",
+      "recurrence",
+      "FDG"
+    ],
+    "simpleMeaning": "A scan combining functional metabolism (where cells burn sugar) and anatomical imaging to detect cancer.",
+    "simpleMeaningGu": "એક વિશેષ સ્કેન જે શરીરમાં કયા કોષો ઝડપથી ખાંડ (ગ્લુકોઝ) વાપરી રહ્યા છે તે બતાવીને કેન્સર ક્યાં ફેલાયું છે તે શોધે છે.",
+    "detailedDescription": "<en>\nPET-CT uses a radioactive glucose tracer (FDG) to highlight metabolically active cells. Cancer cells grow rapidly and consume excess sugar, appearing as bright spots with a high Standardized Uptake Value (SUV). It is combined with a CT scan for exact anatomical location.\n\n### Why This Report Is Ordered\n- To locate actively growing cancer cells anywhere in the body\n- To differentiate between active tumors and dead scar tissue\n- To detect distant metastases beyond the pelvic region\n- The best tool for detecting distant metastases (spread beyond the abdomen) and investigating a rising CA-125 when a regular CT scan comes back clean. It can differentiate between active tumor and dead scar tissue.\n\n### When It Is Commonly Recommended\n- When a rising CA-125 suggests recurrence but a normal CT scan is clear\n- Before complex surgeries to ensure all disease sites are identified\n\n### How To Prepare For The Test\n- Strict fasting for 6-8 hours is mandatory\n- Avoid strenuous exercise 24 hours before the scan\n- If diabetic, blood sugar must be strictly controlled before the FDG injection\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nPET-CT માં કિરણોત્સર્ગી ગ્લુકોઝ (FDG) નો ઉપયોગ થાય છે. કેન્સરના કોષો ઝડપથી વધતા હોવાથી તેઓ વધુ ખાંડ વાપરે છે, જેથી સ્કેનમાં તે 'ચમકતા' દેખાય છે. આનાથી કેન્સર એક્ઝેક્ટ કઈ જગ્યાએ છે તે જાણી શકાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- શરીરમાં કોઈપણ જગ્યાએ સક્રિય રીતે વધી રહેલા કેન્સરના કોષો શોધવા\n- જીવંત ગાંઠ અને મરેલી ગાંઠ (સ્કાર્સ) વચ્ચેનો તફાવત પારખવા\n- પેલ્વિસની બહાર કેન્સર ફેલાયું છે કે કેમ તે જાણવા\n- જો CA-125 રિપોર્ટ વધતો હોય પણ સાદા CT સ્કેનમાં કશું ન દેખાતું હોય, તો કેન્સર ક્યાં છુપાયેલું છે તે શોધવા માટે આ શ્રેષ્ઠ રિપોર્ટ છે. તે જીવંત ગાંઠ અને મરેલી ગાંઠ (સ્કાર્સ) વચ્ચેનો તફાવત પારખી શકે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- જ્યારે CA-125 વધતું હોય પણ સાદા CT સ્કેનમાં કશું ન દેખાતું હોય\n- મોટી સર્જરી પહેલા કેન્સર ક્યાં ક્યાં ફેલાયેલું છે તે સંપૂર્ણપણે જાણવા\n\n### કેવી રીતે તૈયારી કરવી\n- ૬-૮ કલાક સંપૂર્ણપણે ભૂખ્યા રહેવું ફરજિયાત છે\n- સ્કેનના ૨૪ કલાક પહેલા ભારે કસરત કરવાનું ટાળો\n- જો ડાયાબિટીસ હોય, તો રિપોર્ટ પહેલા બ્લડ સુગર કંટ્રોલમાં હોવું અત્યંત જરૂરી છે\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "The best tool for detecting distant metastases (spread beyond the abdomen) and investigating a rising CA-125 when a regular CT scan comes back clean. It can differentiate between active tumor and dead scar tissue.",
+    "whyImportantGu": "જો CA-125 રિપોર્ટ વધતો હોય પણ સાદા CT સ્કેનમાં કશું ન દેખાતું હોય, તો કેન્સર ક્યાં છુપાયેલું છે તે શોધવા માટે આ શ્રેષ્ઠ રિપોર્ટ છે. તે જીવંત ગાંઠ અને મરેલી ગાંઠ (સ્કાર્સ) વચ્ચેનો તફાવત પારખી શકે છે.",
+    "source": "NCCN Guidelines",
+    "alternativeNames": [
+      "PET Scan",
+      "FDG PET",
+      "પેટ સ્કેન"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "BRCA1 / BRCA2 Mutation Analysis",
+    "nameGu": "BRCA1/2 મ્યુટેશન ટેસ્ટ (BRCA Test)",
+    "category": "medical_report",
+    "tags": [
+      "genetics",
+      "germline",
+      "hereditary",
+      "PARP inhibitor eligibility"
+    ],
+    "simpleMeaning": "A blood or saliva test to check for inherited mutations that greatly increase ovarian and breast cancer risk.",
+    "simpleMeaningGu": "વારસાગત ખામી (જેનાથી કેન્સરનું જોખમ વધે છે) શોધવા માટે લોહી અથવા લાળનો રિપોર્ટ.",
+    "detailedDescription": "<en>\nTests for germline (inherited) or somatic (tumor-specific) BRCA1 and BRCA2 mutations. BRCA genes are tumor suppressors responsible for repairing DNA damage. Mutations lead to faulty DNA repair, making cells highly susceptible to malignant transformation.\n\n### Why This Report Is Ordered\n- To detect inherited or tumor-specific mutations in the BRCA genes\n- To determine eligibility for targeted therapies like PARP inhibitors (e.g., Olaparib)\n- To assess the risk of cancer for family members\n- Extremely crucial for three reasons: 1) To determine if family members are at risk. 2) BRCA-mutated tumors respond exceptionally well to platinum chemotherapy. 3) It is the primary passport for eligibility for life-saving PARP inhibitor maintenance drugs (like Olaparib).\n\n### When It Is Commonly Recommended\n- Newly diagnosed ovarian cancer patients (especially high-grade serous)\n- Patients with a strong family history of breast or ovarian cancer\n\n### How To Prepare For The Test\n- No fasting required; it is a simple blood or saliva test\n- Genetic counseling is highly recommended before taking the test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆ રિપોર્ટ BRCA1 અને BRCA2 જનીનોમાં કોઈ ખામી છે કે નહીં તે તપાસે છે. આ જનીનો ડીએનએ(DNA) નું સમારકામ કરે છે. જો તેમાં ખામી હોય તો કેન્સર થવાની શક્યતા ખૂબ વધી જાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- BRCA જનીનોમાં વારસાગત અથવા ગાંઠમાં થયેલી ખામી શોધવા\n- 'ઓલાપેરીબ' (PARP inhibitors) જેવી ટાર્ગેટેડ દવાઓ કામ કરશે કે કેમ તે નક્કી કરવા\n- કુટુંબના અન્ય સભ્યોને કેન્સરનું જોખમ છે કે કેમ તેનો અંદાજ કાઢવા\n- આ રિપોર્ટ ત્રણ કારણોસર જરૂરી છે: 1) કુટુંબના અન્ય સભ્યોને કેન્સરનું જોખમ છે કે નહીં તે જાણવા. 2) કીમોથેરાપી કેટલી અસર કરશે તે નક્કી કરવા. 3) 'ઓલાપેરીબ' જેવી ટાર્ગેટેડ દવાઓ કામ કરશે કે નહીં તે નક્કી કરવા માટે આ રિપોર્ટ મુખ્ય છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- ઓવેરિયન કેન્સરનું નવું નિદાન થયું હોય તેવા દર્દીઓ માટે\n- જેમના પરિવારમાં બ્રેસ્ટ કે ઓવેરિયન કેન્સરની હિસ્ટ્રી હોય\n\n### કેવી રીતે તૈયારી કરવી\n- કોઈ તૈયારીની જરૂર નથી; આ સાદો લોહી અથવા લાળનો રિપોર્ટ છે\n- રિપોર્ટ કરાવતા પહેલા જિનેટિક કાઉન્સેલિંગ (માર્ગદર્શન) લેવું હિતાવહ છે\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Extremely crucial for three reasons: 1) To determine if family members are at risk. 2) BRCA-mutated tumors respond exceptionally well to platinum chemotherapy. 3) It is the primary passport for eligibility for life-saving PARP inhibitor maintenance drugs (like Olaparib).",
+    "whyImportantGu": "આ રિપોર્ટ ત્રણ કારણોસર જરૂરી છે: 1) કુટુંબના અન્ય સભ્યોને કેન્સરનું જોખમ છે કે નહીં તે જાણવા. 2) કીમોથેરાપી કેટલી અસર કરશે તે નક્કી કરવા. 3) 'ઓલાપેરીબ' જેવી ટાર્ગેટેડ દવાઓ કામ કરશે કે નહીં તે નક્કી કરવા માટે આ રિપોર્ટ મુખ્ય છે.",
+    "source": "ASCO/SGO Genetic Testing Guidelines",
+    "alternativeNames": [
+      "BRCA Test",
+      "BRCA Genetic Testing",
+      "Breast Cancer Gene Test",
+      "બીઆરસીએ ટેસ્ટ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "HRD Testing (Homologous Recombination Deficiency)",
+    "nameGu": "HRD ટેસ્ટિંગ (Homologous Recombination Deficiency)",
+    "category": "medical_report",
+    "tags": [
+      "genetics",
+      "biomarker",
+      "tumor tissue",
+      "PARP inhibitor",
+      "HRD score"
+    ],
+    "simpleMeaning": "A test on tumor tissue to detect if the cancer has a DNA-repair defect that makes it vulnerable to PARP inhibitors.",
+    "simpleMeaningGu": "ગાંઠના ટુકડા પર થતો રિપોર્ટ, જે તપાસે છે કે કેન્સરના કોષોમાં ડીએનએ(DNA) સુધારવાની ખામી છે કે કેમ.",
+    "detailedDescription": "<en>\nHRD testing looks beyond just BRCA1/2. It assesses 'genomic scarring'—complex patterns of unrepairable DNA damage indicating a failed Homologous Recombination Repair (HRR) pathway. Measured by Loss of Heterozygosity (LOH), Telomeric Allelic Imbalance (TAI), and Large-Scale State Transitions (LST).\n\n### Why This Report Is Ordered\n- To assess if the tumor has extensive DNA-repair defects (genomic scarring)\n- To identify patients who will benefit from PARP inhibitors, even if their BRCA test is normal\n- About 50% of High-Grade Serous Ovarian Cancers are HRD positive. Patients who test positive (even if their BRCA test is normal) gain significant survival benefits from PARP inhibitors like Niraparib or Olaparib combined with Bevacizumab.\n\n### When It Is Commonly Recommended\n- Usually ordered on the tumor tissue removed during the initial surgery\n- For patients with advanced (Stage III or IV) high-grade serous ovarian cancer\n\n### How To Prepare For The Test\n- Requires a sample of the tumor tissue (usually already stored in the pathology lab)\n- No direct preparation required from the patient\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nHRD રિપોર્ટ ફક્ત BRCA ની જ નહીં, પણ ડીએનએ(DNA) ના અન્ય નુકસાનોની પણ તપાસ કરે છે. તે દર્શાવે છે કે કેન્સરના કોષો પોતાનું સમારકામ કરવામાં કેટલા નબળા છે. આ ટેસ્ટ સર્જરી દરમિયાન કાઢવામાં આવેલી ગાંઠ પર થાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- ગાંઠના કોષોમાં ડીએનએ(DNA) સુધારવાની મોટી ખામી છે કે કેમ તે તપાસવા\n- BRCA રિપોર્ટ નોર્મલ હોવા છતાં કયા દર્દીઓને PARP દવાઓથી ફાયદો થશે તે જાણવા\n- લગભગ 50% ઓવેરિયન કેન્સરમાં HRD ખામી જોવા મળે છે. જો દર્દીનો રિપોર્ટ પોઝિટિવ આવે (ભલે BRCA રિપોર્ટ નોર્મલ હોય), તો પણ તેમને 'પાર્પ ઈન્હિબિટર' (PARP) દવાઓથી ઘણો મોટો ફાયદો મળી શકે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- સામાન્ય રીતે સર્જરી દરમિયાન કાઢવામાં આવેલી ગાંઠ પર આ ટેસ્ટ કરવામાં આવે છે\n- એડવાન્સ સ્ટેજ (સ્ટેજ ૩ કે ૪) ના ઓવેરિયન કેન્સરના દર્દીઓ માટે\n\n### કેવી રીતે તૈયારી કરવી\n- આ માટે ગાંઠના ટુકડાની જરૂર પડે છે (જે સામાન્ય રીતે લેબોરેટરીમાં સચવાયેલ હોય છે)\n- દર્દીએ જાતે કોઈ તૈયારી કરવાની જરૂર નથી\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "About 50% of High-Grade Serous Ovarian Cancers are HRD positive. Patients who test positive (even if their BRCA test is normal) gain significant survival benefits from PARP inhibitors like Niraparib or Olaparib combined with Bevacizumab.",
+    "whyImportantGu": "લગભગ 50% ઓવેરિયન કેન્સરમાં HRD ખામી જોવા મળે છે. જો દર્દીનો રિપોર્ટ પોઝિટિવ આવે (ભલે BRCA રિપોર્ટ નોર્મલ હોય), તો પણ તેમને 'પાર્પ ઈન્હિબિટર' (PARP) દવાઓથી ઘણો મોટો ફાયદો મળી શકે છે.",
+    "source": "NCCN Guidelines / PAOLA-1 Trial",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Histopathology / Biopsy Report",
+    "nameGu": "હિસ્ટોપેથોલોજી / બાયોપ્સી રિપોર્ટ (Biopsy)",
+    "category": "medical_report",
+    "tags": [
+      "pathology",
+      "diagnosis",
+      "microscopy",
+      "grading",
+      "subtype"
+    ],
+    "simpleMeaning": "The final report from a pathologist who looks at the tumor tissue under a microscope to confirm cancer.",
+    "simpleMeaningGu": "સર્જરી પછી ગાંઠના ટુકડાને માઈક્રોસ્કોપમાં તપાસીને આપવામાં આવતો ફાઈનલ રિપોર્ટ, જે કેન્સરને કન્ફર્મ કરે છે.",
+    "detailedDescription": "<en>\nThis report details the macroscopic and microscopic examination of surgical specimens. It confirms the exact histological subtype (e.g., High-Grade Serous, Endometrioid, Clear Cell, Mucinous), establishes the tumor grade (how aggressively cells are dividing), and checks if surgical margins are clear of disease.\n\n### Why This Report Is Ordered\n- To confirm the definitive diagnosis of cancer\n- To identify the exact subtype of ovarian cancer (e.g., High-Grade Serous, Clear Cell)\n- To determine the tumor grade (how aggressive the cells look)\n- It is the ultimate source of truth for diagnosing ovarian cancer. The specific subtype dictates the exact chemotherapy protocol, as different types respond differently to platinum-based drugs.\n\n### When It Is Commonly Recommended\n- After any surgical removal of a tumor or a needle biopsy\n- Before formulating the final chemotherapy and treatment plan\n\n### How To Prepare For The Test\n- This is a laboratory report done on tissue removed during surgery or biopsy\n- The results usually take 5 to 10 days to process\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆ રિપોર્ટમાં સર્જરીમાં કાઢવામાં આવેલી ગાંઠ અને અન્ય અવયવોની માઈક્રોસ્કોપ દ્વારા ઊંડી તપાસ થાય છે. આ રિપોર્ટ કેન્સરનો ચોક્કસ પ્રકાર (દા.ત. સિરસ, ક્લિયર સેલ), તેનું ગ્રેડ (કેટલું આક્રમક છે) અને કેન્સર સંપૂર્ણ કાઢી શકાયું છે કે નહીં તે દર્શાવે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- કેન્સરનું અંતિમ અને પાકું નિદાન કરવા\n- ઓવેરિયન કેન્સરનો ચોક્કસ પ્રકાર (દા.ત. સિરસ, ક્લિયર સેલ) નક્કી કરવા\n- કેન્સરનું ગ્રેડ (તે કેટલું આક્રમક છે) જાણવા\n- આ કેન્સરને સાબિત કરતો અંતિમ અને સૌથી મહત્વનો રિપોર્ટ છે. કેન્સરનો કયો પ્રકાર છે તેના આધારે જ આગળની કીમોથેરાપી કઈ આપવી તે નક્કી કરવામાં આવે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- સર્જરીમાં ગાંઠ કાઢ્યા પછી અથવા સોય દ્વારા ટુકડો (બાયોપ્સી) લીધા પછી\n- આગળની કીમોથેરાપી અને સારવારનો પ્લાન બનાવતા પહેલાં\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ સર્જરીમાં કાઢેલા ટુકડા પર લેબોરેટરીમાં થાય છે\n- સામાન્ય રીતે રિપોર્ટ આવવામાં ૫ થી ૧૦ દિવસનો સમય લાગે છે\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "It is the ultimate source of truth for diagnosing ovarian cancer. The specific subtype dictates the exact chemotherapy protocol, as different types respond differently to platinum-based drugs.",
+    "whyImportantGu": "આ કેન્સરને સાબિત કરતો અંતિમ અને સૌથી મહત્વનો રિપોર્ટ છે. કેન્સરનો કયો પ્રકાર છે તેના આધારે જ આગળની કીમોથેરાપી કઈ આપવી તે નક્કી કરવામાં આવે છે.",
+    "source": "College of American Pathologists (CAP) Protocols",
+    "alternativeNames": [
+      "Biopsy",
+      "Histopath",
+      "Tissue Pathology",
+      "બાયોપ્સી"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Echocardiogram (2D Echo)",
+    "nameGu": "ઇકોકાર્ડિયોગ્રામ (2D Echo / હૃદયનો રિપોર્ટ)",
+    "category": "medical_report",
+    "tags": [
+      "cardiology",
+      "heart function",
+      "pre-op",
+      "toxicity monitoring"
+    ],
+    "simpleMeaning": "An ultrasound of the heart to check its pumping strength and valves.",
+    "simpleMeaningGu": "હૃદયની સોનોગ્રાફી જે તપાસે છે કે હૃદય કેટલી સારી રીતે લોહી પમ્પ કરી રહ્યું છે.",
+    "detailedDescription": "<en>\nAn echocardiogram uses sound waves to create moving pictures of the heart. It accurately measures the Left Ventricular Ejection Fraction (LVEF), which indicates how much blood the left ventricle pumps out with each contraction. It also evaluates heart valves for leaks or stenosis.\n\n### Why This Report Is Ordered\n- To evaluate the pumping strength (Ejection Fraction) of the heart\n- To check for valve abnormalities or fluid around the heart\n- To ensure the heart is strong enough to withstand anesthesia and certain toxic chemotherapies\n- Mandatory before major cancer surgery to ensure the patient can survive anesthesia. Also critical before starting Doxorubicin Liposomal or Bevacizumab, as these drugs carry risks of severe cardiac toxicity or heart failure.\n\n### When It Is Commonly Recommended\n- Before major cancer surgeries\n- Before starting cardiotoxic drugs like Doxorubicin Liposomal or Bevacizumab\n- If experiencing unexplained shortness of breath or chest pain\n\n### How To Prepare For The Test\n- No fasting required\n- Wear loose, comfortable clothing, as electrodes will be placed on your chest\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\n2D ઇકો એટલે હૃદયની સોનોગ્રાફી. તે 'ઈજેક્શન ફ્રેક્શન' (LVEF) માપે છે, જે દર્શાવે છે કે હૃદયની લોહી પમ્પ કરવાની ક્ષમતા કેટલા ટકા છે. તે હૃદયના વાલ્વની સ્થિતિ પણ તપાસે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- હૃદયની લોહી પમ્પ કરવાની ક્ષમતા (Ejection Fraction) માપવા\n- હૃદયના વાલ્વની ખામી કે હૃદયની આસપાસ પાણી છે કે નહીં તે તપાસવા\n- બેહોશી (એનેસ્થેસિયા) અને અમુક કીમોથેરાપી દવાઓ સહન કરવા માટે હૃદય મજબૂત છે કે કેમ તેની ખાતરી કરવા\n- કોઈપણ મોટી સર્જરી કરતા પહેલા અને બેહોશ કરતા પહેલા હૃદય મજબૂત છે કે નહીં તે જાણવું ફરજિયાત છે. 'ડોક્સોરુબિસિન' જેવી દવાઓ હૃદય પર અસર કરતી હોવાથી, તે દવાઓ ચાલુ કરતા પહેલા આ રિપોર્ટ જરૂરી છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- કેન્સરની મોટી સર્જરી કરતા પહેલા\n- ડોક્સોરુબિસિન કે બેવાસીઝુમેબ જેવી હૃદય પર અસર કરતી દવાઓ શરૂ કરતા પહેલા\n- જો અચાનક શ્વાસ ચડતો હોય કે છાતીમાં દુખતું હોય\n\n### કેવી રીતે તૈયારી કરવી\n- કોઈ ખાસ તૈયારી કે ભૂખ્યા રહેવાની જરૂર નથી\n- છાતી પર મશીનના વાયર લગાવવાના હોવાથી ખુલ્લા અને આરામદાયક કપડાં પહેરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Mandatory before major cancer surgery to ensure the patient can survive anesthesia. Also critical before starting Doxorubicin Liposomal or Bevacizumab, as these drugs carry risks of severe cardiac toxicity or heart failure.",
+    "whyImportantGu": "કોઈપણ મોટી સર્જરી કરતા પહેલા અને બેહોશ કરતા પહેલા હૃદય મજબૂત છે કે નહીં તે જાણવું ફરજિયાત છે. 'ડોક્સોરુબિસિન' જેવી દવાઓ હૃદય પર અસર કરતી હોવાથી, તે દવાઓ ચાલુ કરતા પહેલા આ રિપોર્ટ જરૂરી છે.",
+    "source": "Cardiology / Oncology Pre-op Guidelines",
+    "alternativeNames": [
+      "2D Echo",
+      "ECHO",
+      "Heart Ultrasound",
+      "ઇકો",
+      "હૃદયની સોનોગ્રાફી"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Ascitic Fluid Cytology",
+    "nameGu": "જલોદર પ્રવાહી રિપોર્ટ (Ascitic Fluid Cytology)",
+    "category": "medical_report",
+    "tags": [
+      "fluid",
+      "ascites",
+      "diagnosis",
+      "paracentesis"
+    ],
+    "simpleMeaning": "A test that looks for cancer cells in the fluid drained from a swollen abdomen.",
+    "simpleMeaningGu": "પેટમાંથી ખેંચવામાં આવેલા પાણીમાં કેન્સરના કોષો છે કે નહીં તે તપાસતો રિપોર્ટ.",
+    "detailedDescription": "<en>\nAscites (fluid buildup in the abdomen) is a hallmark of advanced ovarian cancer. A procedure called paracentesis is performed to drain this fluid for relief. The fluid is then centrifuged and examined under a microscope by a pathologist to identify malignant epithelial cells.\n\n### Why This Report Is Ordered\n- To detect the presence of malignant (cancer) cells in abdominal fluid\n- To definitively diagnose advanced ovarian cancer without needing invasive surgery\n- It can provide a non-surgical definitive diagnosis of ovarian cancer before starting neoadjuvant chemotherapy. If malignant cells are found in the fluid, it immediately confirms Stage 3C or Stage 4 disease.\n\n### When It Is Commonly Recommended\n- When a patient presents with significant abdominal swelling (ascites) and an undiagnosed pelvic mass\n- Prior to starting neoadjuvant chemotherapy to confirm the diagnosis\n\n### How To Prepare For The Test\n- The fluid will be drained using a needle in a procedure called paracentesis\n- Local anesthesia is used to minimize discomfort during the drain\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઓવેરિયન કેન્સરમાં પેટમાં પાણી ભરાવવું (જલોદર/Ascites) સામાન્ય છે. સોય દ્વારા આ પાણી કાઢીને તેને લેબોરેટરીમાં માઈક્રોસ્કોપ નીચે તપાસવામાં આવે છે, જેથી તેમાં કેન્સરના કોષો (Malignant cells) છે કે કેમ તે જાણી શકાય.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- પેટમાંથી કાઢેલા પાણીમાં કેન્સરના કોષો હાજર છે કે નહીં તે તપાસવા\n- મોટી સર્જરી કર્યા વિના એડવાન્સ ઓવેરિયન કેન્સરનું પાકું નિદાન કરવા\n- સર્જરી કર્યા વિના માત્ર પાણીના રિપોર્ટથી પણ કેન્સરની સાબિતી મળી શકે છે. જો પાણીમાં કેન્સરના કોષો જોવા મળે, તો તે સાબિત કરે છે કે કેન્સર એડવાન્સ સ્ટેજમાં (સ્ટેજ 3 કે 4) છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- જ્યારે દર્દીનું પેટ ખૂબ ફૂલી ગયું હોય (જલોદર) અને અંડાશયમાં ગાંઠની શંકા હોય\n- કીમોથેરાપી શરૂ કરતા પહેલા કેન્સર સાબિત કરવા માટે\n\n### કેવી રીતે તૈયારી કરવી\n- સોય દ્વારા પેટમાંથી પાણી ખેંચીને (Paracentesis) આ રિપોર્ટ માટે મોકલવામાં આવે છે\n- પાણી કાઢતી વખતે દુખાવો ન થાય તે માટે લોકલ એનેસ્થેસિયા આપવામાં આવે છે\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "It can provide a non-surgical definitive diagnosis of ovarian cancer before starting neoadjuvant chemotherapy. If malignant cells are found in the fluid, it immediately confirms Stage 3C or Stage 4 disease.",
+    "whyImportantGu": "સર્જરી કર્યા વિના માત્ર પાણીના રિપોર્ટથી પણ કેન્સરની સાબિતી મળી શકે છે. જો પાણીમાં કેન્સરના કોષો જોવા મળે, તો તે સાબિત કરે છે કે કેન્સર એડવાન્સ સ્ટેજમાં (સ્ટેજ 3 કે 4) છે.",
+    "source": "Cytopathology Protocols",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Serum Magnesium",
+    "nameGu": "મેગ્નેશિયમ (Magnesium)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "electrolytes",
+      "carboplatin",
+      "side effect"
+    ],
+    "simpleMeaning": "A blood test to measure magnesium, an important mineral for muscles and nerves.",
+    "simpleMeaningGu": "સ્નાયુઓ અને જ્ઞાનતંતુઓ માટે જરૂરી એવા મેગ્નેશિયમ નામના મિનરલને માપવા માટેનો બ્લડ ટેસ્ટ.",
+    "detailedDescription": "<en>\nMagnesium is critical for nerve function and muscle contraction. Platinum-based chemotherapy drugs (like Cisplatin and Carboplatin) frequently damage the kidney tubules, causing them to waste (leak) magnesium into the urine. This condition is called hypomagnesemia.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Serum Magnesium\n- To monitor ongoing health and treatment side effects\n- Low magnesium can cause severe muscle cramps, tremors, and dangerous irregular heartbeats. It is routinely checked before every chemo cycle, and IV magnesium is often given before the chemo drip.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nમેગ્નેશિયમ જ્ઞાનતંતુઓ અને સ્નાયુઓના કામ માટે અત્યંત જરૂરી છે. પ્લેટિનમ કીમોથેરાપી દવાઓ (જેમ કે કાર્બોપ્લેટિન) કિડનીને નુકસાન કરે છે, જેના કારણે કિડની પેશાબ વાટે બધું મેગ્નેશિયમ બહાર કાઢી નાખે છે. આને હાઈપોમેગ્નેસેમિયા કહેવાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- મેગ્નેશિયમ (Magnesium) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- મેગ્નેશિયમ ઘટવાથી સ્નાયુઓમાં સખત ગોટલા ચડી જાય છે, ધ્રુજારી આવે છે અને હૃદયના ધબકારા અનિયમિત થઈ શકે છે. કીમોથેરાપી આપતા પહેલા અચૂક આ રિપોર્ટ કઢાવાય છે અને જરૂર પડે તો કીમો પહેલાં મેગ્નેશિયમનો બાટલો ચડાવાય છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Low magnesium can cause severe muscle cramps, tremors, and dangerous irregular heartbeats. It is routinely checked before every chemo cycle, and IV magnesium is often given before the chemo drip.",
+    "whyImportantGu": "મેગ્નેશિયમ ઘટવાથી સ્નાયુઓમાં સખત ગોટલા ચડી જાય છે, ધ્રુજારી આવે છે અને હૃદયના ધબકારા અનિયમિત થઈ શકે છે. કીમોથેરાપી આપતા પહેલા અચૂક આ રિપોર્ટ કઢાવાય છે અને જરૂર પડે તો કીમો પહેલાં મેગ્નેશિયમનો બાટલો ચડાવાય છે.",
+    "source": "Clinical Oncology Guidelines",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Serum Calcium",
+    "nameGu": "કેલ્શિયમ (Calcium)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "bone health",
+      "electrolytes"
+    ],
+    "simpleMeaning": "A blood test to check calcium levels, which are vital for bone strength and heart rhythm.",
+    "simpleMeaningGu": "હાડકાંની મજબૂતી અને હૃદયના ધબકારા માટે જરૂરી કેલ્શિયમ માપવા માટેનો બ્લડ ટેસ્ટ.",
+    "detailedDescription": "<en>\nCalcium levels in the blood are tightly regulated. In oncology, abnormal calcium levels can indicate bone metastases (cancer breaking down bone and releasing calcium into the blood) or the side effects of bone-strengthening drugs (like Zoledronic acid), which can push calcium dangerously low.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Serum Calcium\n- To monitor ongoing health and treatment side effects\n- Extremely high calcium (hypercalcemia of malignancy) is an oncologic emergency causing confusion and coma. Very low calcium causes severe muscle spasms.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** Calcium, Ionized Calcium\n</en>",
+    "detailedDescriptionGu": "<gu>\nલોહીમાં કેલ્શિયમનું પ્રમાણ સંતુલિત હોવું જોઈએ. જો કેન્સર હાડકાંમાં ફેલાયું હોય તો હાડકાં ઓગળે છે અને કેલ્શિયમ લોહીમાં ભળે છે (વધી જાય છે). સામે પક્ષે, હાડકાં મજબૂત કરવાની દવાઓ (ઝોમેટા) લેવાથી કેલ્શિયમ ખતરનાક રીતે ઘટી પણ શકે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- કેલ્શિયમ (Calcium) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- લોહીમાં કેલ્શિયમ બહુ વધી જાય તો તે ઇમરજન્સી છે, જેનાથી દર્દી બેભાન થઈ શકે છે. જો બહુ ઘટી જાય તો સ્નાયુઓ જકડાઈ જાય છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** Calcium, Ionized Calcium\n</gu>",
+    "whyImportant": "Extremely high calcium (hypercalcemia of malignancy) is an oncologic emergency causing confusion and coma. Very low calcium causes severe muscle spasms.",
+    "whyImportantGu": "લોહીમાં કેલ્શિયમ બહુ વધી જાય તો તે ઇમરજન્સી છે, જેનાથી દર્દી બેભાન થઈ શકે છે. જો બહુ ઘટી જાય તો સ્નાયુઓ જકડાઈ જાય છે.",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": [
+      "Total Calcium",
+      "Ca Test",
+      "કેલ્શિયમ ટેસ્ટ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Vitamin D (25-Hydroxy)",
+    "nameGu": "વિટામિન ડી (Vitamin D)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "bone health",
+      "immunity"
+    ],
+    "simpleMeaning": "A blood test to check the vitamin essential for absorbing calcium and keeping bones strong.",
+    "simpleMeaningGu": "કેલ્શિયમ પચાવવા અને હાડકાં મજબૂત રાખવા માટે જરૂરી વિટામિન માપવાનો ટેસ્ટ.",
+    "detailedDescription": "<en>\nVitamin D is required for the gut to absorb calcium. A deficiency leads to weakened bones. Patients undergoing treatments that induce premature menopause (like BSO surgery) or taking aromatase inhibitors are at high risk for rapid bone density loss.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Vitamin D (25-Hydroxy)\n- To monitor ongoing health and treatment side effects\n- Adequate Vitamin D is mandatory before starting any bone-modifying agents (like Zoledronic acid or Denosumab) to prevent severe drops in blood calcium.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** Vitamin D, Calcium\n</en>",
+    "detailedDescriptionGu": "<gu>\nખોરાકમાંથી કેલ્શિયમ પચાવવા માટે વિટામિન ડી જરૂરી છે. તેની ઉણપથી હાડકાં પોચા પડે છે. જે સ્ત્રીઓના અંડાશય કાઢી નાખવામાં આવ્યા હોય (મેનોપોઝ) તેમને હાડકાં નબળા પડવાનું જોખમ સૌથી વધુ હોય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- વિટામિન ડી (Vitamin D) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- હાડકાં મજબૂત કરવાના બાટલા (Zometa) ચડાવતા પહેલા વિટામિન ડી નોર્મલ હોવું ફરજિયાત છે, નહીંતર લોહીમાં કેલ્શિયમ ઘટી જઈ શકે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** Vitamin D, Calcium\n</gu>",
+    "whyImportant": "Adequate Vitamin D is mandatory before starting any bone-modifying agents (like Zoledronic acid or Denosumab) to prevent severe drops in blood calcium.",
+    "whyImportantGu": "હાડકાં મજબૂત કરવાના બાટલા (Zometa) ચડાવતા પહેલા વિટામિન ડી નોર્મલ હોવું ફરજિયાત છે, નહીંતર લોહીમાં કેલ્શિયમ ઘટી જઈ શકે છે.",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": [
+      "Vit D3",
+      "Cholecalciferol Test",
+      "25-OH Vitamin D",
+      "વિટામિન ડી ટેસ્ટ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Thyroid Stimulating Hormone (TSH)",
+    "nameGu": "થાઈરોઈડ રિપોર્ટ (TSH)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "hormones",
+      "immunotherapy side effect"
+    ],
+    "simpleMeaning": "A blood test to check if the thyroid gland is controlling the body's metabolism properly.",
+    "simpleMeaningGu": "ગળામાં આવેલી થાઈરોઈડ ગ્રંથિ બરાબર કામ કરે છે કે નહીં તે તપાસતો રિપોર્ટ.",
+    "detailedDescription": "<en>\nTSH is produced by the pituitary gland to tell the thyroid how much hormone to make. In modern oncology, immunotherapy drugs (like Pembrolizumab) commonly cause the immune system to attack the thyroid, leading to either hyperthyroidism (overactive) followed by hypothyroidism (underactive).\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Thyroid Stimulating Hormone (TSH)\n- To monitor ongoing health and treatment side effects\n- Untreated thyroid dysfunction causes extreme fatigue, weight changes, and heart palpitations. It is monitored regularly for any patient on immunotherapy.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** TSH, Free T3, Free T4\n</en>",
+    "detailedDescriptionGu": "<gu>\nમગજની ગ્રંથિ TSH બનાવે છે જે થાઈરોઈડને કેટલું કામ કરવું તે કહે છે. ઈમ્યુનોથેરાપીની દવાઓ લેવાથી ઘણીવાર શરીરની રોગપ્રતિકારક શક્તિ થાઈરોઈડ પર હુમલો કરે છે, જેનાથી થાઈરોઈડ બગડી શકે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- થાઈરોઈડ રિપોર્ટ (TSH) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- થાઈરોઈડ બગડવાથી સખત થાક લાગે છે, વજન વધઘટ થાય છે અને હૃદયના ધબકારા વધી જાય છે. ઈમ્યુનોથેરાપી લેતા દર્દીઓ માટે આ રિપોર્ટ નિયમિત કઢાવવો જરૂરી છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** TSH, Free T3, Free T4\n</gu>",
+    "whyImportant": "Untreated thyroid dysfunction causes extreme fatigue, weight changes, and heart palpitations. It is monitored regularly for any patient on immunotherapy.",
+    "whyImportantGu": "થાઈરોઈડ બગડવાથી સખત થાક લાગે છે, વજન વધઘટ થાય છે અને હૃદયના ધબકારા વધી જાય છે. ઈમ્યુનોથેરાપી લેતા દર્દીઓ માટે આ રિપોર્ટ નિયમિત કઢાવવો જરૂરી છે.",
+    "source": "Immunotherapy Toxicity Guidelines",
+    "alternativeNames": [
+      "Thyroid Test",
+      "TSH Test",
+      "Thyroid Profile",
+      "થાઈરોઈડ ટેસ્ટ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "HbA1c (Glycosylated Hemoglobin)",
+    "nameGu": "સરેરાશ બ્લડ સુગર (HbA1c)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "diabetes",
+      "steroids"
+    ],
+    "simpleMeaning": "A blood test that shows the average blood sugar level over the past 3 months.",
+    "simpleMeaningGu": "છેલ્લા ૩ મહિનાનું સરેરાશ ડાયાબિટીસ (બ્લડ સુગર) દર્શાવતો રિપોર્ટ.",
+    "detailedDescription": "<en>\nHbA1c measures the percentage of hemoglobin coated with sugar. It is the gold standard for diagnosing and monitoring diabetes. High-dose steroids (like Dexamethasone) used to prevent chemo nausea often cause massive spikes in blood sugar, even in non-diabetics.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to HbA1c (Glycosylated Hemoglobin)\n- To monitor ongoing health and treatment side effects\n- Persistently high blood sugar impairs wound healing after surgery and increases the risk of severe infections during neutropenia. Adjustments to diabetic medications or insulin may be required on chemo days.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆ રિપોર્ટ બતાવે છે કે લોહીમાં કેટલા ટકા હિમોગ્લોબિન પર સુગર ચોંટેલી છે. કીમોથેરાપી વખતે ઉલટી રોકવા માટે અપાતા સ્ટીરોઈડ (Dexamethasone) ને કારણે જેમને ડાયાબિટીસ ન હોય તેમનું સુગર પણ ખૂબ વધી જાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- સરેરાશ બ્લડ સુગર (HbA1c) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- જો સુગર સતત વધારે રહે તો સર્જરીના ઘા જલ્દી રૂઝાતા નથી અને ઈન્ફેક્શન લાગવાનું જોખમ વધી જાય છે. કીમોના દિવસોમાં ડાયાબિટીસની દવાઓ કે ઇન્સ્યુલિન વધારવાની જરૂર પડી શકે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Persistently high blood sugar impairs wound healing after surgery and increases the risk of severe infections during neutropenia. Adjustments to diabetic medications or insulin may be required on chemo days.",
+    "whyImportantGu": "જો સુગર સતત વધારે રહે તો સર્જરીના ઘા જલ્દી રૂઝાતા નથી અને ઈન્ફેક્શન લાગવાનું જોખમ વધી જાય છે. કીમોના દિવસોમાં ડાયાબિટીસની દવાઓ કે ઇન્સ્યુલિન વધારવાની જરૂર પડી શકે છે.",
+    "source": "Endocrinology Oncology Guidelines",
+    "alternativeNames": [
+      "HbA1c",
+      "A1c",
+      "3-Month Average Blood Sugar",
+      "એચબીએ૧સી",
+      "ડાયાબિટીસ રિપોર્ટ"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Urinalysis / Urine Routine",
+    "nameGu": "પેશાબનો રિપોર્ટ (Urine Routine)",
+    "category": "medical_report",
+    "tags": [
+      "urine test",
+      "infection",
+      "kidneys",
+      "proteinuria"
+    ],
+    "simpleMeaning": "A test of the urine to check for infections, kidney function, or bleeding.",
+    "simpleMeaningGu": "પેશાબમાં ઈન્ફેક્શન, લોહી કે પ્રોટીન છે કે નહીં તે તપાસવા માટેનો રિપોર્ટ.",
+    "detailedDescription": "<en>\nExamines the physical, chemical, and microscopic properties of urine. It detects urinary tract infections (UTIs) by checking for pus cells and bacteria. It also checks for protein in the urine (proteinuria), which is a major side effect of the anti-angiogenesis drug Bevacizumab (Avastin).\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Urinalysis / Urine Routine\n- To monitor ongoing health and treatment side effects\n- Required before starting Bevacizumab; if protein levels are too high, the drug must be held to prevent permanent kidney damage. Also crucial for diagnosing painful UTIs.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆમાં પેશાબને માઈક્રોસ્કોપ અને કેમિકલથી તપાસવામાં આવે છે. તેમાં પરુ (pus cells) કે બેક્ટેરિયા હોય તો ઈન્ફેક્શન (UTI) હોવાની ખબર પડે છે. બેવાસીઝુમેબ (અવાસ્ટીન) દવા લેવાથી પેશાબમાં પ્રોટીન જવાની શક્યતા રહે છે, જે આ રિપોર્ટથી પકડાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- પેશાબનો રિપોર્ટ (Urine Routine) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- અવાસ્ટીન દવા ચાલુ કરતા પહેલા આ રિપોર્ટ ફરજિયાત છે. જો પેશાબમાં પ્રોટીન વધારે જતું હોય તો કિડની બચાવવા માટે દવા રોકી દેવામાં આવે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Required before starting Bevacizumab; if protein levels are too high, the drug must be held to prevent permanent kidney damage. Also crucial for diagnosing painful UTIs.",
+    "whyImportantGu": "અવાસ્ટીન દવા ચાલુ કરતા પહેલા આ રિપોર્ટ ફરજિયાત છે. જો પેશાબમાં પ્રોટીન વધારે જતું હોય તો કિડની બચાવવા માટે દવા રોકી દેવામાં આવે છે.",
+    "source": "Standard Clinical Protocol",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Electrocardiogram (ECG / EKG)",
+    "nameGu": "ઇસીજી (ECG / હૃદયના ધબકારાનો ગ્રાફ)",
+    "category": "medical_report",
+    "tags": [
+      "heart",
+      "cardiology",
+      "electrical"
+    ],
+    "simpleMeaning": "A quick test that records the electrical signals in the heart to check its rhythm.",
+    "simpleMeaningGu": "હૃદયના ધબકારા નિયમિત છે કે નહીં તે તપાસવા માટે હૃદયનો ઇલેક્ટ્રિકલ ગ્રાફ.",
+    "detailedDescription": "<en>\nElectrodes are placed on the chest and limbs to map the electrical conduction system of the heart. It detects arrhythmias (irregular beats), ischemia (poor blood flow), and prior heart attacks. Some anti-nausea drugs (like Ondansetron) can cause a specific electrical abnormality called QT prolongation.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Electrocardiogram (ECG / EKG)\n- To monitor ongoing health and treatment side effects\n- Mandatory basic clearance before any surgery under general anesthesia. It is also monitored if a patient is experiencing chest pain, fainting, or palpitations during chemo.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nછાતી અને હાથ-પગ પર મશીનના વાયર લગાવીને હૃદયનો ગ્રાફ કઢાય છે. આનાથી હૃદયના ધબકારાની ગતિ અને અનિયમિતતા પકડાય છે. ઉલટીની દવા (ઓન્ડાન્સેટ્રોન) ક્યારેક હૃદયના ધબકારાની પેટર્ન બદલી શકે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- ઇસીજી (ECG / હૃદયના ધબકારાનો ગ્રાફ) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- બેહોશ કરીને થતી કોઈપણ સર્જરી પહેલા આ રિપોર્ટ ફરજિયાત છે. જો કીમો દરમિયાન છાતીમાં દુખે કે ચક્કર આવે તો તરત જ ECG કઢાવવો પડે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Mandatory basic clearance before any surgery under general anesthesia. It is also monitored if a patient is experiencing chest pain, fainting, or palpitations during chemo.",
+    "whyImportantGu": "બેહોશ કરીને થતી કોઈપણ સર્જરી પહેલા આ રિપોર્ટ ફરજિયાત છે. જો કીમો દરમિયાન છાતીમાં દુખે કે ચક્કર આવે તો તરત જ ECG કઢાવવો પડે છે.",
+    "source": "Cardiology Pre-op Guidelines",
+    "alternativeNames": [
+      "ECG",
+      "EKG",
+      "ઇસીજી"
+    ]
+  },
+  {
+    "type": "report_template",
+    "name": "Ultrasound Abdomen & Pelvis (USG)",
+    "nameGu": "પેટની સોનોગ્રાફી (USG Abdomen)",
+    "category": "medical_report",
+    "tags": [
+      "imaging",
+      "ascites",
+      "liver",
+      "first-line"
+    ],
+    "simpleMeaning": "A quick, radiation-free imaging test using sound waves to look inside the belly.",
+    "simpleMeaningGu": "પેટની અંદર જોવા માટે અવાજના તરંગોનો ઉપયોગ કરતો સાદો રિપોર્ટ (જેમાં રેડિયેશન હોતું નથી).",
+    "detailedDescription": "<en>\nUltrasound uses high-frequency sound waves to create live images of internal organs. It is highly sensitive for detecting ascites (fluid in the abdomen), liver masses, gallbladder stones, and large pelvic masses. It is often the very first test ordered when a patient presents with bloating.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Ultrasound Abdomen & Pelvis (USG)\n- To monitor ongoing health and treatment side effects\n- It is often the initial tool that detects an abnormal ovarian mass. It is also used in real-time to safely guide the needle when draining abdominal fluid (USG-guided paracentesis).\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nસોનોગ્રાફીમાં અવાજના તરંગોથી પેટના અવયવોનું ચિત્ર જોવામાં આવે છે. પેટમાં પાણી (જલોદર), લિવરની તકલીફ, પિત્તાશયની પથરી કે પેલ્વિસની કોઈ મોટી ગાંઠ પકડવા માટે આ બહુ સારો રિપોર્ટ છે. જ્યારે પેટ ફૂલવાની તકલીફ થાય ત્યારે સૌથી પહેલા આ જ રિપોર્ટ કઢાવાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- પેટની સોનોગ્રાફી (USG Abdomen) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- અંડાશયની ગાંઠ પહેલીવાર આ રિપોર્ટમાં જ પકડાય છે. આ ઉપરાંત, પેટમાંથી પાણી કાઢતી વખતે સોય બરાબર જગ્યાએ જાય તે માટે સોનોગ્રાફી જોતા જોતા પાણી કાઢવામાં આવે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "It is often the initial tool that detects an abnormal ovarian mass. It is also used in real-time to safely guide the needle when draining abdominal fluid (USG-guided paracentesis).",
+    "whyImportantGu": "અંડાશયની ગાંઠ પહેલીવાર આ રિપોર્ટમાં જ પકડાય છે. આ ઉપરાંત, પેટમાંથી પાણી કાઢતી વખતે સોય બરાબર જગ્યાએ જાય તે માટે સોનોગ્રાફી જોતા જોતા પાણી કાઢવામાં આવે છે.",
+    "source": "Radiology Guidelines",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Prothrombin Time (PT/INR)",
+    "nameGu": "લોહી ગંઠાવાનો સમય (PT/INR)",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "bleeding",
+      "surgery preparation"
+    ],
+    "simpleMeaning": "A blood test that measures how quickly your blood clots.",
+    "simpleMeaningGu": "તમારું લોહી કેટલી વારમાં જામે (ગંઠાઈ જાય) છે તે માપવાનો રિપોર્ટ.",
+    "detailedDescription": "<en>\nPT/INR evaluates the extrinsic pathway of coagulation. Cancer itself, liver metastases, or chemotherapy can drastically alter blood clotting mechanisms. If the INR is too high, the patient is at risk of bleeding to death during surgery; if it's too low, they are at risk of developing deadly blood clots (DVT/PE).\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Prothrombin Time (PT/INR)\n- To monitor ongoing health and treatment side effects\n- Mandatory before any major debulking surgery or port insertion to ensure the patient won't hemorrhage on the operating table.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆ રિપોર્ટ લોહી જામવાની પ્રક્રિયા ચેક કરે છે. કેન્સર, લિવરની તકલીફ અથવા કીમોથેરાપીથી લોહી જામવાની સિસ્ટમ બગડી શકે છે. જો રિપોર્ટ બહુ વધારે આવે તો સર્જરી વખતે લોહી વહી જવાનું જોખમ રહે છે, અને ઓછો આવે તો નસોમાં લોહી ગંઠાઈ જવાનું (Blood clot) જોખમ રહે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- લોહી ગંઠાવાનો સમય (PT/INR) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- કોઈપણ મોટી સર્જરી કે કીમો પોર્ટ મૂકતા પહેલા આ રિપોર્ટ ફરજિયાત છે, જેથી ઓપરેશન દરમિયાન દર્દીનું લોહી વહી ન જાય.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "Mandatory before any major debulking surgery or port insertion to ensure the patient won't hemorrhage on the operating table.",
+    "whyImportantGu": "કોઈપણ મોટી સર્જરી કે કીમો પોર્ટ મૂકતા પહેલા આ રિપોર્ટ ફરજિયાત છે, જેથી ઓપરેશન દરમિયાન દર્દીનું લોહી વહી ન જાય.",
+    "source": "Surgical Oncology Pre-Op Guidelines",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Lactate Dehydrogenase (LDH) Test",
+    "nameGu": "એલડીએચ (LDH - કોષોના નુકસાનનો રિપોર્ટ) ટેસ્ટ",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "tumor marker",
+      "cell damage"
+    ],
+    "simpleMeaning": "A blood test that detects widespread tissue damage or rapidly growing cancer.",
+    "simpleMeaningGu": "શરીરમાં કોષોને કેટલું નુકસાન થઈ રહ્યું છે કે કેન્સર કેટલી ઝડપથી વધી રહ્યું છે તે જાણવાનો રિપોર્ટ.",
+    "detailedDescription": "<en>\nLDH is an enzyme found in almost all living cells. When cells are damaged or destroyed (such as when a tumor is rapidly growing and its core is dying from lack of oxygen), LDH spills into the blood. It is a highly non-specific but sensitive marker for tumor burden and cell turnover.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Lactate Dehydrogenase (LDH)\n- To monitor ongoing health and treatment side effects\n- Crucial for diagnosing and monitoring Ovarian Dysgerminoma (a type of germ cell tumor) where it acts as a primary tumor marker.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n**Parameters Included:** LDH\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nLDH એ દરેક જીવંત કોષમાં રહેલું એક એન્ઝાઇમ છે. જ્યારે કેન્સરની ગાંઠ ખૂબ ઝડપથી વધતી હોય અને તેના કોષો તૂટતા હોય, ત્યારે આ એન્ઝાઇમ લોહીમાં ભળે છે. તે કેન્સરનું ચોક્કસ નિદાન કરતો નથી, પણ શરીરમાં બીમારીનું પ્રમાણ કેટલું વધારે છે તે બતાવે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- એલડીએચ (LDH - કોષોના નુકસાનનો રિપોર્ટ) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- અંડાશયના 'ડિસ્જર્મિનોમા' (Dysgerminoma) નામના કેન્સરમાં આ રિપોર્ટ ટ્યુમર માર્કર તરીકે કામ કરે છે અને સારવારની અસર બતાવે છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n**Parameters Included:** LDH\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Crucial for diagnosing and monitoring Ovarian Dysgerminoma (a type of germ cell tumor) where it acts as a primary tumor marker.",
+    "whyImportantGu": "અંડાશયના 'ડિસ્જર્મિનોમા' (Dysgerminoma) નામના કેન્સરમાં આ રિપોર્ટ ટ્યુમર માર્કર તરીકે કામ કરે છે અને સારવારની અસર બતાવે છે.",
+    "source": "Clinical Oncology Biomarkers",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Alpha-Fetoprotein (AFP) Test",
+    "nameGu": "આલ્ફા-ફિટોપ્રોટીન (AFP) ટેસ્ટ",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "tumor marker",
+      "germ cell"
+    ],
+    "simpleMeaning": "A blood test used as a tumor marker for rare types of ovarian cancer.",
+    "simpleMeaningGu": "અંડાશયના અમુક ભાગ્યે જ જોવા મળતા કેન્સર માટેનો ટ્યુમર માર્કર (બ્લડ ટેસ્ટ).",
+    "detailedDescription": "<en>\nAFP is normally produced by a fetus during pregnancy. In adults, highly elevated AFP is a classic tumor marker for Endodermal Sinus Tumors (Yolk Sac tumors) of the ovary, a rare type of germ cell tumor.\n\n### Why This Report Is Ordered\n- To act as a specific tumor marker for rare germ cell tumors of the ovary (like Yolk Sac tumors)\n- To differentiate these rare tumors from common epithelial ovarian cancers\n- Used to diagnose germ cell tumors and track if they are responding to BEP chemotherapy.\n\n### When It Is Commonly Recommended\n- During the initial diagnosis of a pelvic mass in young women or children\n- Regularly during and after BEP chemotherapy to monitor treatment response\n\n### How To Prepare For The Test\n- No fasting or special preparation is needed\n- It is a standard blood draw\n\n**Parameters Included:** Alpha-Fetoprotein (AFP)\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nસામાન્ય રીતે AFP ગર્ભમાં રહેલા બાળકમાં બને છે. જો કોઈ સ્ત્રીના લોહીમાં આનું પ્રમાણ ખૂબ વધારે આવે, તો તે અંડાશયના 'યોક સેક ટ્યુમર' (Yolk Sac Tumor) નામના દુર્લભ કેન્સરની નિશાની હોઈ શકે છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- અંડાશયના અમુક ભાગ્યે જ જોવા મળતા કેન્સર (જેમ કે યોક સેક ટ્યુમર) માટે ટ્યુમર માર્કર તરીકે\n- આ દુર્લભ કેન્સરને સામાન્ય ઓવેરિયન કેન્સરથી અલગ પાડવા\n- આ પ્રકારના ખાસ કેન્સરનું નિદાન કરવા અને તેની કીમોથેરાપી (BEP) કેટલી અસર કરે છે તે જાણવા માટે આ રિપોર્ટ જરૂરી છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- નાની ઉંમરની સ્ત્રીઓ કે બાળકીઓમાં અંડાશયની ગાંઠનું નિદાન કરતી વખતે\n- BEP કીમોથેરાપી દરમિયાન અને પછી સારવારની અસર તપાસવા\n\n### કેવી રીતે તૈયારી કરવી\n- કોઈ ખાસ તૈયારી કે ભૂખ્યા રહેવાની જરૂર નથી\n- આ એક સાદો લોહીનો રિપોર્ટ છે\n\n**Parameters Included:** Alpha-Fetoprotein (AFP)\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Used to diagnose germ cell tumors and track if they are responding to BEP chemotherapy.",
+    "whyImportantGu": "આ પ્રકારના ખાસ કેન્સરનું નિદાન કરવા અને તેની કીમોથેરાપી (BEP) કેટલી અસર કરે છે તે જાણવા માટે આ રિપોર્ટ જરૂરી છે.",
+    "source": "NCCN Germ Cell Tumor Guidelines",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Beta-hCG (Human Chorionic Gonadotropin) Test",
+    "nameGu": "બીટા-એચસીજી (Beta-hCG) ટેસ્ટ",
+    "category": "medical_report",
+    "tags": [
+      "blood test",
+      "tumor marker",
+      "germ cell"
+    ],
+    "simpleMeaning": "Normally a pregnancy test, but used here as a tumor marker for certain ovarian cancers.",
+    "simpleMeaningGu": "સામાન્ય રીતે પ્રેગ્નન્સી ચેક કરવાનો ટેસ્ટ, પણ અહીં તે અમુક કેન્સર જોવા માટે વપરાય છે.",
+    "detailedDescription": "<en>\nWhile famous as the pregnancy hormone, Beta-hCG is secreted in massive amounts by Choriocarcinomas and some Dysgerminomas of the ovary. It must be checked in any young woman presenting with a solid ovarian mass to rule out a germ cell tumor.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Beta-hCG (Human Chorionic Gonadotropin)\n- To monitor ongoing health and treatment side effects\n- Helps definitively diagnose non-epithelial ovarian cancers and tracks their response to treatment.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n**Parameters Included:** Beta-hCG\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n</en>",
+    "detailedDescriptionGu": "<gu>\nભલે આ પ્રેગ્નન્સીનો હોર્મોન ગણાય છે, પણ અંડાશયના અમુક ખાસ કેન્સર (જેમ કે કોરિયોકાર્સિનોમા) ના કોષો આ હોર્મોન મોટા પ્રમાણમાં બનાવે છે. યુવાન સ્ત્રીઓમાં જ્યારે અંડાશયની ગાંઠ દેખાય ત્યારે આ ટેસ્ટ અચૂક કરાવાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- બીટા-એચસીજી (Beta-hCG) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- આનાથી સાબિત થાય છે કે ગાંઠ કયા પ્રકારના કેન્સરની છે, અને દવા લીધા પછી આ રિપોર્ટ ઘટવો જોઈએ.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n**Parameters Included:** Beta-hCG\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n</gu>",
+    "whyImportant": "Helps definitively diagnose non-epithelial ovarian cancers and tracks their response to treatment.",
+    "whyImportantGu": "આનાથી સાબિત થાય છે કે ગાંઠ કયા પ્રકારના કેન્સરની છે, અને દવા લીધા પછી આ રિપોર્ટ ઘટવો જોઈએ.",
+    "source": "NCCN Germ Cell Tumor Guidelines",
+    "alternativeNames": []
+  },
+  {
+    "type": "report_template",
+    "name": "Chest X-Ray (CXR)",
+    "nameGu": "છાતીનો એક્સ-રે (Chest X-Ray)",
+    "category": "medical_report",
+    "tags": [
+      "imaging",
+      "lungs",
+      "metastasis"
+    ],
+    "simpleMeaning": "A basic image of the chest to look at the lungs and heart.",
+    "simpleMeaningGu": "ફેફસાં અને હૃદય જોવા માટે છાતીનો સાદો એક્સ-રે (ફોટો).",
+    "detailedDescription": "<en>\nUses a tiny amount of radiation to create an image of the structures inside the chest. It is a rapid way to check for pleural effusion (fluid around the lungs, common in advanced ovarian cancer), lung metastases, or chemotherapy-induced pneumonia.\n\n### Why This Report Is Ordered\n- To check for abnormalities related to Chest X-Ray (CXR)\n- To monitor ongoing health and treatment side effects\n- A fast, cheap, and essential first step if a patient complains of shortness of breath or persistent cough.\n\n### When It Is Commonly Recommended\n- As advised by your oncologist\n- During routine checkups\n\n### How To Prepare For The Test\n- Follow your doctor's standard instructions for this test\n\n### Important Notes\n- Always consult your doctor before making any decisions based on this report.\n\n**Parameters Included:** None specifically mapped\n</en>",
+    "detailedDescriptionGu": "<gu>\nઆમાં ખૂબ ઓછા રેડિયેશનથી છાતીની અંદરનો ફોટો લેવાય છે. ઓવેરિયન કેન્સરમાં ઘણીવાર ફેફસામાં પાણી ભરાય છે, જે આ એક્સ-રેમાં તરત જ પકડાઈ જાય છે. આ ઉપરાંત કીમોથેરાપીથી ન્યુમોનિયા થયો હોય તો પણ દેખાય છે.\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n- છાતીનો એક્સ-રે (Chest X-Ray) ને લગતી સમસ્યાઓ તપાસવા\n- સારવારની અસરો અને આડઅસરો પર નજર રાખવા\n- જો દર્દીને શ્વાસ લેવામાં તકલીફ પડતી હોય કે સતત ઉધરસ આવતી હોય, તો આ સૌથી સસ્તો, ઝડપી અને પહેલો રિપોર્ટ છે.\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n- તમારા ડોક્ટરની સલાહ મુજબ\n- નિયમિત ચેકઅપ દરમિયાન\n\n### કેવી રીતે તૈયારી કરવી\n- આ રિપોર્ટ માટે તમારા ડોક્ટરની સૂચનાઓનું પાલન કરો\n\n### Important Notes\n- આ રિપોર્ટના આધારે કોઈ પણ નિર્ણય લેતા પહેલા હંમેશા તમારા ડોક્ટરની સલાહ લો.\n\n**Parameters Included:** None specifically mapped\n</gu>",
+    "whyImportant": "A fast, cheap, and essential first step if a patient complains of shortness of breath or persistent cough.",
+    "whyImportantGu": "જો દર્દીને શ્વાસ લેવામાં તકલીફ પડતી હોય કે સતત ઉધરસ આવતી હોય, તો આ સૌથી સસ્તો, ઝડપી અને પહેલો રિપોર્ટ છે.",
+    "source": "Radiology Standard Protocol",
+    "alternativeNames": []
+  }
+]

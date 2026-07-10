@@ -83,8 +83,12 @@ function AddKnowledgeForm() {
     "medicine",
     "cancer_info",
     "treatment",
+    "nutrition",
+    "food",
+    "exercise",
     "doctor_advice",
     "general",
+    "Hematology",
   ];
 
   const handleSave = async () => {

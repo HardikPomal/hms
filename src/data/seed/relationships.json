@@ -1,0 +1,162 @@
+[
+  {
+    "sourceName": "Iron-Rich Foods for Anemia",
+    "sourceType": "nutrition",
+    "targetName": "Hemoglobin",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 90
+  },
+  {
+    "sourceName": "Pomegranate",
+    "sourceType": "food",
+    "targetName": "Hemoglobin",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 85
+  },
+  {
+    "sourceName": "Spinach",
+    "sourceType": "food",
+    "targetName": "Hemoglobin",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 85
+  },
+  {
+    "sourceName": "Lentils (Dal)",
+    "sourceType": "food",
+    "targetName": "Hemoglobin",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 80
+  },
+  {
+    "sourceName": "Iron-Rich Foods for Anemia",
+    "sourceType": "nutrition",
+    "targetName": "RDW-CV",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 85
+  },
+  {
+    "sourceName": "Hydration and Electrolytes",
+    "sourceType": "nutrition",
+    "targetName": "Platelet Count",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 70
+  },
+  {
+    "sourceName": "Turmeric",
+    "sourceType": "food",
+    "targetName": "Platelet Count",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 65
+  },
+  {
+    "sourceName": "Neutropenic-Safe Immune-Supportive Foods",
+    "sourceType": "nutrition",
+    "targetName": "WBC Count",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 95
+  },
+  {
+    "sourceName": "Almonds",
+    "sourceType": "food",
+    "targetName": "WBC Count",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 75
+  },
+  {
+    "sourceName": "High-Protein Diet for Tissue Repair",
+    "sourceType": "nutrition",
+    "targetName": "WBC Count",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 80
+  },
+  {
+    "sourceName": "Managing Blood Sugar While on Steroids",
+    "sourceType": "nutrition",
+    "targetName": "Random Blood Sugar",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 95
+  },
+  {
+    "sourceName": "Managing Blood Sugar While on Steroids",
+    "sourceType": "nutrition",
+    "targetName": "Fasting Blood Sugar",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 95
+  },
+  {
+    "sourceName": "Curd (Yogurt)",
+    "sourceType": "food",
+    "targetName": "Calcium",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 80
+  },
+  {
+    "sourceName": "Vitamin D and Calcium for Bone Health",
+    "sourceType": "nutrition",
+    "targetName": "Calcium",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 95
+  },
+  {
+    "sourceName": "Hydration and Electrolytes",
+    "sourceType": "nutrition",
+    "targetName": "Creatinine",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 90
+  },
+  {
+    "sourceName": "Hydration and Electrolytes",
+    "sourceType": "nutrition",
+    "targetName": "Blood Urea Nitrogen (BUN)",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 90
+  },
+  {
+    "sourceName": "Hydration and Electrolytes",
+    "sourceType": "nutrition",
+    "targetName": "Sodium",
+    "targetType": "parameter",
+    "relationType": "improves",
+    "strength": 85
+  },
+  {
+    "sourceName": "Light Walking During Chemotherapy",
+    "sourceType": "general",
+    "targetName": "Fatigue",
+    "targetType": "general",
+    "relationType": "improves",
+    "strength": 85
+  },
+  {
+    "sourceName": "Deep Breathing & Meditation",
+    "sourceType": "general",
+    "targetName": "Anxiety",
+    "targetType": "general",
+    "relationType": "improves",
+    "strength": 90
+  },
+  {
+    "sourceName": "Ginger and Peppermint",
+    "sourceType": "nutrition",
+    "targetName": "Nausea",
+    "targetType": "general",
+    "relationType": "improves",
+    "strength": 90
+  }
+]

@@ -3,7 +3,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import type { ReportField, MedicalEntity } from "@/types";
-import { getRelationshipsForSource, findEntityByNameAndType, getEntityById } from "@/lib/db/knowledge";
+import { getRelationshipsForTarget, findEntityByNameAndType, getEntityById } from "@/lib/db/knowledge";
+import { seedComprehensiveKnowledge } from "@/lib/db/seedData/seeder";
+import RichDescription from "@/components/ui/RichDescription";
 import { Activity } from "lucide-react";
 
 interface Props {
@@ -19,6 +21,9 @@ export default function ReportSuggestions({ fields }: Props) {
 
   useEffect(() => {
     async function fetchSuggestions() {
+      // Ensure graph is seeded before querying
+      await seedComprehensiveKnowledge();
+
       if (!hasAbnormalities) {
         setLoading(false);
         return;
@@ -36,30 +41,16 @@ export default function ReportSuggestions({ fields }: Props) {
         const paramEntity = await findEntityByNameAndType(reportParam.name, "parameter");
         if (!paramEntity) continue;
 
-        // 2. Find associated Finding Entity
-        const stateStr = reportParam.status.charAt(0).toUpperCase() + reportParam.status.slice(1);
-        const findingName = `${paramEntity.name} ${stateStr}`;
-        const findingEntity = await findEntityByNameAndType(findingName, "finding");
+        // Look for direct relations where Intervention --improves--> Parameter
+        const paramTreatments = await getRelationshipsForTarget(paramEntity.id);
         
-        if (!findingEntity) continue;
-
-        // 3. Traverse: Finding -> Condition
-        const findingToConditions = await getRelationshipsForSource(findingEntity.id);
-        
-        for (const fToC of findingToConditions) {
-          if (fToC.targetType !== "condition") continue;
-          
-          // 4. Traverse: Condition -> Intervention (Food/Diet/Supplement)
-          const conditionToInterventions = await getRelationshipsForSource(fToC.targetId);
-          
-          for (const cToI of conditionToInterventions) {
-            if (["food", "diet", "supplement"].includes(cToI.targetType)) {
-               if (!foundItems.has(cToI.targetId)) {
-                 foundItems.add(cToI.targetId);
-                 const interventionEntity = await getEntityById(cToI.targetId);
-                 if (interventionEntity) {
-                   items.push(interventionEntity);
-                 }
+        for (const rel of paramTreatments) {
+          if (["food", "diet", "supplement", "nutrition"].includes(rel.sourceType) && rel.relationType === "improves") {
+            if (!foundItems.has(rel.sourceId)) {
+               foundItems.add(rel.sourceId);
+               const interventionEntity = await getEntityById(rel.sourceId);
+               if (interventionEntity) {
+                 items.push(interventionEntity);
                }
             }
           }
@@ -130,23 +121,25 @@ export default function ReportSuggestions({ fields }: Props) {
             </div>
             
             <div className="space-y-3 mt-4">
-              <div>
-                <p className="text-xs font-bold text-base-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+              <div className="bg-base-50 dark:bg-dark-base-200 p-3 rounded-xl">
+                <p className="text-xs font-bold text-base-500 uppercase tracking-wider mb-2">
                   {language === "gu" ? "વિગતો" : "Details"}
                 </p>
-                <p className="text-sm text-base-700 dark:text-dark-base-700 whitespace-pre-wrap">
-                  {item.detailedDescription || item.simpleMeaning || "No details available."}
-                </p>
+                <RichDescription
+                  text={item.detailedDescription || item.simpleMeaning || ""}
+                  language={language}
+                />
               </div>
               
               {item.whyImportant && (
-                <div className="bg-base-50 dark:bg-dark-base-200 p-3 rounded-lg border border-base-100 dark:border-dark-base-300">
-                  <p className="text-xs font-bold text-base-500 uppercase tracking-wider mb-1">
+                <div className="bg-primary-50 dark:bg-dark-primary-300 p-3 rounded-xl border border-primary-100 dark:border-dark-primary-400">
+                  <p className="text-xs font-bold text-primary-600 dark:text-dark-primary-700 uppercase tracking-wider mb-2">
                     {language === "gu" ? "મહત્વ" : "Why it's important"}
                   </p>
-                  <p className="text-sm text-base-800 dark:text-dark-base-800 whitespace-pre-wrap">
-                    {item.whyImportant}
-                  </p>
+                  <RichDescription
+                    text={item.whyImportant}
+                    language={language}
+                  />
                 </div>
               )}
             </div>

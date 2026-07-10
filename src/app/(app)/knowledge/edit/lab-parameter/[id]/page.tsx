@@ -14,8 +14,9 @@ const extractLangBlock = (text: string, lang: 'en' | 'gu') => {
   return match ? match[1].trim() : "";
 };
 
-const parseSection = (text: string, header: string) => {
-  const regex = new RegExp(`### ${header}\\n([\\s\\S]*?)(?:\\n###|\\n\\*\\*Related|$)`);
+const parseSection = (text: string, headerEn: string, headerGu?: string) => {
+  const headerPattern = headerGu ? `(?:${headerEn}|${headerGu})` : headerEn;
+  const regex = new RegExp(`### ${headerPattern}\\n([\\s\\S]*?)(?:\\n###|\\n\\*\\*Related|$)`);
   const match = text.match(regex);
   return match ? match[1].trim() : "";
 };
@@ -26,7 +27,9 @@ const parseDescription = (text: string) => {
 };
 
 const parseRelated = (text: string, type: 'Reports' | 'Parameters') => {
-  const regex = new RegExp(`\\*\\*Related ${type}:\\*\\*\\n([\\s\\S]*?)(?:\\n\\*\\*Related|$)`);
+  // Use regex to match **Related Reports:** OR **સંબંધિત રિપોર્ટ્સ:**
+  const guType = type === 'Reports' ? 'રિપોર્ટ્સ' : 'પરિમાણો';
+  const regex = new RegExp(`\\*\\*(?:Related ${type}|સંબંધિત ${guType}):\\*\\*\\n([\\s\\S]*?)(?:\\n\\*\\*|$)`);
   const match = text.match(regex);
   return match ? match[1].trim() : "";
 };
@@ -91,14 +94,14 @@ export default function EditLabParameterPage() {
           whyImportantEn: whyImportantEnBlock,
           whyImportantGu: whyImportantGuBlock,
           highIndicateEn: parseSection(enBlock, "High Value May Indicate"),
-          highIndicateGu: parseSection(guBlock, "High Value May Indicate"),
+          highIndicateGu: parseSection(guBlock, "High Value May Indicate", "ઊંચું મૂલ્ય શું સૂચવે છે"),
           lowIndicateEn: parseSection(enBlock, "Low Value May Indicate"),
-          lowIndicateGu: parseSection(guBlock, "Low Value May Indicate"),
+          lowIndicateGu: parseSection(guBlock, "Low Value May Indicate", "નીચું મૂલ્ય શું સૂચવે છે"),
           causesEn: parseSection(enBlock, "Common Causes Of Abnormal Results"),
-          causesGu: parseSection(guBlock, "Common Causes Of Abnormal Results"),
+          causesGu: parseSection(guBlock, "Common Causes Of Abnormal Results", "અસામાન્ય પરિણામોના સામાન્ય કારણો"),
           relatedDiseasesEn: parseSection(enBlock, "Related Diseases"),
-          relatedDiseasesGu: parseSection(guBlock, "Related Diseases"),
-          relatedReports: parseRelated(enBlock, "Reports"),
+          relatedDiseasesGu: parseSection(guBlock, "Related Diseases", "સંબંધિત રોગો"),
+          relatedReports: parseRelated(enBlock, "Reports"), // Wait, `relatedReports` is the same for en and gu. En is fine.
           relatedParameters: parseRelated(enBlock, "Parameters"),
         });
       }
@@ -135,34 +138,43 @@ export default function EditLabParameterPage() {
         name: formState.nameEn.trim(),
         nameGu: formState.nameGu.trim() || undefined,
         alternativeNames: altNames,
-        defaultUnit: formState.unit.trim() || undefined,
-        defaultRefMin,
-        defaultRefMax,
+        metadata: {
+          ...(parameter?.metadata || {}),
+          unit: formState.unit.trim() || undefined,
+          refMin: defaultRefMin,
+          refMax: defaultRefMax,
+        }
       });
 
       let enDesc = formState.descEn.trim();
       let guDesc = formState.descGu.trim();
 
       if (formState.highIndicateEn.trim()) enDesc += `\n\n### High Value May Indicate\n${formState.highIndicateEn.trim()}`;
-      if (formState.highIndicateGu.trim()) guDesc += `\n\n### High Value May Indicate\n${formState.highIndicateGu.trim()}`;
+      if (formState.highIndicateGu.trim()) guDesc += `\n\n### ઊંચું મૂલ્ય શું સૂચવે છે\n${formState.highIndicateGu.trim()}`;
 
       if (formState.lowIndicateEn.trim()) enDesc += `\n\n### Low Value May Indicate\n${formState.lowIndicateEn.trim()}`;
-      if (formState.lowIndicateGu.trim()) guDesc += `\n\n### Low Value May Indicate\n${formState.lowIndicateGu.trim()}`;
+      if (formState.lowIndicateGu.trim()) guDesc += `\n\n### નીચું મૂલ્ય શું સૂચવે છે\n${formState.lowIndicateGu.trim()}`;
 
       if (formState.causesEn.trim()) enDesc += `\n\n### Common Causes Of Abnormal Results\n${formState.causesEn.trim()}`;
-      if (formState.causesGu.trim()) guDesc += `\n\n### Common Causes Of Abnormal Results\n${formState.causesGu.trim()}`;
+      if (formState.causesGu.trim()) guDesc += `\n\n### અસામાન્ય પરિણામોના સામાન્ય કારણો\n${formState.causesGu.trim()}`;
 
       if (formState.relatedDiseasesEn.trim()) enDesc += `\n\n### Related Diseases\n${formState.relatedDiseasesEn.trim()}`;
-      if (formState.relatedDiseasesGu.trim()) guDesc += `\n\n### Related Diseases\n${formState.relatedDiseasesGu.trim()}`;
+      if (formState.relatedDiseasesGu.trim()) guDesc += `\n\n### સંબંધિત રોગો\n${formState.relatedDiseasesGu.trim()}`;
 
-      const sharedRelations = [];
-      if (formState.relatedReports.trim()) sharedRelations.push(`**Related Reports:**\n${formState.relatedReports.trim()}`);
-      if (formState.relatedParameters.trim()) sharedRelations.push(`**Related Parameters:**\n${formState.relatedParameters.trim()}`);
+      const enRelations = [];
+      const guRelations = [];
+      if (formState.relatedReports.trim()) {
+        enRelations.push(`**Related Reports:**\n${formState.relatedReports.trim()}`);
+        guRelations.push(`**સંબંધિત રિપોર્ટ્સ:**\n${formState.relatedReports.trim()}`);
+      }
+      if (formState.relatedParameters.trim()) {
+        enRelations.push(`**Related Parameters:**\n${formState.relatedParameters.trim()}`);
+        guRelations.push(`**સંબંધિત પરિમાણો:**\n${formState.relatedParameters.trim()}`);
+      }
 
-      const relationsStr = sharedRelations.length > 0 ? `\n\n### Relationships\n${sharedRelations.join("\n\n")}` : "";
-      if (relationsStr) {
-        enDesc += relationsStr;
-        guDesc += relationsStr;
+      if (enRelations.length > 0) {
+        enDesc += `\n\n### Relationships\n${enRelations.join("\n\n")}`;
+        guDesc += `\n\n### સંબંધો\n${guRelations.join("\n\n")}`;
       }
 
       let detailedDesc = "";

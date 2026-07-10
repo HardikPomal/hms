@@ -185,9 +185,9 @@ export default function AddReportPage() {
               name: dbParam ? dbParam.name : f.name,
               nameGu: dbParam ? dbParam.nameGu || f.nameGu : f.nameGu,
               value: "",
-              unit: dbParam?.defaultUnit || f.unit,
-              refMin: (dbParam?.defaultRefMin || f.refMin)?.toString(),
-              refMax: (dbParam?.defaultRefMax || f.refMax)?.toString(),
+              unit: (dbParam as any)?.metadata?.unit || (dbParam as any)?.defaultUnit || f.unit,
+              refMin: ((dbParam as any)?.metadata?.refMin || (dbParam as any)?.defaultRefMin || f.refMin)?.toString(),
+              refMax: ((dbParam as any)?.metadata?.refMax || (dbParam as any)?.defaultRefMax || f.refMax)?.toString(),
               status: "unknown",
               notes: f.notes,
             };
@@ -504,9 +504,9 @@ export default function AddReportPage() {
                     const templateParam = selectedTemplate?.fields.find((tf) => tf.name === field.name);
                     const isKnownField = !!templateParam || !!knownParam;
                     
-                    const displayUnit = field.unit || knownParam?.metadata?.unit || knownParam?.defaultUnit || knownParam?.unit || templateParam?.unit || "";
-                    const displayMin = field.refMin || knownParam?.metadata?.refMin || knownParam?.defaultRefMin || knownParam?.refMin || templateParam?.refMin || "";
-                    const displayMax = field.refMax || knownParam?.metadata?.refMax || knownParam?.defaultRefMax || knownParam?.refMax || templateParam?.refMax || "";
+                    const displayUnit = field.unit || (knownParam as any)?.metadata?.unit || (knownParam as any)?.defaultUnit || (knownParam as any)?.unit || templateParam?.unit || "";
+                    const displayMin = field.refMin || (knownParam as any)?.metadata?.refMin || (knownParam as any)?.defaultRefMin || (knownParam as any)?.refMin || templateParam?.refMin || "";
+                    const displayMax = field.refMax || (knownParam as any)?.metadata?.refMax || (knownParam as any)?.defaultRefMax || (knownParam as any)?.refMax || templateParam?.refMax || "";
                     
                     return (
                     <div
@@ -561,9 +561,9 @@ export default function AddReportPage() {
                                         }}
                                         onClick={() => {
                                           updateField(field.id, "name", p.name);
-                                          const unit = p.metadata?.unit || p.defaultUnit || p.unit;
-                                          const min = p.metadata?.refMin ?? p.defaultRefMin ?? p.refMin;
-                                          const max = p.metadata?.refMax ?? p.defaultRefMax ?? p.refMax;
+                                          const unit = (p as any).metadata?.unit || (p as any).defaultUnit || (p as any).unit;
+                                          const min = (p as any).metadata?.refMin ?? (p as any).defaultRefMin ?? (p as any).refMin;
+                                          const max = (p as any).metadata?.refMax ?? (p as any).defaultRefMax ?? (p as any).refMax;
                                           
                                           if (unit !== undefined) updateField(field.id, "unit", unit);
                                           if (min !== undefined) updateField(field.id, "refMin", String(min));
@@ -575,9 +575,9 @@ export default function AddReportPage() {
                                         <span className="font-medium text-base-900 dark:text-dark-base-900">
                                           {p.name}
                                         </span>
-                                        {p.unit && (
+                                        {(p as any).unit && (
                                           <span className="text-xs text-base-400 dark:text-dark-base-400 ml-2">
-                                            ({p.unit})
+                                            ({(p as any).unit})
                                           </span>
                                         )}
                                       </button>
@@ -800,7 +800,7 @@ export default function AddReportPage() {
                             {p.name}
                           </p>
                           <p className="text-xs text-base-500 capitalize">
-                            {p.category.replace("_", " ")}
+                            {p.category?.replace("_", " ")}
                           </p>
                         </div>
                         <button

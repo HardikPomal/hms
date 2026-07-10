@@ -69,18 +69,17 @@ export async function deleteEntity(id: string): Promise<void> {
 
 // ─── Legacy Wrappers (To prevent immediate breakage in existing components) ────
 
-export async function getAllParameters(): Promise<ParameterEntity[]> {
-  return getEntitiesByType<ParameterEntity>("parameter");
+export async function getAllParameters(): Promise<any[]> {
+  return getAllEntities();
 }
 
 export async function searchParameters(query: string): Promise<any[]> {
   return searchEntities(query);
 }
 
-export async function getParameterById(id: string): Promise<ParameterEntity | undefined> {
+export async function getParameterById(id: string): Promise<any | undefined> {
   const entity = await getEntityById(id);
-  if (entity && entity.type === "parameter") return entity as ParameterEntity;
-  return undefined;
+  return entity;
 }
 
 export async function getKnowledgeByParameterId(id: string): Promise<any> {
@@ -136,6 +135,16 @@ export async function addRelationship(
   notes?: string
 ): Promise<EntityRelationship> {
   const db = await getDB();
+  
+  // Check for existing relationship to avoid duplicates
+  const existingRels = await getRelationshipsForSource(sourceId);
+  const existing = existingRels.find(
+    r => r.targetId === targetId && r.relationType === relationType
+  );
+  if (existing) {
+    return existing; // Return existing instead of throwing or duplicating
+  }
+
   const rel: EntityRelationship = {
     id: `rel_${generateId()}`,
     sourceId,
@@ -165,4 +174,32 @@ export async function getRelationshipsForTarget(targetId: string): Promise<Entit
 export async function deleteRelationship(id: string): Promise<void> {
   const db = await getDB();
   await db.delete("relationships", id);
+}
+
+export async function migrateFoodCategories(): Promise<void> {
+  const db = await getDB();
+  const all = await db.getAll("medical_entities");
+  let updated = 0;
+  for (const entity of all) {
+    const isDietStrategy = entity.name.toLowerCase().includes("diet") || 
+                           entity.type === "diet" || 
+                           entity.name.toLowerCase().includes("high-protein") || 
+                           entity.name.toLowerCase().includes("constipation");
+
+    if (isDietStrategy) {
+      if (entity.category !== "nutrition" || entity.type !== "nutrition") {
+        await updateEntity(entity.id, { category: "nutrition", type: "nutrition" });
+        updated++;
+      }
+    } else {
+      if (entity.category === "nutrition" && 
+         (entity.type === "food" || entity.source?.includes("Food Guide"))) {
+        await updateEntity(entity.id, { category: "food", type: "food" });
+        updated++;
+      }
+    }
+  }
+  if (updated > 0) {
+    console.log(`Migrated ${updated} entities between food and nutrition categories.`);
+  }
 }

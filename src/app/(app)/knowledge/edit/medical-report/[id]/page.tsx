@@ -14,8 +14,9 @@ const extractLangBlock = (text: string, lang: 'en' | 'gu') => {
   return match ? match[1].trim() : "";
 };
 
-const parseSection = (text: string, header: string) => {
-  const regex = new RegExp(`### ${header}\\n([\\s\\S]*?)(?:\\n###|\\n\\*\\*Parameters Included|$)`);
+const parseSection = (text: string, headerEn: string, headerGu?: string) => {
+  const headerPattern = headerGu ? `(?:${headerEn}|${headerGu})` : headerEn;
+  const regex = new RegExp(`### ${headerPattern}\\n([\\s\\S]*?)(?:\\n###|\\n\\*\\*Parameters Included|$)`);
   const match = text.match(regex);
   return match ? match[1].trim() : "";
 };
@@ -85,13 +86,13 @@ export default function EditMedicalReportPage() {
           descEn: parseDescription(enBlock),
           descGu: parseDescription(guBlock),
           whyOrderedEn: parseSection(enBlock, "Why This Report Is Ordered"),
-          whyOrderedGu: parseSection(guBlock, "Why This Report Is Ordered"),
+          whyOrderedGu: parseSection(guBlock, "Why This Report Is Ordered", "આ રિપોર્ટ શા માટે જરૂરી છે"),
           whenRecommendedEn: parseSection(enBlock, "When It Is Commonly Recommended"),
-          whenRecommendedGu: parseSection(guBlock, "When It Is Commonly Recommended"),
+          whenRecommendedGu: parseSection(guBlock, "When It Is Commonly Recommended", "ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે"),
           howToPrepareEn: parseSection(enBlock, "How To Prepare For The Test"),
-          howToPrepareGu: parseSection(guBlock, "How To Prepare For The Test"),
+          howToPrepareGu: parseSection(guBlock, "How To Prepare For The Test", "કેવી રીતે તૈયારી કરવી"),
           importantNotesEn: parseSection(enBlock, "Important Notes"),
-          importantNotesGu: parseSection(guBlock, "Important Notes"),
+          importantNotesGu: parseSection(guBlock, "Important Notes", "અગત્યની નોંધ"),
         });
 
         const paramsMatch = enBlock.match(/\*\*Parameters Included:\*\* (.*)/);
@@ -131,16 +132,16 @@ export default function EditMedicalReportPage() {
       let guDesc = formState.descGu.trim();
 
       if (formState.whyOrderedEn.trim()) enDesc += `\n\n### Why This Report Is Ordered\n${formState.whyOrderedEn.trim()}`;
-      if (formState.whyOrderedGu.trim()) guDesc += `\n\n### Why This Report Is Ordered\n${formState.whyOrderedGu.trim()}`;
+      if (formState.whyOrderedGu.trim()) guDesc += `\n\n### આ રિપોર્ટ શા માટે જરૂરી છે\n${formState.whyOrderedGu.trim()}`;
 
       if (formState.whenRecommendedEn.trim()) enDesc += `\n\n### When It Is Commonly Recommended\n${formState.whenRecommendedEn.trim()}`;
-      if (formState.whenRecommendedGu.trim()) guDesc += `\n\n### When It Is Commonly Recommended\n${formState.whenRecommendedGu.trim()}`;
+      if (formState.whenRecommendedGu.trim()) guDesc += `\n\n### ક્યારે સામાન્ય રીતે ભલામણ કરવામાં આવે છે\n${formState.whenRecommendedGu.trim()}`;
 
       if (formState.howToPrepareEn.trim()) enDesc += `\n\n### How To Prepare For The Test\n${formState.howToPrepareEn.trim()}`;
-      if (formState.howToPrepareGu.trim()) guDesc += `\n\n### How To Prepare For The Test\n${formState.howToPrepareGu.trim()}`;
+      if (formState.howToPrepareGu.trim()) guDesc += `\n\n### કેવી રીતે તૈયારી કરવી\n${formState.howToPrepareGu.trim()}`;
 
       if (formState.importantNotesEn.trim()) enDesc += `\n\n### Important Notes\n${formState.importantNotesEn.trim()}`;
-      if (formState.importantNotesGu.trim()) guDesc += `\n\n### Important Notes\n${formState.importantNotesGu.trim()}`;
+      if (formState.importantNotesGu.trim()) guDesc += `\n\n### અગત્યની નોંધ\n${formState.importantNotesGu.trim()}`;
       
       if (selectedParams.length > 0) {
         const paramNames = allParams.filter(p => selectedParams.includes(p.id)).map(p => p.name).join(", ");
@@ -314,7 +315,7 @@ export default function EditMedicalReportPage() {
                         className="w-4 h-4 mt-0.5 shrink-0 text-primary-600 rounded border-base-300 focus:ring-primary-500"
                       />
                       <span className="text-sm font-medium text-base-900 dark:text-dark-base-900 leading-tight">
-                        {param.name} {param.alternativeNames.length > 0 ? `(${param.alternativeNames[0]})` : ""}
+                        {param.name} {param.alternativeNames?.length > 0 ? `(${param.alternativeNames[0]})` : ""}
                       </span>
                     </label>
                   ))}

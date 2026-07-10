@@ -247,7 +247,7 @@ export default function AddMedicalReportPage() {
                         className="w-4 h-4 mt-0.5 shrink-0 text-primary-600 rounded border-base-300 focus:ring-primary-500"
                       />
                       <span className="text-sm font-medium text-base-900 dark:text-dark-base-900 leading-tight">
-                        {param.name} {param.alternativeNames.length > 0 ? `(${param.alternativeNames[0]})` : ""}
+                        {param.name} {param.alternativeNames?.length > 0 ? `(${param.alternativeNames[0]})` : ""}
                       </span>
                     </label>
                   ))}

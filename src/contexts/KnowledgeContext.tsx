@@ -1,11 +1,11 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { getAllParameters } from "@/lib/db/knowledge";
-import type { ParameterDef } from "@/types";
+import { getAllEntities } from "@/lib/db/knowledge";
+import type { MedicalEntity } from "@/types";
 
 interface KnowledgeContextType {
-  parameters: ParameterDef[];
+  parameters: MedicalEntity[];
   knownTerms: string[];
   refreshKnowledge: () => Promise<void>;
   loading: boolean;
@@ -14,14 +14,14 @@ interface KnowledgeContextType {
 const KnowledgeContext = createContext<KnowledgeContextType | undefined>(undefined);
 
 export function KnowledgeProvider({ children }: { children: React.ReactNode }) {
-  const [parameters, setParameters] = useState<ParameterDef[]>([]);
+  const [parameters, setParameters] = useState<MedicalEntity[]>([]);
   const [knownTerms, setKnownTerms] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   const refreshKnowledge = async () => {
     try {
       setLoading(true);
-      const data = await getAllParameters();
+      const data = await getAllEntities();
       setParameters(data);
       const terms = new Set<string>();
       data.forEach(p => {

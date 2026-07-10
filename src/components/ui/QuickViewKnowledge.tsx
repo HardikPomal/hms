@@ -43,7 +43,7 @@ export default function QuickViewKnowledge({
 
   if (!isOpen || !parameter) return null;
 
-  const guName = parameter.alternativeNames.length > 0 ? parameter.alternativeNames[0] : parameter.name;
+  const guName = parameter.alternativeNames?.length > 0 ? parameter.alternativeNames[0] : parameter.name;
 
   return (
     <div className="fixed inset-0 z-100 flex flex-col justify-end">

@@ -43,7 +43,7 @@ export default function AddFoodPage() {
           name: formState.nameEn.trim(),
           nameGu: formState.nameGu.trim() || undefined,
           alternativeNames: [],
-          category: "nutrition",
+          category: "food",
           knowledgeStatus: "needs_analysis", // This will still process tags/relations in background!
           defaultRefMin: undefined,
         });
@@ -67,7 +67,7 @@ export default function AddFoodPage() {
         const param = await addParameter({
           name: notesTitle.trim(),
           alternativeNames: [],
-          category: "nutrition",
+          category: "food",
           knowledgeStatus: "needs_analysis",
           defaultRefMin: undefined,
         });

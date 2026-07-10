@@ -75,60 +75,104 @@ export default function KnowledgeDetailPage() {
         </div>
 
         {/* Content */}
-        <div className="card-elevated">
-          <div className="prose prose-sm dark:prose-invert max-w-none text-base-800 dark:text-dark-base-800">
-            {entity.detailedDescription ? (
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {(() => {
-                  let content = entity.detailedDescription || "";
-                  if (content.includes("<en>") || content.includes("<gu>")) {
-                    const enMatch = content.match(/<en>([\s\S]*?)<\/en>/);
-                    const guMatch = content.match(/<gu>([\s\S]*?)<\/gu>/);
-                    
-                    if (language === "gu" && guMatch) {
-                      content = guMatch[1];
-                    } else if (enMatch) {
-                      content = enMatch[1];
-                    }
-                  }
-                  return content;
-                })()}
-              </ReactMarkdown>
-            ) : (
-              <p>{entity.simpleMeaning || "No detailed information available."}</p>
+        {entity.category === "food" ? (
+          (() => {
+            const englishPrep = entity.detailedDescription || "";
+            const gujPrep = entity.detailedDescriptionGu || englishPrep;
+            
+            const englishBen = entity.simpleMeaning || "";
+            const gujBen = entity.simpleMeaningGu || englishBen;
+            
+            const englishTime = entity.metadata?.bestTimeToEat || "";
+            const gujTime = entity.metadata?.bestTimeToEatGu || englishTime;
+
+            return (
+              <div className="card-elevated space-y-4">
+                <div>
+                  <p className="text-xs font-semibold text-success-600 mb-1">
+                    ✓ {language === "gu" ? "ફાયદા" : "Benefits"}
+                  </p>
+                  <p className="text-sm text-base-700 dark:text-dark-base-700">
+                    {language === "gu" ? gujBen : englishBen}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-primary-600 mb-1">
+                    👩‍🍳 {language === "gu" ? "કેવી રીતે બનાવવું" : "How to prepare"}
+                  </p>
+                  <p className="text-sm text-base-700 dark:text-dark-base-700 whitespace-pre-wrap">
+                    {language === "gu" ? gujPrep : englishPrep}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-secondary-600 mb-1">
+                    🕐 {language === "gu" ? "ખાવાનો શ્રેષ્ઠ સમય" : "Best time to eat"}
+                  </p>
+                  <p className="text-sm text-base-700 dark:text-dark-base-700">
+                    {language === "gu" ? gujTime : englishTime}
+                  </p>
+                </div>
+              </div>
+            );
+          })()
+        ) : (
+          <>
+            <div className="card-elevated">
+              <div className="prose prose-sm dark:prose-invert max-w-none text-base-800 dark:text-dark-base-800">
+                {entity.detailedDescription ? (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {(() => {
+                      let content = entity.detailedDescription || "";
+                      if (content.includes("<en>") || content.includes("<gu>")) {
+                        const enMatch = content.match(/<en>([\s\S]*?)<\/en>/);
+                        const guMatch = content.match(/<gu>([\s\S]*?)<\/gu>/);
+                        
+                        if (language === "gu" && guMatch) {
+                          content = guMatch[1];
+                        } else if (enMatch) {
+                          content = enMatch[1];
+                        }
+                      }
+                      return content;
+                    })()}
+                  </ReactMarkdown>
+                ) : (
+                  <p>{entity.simpleMeaning || "No detailed information available."}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Normal Range */}
+            {entity.normalRangeText && (
+              <div className="card-elevated">
+                <p className="text-xs text-base-400 mb-1">{t("knowledge.normalRange")}</p>
+                <p className="font-semibold text-primary-600 dark:text-dark-primary-600">{entity.normalRangeText}</p>
+              </div>
             )}
-          </div>
-        </div>
 
-        {/* Normal Range */}
-        {entity.normalRangeText && (
-          <div className="card-elevated">
-            <p className="text-xs text-base-400 mb-1">{t("knowledge.normalRange")}</p>
-            <p className="font-semibold text-primary-600 dark:text-dark-primary-600">{entity.normalRangeText}</p>
-          </div>
-        )}
-
-        {/* Importance */}
-        {entity.whyImportant && (
-          <div className="card-elevated bg-primary-50 dark:bg-dark-primary-100 border border-primary-200 dark:border-dark-primary-200">
-            <p className="text-xs text-primary-500 mb-1">{t("knowledge.importance")}</p>
-            <p className="text-sm text-primary-700 dark:text-dark-primary-700">
-              {(() => {
-                let content = entity.whyImportant || "";
-                if (content.includes("<en>") || content.includes("<gu>")) {
-                  const enMatch = content.match(/<en>([\s\S]*?)<\/en>/);
-                  const guMatch = content.match(/<gu>([\s\S]*?)<\/gu>/);
-                  
-                  if (language === "gu" && guMatch) {
-                    content = guMatch[1];
-                  } else if (enMatch) {
-                    content = enMatch[1];
-                  }
-                }
-                return content;
-              })()}
-            </p>
-          </div>
+            {/* Importance */}
+            {entity.whyImportant && entity.category !== "medical_report" && (
+              <div className="card-elevated bg-primary-50 dark:bg-dark-primary-100 border border-primary-200 dark:border-dark-primary-200">
+                <p className="text-xs text-primary-500 mb-1">{t("knowledge.importance")}</p>
+                <p className="text-sm text-primary-700 dark:text-dark-primary-700">
+                  {(() => {
+                    let content = entity.whyImportant || "";
+                    if (content.includes("<en>") || content.includes("<gu>")) {
+                      const enMatch = content.match(/<en>([\s\S]*?)<\/en>/);
+                      const guMatch = content.match(/<gu>([\s\S]*?)<\/gu>/);
+                      
+                      if (language === "gu" && guMatch) {
+                        content = guMatch[1];
+                      } else if (enMatch) {
+                        content = enMatch[1];
+                      }
+                    }
+                    return content;
+                  })()}
+                </p>
+              </div>
+            )}
+          </>
         )}
 
         {/* Meta */}
