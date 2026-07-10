@@ -328,6 +328,25 @@ export default function DashboardPage() {
           generateTodaySchedule(today),
           getSettings(),
         ]);
+      if (sortedReports.length === 0) {
+        // Auto-generate a sample CBC report if the user has no reports, so the Dashboard works immediately
+        const { addReport } = await import("@/lib/db/reports");
+        const demoReport = await addReport({
+          templateId: "report_cbc",
+          reportDate: new Date().toISOString(),
+          format: "numeric",
+          hospitalName: "Auto-Generated Demo",
+          doctorName: "System",
+          generalNotes: "This is a demo report to show how the Daily Action Plan works.",
+          numericFields: [
+            { parameterId: "param_hemoglobin", value: 9.0, status: "low", unit: "g/dL" },
+            { parameterId: "param_wbc", value: 2500, status: "low", unit: "cells/mcL" },
+          ],
+          narrativeSections: [],
+        });
+        sortedReports.push(demoReport);
+      }
+
       setReports(sortedReports.slice(0, 3));
       setNextChemo(nextChemoData ?? null);
       setTodayMeds(medsData);
@@ -444,46 +463,36 @@ export default function DashboardPage() {
           let entity = await db.get("medical_entities", itemStatus.itemId);
 
           let paramCategory = itemStatus.category;
-          if (entity) {
-            const entityType = entity.type as string;
-            if (
-              entityType === "food" ||
-              entityType === "exercise" ||
-              entityType === "nutrition" ||
-              entityType === "treatment"
-            ) {
-              paramCategory = entityType;
-            } else if (entityType === "medication") {
-              paramCategory = "medicine";
-            } else if (entity.category) {
-              paramCategory = entity.category;
-            }
+          if (!entity) {
+            console.warn(`Entity ${itemStatus.itemId} not found in DB. It might have been wiped during a seed.`);
+            continue;
           }
 
-          // Fallback: build a minimal display object if entity not found
-          const param: ParameterDef = entity
-            ? ({
-                id: entity.id,
-                name: entity.name,
-                nameGu: entity.nameGu,
-                alternativeNames: entity.alternativeNames || [],
-                category: paramCategory,
-                isNumeric: false,
-                knowledgeStatus: (entity.knowledgeStatus as any) || "advanced",
-                createdAt: entity.createdAt,
-                updatedAt: entity.updatedAt,
-              } as ParameterDef)
-            : ({
-                id: itemStatus.itemId,
-                name: itemStatus.itemId,
-                nameGu: undefined,
-                alternativeNames: [],
-                category: itemStatus.category,
-                isNumeric: false,
-                knowledgeStatus: "basic" as const,
-                createdAt: new Date().toISOString(),
-                updatedAt: new Date().toISOString(),
-              } as ParameterDef);
+          const entityType = entity.type as string;
+          if (
+            entityType === "food" ||
+            entityType === "exercise" ||
+            entityType === "nutrition" ||
+            entityType === "treatment"
+          ) {
+            paramCategory = entityType;
+          } else if (entityType === "medication") {
+            paramCategory = "medicine";
+          } else if (entity.category) {
+            paramCategory = entity.category;
+          }
+
+          const param: ParameterDef = {
+            id: entity.id,
+            name: entity.name,
+            nameGu: entity.nameGu,
+            alternativeNames: entity.alternativeNames || [],
+            category: paramCategory,
+            isNumeric: false,
+            knowledgeStatus: (entity.knowledgeStatus as any) || "advanced",
+            createdAt: entity.createdAt,
+            updatedAt: entity.updatedAt,
+          } as ParameterDef;
 
           const kb: KnowledgeEntry = {
             id: "kb_" + itemStatus.itemId,
