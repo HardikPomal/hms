@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { MedicineFormData } from "@/types/forms";
 import DynamicListInput from "@/components/ui/DynamicListInput";
+import { getAllEntities } from "@/lib/db/knowledge";
 
 interface MedicineFormProps {
   data: MedicineFormData;
@@ -9,6 +11,26 @@ interface MedicineFormProps {
 }
 
 export default function MedicineForm({ data, onChange }: MedicineFormProps) {
+  const [suggestions, setSuggestions] = useState<{
+    symptoms: string[];
+    medicines: string[];
+    all: string[];
+  }>({ symptoms: [], medicines: [], all: [] });
+
+  useEffect(() => {
+    getAllEntities().then((entities) => {
+      const symptoms = entities
+        .filter((e) => e.type === "symptom" || e.category === "medical_term")
+        .map((e) => e.name);
+      const medicines = entities
+        .filter((e) => e.type === "medication" || e.category === "medicine")
+        .map((e) => e.name);
+      const all = entities.map((e) => e.name);
+
+      setSuggestions({ symptoms, medicines, all });
+    });
+  }, []);
+
   const inputCls =
     "w-full px-4 py-3 bg-white dark:bg-dark-base-100 border-2 border-base-200 dark:border-dark-base-200 rounded-xl text-sm font-medium outline-none focus:border-primary-500 transition-colors";
   const labelCls =
@@ -55,6 +77,7 @@ export default function MedicineForm({ data, onChange }: MedicineFormProps) {
           value={data.brandNames}
           onChange={(v) => handleChange("brandNames", v)}
           placeholder="Add brand name..."
+          suggestions={suggestions.medicines}
         />
         <DynamicListInput
           label="Route of Administration"
@@ -70,12 +93,14 @@ export default function MedicineForm({ data, onChange }: MedicineFormProps) {
           value={data.primaryUses}
           onChange={(v) => handleChange("primaryUses", v)}
           placeholder="Add indication..."
+          suggestions={suggestions.symptoms}
         />
         <DynamicListInput
           label="Cancer-Specific Uses"
           value={data.cancerUses}
           onChange={(v) => handleChange("cancerUses", v)}
           placeholder="Add cancer use..."
+          suggestions={suggestions.symptoms}
         />
       </Section>
 
@@ -85,18 +110,21 @@ export default function MedicineForm({ data, onChange }: MedicineFormProps) {
           value={data.commonSideEffects}
           onChange={(v) => handleChange("commonSideEffects", v)}
           placeholder="Add side effect..."
+          suggestions={suggestions.symptoms}
         />
         <DynamicListInput
           label="Serious Side Effects"
           value={data.seriousSideEffects}
           onChange={(v) => handleChange("seriousSideEffects", v)}
           placeholder="Add serious side effect..."
+          suggestions={suggestions.symptoms}
         />
         <DynamicListInput
           label="Contraindications"
           value={data.contraindications}
           onChange={(v) => handleChange("contraindications", v)}
           placeholder="Add contraindication..."
+          suggestions={suggestions.symptoms}
         />
         <div>
           <label className={labelCls}>Precautions</label>
@@ -142,6 +170,7 @@ export default function MedicineForm({ data, onChange }: MedicineFormProps) {
           value={data.drugInteractions}
           onChange={(v) => handleChange("drugInteractions", v)}
           placeholder="Add interaction..."
+          suggestions={suggestions.medicines}
         />
       </Section>
 
